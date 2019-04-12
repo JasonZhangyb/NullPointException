@@ -1,0 +1,4 @@
+#Fri Apr 12 15:50:45 EDT 2019
+base.0=C\:\\Users\\Jason\\Desktop\\Wishlist\\YelpFusionApi\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\5
+path.0=classes.dex
+renamed.0=classes.dex
