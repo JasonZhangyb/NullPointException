@@ -138,10 +138,10 @@ public class RestaurantPost extends AppCompatActivity {
 
             res_name.setText(business.getName());
             res_rating.setText("Rating: " + Double.toString(business.getRating()));
-            Picasso.get().load(business.getImageUrl()).resize(100,100).into(res_img);
-            Picasso.get().load(business.getPhotos().get(0)).resize(70,70).into(img1);
-            Picasso.get().load(business.getPhotos().get(1)).resize(70,70).into(img2);
-            Picasso.get().load(business.getPhotos().get(2)).resize(70,70).into(img3);
+            Picasso.get().load(business.getImageUrl()).resize(150,150).into(res_img);
+            Picasso.get().load(business.getPhotos().get(0)).resize(100,100).into(img1);
+            Picasso.get().load(business.getPhotos().get(1)).resize(100,100).into(img2);
+            Picasso.get().load(business.getPhotos().get(2)).resize(100,100).into(img3);
 
             ref.addValueEventListener(new ValueEventListener() {
                 @Override
