@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/young/Desktop/NullPointException/YelpFusionApi/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hi-rIN/values-hi-rIN.xml",
+            "outputFile": "/Users/apple/Desktop/CS591E1/final-project/NullPointException/YelpFusionApi/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hi-rIN/values-hi-rIN.xml",
             "map": [
                 {
-                    "source": "/Users/young/.gradle/caches/transforms-1/files-1.1/core-android-0.5.2.aar/8c69a002085d4512bd0f59008f235d18/res/values-hi-rIN/values-hi-rIN.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "52",
-                        "endOffsets": "103"
-                    },
-                    "to": {
-                        "startLines": "8",
-                        "startColumns": "4",
-                        "startOffsets": "530",
-                        "endColumns": "52",
-                        "endOffsets": "578"
-                    }
-                },
-                {
-                    "source": "/Users/young/.gradle/caches/transforms-1/files-1.1/rides-android-0.5.2.aar/c0af09e119ba66371796622e2df74f1f/res/values-hi-rIN/values-hi-rIN.xml",
+                    "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/rides-android-0.5.2.aar/51c2385679ef8454aa1c0481465bac82/res/values-hi-rIN/values-hi-rIN.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8",
                         "startColumns": "4,4,4,4,4,4,4",
@@ -35,6 +18,23 @@
                         "startOffsets": "55,109,173,243,356,461,583",
                         "endColumns": "53,63,69,112,104,68,57",
                         "endOffsets": "104,168,238,351,456,525,636"
+                    }
+                },
+                {
+                    "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/core-android-0.5.2.aar/8e3c0d3b3ee1972448bb0320f19ba575/res/values-hi-rIN/values-hi-rIN.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "52",
+                        "endOffsets": "103"
+                    },
+                    "to": {
+                        "startLines": "8",
+                        "startColumns": "4",
+                        "startOffsets": "530",
+                        "endColumns": "52",
+                        "endOffsets": "578"
                     }
                 }
             ]

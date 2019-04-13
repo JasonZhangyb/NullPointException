@@ -45,13 +45,13 @@ public final class R {
         public static final int btn_gradient_purple_rounded = 0x7f070057;
         public static final int btn_hotpink_rounded = 0x7f070058;
         public static final int btn_white_rounded = 0x7f070059;
-        public static final int gradient_purple_rounded = 0x7f07006f;
-        public static final int prime_time_charcoal = 0x7f070086;
-        public static final int prime_time_mulberry = 0x7f070087;
-        public static final int prime_time_white = 0x7f070088;
-        public static final int wordmark_thin_mulberry = 0x7f070094;
-        public static final int wordmark_thin_pink = 0x7f070095;
-        public static final int wordmark_thin_white = 0x7f070096;
+        public static final int gradient_purple_rounded = 0x7f070070;
+        public static final int prime_time_charcoal = 0x7f070087;
+        public static final int prime_time_mulberry = 0x7f070088;
+        public static final int prime_time_white = 0x7f070089;
+        public static final int wordmark_thin_mulberry = 0x7f070095;
+        public static final int wordmark_thin_pink = 0x7f070096;
+        public static final int wordmark_thin_white = 0x7f070097;
     }
     public static final class id {
         private id() {}
