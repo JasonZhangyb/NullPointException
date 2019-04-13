@@ -20,14 +20,17 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
+            android:imeOptions="actionDone"
             android:inputType="text"
-            android:imeOptions="actionDone"/>
+            android:textColorLink="@color/colorPrimary" />
 
         <Button
             android:id="@+id/button"
-            android:layout_width="wrap_content"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="10dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="@color/colorPrimary"
             android:onClick="sendMessage"
             android:text="Search" />
     </LinearLayout>

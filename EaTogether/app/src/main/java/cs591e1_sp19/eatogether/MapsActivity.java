@@ -91,7 +91,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         rll_search= (RelativeLayout) findViewById(R.id.search);
         rest_search = new ImageView(this);
         rest_search.setLayoutParams(new RelativeLayout.LayoutParams(150, 150));
-        rest_search.setImageResource(R.drawable.app_icon);
+        rest_search.setImageResource(R.drawable.search_icon);
         rll_search.addView(rest_search);
 
 
@@ -129,19 +129,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-/*
-        // Add three markers in Sydney and move the camera
-        LatLng gyu_ka_ku = new LatLng(42.3439052, -71.1072422);
-        LatLng shake_shack = new LatLng(42.3640158, -71.1191255);
-        LatLng atlantic_fish = new LatLng(42.34924, -71.0833737);
-
-        final String[] rest_name = new String[]{"Gyu Ka Ku","Shake Shack", "Atlantic Fish"};
-        final String[] rest_price = new String[]{"$$", "$$", "$$$"};
-        final float[] rest_rating = new float[]{(float)4, (float)3.5, (float)4};
-        final String[] rest_info = new String[]{"Japanese", "Burger", "Seafood"};
-        final double[] rest_lat = new double[]{42.3439052, 42.3640158, 42.34924};
-        final double[] rest_long = new double[]{-71.1072422, -71.1191255, -71.0833737};
-*/
         mRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

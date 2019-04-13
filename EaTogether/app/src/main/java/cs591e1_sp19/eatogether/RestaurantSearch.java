@@ -98,7 +98,7 @@ public class RestaurantSearch extends AppCompatActivity {
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Intent i = new Intent(getApplicationContext(), RestaurantPost.class);
                     //passing intent to RestaurantPost activity for the Business API.
-                    i.putExtra("resID", businesses.get(position).getId());
+                    i.putExtra("rest_id", businesses.get(position).getId());
                     Log.v("ID",businesses.get(position).getId());
                     startActivity(i);
                 }

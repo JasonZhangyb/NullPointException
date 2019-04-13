@@ -155,7 +155,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
                     params.put("latitude", "42.3500397");
                     params.put("longitude", "-71.1093047");
-                    params.put("radius", "5000");
+                    params.put("radius", "2000");
 
                     Call<SearchResponse> call = yelpFusionApi.getBusinessSearch(params);
                     call.enqueue(callback);
