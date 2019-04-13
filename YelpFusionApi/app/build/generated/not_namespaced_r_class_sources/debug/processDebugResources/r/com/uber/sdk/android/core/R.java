@@ -445,11 +445,7 @@ public final class R {
         public static final int abc_textfield_search_activated_mtrl_alpha = 0x7f070051;
         public static final int abc_textfield_search_default_mtrl_alpha = 0x7f070052;
         public static final int abc_textfield_search_material = 0x7f070053;
-<<<<<<< HEAD
-        public static final int notification_template_icon_bg = 0x7f070083;
-=======
         public static final int notification_template_icon_bg = 0x7f070082;
->>>>>>> 648b5b527a67f2e6377bfdf370cd9bcc76e989e2
         public static final int uber_badge = 0x7f07008c;
         public static final int uber_button_background_black = 0x7f07008d;
         public static final int uber_button_background_black_90 = 0x7f07008e;

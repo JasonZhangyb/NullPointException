@@ -72,10 +72,10 @@ public class RestaurantSearch extends AppCompatActivity {
         String message = txt.getText().toString();
         //specifying parameters for the business search.
         params = new HashMap<>();
-        //params.put("term", message);
+        params.put("term", message);
         params.put("latitude", "42.3500397");
         params.put("longitude", "-71.1093047");
-        params.put("radius", message);
+        params.put("radius", "3000");
         //using the getBusinessSearch function to generate a Call object which makes a request to the Search API.
         Call<SearchResponse> call = yelpFusionApi.getBusinessSearch(params);
         call.enqueue(callback);
@@ -98,7 +98,7 @@ public class RestaurantSearch extends AppCompatActivity {
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Intent i = new Intent(getApplicationContext(), RestaurantPost.class);
                     //passing intent to RestaurantPost activity for the Business API.
-                    i.putExtra("resID", businesses.get(position).getId());
+                    i.putExtra("rest_id", businesses.get(position).getId());
                     Log.v("ID",businesses.get(position).getId());
                     startActivity(i);
                 }

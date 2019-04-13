@@ -36,21 +36,24 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="TextView" />
+                    android:text="TextView"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/res_rating"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="TextView" />
+                    android:text="TextView"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/res_review"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="Reviews" />
+                    android:text="Reviews"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -61,6 +64,7 @@
 
             <Button
                 android:id="@+id/btn_post"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Post" />
@@ -80,7 +84,7 @@
             android:layout_width="wrap_content"
             android:layout_height="170dp"
             android:layout_weight="1"
-            android:background="@color/colorPrimaryDark"
+            android:background="@color/colorAccent"
             tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
         <ImageView

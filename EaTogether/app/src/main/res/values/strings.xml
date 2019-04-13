@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">YelpFusionApi</string>
+    <string name="app_name">Eatogether</string>
     <string-array name="time_period">
         <item>1:00</item>
         <item>2:00</item>

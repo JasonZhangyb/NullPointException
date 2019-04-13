@@ -160,29 +160,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
 
-/*
-//store data in firebase
-        for(int i = 0; i < rest_name.length; i++){
-            Firebase nameRegi = new Firebase(databaseURL + "/Restaurants/" + rest_name[i] + "/name");
-            nameRegi.setValue(rest_name[i]);
-            Firebase priceRegi = new Firebase(databaseURL + "/Restaurants/" + rest_name[i] + "/price");
-            priceRegi.setValue(rest_price[i]);
-
-            Firebase ratingRegi = new Firebase(databaseURL + "/Restaurants/" + rest_name[i] + "/rating");
-            ratingRegi.setValue(rest_rating[i]);
-
-            Firebase infoRegi = new Firebase(databaseURL + "/Restaurants/" + rest_name[i] + "/info");
-            infoRegi.setValue(rest_info[i]);
-
-            Firebase latRegi = new Firebase(databaseURL + "/Restaurants/" + rest_name[i] + "/lat");
-            latRegi.setValue(rest_lat[i]);
-
-            Firebase longRegi = new Firebase(databaseURL + "/Restaurants/" + rest_name[i] + "/long");
-            longRegi.setValue(rest_long[i]);
-
-
-        }
-*/
 
         mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
             @Override

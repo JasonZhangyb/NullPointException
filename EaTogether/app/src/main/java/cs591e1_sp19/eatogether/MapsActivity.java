@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.location.LocationListener;
+import android.media.Image;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
@@ -26,6 +27,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewDebug;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -53,6 +55,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
     private GoogleMap mMap;
+    private ImageView rest_search;
     //private int click_times = 0;
     //private String marker_id = "";
     private Marker previous_marker;
@@ -66,7 +69,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private RestaurantInfo fragment;
     private FragmentManager fragmentManager;
     private FragmentTransaction transaction;
-    private RelativeLayout rll;
+    private RelativeLayout rll_restaurant;
+    private RelativeLayout rll_search;
 
     LatLng current_loca = new LatLng(42.3500397, -71.1093047);
 
@@ -84,7 +88,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         setContentView(R.layout.activity_maps);
         Firebase.setAndroidContext(this);
         mRef = new Firebase(databaseURL + "Nearby");
+        rll_search= (RelativeLayout) findViewById(R.id.search);
+        rest_search = new ImageView(this);
+        rest_search.setLayoutParams(new RelativeLayout.LayoutParams(150, 150));
+        rest_search.setImageResource(R.drawable.search02);
+        rll_search.addView(rest_search);
 
+
+        rll_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MapsActivity.this, RestaurantSearch.class);
+
+                startActivity(intent);
+            }
+        });
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -111,19 +129,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-/*
-        // Add three markers in Sydney and move the camera
-        LatLng gyu_ka_ku = new LatLng(42.3439052, -71.1072422);
-        LatLng shake_shack = new LatLng(42.3640158, -71.1191255);
-        LatLng atlantic_fish = new LatLng(42.34924, -71.0833737);
-
-        final String[] rest_name = new String[]{"Gyu Ka Ku","Shake Shack", "Atlantic Fish"};
-        final String[] rest_price = new String[]{"$$", "$$", "$$$"};
-        final float[] rest_rating = new float[]{(float)4, (float)3.5, (float)4};
-        final String[] rest_info = new String[]{"Japanese", "Burger", "Seafood"};
-        final double[] rest_lat = new double[]{42.3439052, 42.3640158, 42.34924};
-        final double[] rest_long = new double[]{-71.1072422, -71.1191255, -71.0833737};
-*/
         mRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -176,6 +181,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         }
 */
+
 
         mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
             @Override
@@ -258,10 +264,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     }
                 });
 
-                rll = (RelativeLayout) findViewById(R.id.fragment);
+                rll_restaurant = (RelativeLayout) findViewById(R.id.fragment);
 
 
-                rll.setOnClickListener(new View.OnClickListener() {
+                rll_restaurant.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent(MapsActivity.this, RestaurantPost.class);
