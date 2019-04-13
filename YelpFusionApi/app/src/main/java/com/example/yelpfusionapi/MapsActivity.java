@@ -33,11 +33,7 @@ import android.widget.Toast;
 
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
-import com.yelp.fusion.client.connection.YelpFusionApi;
-import com.yelp.fusion.client.connection.YelpFusionApiFactory;
-import com.yelp.fusion.client.models.Business;
-import com.yelp.fusion.client.models.Coordinates;
-import com.yelp.fusion.client.models.SearchResponse;
+
 
 
 import java.util.ArrayList;
