@@ -45,7 +45,8 @@
         <activity android:name=".RestaurantPost" />
         <activity android:name=".WishList" />
         <activity android:name=".RestaurantReview" />
-        <activity android:name=".NewPost"></activity>
+        <activity android:name=".NewPost" />
+        <activity android:name=".MessageActivity"></activity>
     </application>
 
 </manifest>

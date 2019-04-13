@@ -135,19 +135,16 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                boolean loginFlag = false;
-
                 for(DataSnapshot userSnapShot : dataSnapshot.getChildren()) {
                     if(userSnapShot.child("email").getValue().equals(email) && userSnapShot.child("password").getValue().equals(password)) {
                         Toast.makeText(getApplicationContext(), "Login Successfully", Toast.LENGTH_SHORT).show();
-                        loginFlag = true;
 
                         AppState.isLoggedIn = true;
                         AppState.userID = userSnapShot.getKey();
                     }
                 }
 
-                if(!loginFlag) {
+                if(!AppState.isLoggedIn) {
                     Toast.makeText(getApplicationContext(), "login Faild, try again", Toast.LENGTH_SHORT).show();
                 } else {
                     // login successfully, we can access the newarby restaurants

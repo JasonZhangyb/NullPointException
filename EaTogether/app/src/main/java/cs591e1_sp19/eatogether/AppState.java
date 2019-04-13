@@ -9,8 +9,8 @@ public class AppState {
     protected static AppState appStateInstance = new AppState();
 
     // Constants
-    protected static final String USER_DATABASE = "users";
-    protected static final String CHAT_DATABASE = "chats";
+    protected static final String USER_DATABASE = "Users";
+    protected static final String CHAT_DATABASE = "Chats";
 
     // References to Databases
     protected static final DatabaseReference DATABASE_REFERENCE = FirebaseDatabase
@@ -21,6 +21,10 @@ public class AppState {
     // Variables
     public static boolean isLoggedIn;
     public static String userID;
+
+    public static String otherChatUserId;
+    public static String otherChatUserAvatar;
+
     public static DatabaseReference userDatabase;
     public static DatabaseReference chatDatabase;
 
@@ -28,6 +32,9 @@ public class AppState {
     private AppState() {
         isLoggedIn = false;
         userID = null;
+
+        otherChatUserId = null;
+        otherChatUserAvatar = null;
     }
 
     // Returns the running instance of our AppState singleton.

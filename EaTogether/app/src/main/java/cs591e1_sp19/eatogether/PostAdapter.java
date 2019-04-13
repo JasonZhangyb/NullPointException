@@ -1,11 +1,13 @@
 package cs591e1_sp19.eatogether;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -31,6 +33,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
         TextView time_period;
         TextView user_note;
         ImageView user_avatar;
+        Button msg_button;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -40,6 +43,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
             time_period = itemView.findViewById(R.id.time_created);
             user_note = itemView.findViewById(R.id.user_comment);
             user_avatar = itemView.findViewById(R.id.user_avatar);
+            msg_button = itemView.findViewById(R.id.btn_message);
         }
     }
 
@@ -51,13 +55,27 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PostAdapter.MyViewHolder myViewHolder, int i) {
+    public void onBindViewHolder(@NonNull final PostAdapter.MyViewHolder myViewHolder, int i) {
+        final PostModel post = posts.get(i);
+
         myViewHolder.user_name.setText(posts.get(i).user);
         myViewHolder.user_locale.setText(posts.get(i).country + ", " + posts.get(i).language);
         myViewHolder.time_period.setText(posts.get(i).time1 + " - " + posts.get(i).time2);
         myViewHolder.user_note.setText(posts.get(i).note);
         Picasso.get().load(posts.get(i).avatar).into(myViewHolder.user_avatar);
 
+        myViewHolder.msg_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(v.getContext(), MessageActivity.class);
+//                i.putExtra("otherUserId", post.user);
+//                i.putExtra("otherUserAvatar", post.avatar);
+                AppState.otherChatUserAvatar = post.avatar;
+                AppState.otherChatUserId = post.user;
+
+                v.getContext().startActivity(i);
+            }
+        });
     }
 
     @Override
