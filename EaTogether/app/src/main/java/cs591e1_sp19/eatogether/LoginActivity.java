@@ -141,6 +141,9 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                     if(userSnapShot.child("email").getValue().equals(email) && userSnapShot.child("password").getValue().equals(password)) {
                         Toast.makeText(getApplicationContext(), "Login Successfully", Toast.LENGTH_SHORT).show();
                         loginFlag = true;
+
+                        AppState.isLoggedIn = true;
+                        AppState.userID = userSnapShot.getKey();
                     }
                 }
 
@@ -188,6 +191,8 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 restaurant.child("price").setValue(bu.getPrice());
             }
 
+            Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
+            startActivity(intent);
         }
         @Override
         public void onFailure(Call<SearchResponse> call, Throwable t) {

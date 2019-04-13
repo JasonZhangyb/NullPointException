@@ -118,7 +118,6 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "failed api call", Toast.LENGTH_SHORT).show();
         }
     };
-
 }
 
 //custom adapter for the custom listviwe

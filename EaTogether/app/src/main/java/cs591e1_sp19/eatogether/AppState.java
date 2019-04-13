@@ -19,14 +19,14 @@ public class AppState {
 
 
     // Variables
-    private static boolean loggedIn;
-    private static String userID;
-    private static DatabaseReference userDatabase;
-    private static DatabaseReference chatDatabase;
+    public static boolean isLoggedIn;
+    public static String userID;
+    public static DatabaseReference userDatabase;
+    public static DatabaseReference chatDatabase;
 
     // Private constructor to enforce singleton.
     private AppState() {
-        loggedIn = false;
+        isLoggedIn = false;
         userID = null;
     }
 
