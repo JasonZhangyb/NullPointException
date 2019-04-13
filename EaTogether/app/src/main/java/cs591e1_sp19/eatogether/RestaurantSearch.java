@@ -75,7 +75,7 @@ public class RestaurantSearch extends AppCompatActivity {
         params.put("term", message);
         params.put("latitude", "42.3500397");
         params.put("longitude", "-71.1093047");
-        params.put("radius", "5000");
+        params.put("radius", "3000");
         //using the getBusinessSearch function to generate a Call object which makes a request to the Search API.
         Call<SearchResponse> call = yelpFusionApi.getBusinessSearch(params);
         call.enqueue(callback);

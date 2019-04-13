@@ -91,7 +91,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         rll_search= (RelativeLayout) findViewById(R.id.search);
         rest_search = new ImageView(this);
         rest_search.setLayoutParams(new RelativeLayout.LayoutParams(150, 150));
-        rest_search.setImageResource(R.drawable.search_icon);
+        rest_search.setImageResource(R.drawable.search02);
         rll_search.addView(rest_search);
 
 
