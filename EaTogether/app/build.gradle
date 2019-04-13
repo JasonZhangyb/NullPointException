@@ -1,0 +1,91 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "cs591e1_sp19.eatogether"
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildTypes.each {
+        it.buildConfigField 'String', 'YelpApiKey', YelpApiKey
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    /*
+    * Our Dependencies Goes Below
+    *
+    * Please comment your dependencies - specifying
+    * their functionality, how they were used in our app, etc.
+    * */
+
+    /*
+    *   1. Firebase-related dependencies
+    * */
+
+    // Firebase Real-time database
+    implementation 'com.google.firebase:firebase-core:16.0.8'
+    implementation 'com.google.firebase:firebase-database:16.1.0'
+
+    /*
+    *   2. Views
+    * */
+
+    // CardView
+    implementation 'com.android.support:cardview-v7:28.0.0'
+
+    // Circular ImageView
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+
+    // Material Favorite Button
+    implementation 'com.github.ivbaranov:materialfavoritebutton:0.1.4'
+
+    // RecyclerView
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+
+    /*
+    *   3. Third-party dependencies
+    * */
+
+    // Google Auth
+    implementation 'com.google.android.gms:play-services-base:16.1.0'
+    implementation 'com.google.firebase:firebase-auth:16.2.1'
+    implementation 'com.google.android.gms:play-services-auth:16.0.1'
+
+    // Google Maps - Geolocation queries
+    implementation 'com.google.android.gms:play-services-maps:16.1.0'
+    implementation 'com.google.android.gms:play-services-location:16.0.0'
+
+    // Lyft - Ride-share price queries
+    implementation 'com.lyft:lyft-android-sdk:1.0.3'
+
+    // Picasso - a third-party library that loads images
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    // Uber - Ride-share price queries
+    implementation 'com.uber.sdk:rides-android:0.5.2'
+
+    // Yelp Api - Restaurant Lookup
+    implementation 'io.github.ranga543:yelp-fusion-client:0.1.4'
+}
+
+apply plugin: 'com.google.gms.google-services'
