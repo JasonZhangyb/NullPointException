@@ -1,0 +1,300 @@
+package cs591e1_sp19.eatogether;
+
+import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.location.Location;
+import android.location.LocationListener;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.os.Bundle;
+
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
+
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
+import android.view.View;
+import android.view.ViewDebug;
+import android.widget.AdapterView;
+import android.widget.RelativeLayout;
+import android.widget.Toast;
+
+
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
+import com.yelp.fusion.client.connection.YelpFusionApi;
+import com.yelp.fusion.client.connection.YelpFusionApiFactory;
+import com.yelp.fusion.client.models.Business;
+import com.yelp.fusion.client.models.Coordinates;
+import com.yelp.fusion.client.models.SearchResponse;
+
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+import static android.provider.AlarmClock.EXTRA_MESSAGE;
+
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+
+
+    private GoogleMap mMap;
+    //private int click_times = 0;
+    //private String marker_id = "";
+    private Marker previous_marker;
+    private int count = 0;
+
+    private String rest_id;
+    private String price;
+    private float rating;
+    private String info;
+
+    private RestaurantInfo fragment;
+    private FragmentManager fragmentManager;
+    private FragmentTransaction transaction;
+    private RelativeLayout rll;
+
+    LatLng current_loca = new LatLng(42.3500397, -71.1093047);
+
+
+    String databaseURL = "https://eatogether-cs591.firebaseio.com/";
+
+    Firebase mRef;
+    Firebase databaseRef;
+
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_maps);
+        Firebase.setAndroidContext(this);
+        mRef = new Firebase(databaseURL + "Nearby");
+
+
+        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+
+        mapFragment.getMapAsync(this);
+
+    }
+
+
+    /**
+     * Manipulates the map once available.
+     * This callback is triggered when the map is ready to be used.
+     * This is where we can add markers or lines, add listeners or move the camera. In this case,
+     * we just add a marker near Sydney, Australia.
+     * If Google Play services is not installed on the device, the user will be prompted to install
+     * it inside the SupportMapFragment. This method will only be triggered once the user has
+     * installed Google Play services and returned to the app.
+     */
+
+
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+
+/*
+        // Add three markers in Sydney and move the camera
+        LatLng gyu_ka_ku = new LatLng(42.3439052, -71.1072422);
+        LatLng shake_shack = new LatLng(42.3640158, -71.1191255);
+        LatLng atlantic_fish = new LatLng(42.34924, -71.0833737);
+
+        final String[] rest_name = new String[]{"Gyu Ka Ku","Shake Shack", "Atlantic Fish"};
+        final String[] rest_price = new String[]{"$$", "$$", "$$$"};
+        final float[] rest_rating = new float[]{(float)4, (float)3.5, (float)4};
+        final String[] rest_info = new String[]{"Japanese", "Burger", "Seafood"};
+        final double[] rest_lat = new double[]{42.3439052, 42.3640158, 42.34924};
+        final double[] rest_long = new double[]{-71.1072422, -71.1191255, -71.0833737};
+*/
+        mRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for(DataSnapshot snapshot : dataSnapshot.getChildren()){
+                    // String data = snapshot.getKey();
+                    LatLng restaurant_loca = new LatLng(snapshot.child("location").child("latitude").getValue(Double.class), snapshot.child("location").child("longitude").getValue(Double.class));
+                    MarkerOptions restaurant_marker = new MarkerOptions();
+                    restaurant_marker.title(snapshot.child("name").getValue(String.class));
+                    restaurant_marker.position(restaurant_loca);
+                    mMap.addMarker(restaurant_marker);
+
+                }
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
+
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(current_loca));
+
+        //set the Map type and zoom range
+        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        mMap.setMinZoomPreference(13);
+
+
+
+
+/*
+//store data in firebase
+        for(int i = 0; i < rest_name.length; i++){
+            Firebase nameRegi = new Firebase(databaseURL + "/Restaurants/" + rest_name[i] + "/name");
+            nameRegi.setValue(rest_name[i]);
+            Firebase priceRegi = new Firebase(databaseURL + "/Restaurants/" + rest_name[i] + "/price");
+            priceRegi.setValue(rest_price[i]);
+
+            Firebase ratingRegi = new Firebase(databaseURL + "/Restaurants/" + rest_name[i] + "/rating");
+            ratingRegi.setValue(rest_rating[i]);
+
+            Firebase infoRegi = new Firebase(databaseURL + "/Restaurants/" + rest_name[i] + "/info");
+            infoRegi.setValue(rest_info[i]);
+
+            Firebase latRegi = new Firebase(databaseURL + "/Restaurants/" + rest_name[i] + "/lat");
+            latRegi.setValue(rest_lat[i]);
+
+            Firebase longRegi = new Firebase(databaseURL + "/Restaurants/" + rest_name[i] + "/long");
+            longRegi.setValue(rest_long[i]);
+
+
+        }
+*/
+
+        mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+            @Override
+            public void onMapClick(LatLng latLng) {
+                System.out.println("????????????????Click on map");
+                if(count != 0){
+                    previous_marker.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
+
+
+                    fragmentManager.beginTransaction().remove(fragment).commit();
+
+
+                }
+                count = 0;
+            }
+        });
+
+        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(final Marker marker) {
+                //If click the marker twice, then go to the main activity
+                if(count != 0){
+                    previous_marker.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
+                    fragmentManager.beginTransaction().remove(fragment).commit();
+                }
+                count++;
+
+                float color = 37;
+
+                marker.setIcon(BitmapDescriptorFactory.defaultMarker(color));
+
+                previous_marker = marker;
+                //click_times++;
+
+
+                fragment = new RestaurantInfo();
+
+                //read data from firebase
+                mRef.addValueEventListener(new ValueEventListener() {
+
+                    @Override
+
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        System.out.println("I'm here!!!!!!!!!");
+                        for(DataSnapshot snapshot : dataSnapshot.getChildren()){
+                            String data = snapshot.child("name").getValue(String.class);
+                            if(data.equals(marker.getTitle())){
+                                System.out.println("I'm here!!!!!!!!!");
+                                rest_id = snapshot.getKey();
+                                price = snapshot.child("price").getValue(String.class);
+                                rating = snapshot.child("rating").getValue(float.class);
+                                info = snapshot.child("type").child("0").child("title").getValue(String.class);
+                                System.out.println("!!!!!!!!!!!! " + price + " " + rating  + " "+ info);
+
+                                //send data to
+
+                                Bundle bundle = new Bundle();
+                                bundle.putString("rest_name", marker.getTitle());
+                                bundle.putString("rest_price", price);
+                                bundle.putFloat("rest_rating", rating);
+                                bundle.putString("rest_info", info);
+                                fragment.setArguments(bundle);
+
+                                fragmentManager = getSupportFragmentManager();
+                                transaction = fragmentManager.beginTransaction();
+                                transaction.add(R.id.fragment, fragment);
+
+                                transaction.addToBackStack(null);
+                                transaction.commit();
+
+
+
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(FirebaseError firebaseError) {
+
+                    }
+                });
+
+                rll = (RelativeLayout) findViewById(R.id.fragment);
+
+
+                rll.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(MapsActivity.this, RestaurantPost.class);
+
+                        intent.putExtra("rest_id", rest_id);
+                        startActivity(intent);
+                    }
+                });
+
+
+
+                //Bundle frag_bundle = fragment.getArguments();
+                //System.out.println(">>>>>>>>>>>>" + frag_bundle.getBoolean("ifClick") );
+
+                /*
+                if((click_times > 1 && marker_id.equals(marker.getId()))){
+                    click_times = 0;
+                    marker_id = "";
+
+
+
+
+                }
+
+                marker_id = marker.getId();
+                */
+                return false;
+            }
+        });
+
+
+
+
+
+    }
+}

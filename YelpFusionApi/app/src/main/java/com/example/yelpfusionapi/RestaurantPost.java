@@ -1,6 +1,5 @@
 package com.example.yelpfusionapi;
 
-import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
@@ -84,7 +83,7 @@ public class RestaurantPost extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        String res_id = getIntent().getStringExtra("resID");
+        String res_id = getIntent().getStringExtra("rest_id");
 
         //use the getBusiness function to query the Business API.
         Call<Business> call = yelpFusionApi.getBusiness(res_id);

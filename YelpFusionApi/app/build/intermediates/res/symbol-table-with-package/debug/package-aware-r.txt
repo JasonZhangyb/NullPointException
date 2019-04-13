@@ -56,6 +56,7 @@ attr alertDialogTheme
 attr allowStacking
 attr alpha
 attr alphabeticModifiers
+attr ambientEnabled
 attr arrowHeadLength
 attr arrowShaftLength
 attr autoCompleteTextViewStyle
@@ -86,10 +87,21 @@ attr buttonStyle
 attr buttonStyleSmall
 attr buttonTint
 attr buttonTintMode
+attr cameraBearing
+attr cameraMaxZoomPreference
+attr cameraMinZoomPreference
+attr cameraTargetLat
+attr cameraTargetLng
+attr cameraTilt
+attr cameraZoom
 attr chainUseRtl
 attr checkboxStyle
 attr checkedTextViewStyle
 attr circleCrop
+attr civ_border_color
+attr civ_border_overlay
+attr civ_border_width
+attr civ_circle_background_color
 attr closeIcon
 attr closeItemLayout
 attr collapseContentDescription
@@ -175,6 +187,10 @@ attr isLightTheme
 attr itemPadding
 attr keylines
 attr lastBaselineToBottomHeight
+attr latLngBoundsNorthEastLatitude
+attr latLngBoundsNorthEastLongitude
+attr latLngBoundsSouthWestLatitude
+attr latLngBoundsSouthWestLongitude
 attr layout
 attr layoutManager
 attr layout_anchor
@@ -245,8 +261,11 @@ attr listPreferredItemHeightLarge
 attr listPreferredItemHeightSmall
 attr listPreferredItemPaddingLeft
 attr listPreferredItemPaddingRight
+attr liteMode
 attr logo
 attr logoDescription
+attr lyftStyle
+attr mapType
 attr maxButtonHeight
 attr measureWithLargestChild
 attr mfb_animate_favorite
@@ -358,6 +377,19 @@ attr track
 attr trackTint
 attr trackTintMode
 attr ttcIndex
+attr ub__request_code
+attr ub__scopes
+attr ub__style
+attr uberButtonStyle
+attr uiCompass
+attr uiMapToolbar
+attr uiRotateGestures
+attr uiScrollGestures
+attr uiScrollGesturesDuringRotateOrZoom
+attr uiTiltGestures
+attr uiZoomControls
+attr uiZoomGestures
+attr useViewLifecycle
 attr viewInflaterClass
 attr voiceIcon
 attr windowActionBar
@@ -370,6 +402,7 @@ attr windowFixedWidthMinor
 attr windowMinWidthMajor
 attr windowMinWidthMinor
 attr windowNoTitle
+attr zOrderOnTop
 bool abc_action_bar_embed_tabs
 bool abc_allow_stacked_button_bar
 bool abc_config_actionMenuItemAllCaps
@@ -403,6 +436,7 @@ color background_floating_material_dark
 color background_floating_material_light
 color background_material_dark
 color background_material_light
+color black
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -425,6 +459,8 @@ color common_google_signin_btn_text_light_disabled
 color common_google_signin_btn_text_light_focused
 color common_google_signin_btn_text_light_pressed
 color common_google_signin_btn_tint
+color dark_blue_1
+color dark_blue_2
 color dim_foreground_disabled_material_dark
 color dim_foreground_disabled_material_light
 color dim_foreground_material_dark
@@ -433,8 +469,13 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color grey_1
+color grey_6
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color hot_pink
+color hot_pink_2
+color hot_pink_3
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -447,6 +488,9 @@ color material_grey_600
 color material_grey_800
 color material_grey_850
 color material_grey_900
+color moon
+color mulberry
+color mulberry_2
 color notification_action_color_filter
 color notification_icon_bg_color
 color notification_material_background_media_default_color
@@ -472,6 +516,11 @@ color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
 color tooltip_background_dark
 color tooltip_background_light
+color uber_black
+color uber_black_90
+color uber_white
+color uber_white_40
+color white
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -547,6 +596,10 @@ dimen abc_text_size_subhead_material
 dimen abc_text_size_subtitle_material_toolbar
 dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
+dimen button_corner_radius
+dimen button_height
+dimen button_padding
+dimen button_width
 dimen compat_button_inset_horizontal_material
 dimen compat_button_inset_vertical_material
 dimen compat_button_padding_horizontal_material
@@ -596,6 +649,14 @@ dimen tooltip_precise_anchor_threshold
 dimen tooltip_vertical_padding
 dimen tooltip_y_offset_non_touch
 dimen tooltip_y_offset_touch
+dimen ub__estimates_text_size
+dimen ub__ride_request_button_height
+dimen ub__ride_request_button_width
+dimen ub__secondary_text_size
+dimen ub__signin_margin
+dimen ub__small_padding
+dimen ub__standard_padding
+dimen ub__text_size
 drawable abc_ab_share_pack_mtrl_alpha
 drawable abc_action_bar_item_background_material
 drawable abc_btn_borderless_material
@@ -680,6 +741,11 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable app_icon
+drawable bg
+drawable btn_gradient_purple_rounded
+drawable btn_hotpink_rounded
+drawable btn_white_rounded
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -701,6 +767,7 @@ drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable gradient_purple_rounded
 drawable ic_favorite_black_24dp
 drawable ic_favorite_border_black_24dp
 drawable ic_favorite_border_white_24dp
@@ -723,12 +790,28 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable prime_time_charcoal
+drawable prime_time_mulberry
+drawable prime_time_white
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable uber_badge
+drawable uber_button_background_black
+drawable uber_button_background_black_90
+drawable uber_button_background_selector_black
+drawable uber_button_background_selector_white
+drawable uber_button_background_white
+drawable uber_button_background_white_40
+drawable uber_logotype_black
+drawable uber_logotype_white
+drawable wordmark_thin_mulberry
+drawable wordmark_thin_pink
+drawable wordmark_thin_white
 id ALT
 id CTRL
 id FUNCTION
 id META
+id Rest_Name
 id RestaurantName
 id SHIFT
 id SYM
@@ -759,6 +842,7 @@ id age1
 id age2
 id alertTitle
 id all
+id all_trips
 id always
 id am_pm1
 id am_pm2
@@ -799,6 +883,8 @@ id clip_vertical
 id collapseActionView
 id content
 id contentPanel
+id cost_container
+id cost_text
 id country
 id custom
 id customPanel
@@ -808,6 +894,7 @@ id default_activity_button
 id dimensions
 id direct
 id disableHome
+id dollar
 id editText
 id edit_query
 id end
@@ -819,12 +906,17 @@ id fill
 id fill_horizontal
 id fill_vertical
 id forever
+id fragment
+id get_ride_label
 id gone
 id group_divider
 id groups
 id heart
+id history
+id history_lite
 id home
 id homeAsUp
+id hybrid
 id icon
 id icon_group
 id icon_only
@@ -847,6 +939,13 @@ id listMode
 id list_item
 id lstView
 id lstView_review
+id lyftHotPink
+id lyftLauncher
+id lyftMulberryDark
+id lyftMulberryLight
+id lyftMultiColor
+id lyft_icon
+id map
 id media_actions
 id message
 id middle
@@ -861,20 +960,32 @@ id notification_main_column_container
 id packed
 id parent
 id parentPanel
+id payment_methods
 id percent
+id places
 id preference
+id price_estimate
+id prime_time_icon
+id profile
 id progress_circular
 id progress_horizontal
 id radio
+id ratingBar
 id recView_post
 id recycler_view
+id request
+id request_button
+id request_receipt
 id res_img
 id res_name
 id res_rating
 id res_review
+id ride_widgets
+id ridetype_eta_text
 id right
 id right_icon
 id right_side
+id satellite
 id screen
 id scrollIndicatorDown
 id scrollIndicatorUp
@@ -911,6 +1022,7 @@ id tabMode
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
+id terrain
 id text
 id text2
 id textSpacerNoButtons
@@ -919,6 +1031,7 @@ id time
 id time1
 id time2
 id time_created
+id time_estimate
 id title
 id titleDividerNoCustom
 id title_template
@@ -938,6 +1051,9 @@ id txt_note
 id txt_other
 id txt_tea
 id txt_time
+id ub__login_webview
+id ub__ride_request_view
+id ub__ride_request_webview
 id uniform
 id up
 id useLogo
@@ -986,11 +1102,14 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout activity_maps
 layout activity_new_post
 layout activity_restaurant_post
 layout activity_restaurant_review
+layout fragment_restaurant_info
 layout listview_review_row
 layout listview_row
+layout lyft_button
 layout notification_action
 layout notification_action_tombstone
 layout notification_media_action
@@ -1011,6 +1130,11 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+layout ub__login_activity
+layout ub__login_view
+layout ub__ride_request_activity
+layout ub__ride_request_button
+layout ub__ride_request_view
 layout wish_list
 menu menu_main
 mipmap ic_launcher
@@ -1073,16 +1197,34 @@ string common_google_play_services_wear_update_text
 string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
+string cost_estimate_range
 string default_web_client_id
 string firebase_database_url
+string fixed_cost_amount
 string gcm_defaultSenderId
+string get_a_ride_text
 string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
+string google_maps_key
 string google_storage_bucket
+string hello_blank_fragment
+string lyft_icon_content_desc
+string prime_time_icon_desc
 string project_id
+string ridetype_eta_text
 string search_menu_title
 string status_bar_notification_info_overflow
+string title_activity_maps
+string ub__get_ride
+string ub__mobile_redirect
+string ub__price_estimate
+string ub__ride_error_try_again
+string ub__ride_request_activity_authentication_error
+string ub__ride_request_activity_widget_error
+string ub__ride_with_uber
+string ub__sign_in
+string ub__time_estimate
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
@@ -1360,6 +1502,10 @@ style ThemeOverlay_AppCompat_Dark_ActionBar
 style ThemeOverlay_AppCompat_Dialog
 style ThemeOverlay_AppCompat_Dialog_Alert
 style ThemeOverlay_AppCompat_Light
+style UberButton
+style UberButton_Login
+style UberButton_Login_White
+style UberButton_White
 style Widget_AppCompat_ActionBar
 style Widget_AppCompat_ActionBar_Solid
 style Widget_AppCompat_ActionBar_TabBar
@@ -1451,6 +1597,7 @@ styleable AppCompatTextHelper android_textAppearance android_drawableTop android
 styleable AppCompatTextView android_textAppearance autoSizeMaxTextSize autoSizeMinTextSize autoSizePresetSizes autoSizeStepGranularity autoSizeTextType firstBaselineToTopHeight fontFamily lastBaselineToBottomHeight lineHeight textAllCaps
 styleable AppCompatTheme android_windowIsFloating android_windowAnimationStyle actionBarDivider actionBarItemBackground actionBarPopupTheme actionBarSize actionBarSplitStyle actionBarStyle actionBarTabBarStyle actionBarTabStyle actionBarTabTextStyle actionBarTheme actionBarWidgetTheme actionButtonStyle actionDropDownStyle actionMenuTextAppearance actionMenuTextColor actionModeBackground actionModeCloseButtonStyle actionModeCloseDrawable actionModeCopyDrawable actionModeCutDrawable actionModeFindDrawable actionModePasteDrawable actionModePopupWindowStyle actionModeSelectAllDrawable actionModeShareDrawable actionModeSplitBackground actionModeStyle actionModeWebSearchDrawable actionOverflowButtonStyle actionOverflowMenuStyle activityChooserViewStyle alertDialogButtonGroupStyle alertDialogCenterButtons alertDialogStyle alertDialogTheme autoCompleteTextViewStyle borderlessButtonStyle buttonBarButtonStyle buttonBarNegativeButtonStyle buttonBarNeutralButtonStyle buttonBarPositiveButtonStyle buttonBarStyle buttonStyle buttonStyleSmall checkboxStyle checkedTextViewStyle colorAccent colorBackgroundFloating colorButtonNormal colorControlActivated colorControlHighlight colorControlNormal colorError colorPrimary colorPrimaryDark colorSwitchThumbNormal controlBackground dialogCornerRadius dialogPreferredPadding dialogTheme dividerHorizontal dividerVertical dropDownListViewStyle dropdownListPreferredItemHeight editTextBackground editTextColor editTextStyle homeAsUpIndicator imageButtonStyle listChoiceBackgroundIndicator listDividerAlertDialog listMenuViewStyle listPopupWindowStyle listPreferredItemHeight listPreferredItemHeightLarge listPreferredItemHeightSmall listPreferredItemPaddingLeft listPreferredItemPaddingRight panelBackground panelMenuListTheme panelMenuListWidth popupMenuStyle popupWindowStyle radioButtonStyle ratingBarStyle ratingBarStyleIndicator ratingBarStyleSmall searchViewStyle seekBarStyle selectableItemBackground selectableItemBackgroundBorderless spinnerDropDownItemStyle spinnerStyle switchStyle textAppearanceLargePopupMenu textAppearanceListItem textAppearanceListItemSecondary textAppearanceListItemSmall textAppearancePopupMenuHeader textAppearanceSearchResultSubtitle textAppearanceSearchResultTitle textAppearanceSmallPopupMenu textColorAlertDialogListItem textColorSearchUrl toolbarNavigationButtonStyle toolbarStyle tooltipForegroundColor tooltipFrameBackground viewInflaterClass windowActionBar windowActionBarOverlay windowActionModeOverlay windowFixedHeightMajor windowFixedHeightMinor windowFixedWidthMajor windowFixedWidthMinor windowMinWidthMajor windowMinWidthMinor windowNoTitle
 styleable ButtonBarLayout allowStacking
+styleable CircleImageView civ_border_color civ_border_overlay civ_border_width civ_circle_background_color
 styleable ColorStateListItem android_color android_alpha alpha
 styleable CompoundButton android_button buttonTint buttonTintMode
 styleable ConstraintLayout_Layout android_orientation android_maxWidth android_maxHeight android_minWidth android_minHeight barrierAllowsGoneWidgets barrierDirection chainUseRtl constraintSet constraint_referenced_ids layout_constrainedHeight layout_constrainedWidth layout_constraintBaseline_creator layout_constraintBaseline_toBaselineOf layout_constraintBottom_creator layout_constraintBottom_toBottomOf layout_constraintBottom_toTopOf layout_constraintCircle layout_constraintCircleAngle layout_constraintCircleRadius layout_constraintDimensionRatio layout_constraintEnd_toEndOf layout_constraintEnd_toStartOf layout_constraintGuide_begin layout_constraintGuide_end layout_constraintGuide_percent layout_constraintHeight_default layout_constraintHeight_max layout_constraintHeight_min layout_constraintHeight_percent layout_constraintHorizontal_bias layout_constraintHorizontal_chainStyle layout_constraintHorizontal_weight layout_constraintLeft_creator layout_constraintLeft_toLeftOf layout_constraintLeft_toRightOf layout_constraintRight_creator layout_constraintRight_toLeftOf layout_constraintRight_toRightOf layout_constraintStart_toEndOf layout_constraintStart_toStartOf layout_constraintTop_creator layout_constraintTop_toBottomOf layout_constraintTop_toTopOf layout_constraintVertical_bias layout_constraintVertical_chainStyle layout_constraintVertical_weight layout_constraintWidth_default layout_constraintWidth_max layout_constraintWidth_min layout_constraintWidth_percent layout_editor_absoluteX layout_editor_absoluteY layout_goneMarginBottom layout_goneMarginEnd layout_goneMarginLeft layout_goneMarginRight layout_goneMarginStart layout_goneMarginTop layout_optimizationLevel
@@ -1468,6 +1615,9 @@ styleable LinearLayoutCompat android_gravity android_orientation android_baselin
 styleable LinearLayoutCompat_Layout android_layout_gravity android_layout_width android_layout_height android_layout_weight
 styleable ListPopupWindow android_dropDownHorizontalOffset android_dropDownVerticalOffset
 styleable LoadingImageView circleCrop imageAspectRatio imageAspectRatioAdjust
+styleable LoginButton ub__request_code ub__scopes
+styleable LyftButton lyftStyle
+styleable MapAttrs ambientEnabled cameraBearing cameraMaxZoomPreference cameraMinZoomPreference cameraTargetLat cameraTargetLng cameraTilt cameraZoom latLngBoundsNorthEastLatitude latLngBoundsNorthEastLongitude latLngBoundsSouthWestLatitude latLngBoundsSouthWestLongitude liteMode mapType uiCompass uiMapToolbar uiRotateGestures uiScrollGestures uiScrollGesturesDuringRotateOrZoom uiTiltGestures uiZoomControls uiZoomGestures useViewLifecycle zOrderOnTop
 styleable MaterialFavoriteButton mfb_animate_favorite mfb_animate_unfavorite mfb_bounce_duration mfb_color mfb_favorite_image mfb_not_favorite_image mfb_padding mfb_rotation_angle mfb_rotation_duration mfb_size mfb_type
 styleable MenuGroup android_enabled android_id android_visible android_menuCategory android_orderInCategory android_checkableBehavior
 styleable MenuItem android_icon android_enabled android_id android_checked android_visible android_menuCategory android_orderInCategory android_title android_titleCondensed android_alphabeticShortcut android_numericShortcut android_checkable android_onClick actionLayout actionProviderClass actionViewClass alphabeticModifiers contentDescription iconTint iconTintMode numericModifiers showAsAction tooltipText
@@ -1476,6 +1626,7 @@ styleable PopupWindow android_popupBackground android_popupAnimationStyle overla
 styleable PopupWindowBackgroundState state_above_anchor
 styleable RecycleListView paddingBottomNoButtons paddingTopNoTitle
 styleable RecyclerView android_orientation android_descendantFocusability fastScrollEnabled fastScrollHorizontalThumbDrawable fastScrollHorizontalTrackDrawable fastScrollVerticalThumbDrawable fastScrollVerticalTrackDrawable layoutManager reverseLayout spanCount stackFromEnd
+styleable RideRequestButton ub__style
 styleable SearchView android_focusable android_maxWidth android_inputType android_imeOptions closeIcon commitIcon defaultQueryHint goIcon iconifiedByDefault layout queryBackground queryHint searchHintIcon searchIcon submitBackground suggestionRowLayout voiceIcon
 styleable SignInButton buttonSize colorScheme scopeUris
 styleable Spinner android_entries android_popupBackground android_prompt android_dropDownWidth popupTheme
@@ -1484,6 +1635,7 @@ styleable StateListDrawableItem android_drawable
 styleable SwitchCompat android_textOn android_textOff android_thumb showText splitTrack switchMinWidth switchPadding switchTextAppearance thumbTextPadding thumbTint thumbTintMode track trackTint trackTintMode
 styleable TextAppearance android_textSize android_typeface android_textStyle android_textColor android_textColorHint android_textColorLink android_shadowColor android_shadowDx android_shadowDy android_shadowRadius android_fontFamily fontFamily textAllCaps
 styleable Toolbar android_gravity android_minHeight buttonGravity collapseContentDescription collapseIcon contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation logo logoDescription maxButtonHeight navigationContentDescription navigationIcon popupTheme subtitle subtitleTextAppearance subtitleTextColor title titleMargin titleMarginBottom titleMarginEnd titleMarginStart titleMarginTop titleMargins titleTextAppearance titleTextColor
+styleable UberButton android_textStyle ub__style
 styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewStubCompat android_id android_layout android_inflatedId

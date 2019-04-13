@@ -12,37 +12,37 @@ public final class R {
     public static final class attr {
         private attr() {}
 
-        public static final int mfb_animate_favorite = 0x7f0300ea;
-        public static final int mfb_animate_unfavorite = 0x7f0300eb;
-        public static final int mfb_bounce_duration = 0x7f0300ec;
-        public static final int mfb_color = 0x7f0300ed;
-        public static final int mfb_favorite_image = 0x7f0300ee;
-        public static final int mfb_not_favorite_image = 0x7f0300ef;
-        public static final int mfb_padding = 0x7f0300f0;
-        public static final int mfb_rotation_angle = 0x7f0300f1;
-        public static final int mfb_rotation_duration = 0x7f0300f2;
-        public static final int mfb_size = 0x7f0300f3;
-        public static final int mfb_type = 0x7f0300f4;
+        public static final int mfb_animate_favorite = 0x7f0300fd;
+        public static final int mfb_animate_unfavorite = 0x7f0300fe;
+        public static final int mfb_bounce_duration = 0x7f0300ff;
+        public static final int mfb_color = 0x7f030100;
+        public static final int mfb_favorite_image = 0x7f030101;
+        public static final int mfb_not_favorite_image = 0x7f030102;
+        public static final int mfb_padding = 0x7f030103;
+        public static final int mfb_rotation_angle = 0x7f030104;
+        public static final int mfb_rotation_duration = 0x7f030105;
+        public static final int mfb_size = 0x7f030106;
+        public static final int mfb_type = 0x7f030107;
     }
     public static final class drawable {
         private drawable() {}
 
-        public static final int ic_favorite_black_24dp = 0x7f07006a;
-        public static final int ic_favorite_border_black_24dp = 0x7f07006b;
-        public static final int ic_favorite_border_white_24dp = 0x7f07006c;
-        public static final int ic_favorite_white_24dp = 0x7f07006d;
-        public static final int ic_star_black_24dp = 0x7f070070;
-        public static final int ic_star_border_black_24dp = 0x7f070071;
-        public static final int ic_star_border_white_24dp = 0x7f070072;
-        public static final int ic_star_white_24dp = 0x7f070073;
+        public static final int ic_favorite_black_24dp = 0x7f070070;
+        public static final int ic_favorite_border_black_24dp = 0x7f070071;
+        public static final int ic_favorite_border_white_24dp = 0x7f070072;
+        public static final int ic_favorite_white_24dp = 0x7f070073;
+        public static final int ic_star_black_24dp = 0x7f070076;
+        public static final int ic_star_border_black_24dp = 0x7f070077;
+        public static final int ic_star_border_white_24dp = 0x7f070078;
+        public static final int ic_star_white_24dp = 0x7f070079;
     }
     public static final class id {
         private id() {}
 
-        public static final int black = 0x7f08002b;
-        public static final int heart = 0x7f080061;
-        public static final int star = 0x7f0800b1;
-        public static final int white = 0x7f0800dc;
+        public static final int black = 0x7f08002d;
+        public static final int heart = 0x7f080068;
+        public static final int star = 0x7f0800ce;
+        public static final int white = 0x7f0800fe;
     }
     public static final class string {
         private string() {}
@@ -52,7 +52,7 @@ public final class R {
     public static final class styleable {
         private styleable() {}
 
-        public static final int[] MaterialFavoriteButton = { 0x7f0300ea, 0x7f0300eb, 0x7f0300ec, 0x7f0300ed, 0x7f0300ee, 0x7f0300ef, 0x7f0300f0, 0x7f0300f1, 0x7f0300f2, 0x7f0300f3, 0x7f0300f4 };
+        public static final int[] MaterialFavoriteButton = { 0x7f0300fd, 0x7f0300fe, 0x7f0300ff, 0x7f030100, 0x7f030101, 0x7f030102, 0x7f030103, 0x7f030104, 0x7f030105, 0x7f030106, 0x7f030107 };
         public static final int MaterialFavoriteButton_mfb_animate_favorite = 0;
         public static final int MaterialFavoriteButton_mfb_animate_unfavorite = 1;
         public static final int MaterialFavoriteButton_mfb_bounce_duration = 2;
