@@ -129,7 +129,7 @@ public class RestaurantPost extends AppCompatActivity {
             res_name = findViewById(R.id.res_name);
             res_rating = findViewById(R.id.res_rating);
             res_review = findViewById(R.id.res_review);
-            res_img = findViewById(R.id.res_img);
+           // res_img = findViewById(R.id.res_img);
             img1 = findViewById(R.id.img1);
             img2 = findViewById(R.id.img2);
             img3 = findViewById(R.id.img3);
@@ -138,10 +138,10 @@ public class RestaurantPost extends AppCompatActivity {
 
             res_name.setText(business.getName());
             res_rating.setText("Rating: " + Double.toString(business.getRating()));
-            Picasso.get().load(business.getImageUrl()).resize(150,150).into(res_img);
-            Picasso.get().load(business.getPhotos().get(0)).resize(100,100).into(img1);
-            Picasso.get().load(business.getPhotos().get(1)).resize(100,100).into(img2);
-            Picasso.get().load(business.getPhotos().get(2)).resize(100,100).into(img3);
+          //  Picasso.get().load(business.getImageUrl())/*.resize(150,150)*/.into(res_img);
+            Picasso.get().load(business.getPhotos().get(0)).resize(150,150).into(img1);
+            Picasso.get().load(business.getPhotos().get(1)).resize(150,150).into(img2);
+            Picasso.get().load(business.getPhotos().get(2)).resize(150,150).into(img3);
 
             ref.addValueEventListener(new ValueEventListener() {
                 @Override

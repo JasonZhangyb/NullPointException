@@ -46,6 +46,7 @@
 
         <activity android:name=".RestaurantPost"
             android:label="Restaurant"/>
+
         <activity android:name=".WishList"
             android:label="Wishlist"/>
         <activity android:name=".RestaurantReview"
