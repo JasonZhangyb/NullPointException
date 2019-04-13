@@ -14,9 +14,13 @@
         android:hint="E-mail"
         android:id="@+id/userEmail" />
 
-
-
-
+    <EditText
+        android:id="@+id/userName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:hint="Nickname"
+        android:inputType="textEmailAddress" />
 
     <EditText
         android:layout_width="match_parent"

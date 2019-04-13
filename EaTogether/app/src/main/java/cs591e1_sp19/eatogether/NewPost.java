@@ -79,8 +79,8 @@ public class NewPost extends AppCompatActivity {
                 if (cb_female.isChecked())gender = "female";
                 DatabaseReference ref_id = ref.child(res_id);
                 DatabaseReference ref_post = ref_id.push();
-                ref_post.setValue(new PostModel("peter",
-                        "https://i.imgur.com/6gNZJPD.jpg",
+                ref_post.setValue(new PostModel(AppState.userName,
+                        "https://firebasestorage.googleapis.com/v0/b/eatogether-cs591.appspot.com/o/avatar_7_cat.jpg?alt=media&token=b983e764-0c75-483e-b74f-c2388aee972b",
                         gender,
                         country.getSelectedItem().toString(),
                         language.getSelectedItem().toString(),

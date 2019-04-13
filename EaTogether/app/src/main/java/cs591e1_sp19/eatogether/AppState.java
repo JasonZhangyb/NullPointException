@@ -21,6 +21,7 @@ public class AppState {
     // Variables
     public static boolean isLoggedIn;
     public static String userID;
+    public static String userName;
 
     public static String otherChatUserId;
     public static String otherChatUserAvatar;

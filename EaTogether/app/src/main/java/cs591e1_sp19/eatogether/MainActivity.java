@@ -19,7 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText email,password;
+    private EditText email,password,name;
     private Button registerButton;
     private Button loginButton;
     private FirebaseAuth firebaseAuth;
@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         email = findViewById(R.id.userEmail);
+        name = findViewById(R.id.userName);
         password = findViewById(R.id.userPassword);
         registerButton = findViewById(R.id.userRegisterButton);
         loginButton = findViewById(R.id.userLoginButton);
@@ -40,9 +41,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 final String emailS = email.getText().toString();
+                final String nameS = name.getText().toString();
                 final String passwordS = password.getText().toString();
 
                 if(TextUtils.isEmpty(emailS)){
+                    Toast.makeText(getApplicationContext(),"Please fill in the required fields",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(TextUtils.isEmpty(nameS)){
                     Toast.makeText(getApplicationContext(),"Please fill in the required fields",Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -61,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                                 if(task.isSuccessful()){
                                     startActivity(new Intent(getApplicationContext(),MainActivity.class));
                                     Toast.makeText(getApplicationContext(), "register successful!", Toast.LENGTH_SHORT).show();
-                                    addUser(emailS, passwordS);
+                                    addUser(emailS, nameS, passwordS);
                                     finish();
                                 }
                                 else{
@@ -81,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void addUser(String emailS, String passwordS) {
+    private void addUser(String emailS, String nameS, String passwordS) {
         FirebaseDatabase mref = FirebaseDatabase.getInstance();
 
         DatabaseReference db = mref
@@ -90,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
 
         String newKey = db.push().getKey();
         db.child(newKey).child("email").setValue(emailS);
+        db.child(newKey).child("name").setValue(nameS);
         db.child(newKey).child("password").setValue(passwordS);
     }
 }
