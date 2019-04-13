@@ -154,10 +154,15 @@
             tools:srcCompat="@tools:sample/backgrounds/scenic" />
     </LinearLayout>
 
+
+
+
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recView_post"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/post_bg"/>
+        android:background="@drawable/post_bg"
+        />
 
 </LinearLayout>

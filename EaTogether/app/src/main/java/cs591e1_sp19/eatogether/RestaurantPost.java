@@ -137,8 +137,7 @@ public class RestaurantPost extends AppCompatActivity {
 
             res_name.setText(business.getName());
             res_rating.setText("Rating: " + Double.toString(business.getRating()));
-            res_type.setText(business.getCategories().get(0).getTitle() + ", " +
-                    business.getCategories().get(1).getTitle());
+            res_type.setText(business.getCategories().get(0).getTitle());
           //  Picasso.get().load(business.getImageUrl())/*.resize(150,150)*/.into(res_img);
             Picasso.get().load(business.getPhotos().get(0)).resize(300,300).into(img1);
             Picasso.get().load(business.getPhotos().get(1)).resize(300,300).into(img2);
