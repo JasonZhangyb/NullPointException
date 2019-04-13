@@ -49,9 +49,9 @@ public final class R {
         public static final int prime_time_charcoal = 0x7f070086;
         public static final int prime_time_mulberry = 0x7f070087;
         public static final int prime_time_white = 0x7f070088;
-        public static final int wordmark_thin_mulberry = 0x7f070094;
-        public static final int wordmark_thin_pink = 0x7f070095;
-        public static final int wordmark_thin_white = 0x7f070096;
+        public static final int wordmark_thin_mulberry = 0x7f070095;
+        public static final int wordmark_thin_pink = 0x7f070096;
+        public static final int wordmark_thin_white = 0x7f070097;
     }
     public static final class id {
         private id() {}
