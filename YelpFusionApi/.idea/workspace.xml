@@ -7,10 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bfa8cb06-f8ca-412b-8cac-1d95400a0bb8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../EaTogether/app/src/main/res/drawable/search02.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EaTogether/app/src/main/java/cs591e1_sp19/eatogether/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EaTogether/app/src/main/java/cs591e1_sp19/eatogether/LoginActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EaTogether/app/src/main/java/cs591e1_sp19/eatogether/MapsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EaTogether/app/src/main/java/cs591e1_sp19/eatogether/MapsActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EaTogether/app/src/main/java/cs591e1_sp19/eatogether/RestaurantSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EaTogether/app/src/main/java/cs591e1_sp19/eatogether/RestaurantSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EaTogether/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EaTogether/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../EaTogether/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EaTogether/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../EaTogether/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EaTogether/app/src/main/res/layout/fragment_message.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../EaTogether/app/src/main/res/layout/fragment_message.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EaTogether/app/src/main/res/layout/recyclerview_posts_row.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../EaTogether/app/src/main/res/layout/recyclerview_posts_row.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,6 +31,7 @@
     <session id="-1507277300">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -282,7 +284,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" visible="true" weight="0.3297568" />
       <window_info id="Structure" side_tool="true" />

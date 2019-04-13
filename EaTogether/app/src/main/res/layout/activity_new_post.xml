@@ -16,9 +16,13 @@
             android:id="@+id/res_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
             android:text="TextView"
-            android:textSize="20dp" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txt_time"
@@ -85,7 +89,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/time1"
-            android:layout_toRightOf="@id/txt_breakfast" />
+            android:layout_toRightOf="@id/txt_breakfast"
+            android:textColorLink="@color/colorPrimary" />
 
         <TextView
             android:id="@+id/txt_brunch"
@@ -98,10 +103,11 @@
 
         <CheckBox
             android:id="@+id/cb_brunch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/time1"
             android:layout_toRightOf="@id/txt_brunch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textColorLink="@color/colorPrimary" />
 
         <TextView
             android:id="@+id/txt_lunch"
@@ -114,10 +120,11 @@
 
         <CheckBox
             android:id="@+id/cb_lunch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/time1"
             android:layout_toRightOf="@id/txt_lunch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textColorLink="@color/colorPrimary" />
 
         <TextView
             android:id="@+id/txt_tea"
@@ -129,10 +136,11 @@
 
         <CheckBox
             android:id="@+id/cb_tea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/txt_breakfast"
             android:layout_toRightOf="@id/txt_tea"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textColorLink="@color/colorPrimary" />
 
         <TextView
             android:id="@+id/txt_dinner"
@@ -145,10 +153,11 @@
 
         <CheckBox
             android:id="@+id/cb_dinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/txt_breakfast"
             android:layout_toRightOf="@id/txt_dinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textColorLink="@color/colorPrimary" />
 
         <TextView
             android:id="@+id/txt_night"
@@ -160,10 +169,11 @@
 
         <CheckBox
             android:id="@+id/cb_night"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/txt_tea"
             android:layout_toRightOf="@id/txt_night"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textColorLink="@color/colorPrimary" />
 
         <TextView
             android:id="@+id/txt_other"
@@ -176,10 +186,11 @@
 
         <CheckBox
             android:id="@+id/cb_other"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/txt_tea"
             android:layout_toRightOf="@id/txt_other"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textColorLink="@color/colorPrimary" />
 
     </RelativeLayout>
 
@@ -192,13 +203,14 @@
             android:id="@+id/preference"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
             android:layout_marginBottom="5dp"
+            android:fontFamily="sans-serif"
             android:text="Preferences"
-            android:textSize="20dp" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txt_male"
@@ -213,7 +225,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/preference"
-            android:layout_toRightOf="@id/txt_male" />
+            android:layout_toRightOf="@id/txt_male"
+            android:textColorLink="@color/colorPrimary" />
 
         <TextView
             android:id="@+id/txt_female"
@@ -229,7 +242,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/preference"
-            android:layout_toRightOf="@id/txt_female" />
+            android:layout_toRightOf="@id/txt_female"
+            android:textColorLink="@color/colorPrimary" />
 
         <TextView
             android:id="@+id/txt_age"
@@ -310,7 +324,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:text="Notes"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/note"
@@ -318,13 +333,17 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:imeOptions="actionDone"
-            android:inputType="text" />
+            android:inputType="text"
+            android:textColorLink="@color/colorPrimary" />
 
         <Button
             android:id="@+id/btn_new_post"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Post" />
+            android:layout_marginTop="10dp"
+            android:text="Post"
+            android:background="@drawable/btn_shape"
+            android:textColorLink="@color/colorPrimary" />
     </LinearLayout>
 </LinearLayout>

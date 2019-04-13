@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
-        android:layout_marginTop="10dp"
+        android:layout_margin="15dp"
         android:hint="E-mail"
         android:id="@+id/userEmail" />
 
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:layout_marginTop="10dp"
+        android:layout_margin="15dp"
         android:id="@+id/userPassword"
         android:hint="Password" />
 
@@ -35,19 +35,18 @@
         android:layout_marginTop="50dp"
         android:textColor="#FFFF"
         android:id="@+id/userRegisterButton"
-        android:background="@color/colorAccent"/>
+        android:background="@drawable/btn_shape"/>
 
 
     <Button
-        android:text="Already has account?"
+        android:id="@+id/userLoginButton"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:id="@+id/userLoginButton"
-        android:background="@null"
-        android:textColor="@color/colorAccent"
         android:layout_marginBottom="10dp"
-        />
+        android:background="@null"
+        android:text="Already has account?"
+        android:textAllCaps="false"
+        android:textColor="@color/colorAccent" />
 
 
 </LinearLayout>
