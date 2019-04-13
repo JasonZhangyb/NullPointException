@@ -41,11 +41,17 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".RestaurantSearch" />
-        <activity android:name=".RestaurantPost" />
-        <activity android:name=".WishList" />
-        <activity android:name=".RestaurantReview" />
-        <activity android:name=".NewPost" />
+        <activity android:name=".RestaurantSearch"
+            android:label="Search"/>
+
+        <activity android:name=".RestaurantPost"
+            android:label="Restaurant"/>
+        <activity android:name=".WishList"
+            android:label="Wishlist"/>
+        <activity android:name=".RestaurantReview"
+            android:label="Restaurants Reviews"/>
+        <activity android:name=".NewPost"
+            android:label="New Post"/>
         <activity android:name=".MessageActivity"></activity>
     </application>
 

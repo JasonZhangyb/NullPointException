@@ -24,11 +24,13 @@ public class MessageActivity extends AppCompatActivity {
 
         // Get other user's ID
         Intent i = getIntent();
-//        String otherUserId = i.getStringExtra("otherUserId");
+        String otherUserId = i.getStringExtra("otherUserId");
+        this.setTitle(otherUserId);
 //        String otherUserAvatar = i.getStringExtra("otherUserAvatar");
 
         // Show the fragment that we need
         showMsgFrag();
+
     }
 
     private void showMsgFrag() {
