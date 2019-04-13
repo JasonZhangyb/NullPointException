@@ -50,10 +50,8 @@ public class RestaurantPost extends AppCompatActivity {
     PostAdapter posts_adapter;
 
     ArrayList<PostModel> posts_lst;
-    TextView res_name;
-    TextView res_rating;
-    TextView res_review;
-    ImageView res_img;
+    TextView res_name,res_rating,res_review,res_type;
+    //ImageView res_img;
     ImageView img1;
     ImageView img2;
     ImageView img3;
@@ -129,6 +127,7 @@ public class RestaurantPost extends AppCompatActivity {
             res_name = findViewById(R.id.res_name);
             res_rating = findViewById(R.id.res_rating);
             res_review = findViewById(R.id.res_review);
+            res_type = findViewById(R.id.res_type);
            // res_img = findViewById(R.id.res_img);
             img1 = findViewById(R.id.img1);
             img2 = findViewById(R.id.img2);
@@ -138,10 +137,12 @@ public class RestaurantPost extends AppCompatActivity {
 
             res_name.setText(business.getName());
             res_rating.setText("Rating: " + Double.toString(business.getRating()));
+            res_type.setText(business.getCategories().get(0).getTitle() + ", " +
+                    business.getCategories().get(1).getTitle());
           //  Picasso.get().load(business.getImageUrl())/*.resize(150,150)*/.into(res_img);
-            Picasso.get().load(business.getPhotos().get(0)).resize(150,150).into(img1);
-            Picasso.get().load(business.getPhotos().get(1)).resize(150,150).into(img2);
-            Picasso.get().load(business.getPhotos().get(2)).resize(150,150).into(img3);
+            Picasso.get().load(business.getPhotos().get(0)).resize(300,300).into(img1);
+            Picasso.get().load(business.getPhotos().get(1)).resize(300,300).into(img2);
+            Picasso.get().load(business.getPhotos().get(2)).resize(300,300).into(img3);
 
             ref.addValueEventListener(new ValueEventListener() {
                 @Override
