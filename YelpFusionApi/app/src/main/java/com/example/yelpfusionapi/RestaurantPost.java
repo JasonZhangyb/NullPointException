@@ -84,7 +84,7 @@ public class RestaurantPost extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        String res_id = getIntent().getStringExtra("resID");
+        String res_id = getIntent().getStringExtra("rest_id");
 
         //use the getBusiness function to query the Business API.
         Call<Business> call = yelpFusionApi.getBusiness(res_id);
