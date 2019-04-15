@@ -954,6 +954,7 @@ drawable post_btn_shape
 drawable prime_time_charcoal
 drawable prime_time_mulberry
 drawable prime_time_white
+drawable rest_bg
 drawable search02
 drawable search_icon
 drawable tag_shape
@@ -1335,7 +1336,6 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_bottom_navigation
 layout activity_login
 layout activity_main
 layout activity_maps
@@ -1360,7 +1360,6 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
-layout fragment_bottom_navigation
 layout fragment_message
 layout fragment_restaurant_info
 layout listview_review_row

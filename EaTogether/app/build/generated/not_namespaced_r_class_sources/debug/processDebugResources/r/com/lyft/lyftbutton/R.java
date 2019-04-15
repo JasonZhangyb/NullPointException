@@ -49,9 +49,9 @@ public final class R {
         public static final int prime_time_charcoal = 0x7f0800a3;
         public static final int prime_time_mulberry = 0x7f0800a4;
         public static final int prime_time_white = 0x7f0800a5;
-        public static final int wordmark_thin_mulberry = 0x7f0800b4;
-        public static final int wordmark_thin_pink = 0x7f0800b5;
-        public static final int wordmark_thin_white = 0x7f0800b6;
+        public static final int wordmark_thin_mulberry = 0x7f0800b5;
+        public static final int wordmark_thin_pink = 0x7f0800b6;
+        public static final int wordmark_thin_white = 0x7f0800b7;
     }
     public static final class id {
         private id() {}
@@ -71,7 +71,7 @@ public final class R {
     public static final class layout {
         private layout() {}
 
-        public static final int lyft_button = 0x7f0b0039;
+        public static final int lyft_button = 0x7f0b0037;
     }
     public static final class string {
         private string() {}

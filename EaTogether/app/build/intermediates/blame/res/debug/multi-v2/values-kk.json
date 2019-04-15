@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/young/Downloads/EaTogether/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-kk/values-kk.xml",
+            "outputFile": "/Users/young/Desktop/NullPointException/EaTogether/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-kk/values-kk.xml",
             "map": [
                 {
                     "source": "/Users/young/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/421f206219ddfb0859fa9a74d1af89cc/res/values-kk/values-kk.xml",

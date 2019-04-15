@@ -75,7 +75,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private RelativeLayout rll_restaurant;
     private RelativeLayout rll_search;
 
-    BottomNavigationView menu;
 
     LatLng current_loca = new LatLng(42.3500397, -71.1093047);
 

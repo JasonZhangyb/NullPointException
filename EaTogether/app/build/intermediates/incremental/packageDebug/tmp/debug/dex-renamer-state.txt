@@ -1,10 +1,10 @@
-#Mon Apr 15 00:19:44 EDT 2019
+#Mon Apr 15 02:14:25 EDT 2019
 path.2=classes2.dex
 path.1=classes.dex
 path.0=classes.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
-base.2=/Users/young/Downloads/EaTogether/app/build/intermediates/transforms/dexMerger/debug/1
-base.1=/Users/young/Downloads/EaTogether/app/build/intermediates/transforms/dexMerger/debug/1
-base.0=/Users/young/Downloads/EaTogether/app/build/intermediates/transforms/dexMerger/debug/0
+base.2=/Users/young/Desktop/NullPointException/EaTogether/app/build/intermediates/transforms/dexMerger/debug/1
+base.1=/Users/young/Desktop/NullPointException/EaTogether/app/build/intermediates/transforms/dexMerger/debug/0
+base.0=/Users/young/Desktop/NullPointException/EaTogether/app/build/intermediates/transforms/dexMerger/debug/1

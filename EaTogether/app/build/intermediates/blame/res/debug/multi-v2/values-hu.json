@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/young/Downloads/EaTogether/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hu/values-hu.xml",
+            "outputFile": "/Users/young/Desktop/NullPointException/EaTogether/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hu/values-hu.xml",
             "map": [
                 {
                     "source": "/Users/young/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.2.0.aar/f7441836dee3f0ee7f7e8e5a9abcd83e/res/values-hu/values.xml",

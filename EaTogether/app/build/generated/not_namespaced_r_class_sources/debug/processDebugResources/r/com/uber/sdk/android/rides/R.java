@@ -450,15 +450,15 @@ public final class R {
         public static final int abc_textfield_search_default_mtrl_alpha = 0x7f080057;
         public static final int abc_textfield_search_material = 0x7f080058;
         public static final int notification_template_icon_bg = 0x7f08009d;
-        public static final int uber_badge = 0x7f0800ab;
-        public static final int uber_button_background_black = 0x7f0800ac;
-        public static final int uber_button_background_black_90 = 0x7f0800ad;
-        public static final int uber_button_background_selector_black = 0x7f0800ae;
-        public static final int uber_button_background_selector_white = 0x7f0800af;
-        public static final int uber_button_background_white = 0x7f0800b0;
-        public static final int uber_button_background_white_40 = 0x7f0800b1;
-        public static final int uber_logotype_black = 0x7f0800b2;
-        public static final int uber_logotype_white = 0x7f0800b3;
+        public static final int uber_badge = 0x7f0800ac;
+        public static final int uber_button_background_black = 0x7f0800ad;
+        public static final int uber_button_background_black_90 = 0x7f0800ae;
+        public static final int uber_button_background_selector_black = 0x7f0800af;
+        public static final int uber_button_background_selector_white = 0x7f0800b0;
+        public static final int uber_button_background_white = 0x7f0800b1;
+        public static final int uber_button_background_white_40 = 0x7f0800b2;
+        public static final int uber_logotype_black = 0x7f0800b3;
+        public static final int uber_logotype_white = 0x7f0800b4;
     }
     public static final class id {
         private id() {}
@@ -605,22 +605,22 @@ public final class R {
         public static final int abc_search_dropdown_item_icons_2line = 0x7f0b0017;
         public static final int abc_search_view = 0x7f0b0018;
         public static final int abc_select_dialog_material = 0x7f0b0019;
-        public static final int notification_media_action = 0x7f0b003d;
-        public static final int notification_media_cancel_action = 0x7f0b003e;
-        public static final int notification_template_big_media = 0x7f0b003f;
-        public static final int notification_template_big_media_narrow = 0x7f0b0041;
-        public static final int notification_template_media = 0x7f0b0046;
-        public static final int notification_template_part_chronometer = 0x7f0b0048;
-        public static final int notification_template_part_time = 0x7f0b0049;
-        public static final int select_dialog_item_material = 0x7f0b004c;
-        public static final int select_dialog_multichoice_material = 0x7f0b004d;
-        public static final int select_dialog_singlechoice_material = 0x7f0b004e;
-        public static final int support_simple_spinner_dropdown_item = 0x7f0b004f;
-        public static final int ub__login_activity = 0x7f0b0050;
-        public static final int ub__login_view = 0x7f0b0051;
-        public static final int ub__ride_request_activity = 0x7f0b0052;
-        public static final int ub__ride_request_button = 0x7f0b0053;
-        public static final int ub__ride_request_view = 0x7f0b0054;
+        public static final int notification_media_action = 0x7f0b003b;
+        public static final int notification_media_cancel_action = 0x7f0b003c;
+        public static final int notification_template_big_media = 0x7f0b003d;
+        public static final int notification_template_big_media_narrow = 0x7f0b003f;
+        public static final int notification_template_media = 0x7f0b0044;
+        public static final int notification_template_part_chronometer = 0x7f0b0046;
+        public static final int notification_template_part_time = 0x7f0b0047;
+        public static final int select_dialog_item_material = 0x7f0b004a;
+        public static final int select_dialog_multichoice_material = 0x7f0b004b;
+        public static final int select_dialog_singlechoice_material = 0x7f0b004c;
+        public static final int support_simple_spinner_dropdown_item = 0x7f0b004d;
+        public static final int ub__login_activity = 0x7f0b004e;
+        public static final int ub__login_view = 0x7f0b004f;
+        public static final int ub__ride_request_activity = 0x7f0b0050;
+        public static final int ub__ride_request_button = 0x7f0b0051;
+        public static final int ub__ride_request_view = 0x7f0b0052;
     }
     public static final class string {
         private string() {}
