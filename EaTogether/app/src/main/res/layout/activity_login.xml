@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:background="#FFF">
+     >
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="200sp"
+        android:layout_height="200sp"
+        app:srcCompat="@drawable/logo_login2" />
 
 
     <EditText
@@ -13,7 +21,7 @@
         android:layout_margin="15dp"
         android:hint="E-mail"
         android:inputType="textEmailAddress"
-        android:textColorLink="@color/colorPrimary" />
+        android:textColorLink="@color/white" />
 
 
 
@@ -44,7 +52,8 @@
             android:background="@drawable/btn_shape"
             android:text="Login"
             android:textAllCaps="true"
-            android:textColor="#FFFF" />
+            android:textColor="@color/white"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/registerButton"
@@ -54,7 +63,8 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/btn_shape"
             android:text="Register!"
-            android:textColor="#FFFF" />
+            android:textColor="@color/white"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <Button
@@ -65,14 +75,15 @@
         android:background="@null"
         android:text="I forgot password"
         android:textAllCaps="false"
-        android:textColor="@color/colorPrimary" />
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="OR"
-        android:textColor="@color/colorPrimaryDark" />
+        android:textColor="@color/colorPrimary" />
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/google_sign_in_button"
@@ -81,6 +92,7 @@
         android:layout_marginTop="15dp"
         android:background="@drawable/post_btn_shape"
         />
+
 
 
 

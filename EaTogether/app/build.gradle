@@ -64,6 +64,9 @@ dependencies {
     // RecyclerView
     implementation 'com.android.support:recyclerview-v7:27.1.1'
 
+    // For Bottom Navigation Bar
+    implementation 'com.android.support:design:27.1.1'
+
     /*
     *   3. Third-party dependencies
     * */

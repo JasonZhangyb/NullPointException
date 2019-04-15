@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
@@ -45,6 +46,7 @@ import retrofit2.Response;
 public class LoginActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
     EditText loginEmail,loginPassword;
     Button loginButton,registerButton,newPassButton;
+
     private static final int RC_SIGN_IN = 9001;
     private SignInButton signInButton;
     FirebaseAuth firebaseAuth;
@@ -61,6 +63,8 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+
 
         loginEmail = (EditText) findViewById(R.id.userEmail);
         loginPassword = (EditText) findViewById(R.id.loginPassword);

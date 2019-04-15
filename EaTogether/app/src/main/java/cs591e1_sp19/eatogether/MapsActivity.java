@@ -5,6 +5,8 @@ import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.location.LocationListener;
 import android.media.Image;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
@@ -24,6 +26,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewDebug;
 import android.widget.AdapterView;
@@ -72,6 +75,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private RelativeLayout rll_restaurant;
     private RelativeLayout rll_search;
 
+    BottomNavigationView menu;
+
     LatLng current_loca = new LatLng(42.3500397, -71.1093047);
 
 
@@ -88,6 +93,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         setContentView(R.layout.activity_maps);
         Firebase.setAndroidContext(this);
         mRef = new Firebase(databaseURL + "Nearby");
+
         rll_search= (RelativeLayout) findViewById(R.id.search);
         rest_search = new ImageView(this);
         rest_search.setLayoutParams(new RelativeLayout.LayoutParams(150, 150));
@@ -128,6 +134,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+
 
         mRef.addValueEventListener(new ValueEventListener() {
             @Override

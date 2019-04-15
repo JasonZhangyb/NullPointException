@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:background="#FFF"
-    >
+    android:background="#FFF">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="200sp"
+        android:layout_height="200sp"
+        app:srcCompat="@drawable/logo_login2" />
 
     <EditText
         android:layout_width="match_parent"
@@ -33,13 +39,14 @@
 
 
     <Button
-        android:text="Register!"
+        android:id="@+id/userRegisterButton"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginTop="50dp"
-        android:textColor="#FFFF"
-        android:id="@+id/userRegisterButton"
-        android:background="@drawable/btn_shape"/>
+        android:background="@drawable/btn_shape"
+        android:text="Register!"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
 
 
     <Button
@@ -50,7 +57,10 @@
         android:background="@null"
         android:text="Already has account?"
         android:textAllCaps="false"
-        android:textColor="@color/colorAccent" />
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold" />
+
+
 
 
 </LinearLayout>
