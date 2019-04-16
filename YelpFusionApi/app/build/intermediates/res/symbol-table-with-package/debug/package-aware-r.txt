@@ -765,6 +765,7 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
+drawable event
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable gradient_purple_rounded
@@ -778,6 +779,9 @@ drawable ic_star_black_24dp
 drawable ic_star_border_black_24dp
 drawable ic_star_border_white_24dp
 drawable ic_star_white_24dp
+drawable map
+drawable me
+drawable message
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -923,6 +927,10 @@ id icon_group
 id icon_only
 id ifRoom
 id image
+id imageView2
+id imageView3
+id imageView4
+id imageView5
 id img1
 id img2
 id img3
@@ -948,6 +956,7 @@ id lyftMultiColor
 id lyft_icon
 id map
 id media_actions
+id menu
 id message
 id middle
 id multiply
@@ -1109,6 +1118,7 @@ layout activity_new_post
 layout activity_restaurant_post
 layout activity_restaurant_review
 layout fragment_restaurant_info
+layout fragment_test_image
 layout listview_review_row
 layout listview_row
 layout lyft_button

@@ -55,6 +55,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     //private String marker_id = "";
     private Marker previous_marker;
     private int count = 0;
+    private int set_menu = 0;
 
     private String rest_id;
     private String price;
@@ -66,6 +67,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private FragmentTransaction transaction;
     private RelativeLayout rll_restaurant;
     private RelativeLayout rll_search;
+    private RelativeLayout rll_menu;
+
+    private TestImage test_img = new TestImage();
+    private FragmentManager test_manager;
+    private FragmentTransaction test_trans;
+
+
+
 
 
     LatLng current_loca = new LatLng(42.3500397, -71.1093047);
@@ -91,6 +100,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         rest_search.setLayoutParams(new RelativeLayout.LayoutParams(150, 150));
         rest_search.setImageResource(R.drawable.search03);
         rll_search.addView(rest_search);
+
+
+        rll_menu = (RelativeLayout)findViewById(R.id.menu);
+
+
+
+
 
 
         rll_search.setOnClickListener(new View.OnClickListener() {
@@ -127,6 +143,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+
+
 
 
 
@@ -172,18 +190,46 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     fragmentManager.beginTransaction().remove(fragment).commit();
 
 
+
                 }
+
+                if(set_menu % 2 == 0){
+
+                    test_manager = getSupportFragmentManager();
+                    test_trans = test_manager.beginTransaction();
+                    test_trans.add(R.id.menu, test_img);
+
+                    test_trans.addToBackStack(null);
+                    test_trans.commit();
+
+
+
+                }
+                else{
+                    test_manager.beginTransaction().remove(test_img).commit();
+                }
+                set_menu++;
+
                 count = 0;
             }
         });
+
+
 
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(final Marker marker) {
                 //If click the marker twice, then go to the main activity
+                if(set_menu % 2 != 0){
+                    test_manager.beginTransaction().remove(test_img).commit();
+                }
+                set_menu = 1;
+
                 if(count != 0){
                     previous_marker.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
                     fragmentManager.beginTransaction().remove(fragment).commit();
+
+
                 }
                 count++;
 
@@ -257,21 +303,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
 
-                //Bundle frag_bundle = fragment.getArguments();
-                //System.out.println(">>>>>>>>>>>>" + frag_bundle.getBoolean("ifClick") );
-
-                /*
-                if((click_times > 1 && marker_id.equals(marker.getId()))){
-                    click_times = 0;
-                    marker_id = "";
 
 
-
-
-                }
-
-                marker_id = marker.getId();
-                */
                 return false;
             }
         });

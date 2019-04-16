@@ -17,7 +17,7 @@ public class RestaurantInfo extends Fragment {
     private TextView Rest_Name;
     private RatingBar ratingBar;
     private TextView dollar;
-    private  TextView info;
+    private TextView info;
 
     private OnFragmentInteractionListener mListener;
 

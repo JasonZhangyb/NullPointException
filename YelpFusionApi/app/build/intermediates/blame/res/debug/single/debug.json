@@ -444,12 +444,12 @@
         "source": "/Users/young/.gradle/caches/transforms-1/files-1.1/materialfavoritebutton-0.1.4.aar/e1260dd841b0fdd6b668bd27bc73d9ad/res/drawable-xxhdpi-v4/ic_star_border_black_24dp.png"
     },
     {
-        "merged": "/Users/young/Desktop/NullPointException/YelpFusionApi/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
-        "source": "/Users/young/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/6553b5dc7847bdc08e0089dbdc7c19bb/res/drawable-xxxhdpi-v4/abc_btn_check_to_on_mtrl_000.png"
-    },
-    {
         "merged": "/Users/young/Desktop/NullPointException/YelpFusionApi/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_googleg_disabled_color_18.png.flat",
         "source": "/Users/young/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/6fc8a643427b7c7c3726a3e1c5781e4d/res/drawable-xhdpi-v4/googleg_disabled_color_18.png"
+    },
+    {
+        "merged": "/Users/young/Desktop/NullPointException/YelpFusionApi/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
+        "source": "/Users/young/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/6553b5dc7847bdc08e0089dbdc7c19bb/res/drawable-xxxhdpi-v4/abc_btn_check_to_on_mtrl_000.png"
     },
     {
         "merged": "/Users/young/Desktop/NullPointException/YelpFusionApi/app/build/intermediates/res/merged/debug/drawable-v23_abc_control_background_material.xml.flat",
@@ -794,6 +794,10 @@
     {
         "merged": "/Users/young/Desktop/NullPointException/YelpFusionApi/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
         "source": "/Users/young/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/6553b5dc7847bdc08e0089dbdc7c19bb/res/drawable-hdpi-v4/abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/young/Desktop/NullPointException/YelpFusionApi/app/build/intermediates/res/merged/debug/drawable_message.png.flat",
+        "source": "/Users/young/Desktop/NullPointException/YelpFusionApi/app/src/main/res/drawable/message.png"
     },
     {
         "merged": "/Users/young/Desktop/NullPointException/YelpFusionApi/app/build/intermediates/res/merged/debug/drawable-ldrtl-xxhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
@@ -1428,6 +1432,10 @@
         "source": "/Users/young/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/6553b5dc7847bdc08e0089dbdc7c19bb/res/drawable-hdpi-v4/abc_btn_check_to_on_mtrl_015.png"
     },
     {
+        "merged": "/Users/young/Desktop/NullPointException/YelpFusionApi/app/build/intermediates/res/merged/debug/drawable_event.png.flat",
+        "source": "/Users/young/Desktop/NullPointException/YelpFusionApi/app/src/main/res/drawable/event.png"
+    },
+    {
         "merged": "/Users/young/Desktop/NullPointException/YelpFusionApi/app/build/intermediates/res/merged/debug/layout-v21_notification_template_icon_group.xml.flat",
         "source": "/Users/young/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/33c90f735093038e6d87221a36b2f8cb/res/layout-v21/notification_template_icon_group.xml"
     },
@@ -1502,6 +1510,10 @@
     {
         "merged": "/Users/young/Desktop/NullPointException/YelpFusionApi/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
         "source": "/Users/young/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/6553b5dc7847bdc08e0089dbdc7c19bb/res/drawable-xhdpi-v4/abc_list_selector_disabled_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/young/Desktop/NullPointException/YelpFusionApi/app/build/intermediates/res/merged/debug/drawable_map.png.flat",
+        "source": "/Users/young/Desktop/NullPointException/YelpFusionApi/app/src/main/res/drawable/map.png"
     },
     {
         "merged": "/Users/young/Desktop/NullPointException/YelpFusionApi/app/build/intermediates/res/merged/debug/drawable_search03.png.flat",
@@ -1588,6 +1600,10 @@
         "source": "/Users/young/.gradle/caches/transforms-1/files-1.1/rides-android-0.5.2.aar/c0af09e119ba66371796622e2df74f1f/res/layout/ub__ride_request_view.xml"
     },
     {
+        "merged": "/Users/young/Desktop/NullPointException/YelpFusionApi/app/build/intermediates/res/merged/debug/layout_fragment_test_image.xml.flat",
+        "source": "/Users/young/Desktop/NullPointException/YelpFusionApi/app/src/main/res/layout/fragment_test_image.xml"
+    },
+    {
         "merged": "/Users/young/Desktop/NullPointException/YelpFusionApi/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_list_longpressed_holo.9.png.flat",
         "source": "/Users/young/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/6553b5dc7847bdc08e0089dbdc7c19bb/res/drawable-xhdpi-v4/abc_list_longpressed_holo.9.png"
     },
@@ -1618,6 +1634,10 @@
     {
         "merged": "/Users/young/Desktop/NullPointException/YelpFusionApi/app/build/intermediates/res/merged/debug/layout_notification_media_action.xml.flat",
         "source": "/Users/young/.gradle/caches/transforms-1/files-1.1/support-media-compat-28.0.0.aar/31a97e8ea0dcd578602c1b2a3ff9c14d/res/layout/notification_media_action.xml"
+    },
+    {
+        "merged": "/Users/young/Desktop/NullPointException/YelpFusionApi/app/build/intermediates/res/merged/debug/drawable_me.png.flat",
+        "source": "/Users/young/Desktop/NullPointException/YelpFusionApi/app/src/main/res/drawable/me.png"
     },
     {
         "merged": "/Users/young/Desktop/NullPointException/YelpFusionApi/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_ic_star_white_24dp.png.flat",
