@@ -39,6 +39,50 @@ public class TestImage extends Fragment {
         img_3 = (ImageView) view.findViewById(R.id.imageView4);
         img_4 = (ImageView) view.findViewById(R.id.imageView5);
 
+        img_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("!!!!!!!!!!!!!!!!!!!MAP");
+                img_1.setImageResource(R.drawable.map_white);
+                img_2.setImageResource(R.drawable.message);
+                img_3.setImageResource(R.drawable.event);
+                img_4.setImageResource(R.drawable.me);
+            }
+        });
+
+        img_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("!!!!!!!!!!!!!!!!!!!MSG");
+                img_1.setImageResource(R.drawable.map);
+                img_2.setImageResource(R.drawable.message_white);
+                img_3.setImageResource(R.drawable.event);
+                img_4.setImageResource(R.drawable.me);
+            }
+        });
+
+        img_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("!!!!!!!!!!!!!!!!!!!EVENT");
+                img_1.setImageResource(R.drawable.map);
+                img_2.setImageResource(R.drawable.message);
+                img_3.setImageResource(R.drawable.event_white);
+                img_4.setImageResource(R.drawable.me);
+            }
+        });
+
+        img_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("!!!!!!!!!!!!!!!!!!!ME");
+                img_1.setImageResource(R.drawable.map);
+                img_2.setImageResource(R.drawable.message);
+                img_3.setImageResource(R.drawable.event);
+                img_4.setImageResource(R.drawable.me_white);
+            }
+        });
+
         return view;
     }
 

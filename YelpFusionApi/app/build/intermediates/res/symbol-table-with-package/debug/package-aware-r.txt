@@ -766,6 +766,7 @@ drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
 drawable event
+drawable event_white
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable gradient_purple_rounded
@@ -780,8 +781,11 @@ drawable ic_star_border_black_24dp
 drawable ic_star_border_white_24dp
 drawable ic_star_white_24dp
 drawable map
+drawable map_white
 drawable me
+drawable me_white
 drawable message
+drawable message_white
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low

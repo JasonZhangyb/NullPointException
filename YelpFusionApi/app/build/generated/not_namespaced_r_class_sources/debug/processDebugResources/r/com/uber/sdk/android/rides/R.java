@@ -447,16 +447,16 @@ public final class R {
         public static final int abc_textfield_search_activated_mtrl_alpha = 0x7f070051;
         public static final int abc_textfield_search_default_mtrl_alpha = 0x7f070052;
         public static final int abc_textfield_search_material = 0x7f070053;
-        public static final int notification_template_icon_bg = 0x7f070086;
-        public static final int uber_badge = 0x7f070090;
-        public static final int uber_button_background_black = 0x7f070091;
-        public static final int uber_button_background_black_90 = 0x7f070092;
-        public static final int uber_button_background_selector_black = 0x7f070093;
-        public static final int uber_button_background_selector_white = 0x7f070094;
-        public static final int uber_button_background_white = 0x7f070095;
-        public static final int uber_button_background_white_40 = 0x7f070096;
-        public static final int uber_logotype_black = 0x7f070097;
-        public static final int uber_logotype_white = 0x7f070098;
+        public static final int notification_template_icon_bg = 0x7f07008a;
+        public static final int uber_badge = 0x7f070094;
+        public static final int uber_button_background_black = 0x7f070095;
+        public static final int uber_button_background_black_90 = 0x7f070096;
+        public static final int uber_button_background_selector_black = 0x7f070097;
+        public static final int uber_button_background_selector_white = 0x7f070098;
+        public static final int uber_button_background_white = 0x7f070099;
+        public static final int uber_button_background_white_40 = 0x7f07009a;
+        public static final int uber_logotype_black = 0x7f07009b;
+        public static final int uber_logotype_white = 0x7f07009c;
     }
     public static final class id {
         private id() {}
