@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.github.ivbaranov.mfb.MaterialFavoriteButton;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -46,12 +47,16 @@ public class WishAdapter extends RecyclerView.Adapter<WishAdapter.MyViewHolder> 
     class MyViewHolder extends RecyclerView.ViewHolder{
         public TextView tvName;
         public ImageView imgRestaurant;
+        public MaterialFavoriteButton fav;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
             tvName = itemView.findViewById(R.id.RestaurantName);
             imgRestaurant = itemView.findViewById(R.id.imgRestaurant);
+            fav = itemView.findViewById(R.id.fav);
+
+            fav.setFavorite(true);
         }
     }
 

@@ -63,6 +63,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     //private String marker_id = "";
     private Marker previous_marker;
     private int count = 0;
+    private int set_menu = 0;
+
 
     private String rest_id;
     private String price;
@@ -70,8 +72,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private String info;
 
     private RestaurantInfo fragment;
+    private MenuFragment  menu = new MenuFragment();;
     private FragmentManager fragmentManager;
     private FragmentTransaction transaction;
+    private FragmentManager menu_manager;
+    private FragmentTransaction menu_trans;
     private RelativeLayout rll_restaurant;
     private RelativeLayout rll_search;
 
@@ -114,6 +119,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
 
         mapFragment.getMapAsync(this);
+
+
+        menu_manager = getSupportFragmentManager();
+        menu_trans = menu_manager.beginTransaction();
+        menu_trans.add(R.id.menu, menu);
+
+        menu_trans.addToBackStack(null);
+        menu_trans.commit();
 
     }
 
@@ -201,6 +214,24 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
                 }
+
+                if(set_menu % 2 != 0){
+
+                    menu_manager = getSupportFragmentManager();
+                    menu_trans = menu_manager.beginTransaction();
+                    menu_trans.add(R.id.menu, menu);
+
+                    menu_trans.addToBackStack(null);
+                    menu_trans.commit();
+
+
+
+                }
+                else{
+                    menu_manager.beginTransaction().remove(menu).commit();
+                }
+
+                set_menu++;
                 count = 0;
             }
         });
@@ -209,6 +240,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             @Override
             public boolean onMarkerClick(final Marker marker) {
                 //If click the marker twice, then go to the main activity
+                if(set_menu % 2 == 0){
+                    menu_manager.beginTransaction().remove(menu).commit();
+                }
+                set_menu = 1;
+
                 if(count != 0){
                     previous_marker.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
                     fragmentManager.beginTransaction().remove(fragment).commit();

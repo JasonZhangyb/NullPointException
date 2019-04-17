@@ -156,13 +156,12 @@
     </LinearLayout>
 
 
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:background="@drawable/rest_bg"
 
-        android:background="@drawable/rest_bg">
+        android:orientation="horizontal">
 
     </RelativeLayout>
 
