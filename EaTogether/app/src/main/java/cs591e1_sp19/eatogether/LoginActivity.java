@@ -1,7 +1,12 @@
 package cs591e1_sp19.eatogether;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
 import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -43,6 +48,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static cs591e1_sp19.eatogether.AppState.current_lati;
+import static cs591e1_sp19.eatogether.AppState.current_longi;
+
 public class LoginActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
     EditText loginEmail,loginPassword;
     Button loginButton,registerButton,newPassButton;
@@ -58,6 +66,10 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
     String apiKey = BuildConfig.YelpApiKey;
     Map<String, String> params;
+
+
+    private static final int REQUEST_LOCATION = 1;
+    LocationManager locationManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -157,12 +169,15 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                     // login successfully, we can access the newarby restaurants
                     params = new HashMap<>();
 
-                    params.put("latitude", "42.3500397");
-                    params.put("longitude", "-71.1093047");
-                    params.put("radius", "3000");
+                    if(getLocation()){
 
-                    Call<SearchResponse> call = yelpFusionApi.getBusinessSearch(params);
-                    call.enqueue(callback);
+                        params.put("latitude", current_lati);
+                        params.put("longitude", current_longi);
+                        params.put("radius", "3000");
+
+                        Call<SearchResponse> call = yelpFusionApi.getBusinessSearch(params);
+                        call.enqueue(callback);
+                    }
                 }
             }
 
@@ -171,6 +186,54 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
             }
         });
+    }
+
+
+    private boolean getLocation() {
+        if (ActivityCompat.checkSelfPermission(LoginActivity.this, Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission
+                (LoginActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+
+            ActivityCompat.requestPermissions(LoginActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
+
+        } else {
+            locationManager = (LocationManager)getApplicationContext().getSystemService(LOCATION_SERVICE);
+            Location location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+
+            Location location1 = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+
+            Location location2 = locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
+
+            if (location != null) {
+                double latti = location.getLatitude();
+                double longi = location.getLongitude();
+                current_lati = String.valueOf(latti);
+                current_longi = String.valueOf(longi);
+                return true;
+
+            } else if (location1 != null) {
+                double latti = location1.getLatitude();
+                double longi = location1.getLongitude();
+                current_lati = String.valueOf(latti);
+                current_longi = String.valueOf(longi);
+                return true;
+
+            } else if (location2 != null) {
+                double latti = location2.getLatitude();
+                double longi = location2.getLongitude();
+                current_lati = String.valueOf(latti);
+                current_longi = String.valueOf(longi);
+                return true;
+
+            } else {
+
+                Toast.makeText(this, "Unble to Trace your location", Toast.LENGTH_SHORT).show();
+                return false;
+
+            }
+        }
+
+        return false;
     }
 
     Callback<SearchResponse> callback = new Callback<SearchResponse>() {

@@ -53,6 +53,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
+import static cs591e1_sp19.eatogether.AppState.current_lati;
+import static cs591e1_sp19.eatogether.AppState.current_longi;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -81,7 +83,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private RelativeLayout rll_search;
 
 
-    LatLng current_loca = new LatLng(42.3500397, -71.1093047);
+    LatLng current_loca = new LatLng(Double.parseDouble(current_lati), Double.parseDouble(current_longi));
 
 
     String databaseURL = "https://eatogether-cs591.firebaseio.com/";
@@ -96,7 +98,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         Firebase.setAndroidContext(this);
-        mRef = new Firebase(databaseURL + "Nearby");
+        mRef = new Firebase(databaseURL + "Users/" + AppState.userID + "/Nearby/" + "2km/");
 
         rll_search= (RelativeLayout) findViewById(R.id.search);
         rest_search = new ImageView(this);

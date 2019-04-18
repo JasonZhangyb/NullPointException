@@ -29,6 +29,9 @@ public class AppState {
     public static DatabaseReference userDatabase;
     public static DatabaseReference chatDatabase;
 
+    public static String current_lati = "";
+    public static String current_longi = "";
+
     // Private constructor to enforce singleton.
     private AppState() {
         isLoggedIn = false;
