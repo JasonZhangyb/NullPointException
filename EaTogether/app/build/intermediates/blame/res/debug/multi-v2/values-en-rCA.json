@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rCA/values-en-rCA.xml",
+            "outputFile": "/Users/young/Desktop/NullPointException/EaTogether/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rCA/values-en-rCA.xml",
             "map": [
                 {
-                    "source": "/Users/yuewu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/7c94a867cab18835b98140cae9b352ff/res/values-en-rCA/values-en-rCA.xml",
+                    "source": "/Users/young/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/421f206219ddfb0859fa9a74d1af89cc/res/values-en-rCA/values-en-rCA.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

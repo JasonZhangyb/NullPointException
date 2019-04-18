@@ -184,7 +184,10 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
             DatabaseReference db = mref
                     .getReference()
-                    .child("Nearby");
+                    .child("Users")
+                    .child(AppState.userID)
+                    .child("Nearby")
+                    .child("2km");
 
             for(Business bu : businesses) {
                 DatabaseReference restaurant = db.child(bu.getId());
