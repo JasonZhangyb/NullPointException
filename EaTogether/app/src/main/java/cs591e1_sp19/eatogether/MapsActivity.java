@@ -98,7 +98,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         Firebase.setAndroidContext(this);
-        mRef = new Firebase(databaseURL + "Users/" + AppState.userID + "/Nearby/" + "2km/");
+        mRef = new Firebase(databaseURL + "Users/" + AppState.userID + "/Nearby/");
 
         rll_search= (RelativeLayout) findViewById(R.id.search);
         rest_search = new ImageView(this);

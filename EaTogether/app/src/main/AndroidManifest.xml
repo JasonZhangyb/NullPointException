@@ -57,6 +57,8 @@
             android:label="New Post" />
         <activity android:name=".MessageActivity" />
         <activity android:name=".ListOfChatsActivity"></activity>
+        <activity android:name=".ProfileActivity"/>
+        <activity android:name=".ProfileChangeActivity"/>
     </application>
 
 </manifest>

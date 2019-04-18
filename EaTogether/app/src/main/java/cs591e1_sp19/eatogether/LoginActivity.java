@@ -249,8 +249,9 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                     .getReference()
                     .child("Users")
                     .child(AppState.userID)
-                    .child("Nearby")
-                    .child("2km");
+                    .child("Nearby");
+
+            db.removeValue();
 
             for(Business bu : businesses) {
                 DatabaseReference restaurant = db.child(bu.getId());
