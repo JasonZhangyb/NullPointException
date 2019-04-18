@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/young/Desktop/NullPointException/EaTogether/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hi-rIN/values-hi-rIN.xml",
+            "outputFile": "/Users/apple/Desktop/CS591E1/final-project/NullPointException/EaTogether/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hi-rIN/values-hi-rIN.xml",
             "map": [
                 {
-                    "source": "/Users/young/.gradle/caches/transforms-1/files-1.1/core-android-0.5.2.aar/5d917002f63e23cf4e97603c6a65a7fb/res/values-hi-rIN/values-hi-rIN.xml",
+                    "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/core-android-0.5.2.aar/041e6adb92013d42b6249132469e3310/res/values-hi-rIN/values-hi-rIN.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/young/.gradle/caches/transforms-1/files-1.1/rides-android-0.5.2.aar/ead267c3b3940268b9c43fbf243109e1/res/values-hi-rIN/values-hi-rIN.xml",
+                    "source": "/Users/apple/.gradle/caches/transforms-1/files-1.1/rides-android-0.5.2.aar/5f50b7b21582bd6c8d849e36e46aebd6/res/values-hi-rIN/values-hi-rIN.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8",
                         "startColumns": "4,4,4,4,4,4,4",

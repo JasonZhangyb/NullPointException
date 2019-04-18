@@ -71,7 +71,7 @@ public final class R {
     public static final class layout {
         private layout() {}
 
-        public static final int lyft_button = 0x7f0b0037;
+        public static final int lyft_button = 0x7f0b0038;
     }
     public static final class string {
         private string() {}
