@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -19,16 +20,10 @@ import java.util.List;
 public class NewPost extends AppCompatActivity {
 
     DatabaseReference ref;
-    Spinner time1;
-    Spinner am_pm1;
-    Spinner time2;
-    Spinner am_pm2;
+    TextView res_name;
+    Spinner time1, am_pm1, time2, am_pm2, age1, age2, country, language;
     CheckBox cb_male;
     CheckBox cb_female;
-    Spinner age1;
-    Spinner age2;
-    Spinner country;
-    Spinner language;
     EditText note;
     Button new_post;
     //set range of the ages
@@ -41,6 +36,7 @@ public class NewPost extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_post);
 
+        res_name = findViewById(R.id.res_name);
         time1 = findViewById(R.id.time1);
         time2 = findViewById(R.id.time2);
         am_pm1 = findViewById(R.id.am_pm1);
@@ -57,6 +53,8 @@ public class NewPost extends AppCompatActivity {
         ArrayAdapter<Integer> age_adapter = new ArrayAdapter<Integer>(
                 this, android.R.layout.simple_spinner_item, age_list);
         age_adapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
+
+        res_name.setText(getIntent().getStringExtra("resName"));
 
         age1 = findViewById(R.id.age1);
         age2 = findViewById(R.id.age2);

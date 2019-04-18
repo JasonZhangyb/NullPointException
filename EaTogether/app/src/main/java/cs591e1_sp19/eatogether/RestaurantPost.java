@@ -52,9 +52,7 @@ public class RestaurantPost extends AppCompatActivity {
     ArrayList<PostModel> posts_lst;
     TextView res_name,res_rating,res_review,res_type;
     //ImageView res_img;
-    ImageView img1;
-    ImageView img2;
-    ImageView img3;
+    ImageView img1, img2, img3;
     Button post;
     MaterialFavoriteButton favorite;
 
@@ -171,6 +169,7 @@ public class RestaurantPost extends AppCompatActivity {
                 public void onClick(View v) {
                     Intent i = new Intent(getApplicationContext(), NewPost.class);
                     i.putExtra("resID", business.getId());
+                    i.putExtra("resName", business.getName());
                     startActivity(i);
                 }
             });
