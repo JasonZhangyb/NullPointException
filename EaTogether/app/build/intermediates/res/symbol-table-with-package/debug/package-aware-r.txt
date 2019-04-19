@@ -936,6 +936,7 @@ drawable icon_03
 drawable icon_03_white
 drawable icon_04
 drawable icon_04_white
+drawable kirk_spock1
 drawable login_btn
 drawable logo_img
 drawable logo_login1
@@ -1023,8 +1024,10 @@ id all_trips
 id always
 id am_pm1
 id am_pm2
+id applyButton
 id async
 id auto
+id avatar
 id bar_age
 id bar_time
 id barrier
@@ -1056,7 +1059,12 @@ id center
 id center_horizontal
 id center_vertical
 id chains
+id checkBox_10km
+id checkBox_5km
+id checkBox_female
 id checkbox
+id checkbox_2km
+id checkbox_male
 id chronometer
 id clip_horizontal
 id clip_vertical
@@ -1095,8 +1103,12 @@ id fill
 id fill_horizontal
 id fill_vertical
 id fixed
+id food_one
+id food_three
+id food_two
 id forever
 id fragment
+id gen
 id get_ride_label
 id ghost_view
 id gone
@@ -1125,6 +1137,7 @@ id imgRestaurant
 id info
 id inputEditText
 id invisible
+id inviteButton
 id italic
 id itemLinearLayout
 id item_touch_helper_previous_elevation
@@ -1178,6 +1191,8 @@ id preference
 id price_estimate
 id prime_time_icon
 id profile
+id profile_avatar
+id profile_change
 id progress_circular
 id progress_horizontal
 id radio
@@ -1257,6 +1272,7 @@ id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
 id text_input_password_toggle
+id text_tag
 id textinput_counter
 id textinput_error
 id time
@@ -1300,6 +1316,8 @@ id uniform
 id up
 id useLogo
 id userEmail
+id userLanguage
+id userLocation
 id userLoginButton
 id userName
 id userPassword
@@ -1313,6 +1331,7 @@ id visible
 id white
 id wide
 id wish
+id wish_list
 id withText
 id wrap
 id wrap_content
@@ -1361,6 +1380,8 @@ layout activity_main
 layout activity_maps
 layout activity_message
 layout activity_new_post
+layout activity_profile
+layout activity_profilechange
 layout activity_restaurant_post
 layout activity_restaurant_review
 layout activity_restaurant_search

@@ -40,6 +40,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static cs591e1_sp19.eatogether.AppState.current_lati;
+import static cs591e1_sp19.eatogether.AppState.current_longi;
+
 public class ProfileChangeActivity extends AppCompatActivity {
 
     private ImageView avatar;
@@ -271,8 +274,8 @@ public class ProfileChangeActivity extends AppCompatActivity {
     private void updateNearby() {
         params = new HashMap<>();
 
-        params.put("latitude", "42.3500397");
-        params.put("longitude", "-71.1093047");
+        params.put("latitude", current_lati);
+        params.put("longitude", current_longi);
         params.put("radius", String.valueOf(radius));
 
         Call<SearchResponse> call = yelpFusionApi.getBusinessSearch(params);
@@ -306,7 +309,7 @@ public class ProfileChangeActivity extends AppCompatActivity {
             }
 
 
-            Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+            Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
             startActivity(intent);
         }
         @Override

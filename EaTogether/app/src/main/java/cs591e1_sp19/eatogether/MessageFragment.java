@@ -35,6 +35,7 @@ public class MessageFragment extends Fragment {
 
     private Button sendButton;
     private EditText inputEditText;
+    private Button inviteButton;
 
     private String currentUid;
     private String otherUid;
@@ -62,6 +63,9 @@ public class MessageFragment extends Fragment {
         // Binds the sendButton and inputEditText.
         sendButton = view.findViewById(R.id.sendButton);
         inputEditText = view.findViewById(R.id.inputEditText);
+
+        //Binds the inviteButton
+        inviteButton = view.findViewById(R.id.inviteButton);
 
         // Bind our custom adapter to the RecyclerView.
         mAdapter = new ChatAdapter(FirebaseDatabase.getInstance().getReference().child("users"));

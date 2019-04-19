@@ -263,6 +263,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             }
 
             Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
+           // Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
             startActivity(intent);
         }
         @Override
