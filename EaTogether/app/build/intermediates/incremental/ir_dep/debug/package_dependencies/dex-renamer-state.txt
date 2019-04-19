@@ -1,7 +1,7 @@
-#Thu Apr 18 18:40:33 EDT 2019
-base.0=C\:\\Users\\Jason\\Desktop\\NullPointException\\EaTogether\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\10
+#Fri Apr 19 18:20:40 EDT 2019
+base.0=/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/transforms/dexMerger/debug/10
 path.1=classes2.dex
 renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=C\:\\Users\\Jason\\Desktop\\NullPointException\\EaTogether\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\10
+base.1=/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/transforms/dexMerger/debug/10

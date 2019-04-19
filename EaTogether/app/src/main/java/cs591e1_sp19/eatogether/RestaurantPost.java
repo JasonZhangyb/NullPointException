@@ -141,6 +141,27 @@ public class RestaurantPost extends AppCompatActivity {
             Picasso.get().load(business.getPhotos().get(1)).resize(300,300).into(img2);
             Picasso.get().load(business.getPhotos().get(2)).resize(300,300).into(img3);
 
+            FirebaseDatabase.getInstance().getReference().child("Restaurants")
+                    .addListenerForSingleValueEvent(new ValueEventListener() {
+
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                                System.out.println(snapshot.getKey());
+                                System.out.println(business.getId());
+                                if (business.getId().equals( snapshot.getKey())){
+                                    favorite.setFavorite(true);
+                                    System.out.println("congs");
+                                }
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
+
             ref.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
