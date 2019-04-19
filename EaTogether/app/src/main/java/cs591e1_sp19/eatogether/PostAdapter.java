@@ -10,7 +10,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 import org.w3c.dom.Text;
@@ -28,10 +31,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView user_name;
-        TextView user_locale;
-        TextView time_period;
-        TextView user_note;
+        TextView user_name, user_locale, time_period, user_note;
         ImageView user_avatar;
         Button msg_button;
 
@@ -44,6 +44,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
             user_note = itemView.findViewById(R.id.user_comment);
             user_avatar = itemView.findViewById(R.id.user_avatar);
             msg_button = itemView.findViewById(R.id.btn_message);
+
+            if (AppState.userPost != null) msg_button.setText("DELETE");
         }
     }
 
@@ -58,22 +60,35 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
     public void onBindViewHolder(@NonNull final PostAdapter.MyViewHolder myViewHolder, int i) {
         final PostModel post = posts.get(i);
 
-        myViewHolder.user_name.setText(posts.get(i).user);
-        myViewHolder.user_locale.setText(posts.get(i).country + ", " + posts.get(i).language);
-        myViewHolder.time_period.setText(posts.get(i).time1 + " - " + posts.get(i).time2);
-        myViewHolder.user_note.setText(posts.get(i).note);
-        Picasso.get().load(posts.get(i).avatar).into(myViewHolder.user_avatar);
+        myViewHolder.user_name.setText(post.user);
+        myViewHolder.user_locale.setText(post.country + ", " + post.language);
+        myViewHolder.time_period.setText(post.time1 + " - " + post.time2);
+        myViewHolder.user_note.setText(post.note);
+        Picasso.get().load(post.avatar).into(myViewHolder.user_avatar);
 
         myViewHolder.msg_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(v.getContext(), MessageActivity.class);
-//                i.putExtra("otherUserId", post.user);
-//                i.putExtra("otherUserAvatar", post.avatar);
-                AppState.otherChatUserAvatar = post.avatar;
-                AppState.otherChatUserId = post.user;
+                if (AppState.userPost != null){
+                    final FirebaseDatabase database = FirebaseDatabase.getInstance();
+                    DatabaseReference ref = database.getReference("Posts")
+                            .child(post.restaurant)
+                            .child(AppState.userPost);
+                    ref.removeValue();
+                    AppState.userPost = null;
+                    Intent i = new Intent(v.getContext(), RestaurantPost.class);
+                    i.putExtra("rest_id", post.restaurant);
+                    v.getContext().startActivity(i);
 
-                v.getContext().startActivity(i);
+                } else {
+                    Intent i = new Intent(v.getContext(), MessageActivity.class);
+                    //i.putExtra("otherUserId", post.user);
+                    //i.putExtra("otherUserAvatar", post.avatar);
+                    AppState.otherChatUserAvatar = post.avatar;
+                    AppState.otherChatUserId = post.user;
+
+                    v.getContext().startActivity(i);
+                }
             }
         });
     }

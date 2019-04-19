@@ -84,7 +84,9 @@ public class NewPost extends AppCompatActivity {
                         language.getSelectedItem().toString(),
                         time1.getSelectedItem().toString() + am_pm1.getSelectedItem().toString(),
                         time2.getSelectedItem().toString() + am_pm2.getSelectedItem().toString(),
-                        note.getText().toString()));
+                        note.getText().toString(),
+                        res_id));
+                AppState.userPost = ref_post.getKey();
                 Intent i = new Intent(getApplicationContext(),MapsActivity.class);
                 startActivity(i);
             }

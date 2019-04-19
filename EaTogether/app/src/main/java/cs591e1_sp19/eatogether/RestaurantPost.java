@@ -41,7 +41,6 @@ import retrofit2.Response;
 
 public class RestaurantPost extends AppCompatActivity {
 
-    Firebase mRef;
     YelpFusionApiFactory apiFactory;
     YelpFusionApi yelpFusionApi;
     String apiKey = BuildConfig.YelpApiKey;
@@ -188,10 +187,14 @@ public class RestaurantPost extends AppCompatActivity {
             post.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i = new Intent(getApplicationContext(), NewPost.class);
-                    i.putExtra("resID", business.getId());
-                    i.putExtra("resName", business.getName());
-                    startActivity(i);
+                    if (AppState.userPost != null) {
+                        Toast.makeText(getApplicationContext(),"You can't have more than 1 post!", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Intent i = new Intent(getApplicationContext(), NewPost.class);
+                        i.putExtra("resID", business.getId());
+                        i.putExtra("resName", business.getName());
+                        startActivity(i);
+                    }
                 }
             });
 

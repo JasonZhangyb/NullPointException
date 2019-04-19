@@ -23,6 +23,8 @@ public class AppState {
     public static String userID;
     public static String userName;
 
+    public static String userPost;
+
     public static String otherChatUserId;
     public static String otherChatUserAvatar;
 
@@ -36,6 +38,7 @@ public class AppState {
     private AppState() {
         isLoggedIn = false;
         userID = null;
+        userPost = null;
 
         otherChatUserId = null;
         otherChatUserAvatar = null;

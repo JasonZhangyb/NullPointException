@@ -10,11 +10,12 @@ public class PostModel {
     public String time1;
     public String time2;
     public String note;
+    public String restaurant;
 
 
     public PostModel(String user, String avatar, String gender,
                      String country, String language, String time1,
-                     String time2, String note){
+                     String time2, String note, String restaurant){
         this.user = user;
         this.avatar = avatar;
         this.gender = gender;
@@ -23,6 +24,7 @@ public class PostModel {
         this.time1 = time1;
         this.time2 = time2;
         this.note = note;
+        this.restaurant = restaurant;
     }
 
     public PostModel(){}
