@@ -27,7 +27,7 @@
                     android:layout_weight="1"
                     android:background="@color/colorPrimary"
                     android:paddingTop="5dp"
-                    android:src="@drawable/icon_01_white" />
+                    android:src="@drawable/icon_01" />
 
                 <ImageView
                     android:id="@+id/imgMessage"

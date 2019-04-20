@@ -1,5 +1,6 @@
 package cs591e1_sp19.eatogether;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -39,6 +40,8 @@ public class MenuFragment extends Fragment {
             @Override
             public void onClick(View v){
                 Toast.makeText(getActivity(),"Map!",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), MapsActivity.class);
+                startActivity(intent);
                 Map.setImageResource(R.drawable.icon_01_white);
                 Message.setImageResource(R.drawable.icon_02);
                 Event.setImageResource(R.drawable.icon_03);
@@ -51,6 +54,8 @@ public class MenuFragment extends Fragment {
             @Override
             public void onClick(View v){
                 Toast.makeText(getActivity(),"Message!",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), ListOfChatsActivity.class);
+                startActivity(intent);
                 Map.setImageResource(R.drawable.icon_01);
                 Message.setImageResource(R.drawable.icon_02_white);
                 Event.setImageResource(R.drawable.icon_03);
@@ -87,6 +92,8 @@ public class MenuFragment extends Fragment {
             @Override
             public void onClick(View v){
                 Toast.makeText(getActivity(),"Map!",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), MapsActivity.class);
+                startActivity(intent);
                 Map.setImageResource(R.drawable.icon_01_white);
                 Message.setImageResource(R.drawable.icon_02);
                 Event.setImageResource(R.drawable.icon_03);
@@ -111,6 +118,8 @@ public class MenuFragment extends Fragment {
             @Override
             public void onClick(View v){
                 Toast.makeText(getActivity(),"Event!",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), ListOfChatsActivity.class);
+                startActivity(intent);
                 Map.setImageResource(R.drawable.icon_01);
                 Message.setImageResource(R.drawable.icon_02);
                 Event.setImageResource(R.drawable.icon_03_white);
