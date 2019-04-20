@@ -6,7 +6,7 @@
     density="xxhdpi"
     format="10"
     plugin-version="3.2.0"
-    timestamp="1555795506398"
+    timestamp="1555795757336"
     token="-3626104655867648687"
     verifier="COLD_SWAP_REQUESTED" >
 
@@ -22,10 +22,6 @@
     <task
         name="verifier"
         duration="0" />
-
-    <artifact
-        location="/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
-        type="SPLIT" />
 
     <build
         build-mode="FULL"
@@ -88,5 +84,9 @@
             location="/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
             type="SPLIT" />
     </build>
+    <build
+        build-mode="COLD"
+        timestamp="1555795757336"
+        verifier="COLD_SWAP_REQUESTED" />
 
 </instant-run>
