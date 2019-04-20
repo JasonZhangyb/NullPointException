@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.firebase.client.Firebase;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -32,6 +33,7 @@ public class MessageFragment extends Fragment {
     private DatabaseReference msgDatabase;
     private DatabaseReference userDatabase;
     private ChildEventListener childEventListener;
+    private DatabaseReference invDatabase;
 
     private Button sendButton;
     private EditText inputEditText;
@@ -92,10 +94,21 @@ public class MessageFragment extends Fragment {
                 .getReference()
                 .child("Users");
 
+        invDatabase = FirebaseDatabase
+                .getInstance()
+                .getReference()
+                .child("Chats")
+                .child(chatKey)
+                .child("Chat")
+                .child("invite");
+
+        invDatabase.setValue(false);
+
         // Initialize and attach onClickListeners and onChildEventListeners
         // for the sendButton and msgDatabase, respectively.
         setSendButtonListener();
         setChildEventListener();
+        setInviteButtonListener();
 
         return view;
     }
@@ -186,5 +199,18 @@ public class MessageFragment extends Fragment {
         };
 
         sendButton.setOnClickListener(sendButtonListener);
+    }
+
+
+    private void setInviteButtonListener() {
+        // Set onClickListener for the send button.
+        View.OnClickListener inviteButtonListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                invDatabase.setValue(true);
+            }
+        };
+
+        inviteButton.setOnClickListener(inviteButtonListener);
     }
 }
