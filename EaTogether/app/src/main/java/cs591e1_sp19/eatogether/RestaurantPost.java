@@ -56,7 +56,6 @@ public class RestaurantPost extends AppCompatActivity {
     MaterialFavoriteButton favorite;
 
 
-
     //the blank space on the bottom is for showing existing posts ones the back end is finished.
     //the post button does not have any functionality for now, since we do not have a back end yet.
     //click on the TextView review to see the reviews.
@@ -161,6 +160,26 @@ public class RestaurantPost extends AppCompatActivity {
                         }
                     });
 
+            /*DatabaseReference ref_user = database.getInstance().getReference("Users");
+            ref_user.child(AppState.userID).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot snapshot) {
+                    if (snapshot.hasChild("Post")) {
+                        String res_id = getIntent().getStringExtra("rest_id");
+                        AppState.userPost = snapshot.child("Post").child(res_id).getValue().toString();
+                        Log.v("test",AppState.userPost);
+                    } else {
+                        AppState.userPost = null;
+                        Log.v("test", "null");
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });*/
+
             ref.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -183,6 +202,7 @@ public class RestaurantPost extends AppCompatActivity {
 
                 }
             });
+
 
             post.setOnClickListener(new View.OnClickListener() {
                 @Override

@@ -160,6 +160,14 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                         AppState.userID = userSnapShot.getKey();
                         AppState.userName = userSnapShot.child("name").getValue().toString();
                         Log.v("test", AppState.userName);
+
+                        if (userSnapShot.hasChild("Post")) {
+                            AppState.userPost = userSnapShot.child("Post").child("PostID").getValue().toString();
+                            Log.v("test_login", AppState.userPost);
+                        } else {
+                            AppState.userPost = null;
+                        }
+
                     }
                 }
 

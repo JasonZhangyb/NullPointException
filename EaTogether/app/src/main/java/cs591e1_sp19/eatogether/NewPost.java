@@ -85,8 +85,12 @@ public class NewPost extends AppCompatActivity {
                         time1.getSelectedItem().toString() + am_pm1.getSelectedItem().toString(),
                         time2.getSelectedItem().toString() + am_pm2.getSelectedItem().toString(),
                         note.getText().toString(),
-                        res_id));
+                        res_id,
+                        ref_post.getKey()));
                 AppState.userPost = ref_post.getKey();
+                DatabaseReference ref_user = database.getReference("Users").child(AppState.userID).child("Post");
+                ref_user.child("PostID").setValue(ref_post.getKey());
+                ref_user.child("ResID").setValue(res_id);
                 Intent i = new Intent(getApplicationContext(),MapsActivity.class);
                 startActivity(i);
             }
