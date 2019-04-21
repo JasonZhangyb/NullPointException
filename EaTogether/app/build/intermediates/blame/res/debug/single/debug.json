@@ -1736,10 +1736,6 @@
         "source": "/Users/young/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/421f206219ddfb0859fa9a74d1af89cc/res/drawable-xxxhdpi-v4/abc_switch_track_mtrl_alpha.9.png"
     },
     {
-        "merged": "/Users/young/Desktop/NullPointException/EaTogether/app/build/intermediates/res/merged/debug/layout_fragment_google_places.xml.flat",
-        "source": "/Users/young/Desktop/NullPointException/EaTogether/app/src/main/res/layout/fragment_google_places.xml"
-    },
-    {
         "merged": "/Users/young/Desktop/NullPointException/EaTogether/app/build/intermediates/res/merged/debug/drawable-watch-v20_common_google_signin_btn_text_light_normal.xml.flat",
         "source": "/Users/young/.gradle/caches/transforms-1/files-1.1/play-services-auth-16.0.1.aar/d7ecb00124543d81bfbde5bb016ca429/res/drawable-watch-v20/common_google_signin_btn_text_light_normal.xml"
     },
@@ -2560,12 +2556,12 @@
         "source": "/Users/young/Desktop/NullPointException/EaTogether/app/src/main/res/drawable-mdpi/nav_map.png"
     },
     {
-        "merged": "/Users/young/Desktop/NullPointException/EaTogether/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_ic_favorite_black_24dp.png.flat",
-        "source": "/Users/young/.gradle/caches/transforms-1/files-1.1/materialfavoritebutton-0.1.4.aar/bcf51eb643cb13f44fca6df1f46e1bf9/res/drawable-xxhdpi-v4/ic_favorite_black_24dp.png"
-    },
-    {
         "merged": "/Users/young/Desktop/NullPointException/EaTogether/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_googleg_standard_color_18.png.flat",
         "source": "/Users/young/.gradle/caches/transforms-1/files-1.1/play-services-base-16.1.0.aar/27954671de17bc8517c4cfceff0f025b/res/drawable-hdpi-v4/googleg_standard_color_18.png"
+    },
+    {
+        "merged": "/Users/young/Desktop/NullPointException/EaTogether/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_ic_favorite_black_24dp.png.flat",
+        "source": "/Users/young/.gradle/caches/transforms-1/files-1.1/materialfavoritebutton-0.1.4.aar/bcf51eb643cb13f44fca6df1f46e1bf9/res/drawable-xxhdpi-v4/ic_favorite_black_24dp.png"
     },
     {
         "merged": "/Users/young/Desktop/NullPointException/EaTogether/app/build/intermediates/res/merged/debug/layout-sw600dp-v13_design_layout_snackbar.xml.flat",

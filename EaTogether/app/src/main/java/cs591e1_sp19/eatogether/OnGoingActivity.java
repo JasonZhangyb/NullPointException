@@ -11,6 +11,12 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,7 +35,7 @@ import com.uber.sdk.rides.client.ServerTokenSession;
 import com.uber.sdk.rides.client.SessionConfiguration;
 import com.uber.sdk.rides.client.error.ApiError;
 
-public class OnGoingActivity extends AppCompatActivity implements RideRequestButtonCallback {
+public class OnGoingActivity extends AppCompatActivity implements RideRequestButtonCallback, OnMapReadyCallback {
 
     private DatabaseReference ongoingdb;
     private DatabaseReference userdb;
@@ -39,6 +45,8 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
     private TextView time;
     private Button msg_btm;
     private ImageView user_avatar;
+
+    private GoogleMap mMap;
 
     private String partner_id ="";
 
@@ -155,7 +163,10 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
         // user_rating.setText(userdb.child(AppState.userID).child("rating").toString());
         // time.setText(ongoingdb.child("time1").getKey() + " - " + ongoingdb.child("time2").toString());
 
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.google_maps);
 
+        mapFragment.getMapAsync(this);
 
 
 
@@ -232,4 +243,21 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
 
     }
 
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+
+        LatLng current_loca = new LatLng(Double.parseDouble(AppState.current_lati), Double.parseDouble(AppState.current_longi));
+        MarkerOptions current_marker = new MarkerOptions();
+        current_marker.title("Current Location");
+        current_marker.position(current_loca);
+
+        mMap.addMarker(current_marker);
+
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(current_loca));
+
+        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+
+        mMap.setMinZoomPreference(13);
+    }
 }

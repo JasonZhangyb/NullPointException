@@ -1112,6 +1112,7 @@ id gen
 id get_ride_label
 id ghost_view
 id gone
+id google_maps
 id google_sign_in_button
 id groups
 id heart
@@ -1406,7 +1407,6 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
-layout fragment_google_places
 layout fragment_message
 layout fragment_restaurant_info
 layout listview_review_row

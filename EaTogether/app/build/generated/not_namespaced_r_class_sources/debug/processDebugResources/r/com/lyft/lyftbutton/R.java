@@ -59,19 +59,19 @@ public final class R {
         public static final int cost_container = 0x7f09005b;
         public static final int cost_text = 0x7f09005c;
         public static final int get_ride_label = 0x7f090080;
-        public static final int lyftHotPink = 0x7f0900ac;
-        public static final int lyftLauncher = 0x7f0900ad;
-        public static final int lyftMulberryDark = 0x7f0900ae;
-        public static final int lyftMulberryLight = 0x7f0900af;
-        public static final int lyftMultiColor = 0x7f0900b0;
-        public static final int lyft_icon = 0x7f0900b2;
-        public static final int prime_time_icon = 0x7f0900d2;
-        public static final int ridetype_eta_text = 0x7f0900e9;
+        public static final int lyftHotPink = 0x7f0900ad;
+        public static final int lyftLauncher = 0x7f0900ae;
+        public static final int lyftMulberryDark = 0x7f0900af;
+        public static final int lyftMulberryLight = 0x7f0900b0;
+        public static final int lyftMultiColor = 0x7f0900b1;
+        public static final int lyft_icon = 0x7f0900b3;
+        public static final int prime_time_icon = 0x7f0900d3;
+        public static final int ridetype_eta_text = 0x7f0900ea;
     }
     public static final class layout {
         private layout() {}
 
-        public static final int lyft_button = 0x7f0b003c;
+        public static final int lyft_button = 0x7f0b003b;
     }
     public static final class string {
         private string() {}
