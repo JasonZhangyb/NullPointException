@@ -146,11 +146,11 @@ public class RestaurantPost extends AppCompatActivity {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                                System.out.println(snapshot.getKey());
-                                System.out.println(business.getId());
+                               //System.out.println(snapshot.getKey());
+                               // System.out.println(business.getId());
                                 if (business.getId().equals( snapshot.getKey())){
                                     favorite.setFavorite(true);
-                                    System.out.println("congs");
+                                    //System.out.println("congs");
                                 }
                             }
                         }

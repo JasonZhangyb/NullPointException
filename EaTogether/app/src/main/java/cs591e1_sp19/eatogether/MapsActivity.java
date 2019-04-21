@@ -122,7 +122,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         mapFragment.getMapAsync(this);
 
-
+        //Add menu dynamically
         menu_manager = getSupportFragmentManager();
         menu_trans = menu_manager.beginTransaction();
         menu_trans.add(R.id.menu, menu);

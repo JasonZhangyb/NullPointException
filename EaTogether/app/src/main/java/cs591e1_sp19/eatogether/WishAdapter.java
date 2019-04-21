@@ -1,6 +1,7 @@
 package cs591e1_sp19.eatogether;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,6 +11,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.github.ivbaranov.mfb.MaterialFavoriteButton;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -19,6 +24,8 @@ public class WishAdapter extends RecyclerView.Adapter<WishAdapter.MyViewHolder> 
 
     Context context;
     ArrayList<Restaurant> restaurants;
+    private String rest_id;
+    private String target_rest;
 
     public WishAdapter(Context c, ArrayList<Restaurant> r){
         context = c;
@@ -55,6 +62,84 @@ public class WishAdapter extends RecyclerView.Adapter<WishAdapter.MyViewHolder> 
             tvName = itemView.findViewById(R.id.RestaurantName);
             imgRestaurant = itemView.findViewById(R.id.imgRestaurant);
             fav = itemView.findViewById(R.id.fav);
+
+
+            tvName.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    FirebaseDatabase.getInstance().getReference().child("Users").child(AppState.userID)
+                            .child("Restaurants")
+                            .addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                                        String Res_Name = String.valueOf(snapshot.child("Name").getValue());
+                                        target_rest = tvName.getText().toString();
+
+                                        if (target_rest.equals(Res_Name)){
+
+                                            rest_id = snapshot.getKey();
+                                            System.out.println("rest_id");
+                                            System.out.println(rest_id);
+                                            Intent intent = new Intent(context, RestaurantPost.class);
+                                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                            intent.putExtra("rest_id", rest_id);
+                                            context.startActivity(intent);
+                                            break;
+                                        }
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                }
+                            });
+
+
+
+                }
+            });
+
+            imgRestaurant.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    FirebaseDatabase.getInstance().getReference().child("Users").child(AppState.userID)
+                            .child("Restaurants")
+                            .addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                                        String Res_Name = String.valueOf(snapshot.child("Name").getValue());
+                                        target_rest = tvName.getText().toString();
+
+                                        if (target_rest.equals(Res_Name)){
+
+                                            rest_id = snapshot.getKey();
+                                            System.out.println("rest_id");
+                                            System.out.println(rest_id);
+                                            Intent intent = new Intent(context, RestaurantPost.class);
+                                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                            intent.putExtra("rest_id", rest_id);
+                                            context.startActivity(intent);
+                                            break;
+                                        }
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                }
+                            });
+
+
+
+                }
+            });
+
 
             fav.setFavorite(true);
         }
