@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/young/Desktop/NullPointException/EaTogether/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-mn/values-mn.xml",
+            "outputFile": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-mn/values-mn.xml",
             "map": [
                 {
-                    "source": "/Users/young/.gradle/caches/transforms-1/files-1.1/play-services-base-16.1.0.aar/27954671de17bc8517c4cfceff0f025b/res/values-mn/values.xml",
+                    "source": "/Users/yuewu/.gradle/caches/transforms-1/files-1.1/play-services-base-16.1.0.aar/9e7afd5f6d3a59fe349dd6be6a257fe7/res/values-mn/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -21,24 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/young/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.2.0.aar/f7441836dee3f0ee7f7e8e5a9abcd83e/res/values-mn/values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "208",
-                        "endOffsets": "455"
-                    },
-                    "to": {
-                        "startLines": "27",
-                        "startColumns": "4",
-                        "startOffsets": "3026",
-                        "endColumns": "208",
-                        "endOffsets": "3230"
-                    }
-                },
-                {
-                    "source": "/Users/young/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/421f206219ddfb0859fa9a74d1af89cc/res/values-mn/values-mn.xml",
+                    "source": "/Users/yuewu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/7c94a867cab18835b98140cae9b352ff/res/values-mn/values-mn.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -55,7 +38,24 @@
                     }
                 },
                 {
-                    "source": "/Users/young/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/efb16f15e424062cf614fc46961871e2/res/values-mn/values-mn.xml",
+                    "source": "/Users/yuewu/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.2.0.aar/9cf7aebe2ff878ff46d3d46208532673/res/values-mn/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "208",
+                        "endOffsets": "455"
+                    },
+                    "to": {
+                        "startLines": "27",
+                        "startColumns": "4",
+                        "startOffsets": "3026",
+                        "endColumns": "208",
+                        "endOffsets": "3230"
+                    }
+                },
+                {
+                    "source": "/Users/yuewu/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/ba14ffc5b0441af24bf76d0204ac18bc/res/values-mn/values-mn.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -139,7 +139,8 @@ public class RestaurantPost extends AppCompatActivity {
             Picasso.get().load(business.getPhotos().get(1)).resize(300,300).into(img2);
             Picasso.get().load(business.getPhotos().get(2)).resize(300,300).into(img3);
 
-            FirebaseDatabase.getInstance().getReference().child("Restaurants")
+            FirebaseDatabase.getInstance().getReference().child("Users").child(AppState.userID)
+                    .child("Restaurants")
                     .addListenerForSingleValueEvent(new ValueEventListener() {
 
                         @Override
@@ -231,7 +232,11 @@ public class RestaurantPost extends AppCompatActivity {
                     new MaterialFavoriteButton.OnFavoriteChangeListener() {
                         @Override
                         public void onFavoriteChanged(MaterialFavoriteButton buttonView, boolean favorite) {
-                            DatabaseReference mRef = database.getReference("Restaurants");
+
+                            DatabaseReference mRef = database.getReference("Users")
+                                    .child(AppState.userID)
+                                    .child("Restaurants");
+                            //DatabaseReference mRef = database.getReference("Restaurants"); BEFORE USERS WERE ADDED TO DB
                             DatabaseReference noRef = mRef.child(business.getId());
                             DatabaseReference nameRef = noRef.child("Name");
                             DatabaseReference imageRef = noRef.child("imageUrl");

@@ -37,7 +37,9 @@ public class WishList extends AppCompatActivity {
         list = new ArrayList<Restaurant>();
 
 
-        reference = FirebaseDatabase.getInstance().getReference().child("Restaurants");
+        reference = FirebaseDatabase.getInstance().getReference().child("Users").child(AppState.userID)
+                .child("Restaurants");
+
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
