@@ -17,6 +17,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".OnGoingActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -56,9 +57,9 @@
             android:name=".NewPost"
             android:label="New Post" />
         <activity android:name=".MessageActivity" />
-        <activity android:name=".ListOfChatsActivity"></activity>
-        <activity android:name=".ProfileActivity"/>
-        <activity android:name=".ProfileChangeActivity"/>
+        <activity android:name=".ListOfChatsActivity" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".ProfileChangeActivity" />
     </application>
 
 </manifest>

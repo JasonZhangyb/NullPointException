@@ -64,14 +64,14 @@ public final class R {
         public static final int lyftMulberryDark = 0x7f0900ae;
         public static final int lyftMulberryLight = 0x7f0900af;
         public static final int lyftMultiColor = 0x7f0900b0;
-        public static final int lyft_icon = 0x7f0900b1;
-        public static final int prime_time_icon = 0x7f0900d0;
-        public static final int ridetype_eta_text = 0x7f0900e6;
+        public static final int lyft_icon = 0x7f0900b2;
+        public static final int prime_time_icon = 0x7f0900d2;
+        public static final int ridetype_eta_text = 0x7f0900e9;
     }
     public static final class layout {
         private layout() {}
 
-        public static final int lyft_button = 0x7f0b003a;
+        public static final int lyft_button = 0x7f0b003c;
     }
     public static final class string {
         private string() {}

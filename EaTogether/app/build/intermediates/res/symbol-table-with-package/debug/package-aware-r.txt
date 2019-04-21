@@ -1158,6 +1158,7 @@ id lyftLauncher
 id lyftMulberryDark
 id lyftMulberryLight
 id lyftMultiColor
+id lyft_button
 id lyft_icon
 id map
 id masked
@@ -1187,6 +1188,7 @@ id payment_methods
 id percent
 id pin
 id places
+id post_info
 id preference
 id price_estimate
 id prime_time_icon
@@ -1210,6 +1212,7 @@ id res_name
 id res_rating
 id res_review
 id res_type
+id rest_name
 id ride_widgets
 id ridetype_eta_text
 id right
@@ -1312,6 +1315,7 @@ id txt_time
 id ub__login_webview
 id ub__ride_request_view
 id ub__ride_request_webview
+id uber_button_black
 id uniform
 id up
 id useLogo
@@ -1380,6 +1384,7 @@ layout activity_main
 layout activity_maps
 layout activity_message
 layout activity_new_post
+layout activity_on_going
 layout activity_profile
 layout activity_profilechange
 layout activity_restaurant_post
@@ -1401,6 +1406,7 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout fragment_google_places
 layout fragment_message
 layout fragment_restaurant_info
 layout listview_review_row
