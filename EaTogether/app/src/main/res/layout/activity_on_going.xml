@@ -67,6 +67,40 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/buttom_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rest_name"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_message"
+            android:background="@drawable/btn_shape"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rest_name"
+            android:layout_alignParentEnd="true"
+            android:text="Message" />
+
+        <Button
+            android:id="@+id/btn_finish"
+            android:background="@drawable/tag_shape"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rest_name"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:text="Finish" />
+
+    </LinearLayout>
+
+
 
     <com.uber.sdk.android.rides.RideRequestButton
         android:id="@+id/uber_button_black"
@@ -92,24 +126,14 @@
         android:layout_below="@+id/uber_button_black"
         />
 
-    <Button
-        android:id="@+id/btn_message"
-        android:background="@drawable/btn_shape"
-        android:textColor="@color/white"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/rest_name"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="15dp"
-        android:text="Message" />
+
 
 
     <fragment
         android:id="@+id/google_maps"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="300dp"
         android:layout_below="@+id/lyft_button"
         android:layout_margin = "20dp">
 

@@ -243,16 +243,54 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
 
     }
 
+    public void findCoffee(){
+
+        ongoingdb.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                DROPOFF_LAT = Double.parseDouble(dataSnapshot.child("latitude").getValue(String.class));
+                DROPOFF_LONG = Double.parseDouble(dataSnapshot.child("longitude").getValue(String.class));
+                StringBuilder stringBuilder = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
+                stringBuilder.append("location="+DROPOFF_LAT.toString()+","+DROPOFF_LONG.toString());
+                stringBuilder.append("&radius="+2000);
+                stringBuilder.append("&keyword="+"coffee");
+                stringBuilder.append("&key="+getResources().getString(R.string.google_maps_key));
+
+                System.out.println(stringBuilder);
+
+                String url = stringBuilder.toString();
+
+                Object dataTransfer[] = new Object[2];
+                dataTransfer[0] = mMap;
+                dataTransfer[1] = url;
+
+                GoogleNearbyPlaces googleNearbyPlaces = new GoogleNearbyPlaces(this);
+                googleNearbyPlaces.execute(dataTransfer);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+    }
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
         LatLng current_loca = new LatLng(Double.parseDouble(AppState.current_lati), Double.parseDouble(AppState.current_longi));
         MarkerOptions current_marker = new MarkerOptions();
-        current_marker.title("Current Location");
+        current_marker.title("Destination");
         current_marker.position(current_loca);
 
         mMap.addMarker(current_marker);
+
+        findCoffee();
 
         mMap.moveCamera(CameraUpdateFactory.newLatLng(current_loca));
 
