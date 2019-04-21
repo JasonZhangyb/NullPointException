@@ -193,7 +193,7 @@ public class RestaurantPost extends AppCompatActivity {
                     posts_view.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                     posts_adapter = new PostAdapter(getApplicationContext(), posts_lst);
                     posts_view.setAdapter(posts_adapter);
-
+                    Log.v("test", "setting up adapter");
 
                 }
 

@@ -73,6 +73,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
         if (AppState.userPost == post.postID) {
             myViewHolder.msg_button.setText("DELETE");
         } else {
+            Log.v("test", post.postID);
             myViewHolder.msg_button.setText("MESSAGE");
         }
 
