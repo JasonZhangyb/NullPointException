@@ -137,19 +137,19 @@
             android:id="@+id/checkbox_2km"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="3KM" />
+            android:text="1KM" />
 
         <CheckBox
             android:id="@+id/checkBox_5km"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="5KM" />
+            android:text="3KM" />
 
         <CheckBox
             android:id="@+id/checkBox_10km"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="10KM" />
+            android:text="5KM" />
 
     </LinearLayout>
 

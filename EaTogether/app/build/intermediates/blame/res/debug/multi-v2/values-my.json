@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/young/Desktop/NullPointException/EaTogether/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-my/values-my.xml",
+            "outputFile": "/Users/limuzi/AndroidStudioProjects/EaTogether/V2/NullPointException/EaTogether/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-my/values-my.xml",
             "map": [
                 {
-                    "source": "/Users/young/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/efb16f15e424062cf614fc46961871e2/res/values-my/values-my.xml",
+                    "source": "/Users/limuzi/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/21077ff68aebbd629ed41ad03340a4f3/res/values-my/values-my.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/young/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/421f206219ddfb0859fa9a74d1af89cc/res/values-my/values-my.xml",
+                    "source": "/Users/limuzi/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/8f83e906aef6520b9c953af6d9fe23d4/res/values-my/values-my.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "/Users/young/.gradle/caches/transforms-1/files-1.1/play-services-base-16.1.0.aar/27954671de17bc8517c4cfceff0f025b/res/values-my/values.xml",
+                    "source": "/Users/limuzi/.gradle/caches/transforms-1/files-1.1/play-services-base-16.1.0.aar/4bbe1015d0a7474cabec8ed6d5e2762a/res/values-my/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -55,7 +55,7 @@
                     }
                 },
                 {
-                    "source": "/Users/young/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.2.0.aar/f7441836dee3f0ee7f7e8e5a9abcd83e/res/values-my/values.xml",
+                    "source": "/Users/limuzi/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.2.0.aar/0d526f24fae316c3fbe581991e94e978/res/values-my/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",

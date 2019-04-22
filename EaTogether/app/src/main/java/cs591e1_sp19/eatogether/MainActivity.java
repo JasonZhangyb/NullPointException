@@ -24,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
     private Button loginButton;
     private FirebaseAuth firebaseAuth;
 
+    //Temporary hard coding, will change it into buildConfig
+    final private String img = "https://firebasestorage.googleapis.com/v0/b/eatogether-cs591.appspot.com/o/profile_img-01.png?alt=media&token=ef833632-1a12-47cf-aecf-a4504abe9c02";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,5 +103,6 @@ public class MainActivity extends AppCompatActivity {
         db.child(newKey).child("password").setValue(passwordS);
         db.child(newKey).child("user_rating").setValue("5.0");
         db.child(newKey).child("rating_amount").setValue("0");
+        db.child(newKey).child("avatar").setValue(img);
     }
 }

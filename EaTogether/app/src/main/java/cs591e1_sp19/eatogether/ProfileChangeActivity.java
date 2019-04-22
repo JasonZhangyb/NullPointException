@@ -3,9 +3,9 @@ package cs591e1_sp19.eatogether;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.text.Editable;
 import android.util.Log;
 import android.view.View;
@@ -17,7 +17,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -27,10 +30,11 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
-import com.yelp.fusion.client.connection.YelpFusionApi;
-import com.yelp.fusion.client.connection.YelpFusionApiFactory;
 import com.yelp.fusion.client.models.Business;
 import com.yelp.fusion.client.models.SearchResponse;
+
+import com.yelp.fusion.client.connection.YelpFusionApi;
+import com.yelp.fusion.client.connection.YelpFusionApiFactory;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -39,9 +43,6 @@ import java.util.Map;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
-import static cs591e1_sp19.eatogether.AppState.current_lati;
-import static cs591e1_sp19.eatogether.AppState.current_longi;
 
 public class ProfileChangeActivity extends AppCompatActivity {
 
@@ -54,7 +55,7 @@ public class ProfileChangeActivity extends AppCompatActivity {
     private EditText oneFood, twoFood, threeFood;
     private Button submit;
     private CheckBox twoK, fiveK, tenK;
-    private int radius;
+    private int radius = 1000;
 
     private String databaseURL = "https://eatogether-cs591.firebaseio.com";
     private StorageReference mStorageRef;
@@ -100,7 +101,6 @@ public class ProfileChangeActivity extends AppCompatActivity {
         USER_NAME = userName.getText().toString();
 
         mRef = new Firebase("https://eatogether-cs591.firebaseio.com/Users");
-
         //Yelp set up
         try {
             apiFactory  = new YelpFusionApiFactory();
@@ -145,7 +145,7 @@ public class ProfileChangeActivity extends AppCompatActivity {
                 twoK.setChecked(true);
                 fiveK.setChecked(false);
                 tenK.setChecked(false);
-                radius = 2000;
+                radius = 1000;
             }
         });
 
@@ -155,7 +155,7 @@ public class ProfileChangeActivity extends AppCompatActivity {
                 twoK.setChecked(false);
                 fiveK.setChecked(true);
                 tenK.setChecked(false);
-                radius = 2000;
+                radius = 3000;
             }
         });
 
@@ -168,6 +168,9 @@ public class ProfileChangeActivity extends AppCompatActivity {
                 radius = 5000;
             }
         });
+
+        //set avatar as user setting
+        setProfile();
 
 
     }
@@ -215,6 +218,11 @@ public class ProfileChangeActivity extends AppCompatActivity {
 
         uploadAvatar();
 
+        updateNearby();
+
+        Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+        startActivity(intent);
+
     }
 
     private String edit2String(EditText editText) {
@@ -259,9 +267,8 @@ public class ProfileChangeActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<Uri> task) {
                     if(task.isSuccessful()) {
                         Uri downloadUri = task.getResult();
-                        mRef.child(USER_NAME).child("avatar").setValue(downloadUri.toString());
+                        mRef.child(AppState.userID).child("avatar").setValue(downloadUri.toString());
                         Toast.makeText(ProfileChangeActivity.this, "Changes has been applied", Toast.LENGTH_LONG).show();
-                        updateNearby();
                     } else {
                         Toast.makeText(ProfileChangeActivity.this, "Faild change Profile", Toast.LENGTH_LONG).show();
                     }
@@ -274,8 +281,8 @@ public class ProfileChangeActivity extends AppCompatActivity {
     private void updateNearby() {
         params = new HashMap<>();
 
-        params.put("latitude", current_lati);
-        params.put("longitude", current_longi);
+        params.put("latitude", "42.3500397");
+        params.put("longitude", "-71.1093047");
         params.put("radius", String.valueOf(radius));
 
         Call<SearchResponse> call = yelpFusionApi.getBusinessSearch(params);
@@ -309,12 +316,32 @@ public class ProfileChangeActivity extends AppCompatActivity {
             }
 
 
-            Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
-            startActivity(intent);
         }
         @Override
         public void onFailure(Call<SearchResponse> call, Throwable t) {
             // HTTP error happened, do something to handle it.
         }
     };
+
+    private void setProfile() {
+        mRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for(DataSnapshot userSnapShot : dataSnapshot.getChildren()) {
+                    if(userSnapShot.getKey().equals(AppState.userID)) {
+                        if(userSnapShot.child("avatar").getValue() != null) {
+                            Picasso.get()
+                                    .load(userSnapShot.child("avatar").getValue().toString())
+                                    .into(avatar);
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
+    }
 }
