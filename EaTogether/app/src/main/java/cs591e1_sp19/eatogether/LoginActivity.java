@@ -273,9 +273,9 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 restaurant.child("price").setValue(bu.getPrice());
             }
 
-           // Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
+            Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
            // Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
-            Intent intent = new Intent(getApplicationContext(), OnGoingActivity.class);
+           // Intent intent = new Intent(getApplicationContext(), OnGoingActivity.class);
             startActivity(intent);
         }
         @Override

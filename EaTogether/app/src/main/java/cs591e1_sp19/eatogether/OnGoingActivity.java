@@ -5,6 +5,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.Image;
 import android.support.annotation.NonNull;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -86,6 +88,10 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
     private SessionConfiguration config;
     private ApiConfig apiConfig;
 
+    private MenuFragment  menu = new MenuFragment();;
+    private FragmentManager menu_manager;
+    private FragmentTransaction menu_trans;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -122,6 +128,13 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
         finish_btn = (Button) findViewById(R.id.btn_finish);
         user_avatar = (ImageView) findViewById(R.id.user_avatar);
 
+
+        menu_manager = getSupportFragmentManager();
+        menu_trans = menu_manager.beginTransaction();
+        menu_trans.add(R.id.menu, menu);
+
+        menu_trans.addToBackStack(null);
+        menu_trans.commit();
 
 
 

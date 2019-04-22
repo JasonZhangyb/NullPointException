@@ -39,7 +39,7 @@ public class MenuFragment extends Fragment {
         Map.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Toast.makeText(getActivity(),"Map!",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity(),"Map!",Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getActivity(), MapsActivity.class);
                 startActivity(intent);
                 Map.setImageResource(R.drawable.icon_01_white);
@@ -53,7 +53,7 @@ public class MenuFragment extends Fragment {
         Message.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Toast.makeText(getActivity(),"Message!",Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getActivity(),"Message!",Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getActivity(), ListOfChatsActivity.class);
                 startActivity(intent);
                 Map.setImageResource(R.drawable.icon_01);
@@ -67,7 +67,9 @@ public class MenuFragment extends Fragment {
         Event.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Toast.makeText(getActivity(),"Event!",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity(),"Event!",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), OnGoingActivity.class);
+                startActivity(intent);
                 Map.setImageResource(R.drawable.icon_01);
                 Message.setImageResource(R.drawable.icon_02);
                 Event.setImageResource(R.drawable.icon_03_white);
@@ -91,7 +93,7 @@ public class MenuFragment extends Fragment {
         txMap.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Toast.makeText(getActivity(),"Map!",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity(),"Map!",Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getActivity(), MapsActivity.class);
                 startActivity(intent);
                 Map.setImageResource(R.drawable.icon_01_white);
@@ -105,7 +107,7 @@ public class MenuFragment extends Fragment {
         txMessage.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Toast.makeText(getActivity(),"Message!",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity(),"Message!",Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getActivity(), ListOfChatsActivity.class);
                 startActivity(intent);
                 Map.setImageResource(R.drawable.icon_01);
@@ -119,7 +121,9 @@ public class MenuFragment extends Fragment {
         txEvent.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Toast.makeText(getActivity(),"Event!",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity(),"Event!",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), OnGoingActivity.class);
+                startActivity(intent);
                 Map.setImageResource(R.drawable.icon_01);
                 Message.setImageResource(R.drawable.icon_02);
                 Event.setImageResource(R.drawable.icon_03_white);
