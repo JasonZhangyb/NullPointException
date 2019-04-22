@@ -5,23 +5,28 @@
     build-mode="COLD"
     density="xxhdpi"
     format="10"
+    ir-eligibility="COMPATIBLE"
     plugin-version="3.2.0"
-    timestamp="1555970060951"
+    timestamp="1555972879073"
     token="-3626104655867648687"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="255" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="16" />
     <task
         name="verifier"
-        duration="0" />
+        duration="2" />
+
+    <artifact
+        location="/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+        type="SPLIT" />
 
     <build
         build-mode="FULL"
@@ -69,24 +74,48 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1555965956478"
+        ir-eligibility="CLASS_ADDED"
+        timestamp="1555972667266"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
             type="SPLIT" />
+        <artifact
+            location="/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+            type="SPLIT" />
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="CLASS_ADDED"
-        timestamp="1555969979803"
+        ir-eligibility="COMPATIBLE"
+        timestamp="1555972879073"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
             type="SPLIT" />
     </build>
-    <build
-        build-mode="COLD"
-        timestamp="1555970060951"
-        verifier="COLD_SWAP_REQUESTED" />
 
 </instant-run>

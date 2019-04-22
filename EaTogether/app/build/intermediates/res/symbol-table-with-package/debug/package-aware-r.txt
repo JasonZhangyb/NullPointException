@@ -979,6 +979,7 @@ drawable uber_button_background_white
 drawable uber_button_background_white_40
 drawable uber_logotype_black
 drawable uber_logotype_white
+drawable wishlist_notice
 drawable wordmark_thin_mulberry
 drawable wordmark_thin_pink
 drawable wordmark_thin_white
@@ -990,6 +991,7 @@ id Rest_Name
 id RestaurantName
 id SHIFT
 id SYM
+id Wish_Notice
 id action0
 id action_bar
 id action_bar_activity_content

@@ -28,6 +28,7 @@ public class WishAdapter extends RecyclerView.Adapter<WishAdapter.MyViewHolder> 
     private String rest_id;
     private String target_rest;
 
+
     public WishAdapter(Context c, ArrayList<Restaurant> r){
         context = c;
         restaurants = r;

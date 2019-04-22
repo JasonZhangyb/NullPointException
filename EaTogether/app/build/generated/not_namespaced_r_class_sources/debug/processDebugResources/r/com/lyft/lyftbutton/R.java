@@ -49,24 +49,24 @@ public final class R {
         public static final int prime_time_charcoal = 0x7f0800ad;
         public static final int prime_time_mulberry = 0x7f0800ae;
         public static final int prime_time_white = 0x7f0800af;
-        public static final int wordmark_thin_mulberry = 0x7f0800bf;
-        public static final int wordmark_thin_pink = 0x7f0800c0;
-        public static final int wordmark_thin_white = 0x7f0800c1;
+        public static final int wordmark_thin_mulberry = 0x7f0800c0;
+        public static final int wordmark_thin_pink = 0x7f0800c1;
+        public static final int wordmark_thin_white = 0x7f0800c2;
     }
     public static final class id {
         private id() {}
 
-        public static final int cost_container = 0x7f09005f;
-        public static final int cost_text = 0x7f090060;
-        public static final int get_ride_label = 0x7f090084;
-        public static final int lyftHotPink = 0x7f0900b2;
-        public static final int lyftLauncher = 0x7f0900b3;
-        public static final int lyftMulberryDark = 0x7f0900b4;
-        public static final int lyftMulberryLight = 0x7f0900b5;
-        public static final int lyftMultiColor = 0x7f0900b6;
-        public static final int lyft_icon = 0x7f0900b8;
-        public static final int prime_time_icon = 0x7f0900da;
-        public static final int ridetype_eta_text = 0x7f0900f2;
+        public static final int cost_container = 0x7f090060;
+        public static final int cost_text = 0x7f090061;
+        public static final int get_ride_label = 0x7f090085;
+        public static final int lyftHotPink = 0x7f0900b3;
+        public static final int lyftLauncher = 0x7f0900b4;
+        public static final int lyftMulberryDark = 0x7f0900b5;
+        public static final int lyftMulberryLight = 0x7f0900b6;
+        public static final int lyftMultiColor = 0x7f0900b7;
+        public static final int lyft_icon = 0x7f0900b9;
+        public static final int prime_time_icon = 0x7f0900db;
+        public static final int ridetype_eta_text = 0x7f0900f3;
     }
     public static final class layout {
         private layout() {}
