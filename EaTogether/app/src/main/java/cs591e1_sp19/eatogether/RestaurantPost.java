@@ -51,9 +51,11 @@ public class RestaurantPost extends AppCompatActivity {
     ArrayList<PostModel> posts_lst;
     TextView res_name,res_rating,res_review,res_type;
     //ImageView res_img;
+    ArrayList<ImageView> imgs;
     ImageView img1, img2, img3;
     Button post;
     MaterialFavoriteButton favorite;
+
 
 
     //the blank space on the bottom is for showing existing posts ones the back end is finished.
@@ -130,14 +132,21 @@ public class RestaurantPost extends AppCompatActivity {
             img3 = findViewById(R.id.img3);
             post = findViewById(R.id.btn_post);
             posts_lst = new ArrayList<>();
+            imgs = new ArrayList<>();
+            imgs.add(img1);
+            imgs.add(img2);
+            imgs.add(img3);
 
             res_name.setText(business.getName());
             res_rating.setText("Rating: " + Double.toString(business.getRating()));
             res_type.setText(business.getCategories().get(0).getTitle());
           //  Picasso.get().load(business.getImageUrl())/*.resize(150,150)*/.into(res_img);
-            Picasso.get().load(business.getPhotos().get(0)).resize(300,300).into(img1);
-            Picasso.get().load(business.getPhotos().get(1)).resize(300,300).into(img2);
-            Picasso.get().load(business.getPhotos().get(2)).resize(300,300).into(img3);
+            for (int i = 0 ; i < business.getPhotos().size(); i++){
+                Picasso.get().load(business.getPhotos().get(i)).resize(300, 300).into(imgs.get(i));
+            }
+            //Picasso.get().load(business.getPhotos().get(0)).resize(300,300).into(img1);
+            //Picasso.get().load(business.getPhotos().get(1)).resize(300,300).into(img2);
+            //Picasso.get().load(business.getPhotos().get(2)).resize(300,300).into(img3);
 
             FirebaseDatabase.getInstance().getReference().child("Users").child(AppState.userID)
                     .child("Restaurants")
