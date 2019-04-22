@@ -6,7 +6,33 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7fc32761-6730-4b41-89ad-bddd33ac36a1" name="Default Changelist" comment="" />
+    <list default="true" id="7fc32761-6730-4b41-89ad-bddd33ac36a1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/cs591e1_sp19/eatogether/OnGoingActivity$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/cs591e1_sp19/eatogether/OnGoingActivity$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/cs591e1_sp19/eatogether/OnGoingActivity$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/cs591e1_sp19/eatogether/OnGoingActivity$2$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/cs591e1_sp19/eatogether/OnGoingActivity$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/cs591e1_sp19/eatogether/OnGoingActivity$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/cs591e1_sp19/eatogether/OnGoingActivity$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/cs591e1_sp19/eatogether/OnGoingActivity$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/cs591e1_sp19/eatogether/OnGoingActivity$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/cs591e1_sp19/eatogether/OnGoingActivity$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/cs591e1_sp19/eatogether/OnGoingActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/cs591e1_sp19/eatogether/OnGoingActivity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/92/cs591e1_sp19/eatogether/OnGoingActivity$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/92/cs591e1_sp19/eatogether/OnGoingActivity$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/92/cs591e1_sp19/eatogether/OnGoingActivity$2$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/92/cs591e1_sp19/eatogether/OnGoingActivity$2$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/92/cs591e1_sp19/eatogether/OnGoingActivity$2.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/92/cs591e1_sp19/eatogether/OnGoingActivity$2.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/92/cs591e1_sp19/eatogether/OnGoingActivity$3.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/92/cs591e1_sp19/eatogether/OnGoingActivity$3.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/92/cs591e1_sp19/eatogether/OnGoingActivity$4.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/92/cs591e1_sp19/eatogether/OnGoingActivity$4.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/92/cs591e1_sp19/eatogether/OnGoingActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/92/cs591e1_sp19/eatogether/OnGoingActivity.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/0/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/0/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/OnGoingActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/OnGoingActivity.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,14 +68,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1850" />
+          <entry key="java" value="2213" />
           <entry key="txt" value="2" />
           <entry key="xml" value="389" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1850" />
+          <entry key="JAVA" value="2213" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="XML" value="389" />
         </counts>
@@ -58,11 +84,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/OnGoingActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="280" column="16" selection-start-line="280" selection-start-column="16" selection-end-line="280" selection-end-column="16" />
+            <state relative-caret-position="246">
+              <caret line="281" column="86" selection-start-line="281" selection-start-column="86" selection-end-line="281" selection-end-column="86" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#6436#6631#0" expanded="true" />
@@ -95,10 +121,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/LoginActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
+            <state relative-caret-position="1262">
               <caret line="275" column="13" selection-start-line="275" selection-start-column="13" selection-end-line="275" selection-end-column="13" />
             </state>
           </provider>
@@ -168,8 +194,8 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/rating_dialog.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/AppState.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/OnGoingActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/LoginActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/OnGoingActivity.java" />
       </list>
     </option>
   </component>
@@ -323,9 +349,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" visible="true" weight="0.20028612" />
+      <window_info content_ui="combo" id="Project" visible="true" weight="0.20028612" />
       <window_info id="Structure" side_tool="true" />
       <window_info id="Build Variants" side_tool="true" />
       <window_info id="Image Layers" />
@@ -333,7 +358,7 @@
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Run" visible="true" weight="0.32891566" />
+      <window_info anchor="bottom" id="Run" weight="0.44216868" />
       <window_info anchor="bottom" id="Logcat" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
       <window_info anchor="bottom" id="TODO" />
@@ -341,7 +366,7 @@
       <window_info anchor="bottom" id="Debug" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Build" weight="0.43012047" />
+      <window_info active="true" anchor="bottom" id="Build" visible="true" weight="0.43012047" />
       <window_info anchor="right" id="Device File Explorer" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" />
       <window_info anchor="right" id="Gradle" />
@@ -452,6 +477,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1262">
+          <caret line="275" column="13" selection-start-line="275" selection-start-column="13" selection-end-line="275" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/GoogleNearbyPlaces.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-45">
@@ -461,8 +493,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/OnGoingActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="280" column="16" selection-start-line="280" selection-start-column="16" selection-end-line="280" selection-end-column="16" />
+        <state relative-caret-position="246">
+          <caret line="281" column="86" selection-start-line="281" selection-start-column="86" selection-end-line="281" selection-end-column="86" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#6436#6631#0" expanded="true" />
@@ -472,13 +504,6 @@
             <element signature="e#10647#10823#0" expanded="true" />
             <element signature="e#10822#10823#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/LoginActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="275" column="13" selection-start-line="275" selection-start-column="13" selection-end-line="275" selection-end-column="13" />
         </state>
       </provider>
     </entry>

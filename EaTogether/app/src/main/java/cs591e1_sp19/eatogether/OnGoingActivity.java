@@ -49,6 +49,9 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
     private Button finish_btn;
     private ImageView user_avatar;
 
+    float ptner_rating;
+    int rating_amount;
+
     private GoogleMap mMap;
 
     private String partner_id ="";
@@ -155,12 +158,13 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
 
                 user_avatar.setImageResource(R.drawable.logo_login2);
 
-
-
+                ptner_rating = Float.parseFloat(dataSnapshot.child(partner_id).child("user_rating").getValue().toString());
+                rating_amount =  Integer.parseInt(dataSnapshot.child(partner_id).child("rating_amount").getValue().toString());
                 finish_btn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        openRatingDialog(user_name.getText().toString(), R.drawable.logo_login2);
+                        openRatingDialog(user_name.getText().toString(), R.drawable.logo_login2)
+                                ;
 
 
                     }
@@ -271,16 +275,12 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
             @Override
             public void onClick(View view) {
 
-                System.out.println(">>>>>>>>>>>>>. ratingbar: " + ratingBar.getRating());
-                AppState.userRating =  (AppState.userRating * AppState.ratingAmount + ratingBar.getRating() ) / (1 + AppState.ratingAmount);
-                AppState.ratingAmount += 1;
 
-                System.out.println(">>>>>>>>>>>>>. ratingbar: " +  AppState.userRating);
-                System.out.println(">>>>>>>>>>>>>. amount: " +  AppState.ratingAmount);
+                ptner_rating=  (ptner_rating * rating_amount + ratingBar.getRating() ) / (1 + rating_amount);
+                rating_amount ++;
 
-                
-                userdb.child(partner_id).child("rating_amount").setValue(AppState.ratingAmount);
-                userdb.child(partner_id).child("user_rating").setValue(AppState.userRating);
+                userdb.child(partner_id).child("rating_amount").setValue(rating_amount);
+                userdb.child(partner_id).child("user_rating").setValue(ptner_rating);
 
                 rating_dialog.cancel();
             }
