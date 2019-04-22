@@ -228,6 +228,10 @@
         "source": "/Users/yuewu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/7c94a867cab18835b98140cae9b352ff/res/drawable-xxhdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png"
     },
     {
+        "merged": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/res/merged/debug/drawable_notice_1.png.flat",
+        "source": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/src/main/res/drawable/notice_1.png"
+    },
+    {
         "merged": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher.png.flat",
         "source": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
     },
@@ -1794,6 +1798,10 @@
     {
         "merged": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_round.png.flat",
         "source": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/res/merged/debug/layout_no_ongoing_notice.xml.flat",
+        "source": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/src/main/res/layout/no_ongoing_notice.xml"
     },
     {
         "merged": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",

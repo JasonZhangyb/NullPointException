@@ -58,6 +58,9 @@
         <activity
             android:name=".NewPost"
             android:label="New Post" />
+        <activity
+            android:name=".NoOngingEventNotice"
+            android:label="Event" />
         <activity android:name=".MessageActivity" />
         <activity android:name=".ListOfChatsActivity" />
         <activity android:name=".ProfileActivity" />

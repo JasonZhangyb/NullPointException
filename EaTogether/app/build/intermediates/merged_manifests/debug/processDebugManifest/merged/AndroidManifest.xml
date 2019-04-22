@@ -78,6 +78,9 @@
         <activity
             android:name="cs591e1_sp19.eatogether.NewPost"
             android:label="New Post" />
+        <activity
+            android:name="cs591e1_sp19.eatogether.NoOngingEventNotice"
+            android:label="Event" />
         <activity android:name="cs591e1_sp19.eatogether.MessageActivity" />
         <activity android:name="cs591e1_sp19.eatogether.ListOfChatsActivity" />
         <activity android:name="cs591e1_sp19.eatogether.ProfileActivity" />

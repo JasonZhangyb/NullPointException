@@ -1,4 +1,4 @@
-#Mon Apr 22 14:09:19 EDT 2019
+#Mon Apr 22 16:30:31 EDT 2019
 base.0=/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/transforms/dexMerger/debug/2
 path.0=classes.dex
 renamed.0=classes.dex

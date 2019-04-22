@@ -946,6 +946,7 @@ drawable nav_map
 drawable nav_me
 drawable nav_message
 drawable navigation_empty_icon
+drawable notice_1
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -1037,6 +1038,7 @@ id blocking
 id bottom
 id btm_menu
 id btnDetail
+id btnSearch
 id btn_finish
 id btn_message
 id btn_new_post
@@ -1137,6 +1139,7 @@ id imgEvent
 id imgMap
 id imgMe
 id imgMessage
+id imgNotice
 id imgRestaurant
 id info
 id inputEditText
@@ -1420,6 +1423,7 @@ layout listview_row
 layout lyft_button
 layout menu_fragment
 layout message_recycler_row
+layout no_ongoing_notice
 layout notification_action
 layout notification_action_tombstone
 layout notification_media_action
