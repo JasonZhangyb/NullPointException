@@ -1,5 +1,7 @@
 package cs591e1_sp19.eatogether;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.Image;
 import android.support.annotation.NonNull;
@@ -43,7 +45,8 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
     private TextView user_name;
     private RatingBar user_rating;
     private TextView time;
-    private Button msg_btm;
+    private Button msg_btn;
+    private Button finish_btn;
     private ImageView user_avatar;
 
     private GoogleMap mMap;
@@ -112,7 +115,8 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
         user_name = (TextView) findViewById(R.id.user_name);
         user_rating = (RatingBar) findViewById(R.id.user_rating);
         time = (TextView) findViewById(R.id.time_created);
-        msg_btm = (Button) findViewById(R.id.btn_message);
+        msg_btn = (Button) findViewById(R.id.btn_message);
+        finish_btn = (Button) findViewById(R.id.btn_finish);
         user_avatar = (ImageView) findViewById(R.id.user_avatar);
 
 
@@ -133,6 +137,8 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
 
                 onRide();
 
+
+
             }
 
             @Override
@@ -148,6 +154,16 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
                 user_rating.setRating(Float.parseFloat(dataSnapshot.child(AppState.userID).child("rating").getValue(String.class)));
 
                 user_avatar.setImageResource(R.drawable.logo_login2);
+
+                final String usr_name = user_name.getText().toString();
+
+
+                finish_btn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        openRatingDialog(usr_name, R.drawable.logo_login2);
+                    }
+                });
             }
 
             @Override
@@ -224,6 +240,38 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
 
         lyftButton.setRideParams(rideParamsBuilder.build());
         lyftButton.load();
+
+    }
+
+    public void openRatingDialog(String partner_name, int partner_avatar){
+        final Dialog rating_dialog = new Dialog(this);
+        rating_dialog.setContentView(R.layout.rating_dialog);
+
+        rating_dialog.setTitle("Rating For Your Partner");
+        RatingBar ratingBar = (RatingBar) rating_dialog.findViewById(R.id.ratingBar);
+        TextView name = (TextView) rating_dialog.findViewById(R.id.parner_name);
+        ImageView avatar = (ImageView) rating_dialog.findViewById(R.id.partner_avatar);
+        Button finish = (Button) rating_dialog.findViewById(R.id.rating_finish);
+
+        name.setText(partner_name);
+        avatar.setImageResource(partner_avatar);
+
+
+        ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
+
+            }
+        });
+
+        rating_dialog.show();
+
+        finish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                rating_dialog.cancel();
+            }
+        });
 
     }
 

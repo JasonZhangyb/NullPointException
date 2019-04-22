@@ -41,8 +41,8 @@ public final class R {
 
         public static final int black = 0x7f090033;
         public static final int heart = 0x7f090089;
-        public static final int star = 0x7f09011b;
-        public static final int white = 0x7f090163;
+        public static final int star = 0x7f09011e;
+        public static final int white = 0x7f090166;
     }
     public static final class string {
         private string() {}

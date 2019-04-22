@@ -1188,6 +1188,8 @@ id parallax
 id parent
 id parentPanel
 id parent_matrix
+id parner_name
+id partner_avatar
 id payment_methods
 id percent
 id pin
@@ -1203,6 +1205,7 @@ id progress_circular
 id progress_horizontal
 id radio
 id ratingBar
+id rating_finish
 id recView_post
 id recyclerView
 id recyclerViewHolder
@@ -1432,6 +1435,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout rating_dialog
 layout recyclerview_posts_row
 layout restaurant_item
 layout select_dialog_item_material

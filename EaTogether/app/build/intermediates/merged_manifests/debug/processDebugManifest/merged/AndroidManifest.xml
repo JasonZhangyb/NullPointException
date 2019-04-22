@@ -37,7 +37,9 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="cs591e1_sp19.eatogether.OnGoingActivity" />
+        <activity
+            android:name="cs591e1_sp19.eatogether.OnGoingActivity"
+            android:label="Event" />
         <activity android:name="cs591e1_sp19.eatogether.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

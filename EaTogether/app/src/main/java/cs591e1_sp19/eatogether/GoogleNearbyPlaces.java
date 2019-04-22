@@ -72,7 +72,6 @@ public class GoogleNearbyPlaces  extends AsyncTask <Object, String, String> {
     @Override
     protected void onPostExecute(String s) {
 
-        System.out.println("????????????????????????");
 
 
         try {
@@ -80,7 +79,7 @@ public class GoogleNearbyPlaces  extends AsyncTask <Object, String, String> {
             JSONArray resultsArray = parentObject.getJSONArray("results");
 
             for(int i = 0; i < resultsArray.length(); i++){
-                System.out.print("////////////////////");
+
 
                 JSONObject jsonObject = resultsArray.getJSONObject(i);
                 JSONObject locationObj = jsonObject.getJSONObject("geometry").getJSONObject("location");

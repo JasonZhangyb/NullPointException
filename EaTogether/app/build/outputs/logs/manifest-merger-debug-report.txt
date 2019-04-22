@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:2:1-65:12
-INJECTED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:2:1-65:12
-INJECTED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:2:1-65:12
-INJECTED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:2:1-65:12
+ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:2:1-67:12
+INJECTED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:2:1-67:12
+INJECTED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:2:1-67:12
+INJECTED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:2:1-67:12
 MERGED from [com.android.support:design:27.1.1] /Users/young/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/7a7f3934b25ca8c3ce277c8645988b45/AndroidManifest.xml:17:1-22:12
 MERGED from [com.uber.sdk:rides-android:0.5.2] /Users/young/.gradle/caches/transforms-1/files-1.1/rides-android-0.5.2.aar/ead267c3b3940268b9c43fbf243109e1/AndroidManifest.xml:23:1-43:12
 MERGED from [io.github.ranga543:yelp-fusion-client:0.1.4] /Users/young/.gradle/caches/transforms-1/files-1.1/yelp-fusion-client-0.1.4.aar/236a68b9336a9cc19a60ea0b23f498b8/AndroidManifest.xml:2:1-17:12
@@ -62,20 +62,20 @@ MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/young/.gradle/ca
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/young/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/0224f5b81832086263b272ae83c28157/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/young/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/ad4b15cee12cd7b01069a71056c94158/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.0] /Users/young/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/e8ca3f6071bb8f89e4c10fedd521b478/AndroidManifest.xml:17:1-22:12
-INJECTED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:2:1-65:12
-INJECTED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:2:1-65:12
-INJECTED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:2:1-65:12
+INJECTED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:2:1-67:12
+INJECTED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:2:1-67:12
+INJECTED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:2:1-67:12
 	package
 		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:3:5-38
 		INJECTED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml
-		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:2:1-65:12
+		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:2:1-67:12
 		INJECTED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml
-		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:2:1-65:12
+		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:2:1-67:12
 		INJECTED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:2:11-69
@@ -112,7 +112,7 @@ MERGED from [com.uber.sdk:core-android:0.5.2] /Users/young/.gradle/caches/transf
 	android:name
 		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:11:22-76
 application
-ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:13:5-63:19
+ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:13:5-65:19
 MERGED from [com.uber.sdk:rides-android:0.5.2] /Users/young/.gradle/caches/transforms-1/files-1.1/rides-android-0.5.2.aar/ead267c3b3940268b9c43fbf243109e1/AndroidManifest.xml:32:5-41:19
 MERGED from [com.uber.sdk:rides-android:0.5.2] /Users/young/.gradle/caches/transforms-1/files-1.1/rides-android-0.5.2.aar/ead267c3b3940268b9c43fbf243109e1/AndroidManifest.xml:32:5-41:19
 MERGED from [io.github.ranga543:yelp-fusion-client:0.1.4] /Users/young/.gradle/caches/transforms-1/files-1.1/yelp-fusion-client-0.1.4.aar/236a68b9336a9cc19a60ea0b23f498b8/AndroidManifest.xml:11:5-15:19
@@ -186,85 +186,87 @@ MERGED from [com.squareup.picasso:picasso:2.71828] /Users/young/.gradle/caches/t
 	android:theme
 		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:19:9-40
 activity#cs591e1_sp19.eatogether.OnGoingActivity
-ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:20:9-62
+ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:20:9-22:46
+	android:label
+		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:22:13-34
 	android:name
-		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:20:19-50
+		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:21:13-44
 activity#cs591e1_sp19.eatogether.MainActivity
-ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:21:9-27:20
+ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:23:9-29:20
 	android:name
-		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:21:19-47
+		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:23:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:22:13-26:29
+ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:24:13-28:29
 action#android.intent.action.MAIN
-ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:23:17-69
+ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:25:17-69
 	android:name
-		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:23:25-66
+		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:25:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:25:17-77
+ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:27:17-77
 	android:name
-		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:25:27-74
+		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:27:27-74
 activity#cs591e1_sp19.eatogether.LoginActivity
-ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:28:9-51
+ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:30:9-51
 	android:name
-		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:28:19-48
+		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:30:19-48
 meta-data#com.google.android.geo.API_KEY
-ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:37:9-39:71
+ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:39:9-41:71
 	android:value
-		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:39:13-68
+		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:41:13-68
 	android:name
-		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:38:13-58
+		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:40:13-58
 activity#cs591e1_sp19.eatogether.MapsActivity
-ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:41:9-43:59
+ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:43:9-45:59
 	android:label
-		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:43:13-56
+		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:45:13-56
 	android:name
-		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:42:13-41
+		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:44:13-41
 activity#cs591e1_sp19.eatogether.RestaurantSearch
-ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:44:9-46:38
+ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:46:9-48:38
 	android:label
-		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:46:13-35
+		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:48:13-35
 	android:name
-		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:45:13-45
+		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:47:13-45
 activity#cs591e1_sp19.eatogether.RestaurantPost
-ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:47:9-49:42
+ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:49:9-51:42
 	android:label
-		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:49:13-39
+		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:51:13-39
 	android:name
-		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:48:13-43
+		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:50:13-43
 activity#cs591e1_sp19.eatogether.WishList
-ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:50:9-52:40
+ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:52:9-54:40
 	android:label
-		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:52:13-37
+		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:54:13-37
 	android:name
-		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:51:13-37
+		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:53:13-37
 activity#cs591e1_sp19.eatogether.RestaurantReview
-ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:53:9-55:51
+ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:55:9-57:51
 	android:label
-		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:55:13-48
+		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:57:13-48
 	android:name
-		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:54:13-45
+		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:56:13-45
 activity#cs591e1_sp19.eatogether.NewPost
-ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:56:9-58:40
+ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:58:9-60:40
 	android:label
-		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:58:13-37
+		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:60:13-37
 	android:name
-		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:57:13-36
+		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:59:13-36
 activity#cs591e1_sp19.eatogether.MessageActivity
-ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:59:9-53
-	android:name
-		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:59:19-50
-activity#cs591e1_sp19.eatogether.ListOfChatsActivity
-ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:60:9-57
-	android:name
-		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:60:19-54
-activity#cs591e1_sp19.eatogether.ProfileActivity
 ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:61:9-53
 	android:name
 		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:61:19-50
-activity#cs591e1_sp19.eatogether.ProfileChangeActivity
-ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:62:9-59
+activity#cs591e1_sp19.eatogether.ListOfChatsActivity
+ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:62:9-57
 	android:name
-		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:62:19-56
+		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:62:19-54
+activity#cs591e1_sp19.eatogether.ProfileActivity
+ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:63:9-53
+	android:name
+		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:63:19-50
+activity#cs591e1_sp19.eatogether.ProfileChangeActivity
+ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:64:9-59
+	android:name
+		ADDED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml:64:19-56
 uses-sdk
 INJECTED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/young/Desktop/NullPointException/EaTogether/app/src/main/AndroidManifest.xml
