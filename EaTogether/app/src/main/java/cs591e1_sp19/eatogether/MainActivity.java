@@ -98,5 +98,7 @@ public class MainActivity extends AppCompatActivity {
         db.child(newKey).child("email").setValue(emailS);
         db.child(newKey).child("name").setValue(nameS);
         db.child(newKey).child("password").setValue(passwordS);
+        db.child(newKey).child("user_rating").setValue("5.0");
+        db.child(newKey).child("rating_amount").setValue("0");
     }
 }

@@ -149,19 +149,20 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
 
         userdb.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+            public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
                 user_name.setText(dataSnapshot.child(partner_id).child("name").getValue(String.class));
                 user_rating.setRating(Float.parseFloat(dataSnapshot.child(AppState.userID).child("rating").getValue(String.class)));
 
                 user_avatar.setImageResource(R.drawable.logo_login2);
 
-                final String usr_name = user_name.getText().toString();
 
 
                 finish_btn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        openRatingDialog(usr_name, R.drawable.logo_login2);
+                        openRatingDialog(user_name.getText().toString(), R.drawable.logo_login2);
+
+
                     }
                 });
             }
@@ -248,7 +249,7 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
         rating_dialog.setContentView(R.layout.rating_dialog);
 
         rating_dialog.setTitle("Rating For Your Partner");
-        RatingBar ratingBar = (RatingBar) rating_dialog.findViewById(R.id.ratingBar);
+        final RatingBar ratingBar = (RatingBar) rating_dialog.findViewById(R.id.ratingBar);
         TextView name = (TextView) rating_dialog.findViewById(R.id.parner_name);
         ImageView avatar = (ImageView) rating_dialog.findViewById(R.id.partner_avatar);
         Button finish = (Button) rating_dialog.findViewById(R.id.rating_finish);
@@ -260,7 +261,7 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
         ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
-
+                ratingBar.setRating(v);
             }
         });
 
@@ -269,9 +270,25 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
         finish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                System.out.println(">>>>>>>>>>>>>. ratingbar: " + ratingBar.getRating());
+                AppState.userRating =  (AppState.userRating * AppState.ratingAmount + ratingBar.getRating() ) / (1 + AppState.ratingAmount);
+                AppState.ratingAmount += 1;
+
+                System.out.println(">>>>>>>>>>>>>. ratingbar: " +  AppState.userRating);
+                System.out.println(">>>>>>>>>>>>>. amount: " +  AppState.ratingAmount);
+
+                
+                userdb.child(partner_id).child("rating_amount").setValue(AppState.ratingAmount);
+                userdb.child(partner_id).child("user_rating").setValue(AppState.userRating);
+
                 rating_dialog.cancel();
             }
         });
+
+        System.out.println(">>>>>>>>>>>>>. ratingbar: " + ratingBar.getRating());
+
+
 
     }
 

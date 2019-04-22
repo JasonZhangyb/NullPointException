@@ -25,6 +25,9 @@ public class AppState {
 
     public static String userPost;
 
+    public static float userRating;
+    public static int ratingAmount;
+
     public static String otherChatUserId;
     public static String otherChatUserAvatar;
 

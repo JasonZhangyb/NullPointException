@@ -9,6 +9,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatDialog;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -159,6 +160,8 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                         AppState.isLoggedIn = true;
                         AppState.userID = userSnapShot.getKey();
                         AppState.userName = userSnapShot.child("name").getValue().toString();
+                        AppState.userRating = Float.parseFloat(userSnapShot.child("user_rating").getValue().toString());
+                        AppState.ratingAmount = Integer.parseInt(userSnapShot.child("rating_amount").getValue().toString());
                         Log.v("test", AppState.userName);
 
                         if (userSnapShot.hasChild("Post")) {
