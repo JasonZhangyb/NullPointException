@@ -1036,6 +1036,7 @@ id black
 id blocking
 id bottom
 id btm_menu
+id btnDetail
 id btn_finish
 id btn_message
 id btn_new_post

@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -54,17 +55,17 @@ public class WishAdapter extends RecyclerView.Adapter<WishAdapter.MyViewHolder> 
     class MyViewHolder extends RecyclerView.ViewHolder{
         public TextView tvName;
         public ImageView imgRestaurant;
-        public MaterialFavoriteButton fav;
+        public Button btnDetail;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
             tvName = itemView.findViewById(R.id.RestaurantName);
             imgRestaurant = itemView.findViewById(R.id.imgRestaurant);
-            fav = itemView.findViewById(R.id.fav);
+            btnDetail = itemView.findViewById(R.id.btnDetail);
 
 
-            tvName.setOnClickListener(new View.OnClickListener() {
+            btnDetail.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
@@ -141,7 +142,7 @@ public class WishAdapter extends RecyclerView.Adapter<WishAdapter.MyViewHolder> 
             });
 
 
-            fav.setFavorite(true);
+
         }
     }
 
