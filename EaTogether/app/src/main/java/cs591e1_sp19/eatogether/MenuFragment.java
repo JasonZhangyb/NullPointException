@@ -27,6 +27,7 @@ public class MenuFragment extends Fragment {
     private TextView txMessage;
     private TextView txEvent;
     private TextView txMe;
+    private int count=0;
 
     @Nullable
     @Override
@@ -74,30 +75,39 @@ public class MenuFragment extends Fragment {
             @Override
             public void onClick(View v){
                 //Toast.makeText(getActivity(),"Event!",Toast.LENGTH_SHORT).show();
+
+
                 FirebaseDatabase.getInstance().getReference().child("Users").child(AppState.userID)
                         .addListenerForSingleValueEvent(new ValueEventListener() {
-                                                            @Override
-                                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                                                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                                                                    if (snapshot.getKey().equals("Ongoing")){
-                                                                        Intent intent = new Intent(getActivity(), OnGoingActivity.class);
-                                                                        startActivity(intent);
-                                                                        break;
-                                                                    }
-                                                                    else{
-                                                                        Intent intent = new Intent(getActivity(), NoOngingEventNotice.class);
-                                                                        startActivity(intent);
-                                                                        break;
-                                                                    }
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                                    if (snapshot.getKey().equals("Ongoing")){
+                                        Intent intent = new Intent(getActivity(), OnGoingActivity.class);
+                                        startActivity(intent);
+                                        count = 1;
 
-                                                                }
-                                                            }
+                                    }
 
-                                                            @Override
-                                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+                                }
+                                if (count==0){
 
-                                                            }
-                                                        });
+                                    Intent intent = new Intent(getActivity(), NoOngingEventNotice.class);
+                                    startActivity(intent);
+                                    System.out.println("hihhhhhh");
+
+
+                                }
+                            }
+
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                            }
+                        });
+
+
 
                 Map.setImageResource(R.drawable.icon_01);
                 Message.setImageResource(R.drawable.icon_02);
@@ -159,22 +169,30 @@ public class MenuFragment extends Fragment {
                                     if (snapshot.getKey().equals("Ongoing")){
                                         Intent intent = new Intent(getActivity(), OnGoingActivity.class);
                                         startActivity(intent);
-                                        break;
-                                    }
-                                    else{
-                                        Intent intent = new Intent(getActivity(), NoOngingEventNotice.class);
-                                        startActivity(intent);
-                                        break;
+                                        count = 1;
+
                                     }
 
                                 }
+                                if (count==0){
+
+                                    Intent intent = new Intent(getActivity(), NoOngingEventNotice.class);
+                                    startActivity(intent);
+                                    System.out.println("hihhhhhh");
+
+
+                                }
                             }
+
 
                             @Override
                             public void onCancelled(@NonNull DatabaseError databaseError) {
 
                             }
                         });
+
+
+
 
                 Map.setImageResource(R.drawable.icon_01);
                 Message.setImageResource(R.drawable.icon_02);
