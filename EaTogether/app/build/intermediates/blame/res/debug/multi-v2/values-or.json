@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Jason Zhang\\Desktop\\npe\\NullPointException\\EaTogether\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-or\\values-or.xml",
+            "outputFile": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-or/values-or.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Jason Zhang\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.1.0.aar\\f6e29d0a0b8736466b290efe25416352\\res\\values-or\\values.xml",
+                    "source": "/Users/yuewu/.gradle/caches/transforms-1/files-1.1/play-services-base-16.1.0.aar/9e7afd5f6d3a59fe349dd6be6a257fe7/res/values-or/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Jason Zhang\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-16.2.0.aar\\74f61b6264e23abed1c5ca00ed1e8ec3\\res\\values-or\\values.xml",
+                    "source": "/Users/yuewu/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.2.0.aar/9cf7aebe2ff878ff46d3d46208532673/res/values-or/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
