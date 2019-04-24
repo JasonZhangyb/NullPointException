@@ -64,6 +64,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     //private int click_times = 0;
     //private String marker_id = "";
     private Marker previous_marker;
+    private MarkerOptions restaurant_marker = new MarkerOptions();
     private int count = 0;
     private int set_menu = 0;
 
@@ -100,6 +101,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Firebase.setAndroidContext(this);
         mRef = new Firebase(databaseURL + "Users/" + AppState.userID + "/Nearby/");
 
+
         rll_search= (RelativeLayout) findViewById(R.id.search);
         rest_search = new ImageView(this);
         rest_search.setLayoutParams(new RelativeLayout.LayoutParams(150, 150));
@@ -130,6 +132,30 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         menu_trans.addToBackStack(null);
         menu_trans.commit();
 
+        mRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for(DataSnapshot snapshot : dataSnapshot.getChildren()){
+                    // String data = snapshot.getKey();
+                    String latitude = snapshot.child("location").child("latitude").getValue().toString();
+                    String longitude = snapshot.child("location").child("longitude").getValue().toString();
+                    double loclatitude = Double.parseDouble(latitude);
+                    double loclongitude = Double.parseDouble(longitude);
+                    LatLng restaurant_loca = new LatLng(loclatitude, loclongitude);
+                    //MarkerOptions restaurant_marker = new MarkerOptions();
+                    restaurant_marker.title(snapshot.child("name").getValue().toString());
+                    restaurant_marker.position(restaurant_loca);
+                    mMap.addMarker(restaurant_marker);
+
+                }
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
+
     }
 
 
@@ -148,27 +174,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
-
-        mRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for(DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    // String data = snapshot.getKey();
-                    LatLng restaurant_loca = new LatLng(snapshot.child("location").child("latitude").getValue(Double.class), snapshot.child("location").child("longitude").getValue(Double.class));
-                    MarkerOptions restaurant_marker = new MarkerOptions();
-                    restaurant_marker.title(snapshot.child("name").getValue(String.class));
-                    restaurant_marker.position(restaurant_loca);
-                    mMap.addMarker(restaurant_marker);
-
-                }
-            }
-
-            @Override
-            public void onCancelled(FirebaseError firebaseError) {
-
-            }
-        });
 
         mMap.moveCamera(CameraUpdateFactory.newLatLng(current_loca));
 
@@ -269,18 +274,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     @Override
 
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        System.out.println("I'm here!!!!!!!!!");
                         for(DataSnapshot snapshot : dataSnapshot.getChildren()){
                             String data = snapshot.child("name").getValue(String.class);
                             if(data.equals(marker.getTitle())){
-                                System.out.println("I'm here!!!!!!!!!");
                                 rest_id = snapshot.getKey();
                                 price = snapshot.child("price").getValue(String.class);
                                 rating = snapshot.child("rating").getValue(float.class);
                                 info = snapshot.child("type").child("0").child("title").getValue(String.class);
-                                System.out.println("!!!!!!!!!!!! " + price + " " + rating  + " "+ info);
 
-                                //send data to
 
                                 Bundle bundle = new Bundle();
                                 bundle.putString("rest_name", marker.getTitle());

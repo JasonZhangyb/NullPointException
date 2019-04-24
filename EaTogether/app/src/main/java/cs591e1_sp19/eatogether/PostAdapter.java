@@ -63,25 +63,18 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
     public void onBindViewHolder(@NonNull final PostAdapter.MyViewHolder myViewHolder, int i) {
         final PostModel post = posts.get(i);
 
-        myViewHolder.user_name.setText(post.user);
+        myViewHolder.user_name.setText(post.user_name);
         myViewHolder.user_locale.setText(post.country + ", " + post.language);
         myViewHolder.time_period.setText(post.time1 + " - " + post.time2);
         myViewHolder.user_note.setText(post.note);
         Picasso.get().load(post.avatar).into(myViewHolder.user_avatar);
 
 
-        if (AppState.userPost == post.postID) {
-            myViewHolder.msg_button.setText("DELETE");
-        } else {
-            Log.v("test", post.postID);
-            myViewHolder.msg_button.setText("MESSAGE");
-        }
-
 
         myViewHolder.msg_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (AppState.userPost == post.postID){
+                /*if (AppState.userPost == post.postID){
                     final FirebaseDatabase database = FirebaseDatabase.getInstance();
                     DatabaseReference ref = database.getReference("Posts")
                             .child(post.restaurant)
@@ -96,17 +89,17 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
                     i.putExtra("rest_id", post.restaurant);
                     v.getContext().startActivity(i);
 
-                } else {
-                    Intent i = new Intent(v.getContext(), MessageActivity.class);
-                    //i.putExtra("otherUserId", post.user);
-                    //i.putExtra("otherUserAvatar", post.avatar);
-                    i.putExtra("rest_id", post.restaurant);
-                    i.putExtra("post_id", post.postID);
-                    AppState.otherChatUserAvatar = post.avatar;
-                    AppState.otherChatUserId = post.user;
+                }*/
 
-                    v.getContext().startActivity(i);
-                }
+                Intent i = new Intent(v.getContext(), MessageActivity.class);
+                //i.putExtra("otherUserId", post.user);
+                //i.putExtra("otherUserAvatar", post.avatar);
+                i.putExtra("rest_id", post.restaurant_id);
+                i.putExtra("post_id", post.post_id);
+                AppState.otherChatUserAvatar = post.avatar;
+                AppState.otherChatUserId = post.user_name;
+
+                v.getContext().startActivity(i);
             }
         });
     }

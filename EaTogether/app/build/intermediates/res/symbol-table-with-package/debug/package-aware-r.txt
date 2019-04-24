@@ -1160,6 +1160,7 @@ id listMode
 id list_item
 id loginButton
 id loginPassword
+id logout
 id lstView
 id lstView_review
 id lyftHotPink
@@ -1177,6 +1178,7 @@ id message
 id middle
 id mini
 id multiply
+id my_posts
 id navigation_dashboard
 id navigation_header_container
 id navigation_home
@@ -1211,6 +1213,7 @@ id progress_horizontal
 id radio
 id ratingBar
 id rating_finish
+id recView_my_post
 id recView_post
 id recyclerView
 id recyclerViewHolder
@@ -1395,6 +1398,7 @@ layout activity_login
 layout activity_main
 layout activity_maps
 layout activity_message
+layout activity_my_posts
 layout activity_new_post
 layout activity_on_going
 layout activity_profile

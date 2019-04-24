@@ -44,6 +44,24 @@
             android:background="@color/colorPrimary"
             android:text="Profile change"/>
 
+        <Button
+            android:id="@+id/my_posts"
+            android:layout_width="145sp"
+            android:layout_height="45sp"
+            android:layout_marginTop="15sp"
+            android:background="@color/colorPrimary"
+            android:text="My Posts"
+            android:textAllCaps="true" />
+
+        <Button
+            android:id="@+id/logout"
+            android:textAllCaps="true"
+            android:layout_marginTop="15sp"
+            android:layout_width="145sp"
+            android:layout_height="45sp"
+            android:background="@color/colorPrimary"
+            android:text=" Log out" />
+
     </LinearLayout>
 
 </LinearLayout>

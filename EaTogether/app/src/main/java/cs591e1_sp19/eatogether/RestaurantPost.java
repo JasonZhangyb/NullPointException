@@ -155,11 +155,10 @@ public class RestaurantPost extends AppCompatActivity {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                               //System.out.println(snapshot.getKey());
-                               // System.out.println(business.getId());
+
                                 if (business.getId().equals( snapshot.getKey())){
                                     favorite.setFavorite(true);
-                                    //System.out.println("congs");
+
                                 }
                             }
                         }
@@ -170,34 +169,19 @@ public class RestaurantPost extends AppCompatActivity {
                         }
                     });
 
-            /*DatabaseReference ref_user = database.getInstance().getReference("Users");
-            ref_user.child(AppState.userID).addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot snapshot) {
-                    if (snapshot.hasChild("Post")) {
-                        String res_id = getIntent().getStringExtra("rest_id");
-                        AppState.userPost = snapshot.child("Post").child(res_id).getValue().toString();
-                        Log.v("test",AppState.userPost);
-                    } else {
-                        AppState.userPost = null;
-                        Log.v("test", "null");
-                    }
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                }
-            });*/
-
             ref.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     for (DataSnapshot dataSnapshot1: dataSnapshot.getChildren())
                     {
                         PostModel r = dataSnapshot1.getValue(PostModel.class);
-                        System.out.println(r);
-                        posts_lst.add(r);
+                        if (!AppState.userID.equals(r.user_id)) {
+                            Log.v("test_post_app", AppState.userID);
+                            Log.v("test_post_db", r.user_id);
+                            Log.v("test_post", r.user_name);
+                            posts_lst.add(r);
+                        }
+
                     }
                     posts_view = findViewById(R.id.recView_post);
                     posts_view.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
@@ -217,14 +201,12 @@ public class RestaurantPost extends AppCompatActivity {
             post.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (AppState.userPost != null) {
-                        Toast.makeText(getApplicationContext(),"You can't have more than 1 post!", Toast.LENGTH_SHORT).show();
-                    } else {
-                        Intent i = new Intent(getApplicationContext(), NewPost.class);
-                        i.putExtra("resID", business.getId());
-                        i.putExtra("resName", business.getName());
-                        startActivity(i);
-                    }
+
+                    Intent i = new Intent(getApplicationContext(), NewPost.class);
+                    i.putExtra("resID", business.getId());
+                    i.putExtra("resName", business.getName());
+                    startActivity(i);
+
                 }
             });
 

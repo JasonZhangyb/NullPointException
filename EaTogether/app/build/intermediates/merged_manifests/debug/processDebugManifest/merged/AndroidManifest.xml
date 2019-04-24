@@ -37,6 +37,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="cs591e1_sp19.eatogether.MyPosts" />
         <activity
             android:name="cs591e1_sp19.eatogether.OnGoingActivity"
             android:label="Event" />
@@ -199,6 +200,11 @@
             android:name="com.squareup.picasso.PicassoProvider"
             android:authorities="cs591e1_sp19.eatogether.com.squareup.picasso"
             android:exported="false" />
+
+        <activity
+            android:name="com.jakewharton.processphoenix.ProcessPhoenix"
+            android:process=":phoenix"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
     </application>
 
 </manifest>

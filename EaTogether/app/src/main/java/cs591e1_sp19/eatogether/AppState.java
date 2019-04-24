@@ -23,8 +23,6 @@ public class AppState {
     public static String userID;
     public static String userName;
 
-    public static String userPost;
-
     public static float userRating;
     public static int ratingAmount;
 
@@ -34,14 +32,13 @@ public class AppState {
     public static DatabaseReference userDatabase;
     public static DatabaseReference chatDatabase;
 
-    public static String current_lati = "";
-    public static String current_longi = "";
+    public static String current_lati = "37.421998333333335";
+    public static String current_longi = "-122.08400000000002";
 
     // Private constructor to enforce singleton.
     private AppState() {
         isLoggedIn = false;
         userID = null;
-        userPost = null;
 
         otherChatUserId = null;
         otherChatUserAvatar = null;

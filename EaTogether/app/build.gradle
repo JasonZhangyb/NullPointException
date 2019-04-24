@@ -93,6 +93,9 @@ dependencies {
 
     // Yelp Api - Restaurant Lookup
     implementation 'io.github.ranga543:yelp-fusion-client:0.1.4'
+
+    // Process Phoenix
+    implementation 'com.jakewharton:process-phoenix:2.0.0'
 }
 
 apply plugin: 'com.google.gms.google-services'

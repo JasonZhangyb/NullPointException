@@ -120,7 +120,9 @@ public class MenuFragment extends Fragment {
         Me.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Toast.makeText(getActivity(),"Me!",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity(),"Me!",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), ProfileActivity.class);
+                startActivity(intent);
                 Map.setImageResource(R.drawable.icon_01);
                 Message.setImageResource(R.drawable.icon_02);
                 Event.setImageResource(R.drawable.icon_03);

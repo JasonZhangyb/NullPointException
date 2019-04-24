@@ -77,7 +77,8 @@ public class NewPost extends AppCompatActivity {
                 if (cb_female.isChecked())gender = "female";
                 DatabaseReference ref_id = ref.child(res_id);
                 DatabaseReference ref_post = ref_id.push();
-                ref_post.setValue(new PostModel(AppState.userName,
+                ref_post.setValue(new PostModel(AppState.userID,
+                        AppState.userName,
                         "https://firebasestorage.googleapis.com/v0/b/eatogether-cs591.appspot.com/o/avatar_7_cat.jpg?alt=media&token=b983e764-0c75-483e-b74f-c2388aee972b",
                         gender,
                         country.getSelectedItem().toString(),
@@ -87,10 +88,8 @@ public class NewPost extends AppCompatActivity {
                         note.getText().toString(),
                         res_id,
                         ref_post.getKey()));
-                AppState.userPost = ref_post.getKey();
-                DatabaseReference ref_user = database.getReference("Users").child(AppState.userID).child("Post");
-                ref_user.child("PostID").setValue(ref_post.getKey());
-                ref_user.child("ResID").setValue(res_id);
+                DatabaseReference ref_user = database.getReference("Users").child(AppState.userID).child("Posts");
+                ref_user.child(ref_post.getKey()).setValue(res_id);
                 Intent i = new Intent(getApplicationContext(),MapsActivity.class);
                 startActivity(i);
             }

@@ -145,7 +145,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     private void logIn(final String email, final String password) {
         FirebaseDatabase mref = FirebaseDatabase.getInstance();
 
-        DatabaseReference db = mref
+        final DatabaseReference db = mref
                 .getReference()
                 .child("Users");
 
@@ -164,12 +164,13 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                         AppState.ratingAmount = Integer.parseInt(userSnapShot.child("rating_amount").getValue().toString());
                         Log.v("test", AppState.userName);
 
-                        if (userSnapShot.hasChild("Post")) {
+                        /*if (userSnapShot.hasChild("Post")) {
                             AppState.userPost = userSnapShot.child("Post").child("PostID").getValue().toString();
                             Log.v("test_login", AppState.userPost);
                         } else {
                             AppState.userPost = null;
-                        }
+                        }*/
+
 
                     }
                 }
@@ -182,6 +183,8 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
                     if(getLocation()){
 
+                        Log.v("test_logout", current_lati);
+                        Log.v("test_logout", current_longi);
                         params.put("latitude", current_lati);
                         params.put("longitude", current_longi);
                         params.put("radius", "3000");
