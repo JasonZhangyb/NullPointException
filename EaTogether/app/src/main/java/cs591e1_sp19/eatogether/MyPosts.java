@@ -32,13 +32,15 @@ public class MyPosts extends AppCompatActivity {
 
     ArrayList<PostModel> posts_lst;
 
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference ref_posts = database.getReference("Posts");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_posts);
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference ref_posts = database.getReference("Posts");
+
 
         posts_lst = new ArrayList<>();
 
@@ -84,6 +86,7 @@ class MyPostsAdapter extends RecyclerView.Adapter<MyPostsAdapter.MyViewHolder> {
     class MyViewHolder extends RecyclerView.ViewHolder{
         TextView user_name, user_locale, time_period, user_note;
         ImageView user_avatar;
+        Button msg_btn;
 
         MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -93,6 +96,7 @@ class MyPostsAdapter extends RecyclerView.Adapter<MyPostsAdapter.MyViewHolder> {
             time_period = itemView.findViewById(R.id.time_created);
             user_note = itemView.findViewById(R.id.user_comment);
             user_avatar = itemView.findViewById(R.id.user_avatar);
+            msg_btn = itemView.findViewById(R.id.btn_message);
 
         }
     }
@@ -100,7 +104,7 @@ class MyPostsAdapter extends RecyclerView.Adapter<MyPostsAdapter.MyViewHolder> {
     @NonNull
     @Override
     public MyPostsAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View v = LayoutInflater.from(context).inflate(R.layout.listview_review_row,viewGroup, false);
+        View v = LayoutInflater.from(context).inflate(R.layout.recyclerview_posts_row,viewGroup, false);
         return  new MyViewHolder(v);
     }
 
@@ -112,7 +116,21 @@ class MyPostsAdapter extends RecyclerView.Adapter<MyPostsAdapter.MyViewHolder> {
         myViewHolder.user_locale.setText(post.country + ", " + post.language);
         myViewHolder.time_period.setText(post.time1 + " - " + post.time2);
         myViewHolder.user_note.setText(post.note);
+        myViewHolder.msg_btn.setText("DELETE");
         Picasso.get().load(post.avatar).into(myViewHolder.user_avatar);
+
+        myViewHolder.msg_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference ref_posts = database.getReference("Posts");
+                DatabaseReference ref_users = database.getReference("Users");
+                ref_posts.child(post.restaurant_id).child(post.post_id).removeValue();
+                ref_users.child(AppState.userID).child("Posts").child(post.post_id).removeValue();
+                Intent i = new Intent(view.getContext(), MyPosts.class);
+                view.getContext().startActivity(i);
+            }
+        });
 
     }
 

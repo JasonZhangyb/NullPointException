@@ -67,29 +67,12 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
         myViewHolder.user_locale.setText(post.country + ", " + post.language);
         myViewHolder.time_period.setText(post.time1 + " - " + post.time2);
         myViewHolder.user_note.setText(post.note);
+        myViewHolder.msg_button.setText("MESSAGE");
         Picasso.get().load(post.avatar).into(myViewHolder.user_avatar);
-
-
 
         myViewHolder.msg_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*if (AppState.userPost == post.postID){
-                    final FirebaseDatabase database = FirebaseDatabase.getInstance();
-                    DatabaseReference ref = database.getReference("Posts")
-                            .child(post.restaurant)
-                            .child(post.postID);
-                    ref.removeValue();
-                    DatabaseReference ref_user = database.getReference("Users")
-                            .child(AppState.userID)
-                            .child("Post");
-                    ref_user.removeValue();
-                    AppState.userPost = null;
-                    Intent i = new Intent(v.getContext(), RestaurantPost.class);
-                    i.putExtra("rest_id", post.restaurant);
-                    v.getContext().startActivity(i);
-
-                }*/
 
                 Intent i = new Intent(v.getContext(), MessageActivity.class);
                 //i.putExtra("otherUserId", post.user);
