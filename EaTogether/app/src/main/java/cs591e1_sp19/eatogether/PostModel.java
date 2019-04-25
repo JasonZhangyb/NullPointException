@@ -3,8 +3,7 @@ package cs591e1_sp19.eatogether;
 public class PostModel {
 
     public String user_id, user_name;
-    public String avatar;
-    public String gender;
+    public String avatar, gender;
     public String country, language;
     public String time1, time2;
     public String note;

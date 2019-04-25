@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="@dimen/cardview_default_elevation"
-    android:clickable="true"
-    android:focusable="true"
+    android:descendantFocusability="blocksDescendants"
     android:foreground="?android:attr/selectableItemBackground"
     app:cardCornerRadius="@dimen/cardview_default_radius"
     android:elevation="@dimen/cardview_default_elevation">
@@ -23,13 +23,14 @@
             android:layout_weight="1">
 
             <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/rowImageView"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:paddingLeft="10dp"
+                android:paddingTop="5dp"
                 android:paddingRight="10dp"
                 android:paddingBottom="5dp"
-                android:paddingTop="5dp"
-                android:id="@+id/rowImageView"/>
+                tools:src="@tools:sample/avatars" />
 
         </LinearLayout>
 

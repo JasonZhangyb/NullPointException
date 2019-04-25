@@ -13,9 +13,17 @@ public class MessageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_message);
 
+        String post_id = getIntent().getStringExtra("post_id");
+        String rest_id = getIntent().getStringExtra("rest_id");
+
+        Bundle bundle = new Bundle();
+        bundle.putString("post_id", post_id);
+        bundle.putString("res_id", rest_id);
+
         // Add fragment to FragmentManager and attach it to our activity
         fragmentManager = getSupportFragmentManager();
         msgFrag = new MessageFragment();
+        msgFrag.setArguments(bundle);
 
         fragmentManager
                 .beginTransaction()

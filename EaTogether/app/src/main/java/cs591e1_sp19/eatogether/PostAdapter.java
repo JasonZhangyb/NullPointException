@@ -74,13 +74,17 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(v.getContext(), MessageActivity.class);
+                Intent i = new Intent(v.getContext(), Chat.class);
                 //i.putExtra("otherUserId", post.user);
                 //i.putExtra("otherUserAvatar", post.avatar);
                 i.putExtra("rest_id", post.restaurant_id);
                 i.putExtra("post_id", post.post_id);
+                i.putExtra("creator_avatar", post.avatar);
+                i.putExtra("creator_id", post.user_id);
+                i.putExtra("creator_name", post.user_name);
+                i.putExtra("restaurant_name", post.restaurant_name);
                 AppState.otherChatUserAvatar = post.avatar;
-                AppState.otherChatUserId = post.user_name;
+                AppState.otherChatUserId = post.user_id;
 
                 v.getContext().startActivity(i);
             }

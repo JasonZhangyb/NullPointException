@@ -9,7 +9,8 @@
         app:showAsAction="never"/>
     <item
         android:id="@+id/map"
+        android:icon="@drawable/ic_home_black_24dp"
         android:title="Map"
-        app:showAsAction="never"/>
+        app:showAsAction="ifRoom" />
 
 </menu>

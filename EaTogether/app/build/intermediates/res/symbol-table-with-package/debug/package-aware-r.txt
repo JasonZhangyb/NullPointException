@@ -1042,10 +1042,12 @@ id btm_menu
 id btnDetail
 id btnSearch
 id btn_finish
+id btn_inv
 id btn_message
 id btn_new_post
 id btn_post
 id btn_search
+id btn_send
 id business_img
 id business_name
 id business_rating
@@ -1134,6 +1136,7 @@ id icon_group
 id icon_only
 id ifRoom
 id image
+id imageView
 id imageView2
 id img1
 id img2
@@ -1163,6 +1166,7 @@ id loginButton
 id loginPassword
 id logout
 id lstView
+id lstView_chats_list
 id lstView_review
 id lyftHotPink
 id lyftLauncher
@@ -1214,6 +1218,7 @@ id progress_horizontal
 id radio
 id ratingBar
 id rating_finish
+id recView_chat
 id recView_my_post
 id recView_post
 id recyclerView
@@ -1290,6 +1295,8 @@ id text
 id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
+id textView
+id textView2
 id text_input_password_toggle
 id text_tag
 id textinput_counter
@@ -1320,6 +1327,7 @@ id txt_brunch
 id txt_country
 id txt_dinner
 id txt_female
+id txt_input
 id txt_language
 id txt_lunch
 id txt_male
@@ -1394,6 +1402,8 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_chat
+layout activity_chats_list
 layout activity_list_of_chats
 layout activity_login
 layout activity_main
@@ -1447,6 +1457,7 @@ layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
 layout rating_dialog
+layout recyclerview_chats_list_row
 layout recyclerview_posts_row
 layout restaurant_item
 layout select_dialog_item_material

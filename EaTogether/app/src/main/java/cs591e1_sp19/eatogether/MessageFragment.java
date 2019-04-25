@@ -34,6 +34,7 @@ public class MessageFragment extends Fragment {
     private DatabaseReference userDatabase;
     private ChildEventListener childEventListener;
     private DatabaseReference invDatabase;
+    private DatabaseReference chatsDatabase;
 
     private Button sendButton;
     private EditText inputEditText;
@@ -80,6 +81,9 @@ public class MessageFragment extends Fragment {
 
         String chatKey = generateChatKey(currentUid, otherUid);
 
+        String post_id = getArguments().getString("post_id");
+        String rest_id = getArguments().getString("rest_id");
+
         // Get a reference to the Firebase DBs.
         msgDatabase = FirebaseDatabase
                 .getInstance()
@@ -101,6 +105,9 @@ public class MessageFragment extends Fragment {
                 .child(chatKey)
                 .child("Chat")
                 .child("invite");
+
+        //chatsDatabase = FirebaseDatabase.getInstance().getReference("Chats");
+        //chatsDatabase.child(chatKey).child(post_id).setValue(rest_id);
 
         invDatabase.setValue(false);
 
