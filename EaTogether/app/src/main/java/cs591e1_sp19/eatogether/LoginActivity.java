@@ -162,6 +162,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                         AppState.userName = userSnapShot.child("name").getValue().toString();
                         AppState.userRating = Float.parseFloat(userSnapShot.child("user_rating").getValue().toString());
                         AppState.ratingAmount = Integer.parseInt(userSnapShot.child("rating_amount").getValue().toString());
+                        AppState.userAvatar = userSnapShot.child("avatar").getValue().toString();
                         Log.v("test", AppState.userName);
 
                         /*if (userSnapShot.hasChild("Post")) {

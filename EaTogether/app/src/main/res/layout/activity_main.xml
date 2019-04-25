@@ -6,61 +6,83 @@
     android:gravity="center"
     android:background="#FFF">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="200sp"
-        android:layout_height="200sp"
-        app:srcCompat="@drawable/logo_login2" />
-
-    <EditText
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:layout_margin="15dp"
-        android:hint="E-mail"
-        android:id="@+id/userEmail" />
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/userName"
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/logo_login2"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="15dp"
-        android:hint="Nickname"
-        android:inputType="textEmailAddress" />
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:orientation="vertical">
 
-    <EditText
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:layout_margin="15dp"
+            android:hint="E-mail"
+            android:id="@+id/userEmail" />
+
+        <EditText
+            android:id="@+id/userName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:hint="Nickname"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:layout_margin="15dp"
+            android:id="@+id/userPassword"
+            android:hint="Password" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:layout_margin="15dp"
-        android:id="@+id/userPassword"
-        android:hint="Password" />
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/userRegisterButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_shape"
+            android:text="Register!"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_gravity="center"/>
 
 
-    <Button
-        android:id="@+id/userRegisterButton"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/btn_shape"
-        android:text="Register!"
-        android:textColor="@color/white"
-        android:textStyle="bold" />
+        <Button
+            android:id="@+id/userLoginButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@null"
+            android:text="Already have an account?"
+            android:textAllCaps="false"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:layout_gravity="center"/>
 
-
-    <Button
-        android:id="@+id/userLoginButton"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:background="@null"
-        android:text="Already has an account?"
-        android:textAllCaps="false"
-        android:textColor="@color/colorAccent"
-        android:textStyle="bold" />
-
-
-
+    </LinearLayout>
 
 </LinearLayout>

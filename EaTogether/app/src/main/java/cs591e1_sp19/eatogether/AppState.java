@@ -22,6 +22,7 @@ public class AppState {
     public static boolean isLoggedIn;
     public static String userID;
     public static String userName;
+    public static String userAvatar;
 
     public static Integer radius;
 
@@ -44,6 +45,7 @@ public class AppState {
         isLoggedIn = false;
         userID = null;
         userName = null;
+        userAvatar = null;
 
         isCreator = null;
 

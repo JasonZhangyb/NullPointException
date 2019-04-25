@@ -127,7 +127,7 @@ public class Chat extends AppCompatActivity {
 
                 DatabaseReference ref = ref_msg.child("msg").push();
 
-                msg = new MsgModel(AppState.userID, AppState.userName,input);
+                msg = new MsgModel(AppState.userID, AppState.userName,input, AppState.userAvatar);
 
                 ref.setValue(msg);
 
@@ -164,6 +164,8 @@ public class Chat extends AppCompatActivity {
 
 
                 }
+
+                lstView_chat.setSelection(chat_adapter.getCount() - 1);
             }
 
             @Override
@@ -244,7 +246,20 @@ class ChatsAdapter extends BaseAdapter {
 
         TextView header = row.findViewById(R.id.rowTextHeader);
         TextView body = row.findViewById(R.id.rowTextBody);
-        ImageView user_avatar = row.findViewById(R.id.rowImageView);
+        final ImageView user_avatar = row.findViewById(R.id.rowImageView);
+
+        // Retrieving sender's user avatar.
+        AppState.getDatabaseReference(AppState.USER_DATABASE).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Picasso.get().load(dataSnapshot.child(msg.sender_id).child("avatar").getValue().toString()).into(user_avatar);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
         header.setText(msg.sender_name);
         body.setText(msg.txt);

@@ -81,7 +81,7 @@ public class NewPost extends AppCompatActivity {
                 DatabaseReference ref_post = ref_id.push();
                 ref_post.setValue(new PostModel(AppState.userID,
                         AppState.userName,
-                        "https://firebasestorage.googleapis.com/v0/b/eatogether-cs591.appspot.com/o/avatar_7_cat.jpg?alt=media&token=b983e764-0c75-483e-b74f-c2388aee972b",
+                        AppState.userAvatar,
                         gender,
                         country.getSelectedItem().toString(),
                         language.getSelectedItem().toString(),

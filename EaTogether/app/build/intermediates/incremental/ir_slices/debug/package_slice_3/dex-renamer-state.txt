@@ -1,4 +1,4 @@
-#Thu Apr 25 13:43:38 EDT 2019
-base.0=C\:\\Users\\Jason\\Desktop\\npe\\NullPointException\\EaTogether\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\3
+#Thu Apr 25 15:44:23 EDT 2019
+base.0=/Users/apple/Desktop/CS591E1/final-project/NullPointException/EaTogether/app/build/intermediates/transforms/dexMerger/debug/3
 path.0=classes.dex
 renamed.0=classes.dex
