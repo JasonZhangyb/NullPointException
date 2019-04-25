@@ -167,7 +167,7 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
             @Override
             public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
                 user_name.setText(dataSnapshot.child(partner_id).child("name").getValue(String.class));
-                user_rating.setRating(Float.parseFloat(dataSnapshot.child(AppState.userID).child("rating").getValue(String.class)));
+                user_rating.setRating(Float.parseFloat(dataSnapshot.child(AppState.userID).child("user_rating").getValue(String.class)));
 
                 user_avatar.setImageResource(R.drawable.logo_login2);
 

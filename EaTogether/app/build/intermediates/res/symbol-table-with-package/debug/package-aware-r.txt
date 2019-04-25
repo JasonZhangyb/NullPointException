@@ -1042,6 +1042,7 @@ id btm_menu
 id btnDetail
 id btnSearch
 id btn_finish
+id btn_info
 id btn_inv
 id btn_message
 id btn_new_post
@@ -1148,6 +1149,10 @@ id imgMessage
 id imgNotice
 id imgRestaurant
 id info
+id info_avatar
+id info_loc
+id info_name
+id info_pref
 id inputEditText
 id invisible
 id inviteButton
@@ -1166,6 +1171,7 @@ id loginButton
 id loginPassword
 id logout
 id lstView
+id lstView_chat
 id lstView_chats_list
 id lstView_review
 id lyftHotPink
@@ -1218,7 +1224,7 @@ id progress_horizontal
 id radio
 id ratingBar
 id rating_finish
-id recView_chat
+id recView_info
 id recView_my_post
 id recView_post
 id recyclerView
@@ -1417,6 +1423,7 @@ layout activity_profilechange
 layout activity_restaurant_post
 layout activity_restaurant_review
 layout activity_restaurant_search
+layout activity_user_info
 layout activity_wish_list
 layout bottom_navi
 layout design_bottom_navigation_item

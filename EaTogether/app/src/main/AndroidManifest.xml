@@ -17,7 +17,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ChatsList"></activity>
+        <activity android:name=".UserInfo"></activity>
+        <activity android:name=".ChatsList" />
         <activity android:name=".Chat" />
         <activity android:name=".MyPosts" />
         <activity

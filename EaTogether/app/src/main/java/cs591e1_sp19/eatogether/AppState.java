@@ -31,6 +31,8 @@ public class AppState {
     public static String otherChatUserId;
     public static String otherChatUserAvatar;
 
+    public static String isCreator;
+
     public static DatabaseReference userDatabase;
     public static DatabaseReference chatDatabase;
 
@@ -42,6 +44,8 @@ public class AppState {
         isLoggedIn = false;
         userID = null;
         userName = null;
+
+        isCreator = null;
 
         radius = 1000;
 

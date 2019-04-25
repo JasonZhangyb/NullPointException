@@ -13,9 +13,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,11 +43,12 @@ public class Chat extends AppCompatActivity {
     ArrayList<MsgModel> msgs;
     HashMap<String, String> guests;
 
-    RecyclerView recView_chat;
+    ListView lstView_chat;
     ChatsAdapter chat_adapter;
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference ref_chats = database.getReference("ChatsAlt");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +58,7 @@ public class Chat extends AppCompatActivity {
         txt_input = findViewById(R.id.txt_input);
         btn_send = findViewById(R.id.btn_send);
         btn_inv = findViewById(R.id.btn_inv);
-        recView_chat = findViewById(R.id.recView_chat);
+        lstView_chat = findViewById(R.id.lstView_chat);
 
         final String post_id = getIntent().getStringExtra("post_id");
         final String rest_id = getIntent().getStringExtra("rest_id");
@@ -87,8 +91,10 @@ public class Chat extends AppCompatActivity {
                     //ref_msg.child("guests").setValue(guests);
 
                 } else {
+
                     ChatModel data = dataSnapshot.child(post_id).getValue(ChatModel.class);
                     ArrayList<MsgModel> old_msgs = new ArrayList<>();
+                    AppState.isCreator = data.creator_id;
                     for(DataSnapshot snapshot : dataSnapshot.child(post_id).child("msg").getChildren()){
                         old_msgs.add(snapshot.getValue(MsgModel.class));
                     }
@@ -125,7 +131,7 @@ public class Chat extends AppCompatActivity {
 
                 ref.setValue(msg);
 
-                recView_chat.setAdapter(null);
+                lstView_chat.setAdapter(null);
 
             }
         });
@@ -140,9 +146,21 @@ public class Chat extends AppCompatActivity {
 
                     msgs.add(msg);
 
-                    recView_chat.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                    lstView_chat = findViewById(R.id.lstView_chat);
                     chat_adapter = new ChatsAdapter(getApplicationContext(), msgs);
-                    recView_chat.setAdapter(chat_adapter);
+                    lstView_chat.setAdapter(chat_adapter);
+                    lstView_chat.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                            Intent intent = new Intent(getApplicationContext(), UserInfo.class);
+                            intent.putExtra("isCreator", AppState.isCreator);
+                            intent.putExtra("resID", rest_id);
+                            intent.putExtra("resName", restaurant_name);
+                            intent.putExtra("postID", post_id);
+                            intent.putExtra("guestID", msgs.get(i).sender_id);
+                            startActivity(intent);
+                        }
+                    });
 
 
                 }
@@ -185,7 +203,7 @@ public class Chat extends AppCompatActivity {
     }
 }
 
-class ChatsAdapter extends RecyclerView.Adapter<ChatsAdapter.MyViewHolder> {
+class ChatsAdapter extends BaseAdapter {
 
     Context context;
     ArrayList<MsgModel> msgs;
@@ -195,42 +213,43 @@ class ChatsAdapter extends RecyclerView.Adapter<ChatsAdapter.MyViewHolder> {
         msgs = p;
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView header, body;
-        ImageView user_avatar;
-
-
-        public MyViewHolder(@NonNull View itemView) {
-            super(itemView);
-
-            header = itemView.findViewById(R.id.rowTextHeader);
-            body = itemView.findViewById(R.id.rowTextBody);
-            user_avatar = itemView.findViewById(R.id.rowImageView);
-
-        }
-    }
-
-    @NonNull
     @Override
-    public ChatsAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View v = LayoutInflater.from(context).inflate(R.layout.message_recycler_row,viewGroup, false);
-        return  new MyViewHolder(v);
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull final ChatsAdapter.MyViewHolder myViewHolder, int i) {
-        final MsgModel msg = msgs.get(i);
-
-        myViewHolder.header.setText(msg.sender_name);
-        myViewHolder.body.setText(msg.txt);
-        //Picasso.get().load().into(myViewHolder.user_avatar);
-
-
-    }
-
-    @Override
-    public int getItemCount() {
+    public int getCount() {
         return msgs.size();
+    }
+
+    @Override
+    public Object getItem(int position) {
+        return msgs.get(position);
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        View row;
+
+        final MsgModel msg = msgs.get(position);
+
+        if (convertView == null){
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            row = inflater.inflate(R.layout.message_recycler_row, parent, false);
+        }
+        else{
+            row = convertView;
+        }
+
+        TextView header = row.findViewById(R.id.rowTextHeader);
+        TextView body = row.findViewById(R.id.rowTextBody);
+        ImageView user_avatar = row.findViewById(R.id.rowImageView);
+
+        header.setText(msg.sender_name);
+        body.setText(msg.txt);
+
+        return row;
     }
 
 }
