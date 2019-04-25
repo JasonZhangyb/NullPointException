@@ -270,9 +270,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 previous_marker = marker;
                 //click_times++;
 
-
-                fragment = new RestaurantInfo();
-
                 //read data from firebase
                 mRef.addValueEventListener(new ValueEventListener() {
 
@@ -281,6 +278,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         for(DataSnapshot snapshot : dataSnapshot.getChildren()){
                             MapModel data = snapshot.getValue(MapModel.class);
+
+
 
                             if(data.res_name.equals(marker.getTitle())){
                                 rest_id = snapshot.getKey();
@@ -294,17 +293,24 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                 bundle.putString("rest_price", price);
                                 bundle.putFloat("rest_rating", rating);
                                 bundle.putString("rest_info", info);
+
+
+                                fragmentManager = getSupportFragmentManager();
+                                Fragment old_frag = fragmentManager.findFragmentByTag("marker");
+
+                                if (old_frag != null) {
+                                    fragmentManager.beginTransaction().remove(old_frag).commitAllowingStateLoss();
+                                }
+
+                                fragment = new RestaurantInfo();
                                 fragment.setArguments(bundle);
 
                                 fragmentManager = getSupportFragmentManager();
                                 transaction = fragmentManager.beginTransaction();
-                                transaction.add(R.id.fragment, fragment);
+                                transaction.add(R.id.fragment, fragment, "marker");
 
-                                transaction.addToBackStack(null);
-                                transaction.commit();
-
-
-
+                                //transaction.addToBackStack(null);
+                                transaction.commitAllowingStateLoss();
                             }
                         }
                     }

@@ -96,7 +96,6 @@ public class RestaurantSearch extends AppCompatActivity {
         }
 
         if (id == R.id.wish) {
-            Toast.makeText(getBaseContext(), "wishlist", Toast.LENGTH_LONG).show();
             Intent i = new Intent(this, WishList.class);
             startActivity(i);
             return true;

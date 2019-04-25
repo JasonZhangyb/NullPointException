@@ -10,11 +10,14 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -71,6 +74,35 @@ public class MyPosts extends AppCompatActivity {
         });
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+//        return super.onCreateOptionsMenu(menu);   //get rid of default behavior.
+
+        // Inflate the menu; this adds items to the action bar
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) { //open wishlist activity
+
+        int id = item.getItemId();
+
+        if (id == R.id.wish) {
+            Intent i = new Intent(this, WishList.class);
+            startActivity(i);
+            return true;
+        }
+
+        if (id == R.id.map) {
+            Intent i = new Intent(this, MapsActivity.class);
+            startActivity(i);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);  //if none of the above are true, do the default and return a boolean.
+    }
 }
 
 class MyPostsAdapter extends RecyclerView.Adapter<MyPostsAdapter.MyViewHolder> {
@@ -84,18 +116,18 @@ class MyPostsAdapter extends RecyclerView.Adapter<MyPostsAdapter.MyViewHolder> {
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView user_name, user_locale, time_period, user_note;
-        ImageView user_avatar;
+        TextView res_name, user_locale, time_period, user_note;
+        ImageView res_img;
         Button msg_btn;
 
         MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            user_name = itemView.findViewById(R.id.user_name);
+            res_name = itemView.findViewById(R.id.user_name);
             user_locale = itemView.findViewById(R.id.user_rating);
             time_period = itemView.findViewById(R.id.time_created);
             user_note = itemView.findViewById(R.id.user_comment);
-            user_avatar = itemView.findViewById(R.id.user_avatar);
+            res_img = itemView.findViewById(R.id.user_avatar);
             msg_btn = itemView.findViewById(R.id.btn_message);
 
         }
@@ -112,12 +144,12 @@ class MyPostsAdapter extends RecyclerView.Adapter<MyPostsAdapter.MyViewHolder> {
     public void onBindViewHolder(@NonNull final MyPostsAdapter.MyViewHolder myViewHolder, int i) {
         final PostModel post = posts.get(i);
 
-        myViewHolder.user_name.setText(post.user_name);
+        myViewHolder.res_name.setText(post.restaurant_name);
         myViewHolder.user_locale.setText(post.country + ", " + post.language);
         myViewHolder.time_period.setText(post.time1 + " - " + post.time2);
         myViewHolder.user_note.setText(post.note);
         myViewHolder.msg_btn.setText("DELETE");
-        Picasso.get().load(post.avatar).into(myViewHolder.user_avatar);
+        Picasso.get().load(post.restaurant_img).into(myViewHolder.res_img);
 
         myViewHolder.msg_btn.setOnClickListener(new View.OnClickListener() {
             @Override

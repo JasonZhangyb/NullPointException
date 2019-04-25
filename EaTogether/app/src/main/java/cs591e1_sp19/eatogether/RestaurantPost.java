@@ -154,6 +154,8 @@ public class RestaurantPost extends AppCompatActivity {
             //Picasso.get().load(business.getPhotos().get(1)).resize(300,300).into(img2);
             //Picasso.get().load(business.getPhotos().get(2)).resize(300,300).into(img3);
 
+            Log.v("test_loc", Boolean.toString(AppState.userID == null));
+
             FirebaseDatabase.getInstance().getReference().child("Users").child(AppState.userID)
                     .child("Restaurants")
                     .addListenerForSingleValueEvent(new ValueEventListener() {
@@ -211,6 +213,7 @@ public class RestaurantPost extends AppCompatActivity {
                     Intent i = new Intent(getApplicationContext(), NewPost.class);
                     i.putExtra("resID", business.getId());
                     i.putExtra("resName", business.getName());
+                    i.putExtra("resImg", business.getImageUrl());
                     startActivity(i);
 
                 }

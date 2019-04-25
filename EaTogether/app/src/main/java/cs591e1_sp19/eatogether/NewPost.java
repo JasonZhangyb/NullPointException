@@ -20,7 +20,7 @@ import java.util.List;
 public class NewPost extends AppCompatActivity {
 
     DatabaseReference ref;
-    TextView res_name;
+    TextView res_name_txt;
     Spinner time1, am_pm1, time2, am_pm2, age1, age2, country, language;
     CheckBox cb_male;
     CheckBox cb_female;
@@ -36,7 +36,7 @@ public class NewPost extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_post);
 
-        res_name = findViewById(R.id.res_name);
+        res_name_txt = findViewById(R.id.res_name);
         time1 = findViewById(R.id.time1);
         time2 = findViewById(R.id.time2);
         am_pm1 = findViewById(R.id.am_pm1);
@@ -54,7 +54,9 @@ public class NewPost extends AppCompatActivity {
                 this, android.R.layout.simple_spinner_item, age_list);
         age_adapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
 
-        res_name.setText(getIntent().getStringExtra("resName"));
+        final String res_name = getIntent().getStringExtra("resName");
+        final String res_img = getIntent().getStringExtra("resImg");
+        res_name_txt.setText(res_name);
 
         age1 = findViewById(R.id.age1);
         age2 = findViewById(R.id.age2);
@@ -87,6 +89,8 @@ public class NewPost extends AppCompatActivity {
                         time2.getSelectedItem().toString() + am_pm2.getSelectedItem().toString(),
                         note.getText().toString(),
                         res_id,
+                        res_name,
+                        res_img,
                         ref_post.getKey()));
                 DatabaseReference ref_user = database.getReference("Users").child(AppState.userID).child("Posts");
                 ref_user.child(ref_post.getKey()).setValue(res_id);

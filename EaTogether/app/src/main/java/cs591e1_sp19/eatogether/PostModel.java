@@ -8,13 +8,13 @@ public class PostModel {
     public String country, language;
     public String time1, time2;
     public String note;
-    public String restaurant_id, post_id;
+    public String restaurant_id, restaurant_name, restaurant_img, post_id;
 
 
     public PostModel(String user_id, String user_name, String avatar, String gender,
                      String country, String language, String time1,
                      String time2, String note, String restaurant_id,
-                     String post_id){
+                     String restaurant_name, String restaurant_img, String post_id){
 
         this.user_id = user_id;
         this.user_name = user_name;
@@ -26,6 +26,8 @@ public class PostModel {
         this.time2 = time2;
         this.note = note;
         this.restaurant_id = restaurant_id;
+        this.restaurant_name = restaurant_name;
+        this.restaurant_img = restaurant_img;
         this.post_id = post_id;
     }
 
