@@ -44,6 +44,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static cs591e1_sp19.eatogether.AppState.current_lati;
+import static cs591e1_sp19.eatogether.AppState.current_longi;
+
 public class ProfileChangeActivity extends AppCompatActivity {
 
     private ImageView avatar;
@@ -146,6 +149,7 @@ public class ProfileChangeActivity extends AppCompatActivity {
                 fiveK.setChecked(false);
                 tenK.setChecked(false);
                 radius = 1000;
+                AppState.radius = 1000;
             }
         });
 
@@ -156,6 +160,7 @@ public class ProfileChangeActivity extends AppCompatActivity {
                 fiveK.setChecked(true);
                 tenK.setChecked(false);
                 radius = 3000;
+                AppState.radius = 3000;
             }
         });
 
@@ -166,6 +171,7 @@ public class ProfileChangeActivity extends AppCompatActivity {
                 fiveK.setChecked(false);
                 tenK.setChecked(true);
                 radius = 5000;
+                AppState.radius = 5000;
             }
         });
 
@@ -281,8 +287,8 @@ public class ProfileChangeActivity extends AppCompatActivity {
     private void updateNearby() {
         params = new HashMap<>();
 
-        params.put("latitude", "42.3500397");
-        params.put("longitude", "-71.1093047");
+        params.put("latitude", current_lati);
+        params.put("longitude", current_longi);
         params.put("radius", String.valueOf(radius));
 
         Call<SearchResponse> call = yelpFusionApi.getBusinessSearch(params);
@@ -308,11 +314,11 @@ public class ProfileChangeActivity extends AppCompatActivity {
 
             for(Business bu : businesses) {
                 DatabaseReference restaurant = db.child(bu.getId());
-                restaurant.child("name").setValue(bu.getName());
-                restaurant.child("location").setValue(bu.getCoordinates());
-                restaurant.child("rating").setValue(bu.getRating());
-                restaurant.child("type").setValue(bu.getCategories());
-                restaurant.child("price").setValue(bu.getPrice());
+                restaurant.setValue(new MapModel(bu.getName(),
+                        bu.getPrice(),
+                        bu.getRating(),
+                        bu.getCategories(),
+                        bu.getCoordinates()));
             }
 
 

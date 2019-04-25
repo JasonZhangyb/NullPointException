@@ -23,6 +23,8 @@ public class AppState {
     public static String userID;
     public static String userName;
 
+    public static Integer radius;
+
     public static float userRating;
     public static int ratingAmount;
 
@@ -39,6 +41,9 @@ public class AppState {
     private AppState() {
         isLoggedIn = false;
         userID = null;
+        userName = null;
+
+        radius = 1000;
 
         otherChatUserId = null;
         otherChatUserAvatar = null;

@@ -108,6 +108,12 @@ public class RestaurantPost extends AppCompatActivity {
             return true;
         }
 
+        if (id == R.id.map) {
+            Intent i = new Intent(this, MapsActivity.class);
+            startActivity(i);
+            return true;
+        }
+
         return super.onOptionsItemSelected(item);  //if none of the above are true, do the default and return a boolean.
     }
 

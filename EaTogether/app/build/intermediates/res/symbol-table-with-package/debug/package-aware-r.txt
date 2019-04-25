@@ -1045,11 +1045,11 @@ id btn_finish
 id btn_message
 id btn_new_post
 id btn_post
+id btn_search
 id business_img
 id business_name
 id business_rating
 id buttom_layout
-id button
 id buttonPanel
 id cancel_action
 id cardView
@@ -1097,6 +1097,7 @@ id direct
 id disableHome
 id dollar
 id editText
+id editText2
 id edit_query
 id end
 id end_padder

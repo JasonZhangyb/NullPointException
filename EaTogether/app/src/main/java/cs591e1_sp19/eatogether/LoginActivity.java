@@ -269,11 +269,11 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
             for(Business bu : businesses) {
                 DatabaseReference restaurant = db.child(bu.getId());
-                restaurant.child("name").setValue(bu.getName());
-                restaurant.child("location").setValue(bu.getCoordinates());
-                restaurant.child("rating").setValue(bu.getRating());
-                restaurant.child("type").setValue(bu.getCategories());
-                restaurant.child("price").setValue(bu.getPrice());
+                restaurant.setValue(new MapModel(bu.getName(),
+                        bu.getPrice(),
+                        bu.getRating(),
+                        bu.getCategories(),
+                        bu.getCoordinates()));
             }
 
             Intent intent = new Intent(getApplicationContext(), MapsActivity.class);

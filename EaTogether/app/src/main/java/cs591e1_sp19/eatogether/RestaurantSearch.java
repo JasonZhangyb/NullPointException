@@ -6,10 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
@@ -18,6 +21,8 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 import com.yelp.fusion.client.connection.YelpFusionApi;
 import com.yelp.fusion.client.connection.YelpFusionApiFactory;
@@ -32,6 +37,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static cs591e1_sp19.eatogether.AppState.current_lati;
+import static cs591e1_sp19.eatogether.AppState.current_longi;
+
 public class RestaurantSearch extends AppCompatActivity {
 
     //using a third party library to call and retrieve data from yelp fusion api
@@ -43,6 +51,7 @@ public class RestaurantSearch extends AppCompatActivity {
     YelpFusionApi yelpFusionApi;
     String apiKey = BuildConfig.YelpApiKey;
     Map<String, String> params;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,16 +75,47 @@ public class RestaurantSearch extends AppCompatActivity {
         }
     });
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        //return super.onCreateOptionsMenu(menu);   //get rid of default behavior.
+
+        // Inflate the menu; this adds items to the action bar
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) { //open map activity
+
+        int id = item.getItemId();
+
+        if (id == R.id.map) {
+            Intent i = new Intent(this, MapsActivity.class);
+            startActivity(i);
+            return true;
+        }
+
+        if (id == R.id.wish) {
+            Toast.makeText(getBaseContext(), "wishlist", Toast.LENGTH_LONG).show();
+            Intent i = new Intent(this, WishList.class);
+            startActivity(i);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);  //if none of the above are true, do the default and return a boolean.
+    }
+
 
     public void sendMessage(View view) {
-        EditText txt = findViewById(R.id.editText);
-        String message = txt.getText().toString();
+        EditText txt1 = findViewById(R.id.editText);
+        EditText txt2 = findViewById(R.id.editText2);
+        String message = txt1.getText().toString();
+        String location = txt2.getText().toString();
         //specifying parameters for the business search.
         params = new HashMap<>();
         params.put("term", message);
-        params.put("latitude", "42.3500397");
-        params.put("longitude", "-71.1093047");
-        params.put("radius", "3000");
+        params.put("location", location);
+        //params.put("radius", String.valueOf(AppState.radius));
         //using the getBusinessSearch function to generate a Call object which makes a request to the Search API.
         Call<SearchResponse> call = yelpFusionApi.getBusinessSearch(params);
         call.enqueue(callback);
@@ -88,6 +128,29 @@ public class RestaurantSearch extends AppCompatActivity {
         public void onResponse(Call<SearchResponse> call, Response<SearchResponse> response) {
             SearchResponse searchResponse = response.body();
             final ArrayList<Business> businesses = searchResponse.getBusinesses();
+
+            FirebaseDatabase ref = FirebaseDatabase.getInstance();
+
+            DatabaseReference db = ref
+                    .getReference()
+                    .child("Users")
+                    .child(AppState.userID)
+                    .child("Nearby");
+
+            db.removeValue();
+
+            current_lati = Double.toString(businesses.get(0).getCoordinates().getLatitude());
+            current_longi = Double.toString(businesses.get(0).getCoordinates().getLongitude());
+
+            for(Business bu : businesses) {
+                DatabaseReference restaurant = db.child(bu.getId());
+                restaurant.setValue(new MapModel(bu.getName(),
+                        bu.getPrice(),
+                        bu.getRating(),
+                        bu.getCategories(),
+                        bu.getCoordinates()));
+
+            }
 
             //custom listview
             lstView = findViewById(R.id.lstView);
@@ -115,7 +178,7 @@ public class RestaurantSearch extends AppCompatActivity {
 
 
 
-//custom adapter for the custom listviwe
+//custom adapter for the custom listview
 class CustomAdapter extends BaseAdapter {
 
     ArrayList<Business> businesses;

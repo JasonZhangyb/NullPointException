@@ -11,6 +11,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
+import com.firebase.client.ChildEventListener;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -132,29 +133,33 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         menu_trans.addToBackStack(null);
         menu_trans.commit();
 
+
+
         mRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for(DataSnapshot snapshot : dataSnapshot.getChildren()){
                     // String data = snapshot.getKey();
-                    String latitude = snapshot.child("location").child("latitude").getValue().toString();
-                    String longitude = snapshot.child("location").child("longitude").getValue().toString();
-                    double loclatitude = Double.parseDouble(latitude);
-                    double loclongitude = Double.parseDouble(longitude);
-                    LatLng restaurant_loca = new LatLng(loclatitude, loclongitude);
+                    MapModel data = snapshot.getValue(MapModel.class);
+
+                    double latitude = data.location.getLatitude();
+                    double longitude = data.location.getLongitude();
+                    LatLng restaurant_loca = new LatLng(latitude, longitude);
                     //MarkerOptions restaurant_marker = new MarkerOptions();
-                    restaurant_marker.title(snapshot.child("name").getValue().toString());
+                    restaurant_marker.title(data.res_name);
                     restaurant_marker.position(restaurant_loca);
                     mMap.addMarker(restaurant_marker);
 
                 }
             }
 
+
             @Override
             public void onCancelled(FirebaseError firebaseError) {
 
             }
         });
+
 
     }
 
@@ -275,12 +280,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         for(DataSnapshot snapshot : dataSnapshot.getChildren()){
-                            String data = snapshot.child("name").getValue(String.class);
-                            if(data.equals(marker.getTitle())){
+                            MapModel data = snapshot.getValue(MapModel.class);
+
+                            if(data.res_name.equals(marker.getTitle())){
                                 rest_id = snapshot.getKey();
-                                price = snapshot.child("price").getValue(String.class);
-                                rating = snapshot.child("rating").getValue(float.class);
-                                info = snapshot.child("type").child("0").child("title").getValue(String.class);
+                                price = data.res_price;
+                                rating = data.res_rating.floatValue();
+                                info = data.type.get(0).getTitle();
 
 
                                 Bundle bundle = new Bundle();

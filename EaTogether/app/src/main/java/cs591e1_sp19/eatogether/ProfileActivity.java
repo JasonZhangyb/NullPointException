@@ -52,18 +52,23 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                //AppState.isLoggedIn = false;
-                //AppState.userID = null;
-                //AppState.userName = null;
-                //AppState.current_lati = "";
-                //AppState.current_longi = "";
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
 
-                Intent mStartActivity = new Intent(getApplicationContext(), LoginActivity.class);
+                AppState.isLoggedIn = false;
+                AppState.userID = null;
+                AppState.userName = null;
+                AppState.current_lati = "";
+                AppState.current_longi = "";
+                AppState.radius = 1000;
+
+                startActivity(intent);
+
+                /*Intent mStartActivity = new Intent(getApplicationContext(), LoginActivity.class);
                 int mPendingIntentId = 123456;
                 PendingIntent mPendingIntent = PendingIntent.getActivity(getApplicationContext(), mPendingIntentId, mStartActivity, PendingIntent.FLAG_CANCEL_CURRENT);
                 AlarmManager mgr = (AlarmManager)getApplicationContext().getSystemService(Context.ALARM_SERVICE);
                 mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 100, mPendingIntent);
-                System.exit(0);
+                System.exit(0);*/
 
             }
         });
