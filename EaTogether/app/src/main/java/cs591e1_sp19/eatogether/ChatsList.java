@@ -67,6 +67,10 @@ public class ChatsList extends AppCompatActivity {
                             Intent i = new Intent(getApplicationContext(), Chat.class);
                             i.putExtra("rest_id", rooms.get(position).res_id);
                             i.putExtra("post_id", rooms.get(position).post_id);
+                            i.putExtra("creator_id", rooms.get(position).creator_id);
+                            i.putExtra("creator_name", rooms.get(position).creator_name);
+                            i.putExtra("creator_avatar", rooms.get(position).creator_avatar);
+                            i.putExtra("restaurant_name", rooms.get(position).res_name);
                             startActivity(i);
                         }
                     });
