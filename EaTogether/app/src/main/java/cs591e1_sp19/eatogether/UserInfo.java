@@ -24,9 +24,9 @@ public class UserInfo extends AppCompatActivity {
     Button btn_info;
     RecyclerView recView_info;
 
-    EventModel event;
+    EventModel event, event_guest;
 
-    HashMap<String, String> guests;
+    HashMap<String, String> guests1, guests2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,22 +41,33 @@ public class UserInfo extends AppCompatActivity {
         recView_info = findViewById(R.id.recView_info);
 
         Boolean isCreator = getIntent().getStringExtra("isCreator").equals(AppState.userID);
+        final String creator_name = getIntent().getStringExtra("creator_name");
+        final String creator_avatar = getIntent().getStringExtra("creator_avatar");
         final String post_id = getIntent().getStringExtra("postID");
         final String res_id = getIntent().getStringExtra("resID");
         final String res_name = getIntent().getStringExtra("resName");
         final String guest_id = getIntent().getStringExtra("guestID");
+        final String time1 = getIntent().getStringExtra("time1");
+        final String time2 = getIntent().getStringExtra("time2");
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
+        final DatabaseReference ref_posts = database.getReference("Posts");
         final DatabaseReference ref_users = database.getReference("Users");
 
-        guests = new HashMap<>();
+        guests1 = new HashMap<>();
+        guests2 = new HashMap<>();
 
         if (isCreator){
             btn_info.setText("INVITE");
             btn_info.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    guests.put(guest_id, guest_id);
+
+                    AppState.onGoingPost = post_id;
+                    AppState.onGoingRes = res_id;
+
+                    guests1.put("guest", guest_id);
+                    guests2.put("guest", AppState.userID);
                     event = new EventModel(
                             AppState.userID,
                             res_id,
@@ -64,12 +75,30 @@ public class UserInfo extends AppCompatActivity {
                             post_id,
                             AppState.current_lati,
                             AppState.current_longi,
-                            guests);
+                            guests1,
+                            time1,
+                            time2);
+                    event_guest = new EventModel(
+                            guest_id,
+                            res_id,
+                            res_name,
+                            post_id,
+                            AppState.current_lati,
+                            AppState.current_longi,
+                            guests2,
+                            time1,
+                            time2
+                    );
                     ref_users.child(AppState.userID).child("Ongoing").setValue(event);
-                    ref_users.child(guest_id).child("Ongoing").setValue(event);
+                    ref_users.child(guest_id).child("Ongoing").setValue(event_guest);
+                    //ref_users.child(AppState.userID).child("Posts").child(post_id).removeValue();
+                    //ref_posts.child(res_id).child(post_id).removeValue();
+
                 }
             });
         } else {
+            AppState.onGoingPost = post_id;
+            AppState.onGoingRes = res_id;
 
         }
 

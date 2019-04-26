@@ -71,6 +71,8 @@ public class ChatsList extends AppCompatActivity {
                             i.putExtra("creator_name", rooms.get(position).creator_name);
                             i.putExtra("creator_avatar", rooms.get(position).creator_avatar);
                             i.putExtra("restaurant_name", rooms.get(position).res_name);
+                            i.putExtra("time1", rooms.get(position).time1);
+                            i.putExtra("time2", rooms.get(position).time2);
                             startActivity(i);
                         }
                     });

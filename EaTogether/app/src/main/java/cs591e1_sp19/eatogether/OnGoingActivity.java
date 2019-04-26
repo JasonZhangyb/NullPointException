@@ -111,7 +111,7 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
                 .getReference()
                 .child("Users");
 
-
+/*
         ongoingdb.child("Rest_name").setValue("Fugakyu Japanese Cuisine");
         ongoingdb.child("partner_id").setValue("-LcNvXfmtYgx6_jBvAZy");
         userdb.child(AppState.userID).child("rating").setValue("4.5");
@@ -119,7 +119,7 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
         ongoingdb.child("time2").setValue("3 pm");
         ongoingdb.child("latitude").setValue("42.342954");
         ongoingdb.child("longitude").setValue("-71.119374642915");
-
+*/
         rest_name = (TextView) findViewById(R.id.rest_name);
         user_name = (TextView) findViewById(R.id.user_name);
         user_rating = (RatingBar) findViewById(R.id.user_rating);
@@ -138,17 +138,29 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
 
 
 
+        msg_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), Chat.class);
+                i.putExtra("post_id", AppState.onGoingPost);
+                startActivity(i);
+
+            }
+        });
+
         ongoingdb.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                rest_name.setText(dataSnapshot.child("Rest_name").getValue(String.class));
-                time.setText("Time: " + dataSnapshot.child("time1").getValue(String.class) + " - " + dataSnapshot.child("time2").getValue(String.class));
-                partner_id = dataSnapshot.child("partner_id").getValue(String.class);
+                EventModel event = dataSnapshot.getValue(EventModel.class);
 
-                DROPOFF_ADDR = dataSnapshot.child("Rest_name").getValue(String.class);
-                DROPOFF_LAT = Double.parseDouble(dataSnapshot.child("latitude").getValue(String.class));
-                DROPOFF_LONG = Double.parseDouble(dataSnapshot.child("longitude").getValue(String.class));
+                rest_name.setText(event.res_name);
+                time.setText(event.time1 + " - " + event.time2);
+                partner_id = event.guests.get("guest");
+
+                DROPOFF_ADDR = event.res_name;
+                DROPOFF_LAT = Double.parseDouble(event.latitude);
+                DROPOFF_LONG = Double.parseDouble(event.longitude);
                 System.out.println(">>>>>>>>>>>> location: " + DROPOFF_LAT);
 
                 onRide();
@@ -167,17 +179,18 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
             @Override
             public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
                 user_name.setText(dataSnapshot.child(partner_id).child("name").getValue(String.class));
-                user_rating.setRating(Float.parseFloat(dataSnapshot.child(AppState.userID).child("user_rating").getValue(String.class)));
+                user_rating.setRating(Float.parseFloat(dataSnapshot.child(partner_id).child("user_rating").getValue(String.class)));
 
-                user_avatar.setImageResource(R.drawable.logo_login2);
+                Picasso.get().load(dataSnapshot.child(partner_id).child("avatar").toString()).into(user_avatar);
+
+                //user_avatar.setImageResource(R.drawable.logo_login2);
 
                 ptner_rating = Float.parseFloat(dataSnapshot.child(partner_id).child("user_rating").getValue().toString());
                 rating_amount =  Integer.parseInt(dataSnapshot.child(partner_id).child("rating_amount").getValue().toString());
                 finish_btn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        openRatingDialog(user_name.getText().toString(), R.drawable.logo_login2)
-                                ;
+                        openRatingDialog(user_name.getText().toString(), dataSnapshot.child(partner_id).child("avatar").toString());
 
 
                     }
@@ -261,7 +274,7 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
 
     }
 
-    public void openRatingDialog(String partner_name, int partner_avatar){
+    public void openRatingDialog(String partner_name, String url){
         final Dialog rating_dialog = new Dialog(this);
         rating_dialog.setContentView(R.layout.rating_dialog);
 
@@ -272,7 +285,8 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
         Button finish = (Button) rating_dialog.findViewById(R.id.rating_finish);
 
         name.setText(partner_name);
-        avatar.setImageResource(partner_avatar);
+        //avatar.setImageResource(partner_avatar);
+        Picasso.get().load(url).into(avatar);
 
 
         ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
@@ -288,14 +302,26 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
             @Override
             public void onClick(View view) {
 
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                final DatabaseReference ref_posts = database.getReference("Posts");
+                final DatabaseReference ref_users = database.getReference("Users");
+                final DatabaseReference ref_chats = database.getReference("ChatsAlt");
 
                 ptner_rating=  (ptner_rating * rating_amount + ratingBar.getRating() ) / (1 + rating_amount);
                 rating_amount ++;
 
-                userdb.child(partner_id).child("rating_amount").setValue(rating_amount);
-                userdb.child(partner_id).child("user_rating").setValue(ptner_rating);
+                userdb.child(partner_id).child("rating_amount").setValue(String.valueOf(rating_amount));
+                userdb.child(partner_id).child("user_rating").setValue(String.valueOf(ptner_rating));
 
                 rating_dialog.cancel();
+
+
+                ref_users.child(AppState.userID).child("Ongoing").removeValue();
+                ref_users.child(AppState.userID).child("Posts").child(AppState.onGoingPost).removeValue();
+                ref_posts.child(AppState.onGoingRes).child(AppState.onGoingPost).removeValue();
+                //ref_chats.child(AppState.onGoingPost).removeValue();
+                Intent i = new Intent(getApplicationContext(), NoOngingEventNotice.class);
+                startActivity(i);
             }
         });
 
@@ -327,8 +353,10 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                DROPOFF_LAT = Double.parseDouble(dataSnapshot.child("latitude").getValue(String.class));
-                DROPOFF_LONG = Double.parseDouble(dataSnapshot.child("longitude").getValue(String.class));
+                EventModel event = dataSnapshot.getValue(EventModel.class);
+
+                DROPOFF_LAT = Double.parseDouble(event.latitude);
+                DROPOFF_LONG = Double.parseDouble(event.longitude);
                 StringBuilder stringBuilder = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
                 stringBuilder.append("location="+DROPOFF_LAT.toString()+","+DROPOFF_LONG.toString());
                 stringBuilder.append("&radius="+2000);

@@ -33,6 +33,8 @@ public class AppState {
     public static String otherChatUserAvatar;
 
     public static String isCreator;
+    public static String onGoingPost;
+    public static String onGoingRes;
 
     public static DatabaseReference userDatabase;
     public static DatabaseReference chatDatabase;
@@ -46,6 +48,9 @@ public class AppState {
         userID = null;
         userName = null;
         userAvatar = null;
+
+        onGoingPost = null;
+        onGoingRes = null;
 
         isCreator = null;
 

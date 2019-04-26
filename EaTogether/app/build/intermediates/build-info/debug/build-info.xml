@@ -1,82 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
     abi="arm64-v8a,armeabi-v7a,armeabi"
-    api-level="24"
-    build-mode="COLD"
-    density="420dpi"
+    api-level="28"
+    build-mode="FULL"
+    density="xxhdpi"
     format="10"
-    ir-eligibility="COMPATIBLE"
     plugin-version="3.2.0"
-    timestamp="1556222386710"
-    token="-933167832691717456"
-    verifier="COLD_SWAP_REQUESTED" >
+    timestamp="1556236348311"
+    token="8373578252080030779"
+    verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="357" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="9" />
+        duration="1024" />
     <task
         name="verifier"
-        duration="3" />
+        duration="0" />
 
     <artifact
-        location="/Users/apple/Desktop/CS591E1/final-project/NullPointException/EaTogether/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+        location="C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
         type="SPLIT" />
+    <artifact
+        location="C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
+        type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1556221455880"
+        timestamp="1556236348311"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="/Users/apple/Desktop/CS591E1/final-project/NullPointException/EaTogether/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
+            location="C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/apple/Desktop/CS591E1/final-project/NullPointException/EaTogether/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+            location="C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/apple/Desktop/CS591E1/final-project/NullPointException/EaTogether/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
+            location="C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/apple/Desktop/CS591E1/final-project/NullPointException/EaTogether/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+            location="C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/apple/Desktop/CS591E1/final-project/NullPointException/EaTogether/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+            location="C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/apple/Desktop/CS591E1/final-project/NullPointException/EaTogether/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+            location="C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/apple/Desktop/CS591E1/final-project/NullPointException/EaTogether/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            location="C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/apple/Desktop/CS591E1/final-project/NullPointException/EaTogether/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+            location="C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/apple/Desktop/CS591E1/final-project/NullPointException/EaTogether/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+            location="C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/apple/Desktop/CS591E1/final-project/NullPointException/EaTogether/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+            location="C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/apple/Desktop/CS591E1/final-project/NullPointException/EaTogether/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+            location="C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/apple/Desktop/CS591E1/final-project/NullPointException/EaTogether/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
+            location="C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
             type="SPLIT_MAIN" />
-    </build>
-    <build
-        build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
-        timestamp="1556222386710"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/Users/apple/Desktop/CS591E1/final-project/NullPointException/EaTogether/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
-            type="SPLIT" />
     </build>
 
 </instant-run>

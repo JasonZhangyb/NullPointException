@@ -1,7 +1,7 @@
-#Thu Apr 25 15:44:22 EDT 2019
-base.0=/Users/apple/Desktop/CS591E1/final-project/NullPointException/EaTogether/app/build/intermediates/transforms/dexMerger/debug/10
+#Thu Apr 25 16:15:32 EDT 2019
+base.0=C\:\\Users\\Jason\\Desktop\\npe\\NullPointException\\EaTogether\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\10
 path.1=classes2.dex
 renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=/Users/apple/Desktop/CS591E1/final-project/NullPointException/EaTogether/app/build/intermediates/transforms/dexMerger/debug/10
+base.1=C\:\\Users\\Jason\\Desktop\\npe\\NullPointException\\EaTogether\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\10

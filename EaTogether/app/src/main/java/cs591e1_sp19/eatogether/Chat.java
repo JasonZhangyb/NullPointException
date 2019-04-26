@@ -66,6 +66,8 @@ public class Chat extends AppCompatActivity {
         final String creator_name = getIntent().getStringExtra("creator_name");
         final String creator_avatar = getIntent().getStringExtra("creator_avatar");
         final String restaurant_name = getIntent().getStringExtra("restaurant_name");
+        final String time1 = getIntent().getStringExtra("time1");
+        final String time2 = getIntent().getStringExtra("time2");
 
         final DatabaseReference ref_msg = ref_chats.child(post_id);
 
@@ -85,7 +87,9 @@ public class Chat extends AppCompatActivity {
                             guests,
                             post_id,
                             rest_id,
-                            restaurant_name);
+                            restaurant_name,
+                            time1,
+                            time2);
 
                     ref_msg.setValue(chats);
                     //ref_msg.child("guests").setValue(guests);
@@ -154,10 +158,16 @@ public class Chat extends AppCompatActivity {
                         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                             Intent intent = new Intent(getApplicationContext(), UserInfo.class);
                             intent.putExtra("isCreator", AppState.isCreator);
+                            intent.putExtra("creator_avatar", AppState.userAvatar);
+                            intent.putExtra("creator_name", creator_name);
                             intent.putExtra("resID", rest_id);
                             intent.putExtra("resName", restaurant_name);
                             intent.putExtra("postID", post_id);
                             intent.putExtra("guestID", msgs.get(i).sender_id);
+                            intent.putExtra("time1", time1);
+                            intent.putExtra("time2", time2);
+
+
                             startActivity(intent);
                         }
                     });
@@ -165,7 +175,7 @@ public class Chat extends AppCompatActivity {
 
                 }
 
-                lstView_chat.setSelection(chat_adapter.getCount() - 1);
+                //lstView_chat.setSelection(chat_adapter.getCount() - 1);
             }
 
             @Override

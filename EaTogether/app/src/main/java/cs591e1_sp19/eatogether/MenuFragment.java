@@ -78,7 +78,7 @@ public class MenuFragment extends Fragment {
 
 
                 FirebaseDatabase.getInstance().getReference().child("Users").child(AppState.userID)
-                        .addListenerForSingleValueEvent(new ValueEventListener() {
+                        .addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                 for (DataSnapshot snapshot : dataSnapshot.getChildren()){
