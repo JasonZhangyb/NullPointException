@@ -274,6 +274,7 @@ public class ProfileChangeActivity extends AppCompatActivity {
                     if(task.isSuccessful()) {
                         Uri downloadUri = task.getResult();
                         mRef.child(AppState.userID).child("avatar").setValue(downloadUri.toString());
+                        AppState.userAvatar = downloadUri.toString();
                         Toast.makeText(ProfileChangeActivity.this, "Changes has been applied", Toast.LENGTH_LONG).show();
                     } else {
                         Toast.makeText(ProfileChangeActivity.this, "Faild change Profile", Toast.LENGTH_LONG).show();
@@ -338,7 +339,32 @@ public class ProfileChangeActivity extends AppCompatActivity {
                         if(userSnapShot.child("avatar").getValue() != null) {
                             Picasso.get()
                                     .load(userSnapShot.child("avatar").getValue().toString())
+                                    .transform(new CircleTransform())
                                     .into(avatar);
+                        }
+
+                        if(userSnapShot.child("gender").getValue() != null) {
+                            if(userSnapShot.child("gender").getValue().toString().equals("female")) {
+                                female.setChecked(true);
+                                male.setChecked(false);
+                            } else {
+                                male.setChecked(true);
+                                female.setChecked(false);
+                            }
+                        }
+
+                        if(userSnapShot.child("location").getValue() != null) {
+                            loc.setText(userSnapShot.child("location").getValue().toString());
+                        }
+
+                        if(userSnapShot.child("language").getValue() != null) {
+                            language.setText(userSnapShot.child("language").getValue().toString());
+                        }
+
+                        if(userSnapShot.child("fav").getValue() != null) {
+                            oneFood.setText(userSnapShot.child("fav").child("one").getValue().toString());
+                            twoFood.setText(userSnapShot.child("fav").child("two").getValue().toString());
+                            threeFood.setText(userSnapShot.child("fav").child("three").getValue().toString());
                         }
                     }
                 }

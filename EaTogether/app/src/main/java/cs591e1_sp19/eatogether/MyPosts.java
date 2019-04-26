@@ -145,7 +145,8 @@ class MyPostsAdapter extends RecyclerView.Adapter<MyPostsAdapter.MyViewHolder> {
         final PostModel post = posts.get(i);
 
         myViewHolder.res_name.setText(post.restaurant_name);
-        myViewHolder.user_locale.setText(post.country + ", " + post.language);
+        //myViewHolder.user_locale.setText(post.country + ", " + post.language);
+        myViewHolder.user_locale.setText("Boston" + ", " + "English");
         myViewHolder.time_period.setText(post.time1 + " - " + post.time2);
         myViewHolder.user_note.setText(post.note);
         myViewHolder.msg_btn.setText("DELETE");

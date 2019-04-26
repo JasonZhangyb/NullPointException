@@ -7,343 +7,81 @@
     android:orientation="vertical"
     tools:context=".NewPost">
 
-    <RelativeLayout
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp">
-
-        <TextView
-            android:id="@+id/res_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="5dp"
-            android:text="TextView"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/txt_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/res_name"
-            android:layout_margin="5dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:text="Time Period" />
-
-        <Spinner
-            android:id="@+id/time1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txt_time"
-            android:entries="@array/time_period" />
-
-        <Spinner
-            android:id="@+id/am_pm1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txt_time"
-            android:layout_toRightOf="@id/time1"
-            android:entries="@array/am_pm" />
-
-        <TextView
-            android:id="@+id/bar_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txt_time"
-            android:layout_toRightOf="@id/am_pm1"
-            android:text="-"
-            android:textSize="20dp" />
-
-        <Spinner
-            android:id="@+id/time2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txt_time"
-            android:layout_toRightOf="@id/bar_time"
-            android:entries="@array/time_period" />
-
-        <Spinner
-            android:id="@+id/am_pm2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txt_time"
-            android:layout_toRightOf="@id/time2"
-            android:entries="@array/am_pm" />
-
-        <TextView
-            android:id="@+id/txt_breakfast"
-            android:layout_below="@id/time1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="Breakfast" />
-
-        <CheckBox
-            android:id="@+id/cb_breakfast"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/time1"
-            android:layout_toRightOf="@id/txt_breakfast"
-            android:textColorLink="@color/colorPrimary" />
-
-        <TextView
-            android:id="@+id/txt_brunch"
-            android:layout_below="@id/time1"
-            android:layout_toRightOf="@id/cb_breakfast"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="Brunch" />
-
-        <CheckBox
-            android:id="@+id/cb_brunch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/time1"
-            android:layout_toRightOf="@id/txt_brunch"
-            android:textColorLink="@color/colorPrimary" />
-
-        <TextView
-            android:id="@+id/txt_lunch"
-            android:layout_below="@id/time1"
-            android:layout_toRightOf="@id/cb_brunch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="Lunch" />
-
-        <CheckBox
-            android:id="@+id/cb_lunch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/time1"
-            android:layout_toRightOf="@id/txt_lunch"
-            android:textColorLink="@color/colorPrimary" />
-
-        <TextView
-            android:id="@+id/txt_tea"
-            android:layout_below="@id/txt_breakfast"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="Afternoon Tea" />
-
-        <CheckBox
-            android:id="@+id/cb_tea"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txt_breakfast"
-            android:layout_toRightOf="@id/txt_tea"
-            android:textColorLink="@color/colorPrimary" />
-
-        <TextView
-            android:id="@+id/txt_dinner"
-            android:layout_below="@id/txt_breakfast"
-            android:layout_toRightOf="@id/cb_tea"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="Dinner" />
-
-        <CheckBox
-            android:id="@+id/cb_dinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txt_breakfast"
-            android:layout_toRightOf="@id/txt_dinner"
-            android:textColorLink="@color/colorPrimary" />
-
-        <TextView
-            android:id="@+id/txt_night"
-            android:layout_below="@id/txt_tea"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="Late Night" />
-
-        <CheckBox
-            android:id="@+id/cb_night"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txt_tea"
-            android:layout_toRightOf="@id/txt_night"
-            android:textColorLink="@color/colorPrimary" />
-
-        <TextView
-            android:id="@+id/txt_other"
-            android:layout_below="@id/txt_tea"
-            android:layout_toRightOf="@id/cb_night"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="Others" />
-
-        <CheckBox
-            android:id="@+id/cb_other"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txt_tea"
-            android:layout_toRightOf="@id/txt_other"
-            android:textColorLink="@color/colorPrimary" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp">
-
-        <TextView
-            android:id="@+id/preference"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="5dp"
-            android:fontFamily="sans-serif"
-            android:text="Preferences"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/txt_male"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/preference"
-            android:layout_margin="5dp"
-            android:text="Male" />
-
-        <CheckBox
-            android:id="@+id/cb_male"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/preference"
-            android:layout_toRightOf="@id/txt_male"
-            android:textColorLink="@color/colorPrimary" />
-
-        <TextView
-            android:id="@+id/txt_female"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/preference"
-            android:layout_margin="5dp"
-            android:layout_toRightOf="@id/cb_male"
-            android:text="Female" />
-
-        <CheckBox
-            android:id="@+id/cb_female"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/preference"
-            android:layout_toRightOf="@id/txt_female"
-            android:textColorLink="@color/colorPrimary" />
-
-        <TextView
-            android:id="@+id/txt_age"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txt_male"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="5dp"
-            android:text="Age" />
-
-        <Spinner
-            android:id="@+id/age1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txt_male"
-            android:layout_toRightOf="@id/txt_age" />
-
-        <TextView
-            android:id="@+id/bar_age"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txt_male"
-            android:layout_toRightOf="@id/age1"
-            android:text="-"
-            android:textSize="20dp" />
-
-        <Spinner
-            android:id="@+id/age2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txt_male"
-            android:layout_toRightOf="@id/bar_age" />
-
-        <TextView
-            android:id="@+id/txt_country"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txt_age"
-            android:layout_margin="5dp"
-            android:text="Comes from" />
-
-        <Spinner
-            android:id="@+id/country"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txt_age"
-            android:layout_toRightOf="@id/txt_country"
-            android:entries="@array/country" />
-
-        <TextView
-            android:id="@+id/txt_language"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txt_country"
-            android:layout_margin="5dp"
-            android:text="Language" />
-
-        <Spinner
-            android:id="@+id/language"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txt_country"
-            android:layout_toRightOf="@id/txt_language"
-            android:entries="@array/language" />
-    </RelativeLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_margin="10dp">
-
-        <TextView
-            android:id="@+id/txt_note"
+        android:layout_height="match_parent">
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="Notes"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            android:layout_margin="10dp"
+            android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/note"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:imeOptions="actionDone"
-            android:inputType="text"
-            android:textColorLink="@color/colorPrimary" />
+            <TextView
+                android:id="@+id/res_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/btn_new_post"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Post"
-            android:background="@drawable/btn_shape"
-            android:textColorLink="@color/colorPrimary" />
-    </LinearLayout>
+            <DatePicker
+                android:id="@+id/datePicker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:calendarViewShown="false"
+                android:spinnersShown="true"
+                android:startYear="2000"
+                android:endYear="2100"
+                android:maxDate="12/31/2100"
+                android:minDate="01/01/2000"
+                android:datePickerMode="spinner" />
+
+            <TimePicker
+                android:id="@+id/timePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:timePickerMode="clock"
+                android:headerBackground="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/txt_note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="Notes"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:textColorLink="@color/colorPrimary" />
+
+            <Button
+                android:id="@+id/btn_new_post"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Post"
+                android:background="@drawable/btn_shape"
+                android:textColorLink="@color/colorPrimary"
+                android:layout_marginBottom="30sp"
+                />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
 </LinearLayout>

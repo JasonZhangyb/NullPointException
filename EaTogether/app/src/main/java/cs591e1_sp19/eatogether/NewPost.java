@@ -7,61 +7,46 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.TimePicker;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Calendar;
+import java.util.TimeZone;
 
 public class NewPost extends AppCompatActivity {
 
     DatabaseReference ref;
-    TextView res_name_txt;
-    Spinner time1, am_pm1, time2, am_pm2, age1, age2, country, language;
-    CheckBox cb_male;
-    CheckBox cb_female;
+    TextView res_name;
     EditText note;
     Button new_post;
-    //set range of the ages
-    Integer age_from = new Integer(18);
-    Integer age_to = new Integer(40);
-    String gender = "";
+
+    String time1;
+    String time2;
+
+    public int year;
+    public int month;
+    public int day;
+    public int hour;
+    public int minute;
+    String res_img;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_post);
 
-        res_name_txt = findViewById(R.id.res_name);
-        time1 = findViewById(R.id.time1);
-        time2 = findViewById(R.id.time2);
-        am_pm1 = findViewById(R.id.am_pm1);
-        am_pm2 = findViewById(R.id.am_pm2);
-        country = findViewById(R.id.country);
-        language = findViewById(R.id.language);
+        res_name = findViewById(R.id.res_name);
         note = findViewById(R.id.note);
 
-        List age_list = new ArrayList<Integer>();
-        for (int i = age_from; i <= age_to; i++){
-            age_list.add(Integer.toString(i));
-        }
+        res_name.setText(getIntent().getStringExtra("resName"));
+        res_img = getIntent().getStringExtra("resImg");
 
-        ArrayAdapter<Integer> age_adapter = new ArrayAdapter<Integer>(
-                this, android.R.layout.simple_spinner_item, age_list);
-        age_adapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
-
-        final String res_name = getIntent().getStringExtra("resName");
-        final String res_img = getIntent().getStringExtra("resImg");
-        res_name_txt.setText(res_name);
-
-        age1 = findViewById(R.id.age1);
-        age2 = findViewById(R.id.age2);
-        age1.setAdapter(age_adapter);
-        age2.setAdapter(age_adapter);
 
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         ref = database.getReference("Posts");
@@ -69,29 +54,50 @@ public class NewPost extends AppCompatActivity {
 
         final String res_id = getIntent().getStringExtra("resID");
 
-        cb_male = findViewById(R.id.cb_male);
-        cb_female = findViewById(R.id.cb_female);
+        // Get date picker object.
+        DatePicker datePicker = (DatePicker)findViewById(R.id.datePicker);
+        datePicker.init(2019, 04, 25, new DatePicker.OnDateChangedListener() {
+            @Override
+            public void onDateChanged(DatePicker datePicker, int year, int month, int day) {
+                NewPost.this.year = year;
+                NewPost.this.month = month;
+                NewPost.this.day = day;
+            }
+        });
+
+        // Get time picker object.
+        TimePicker timePicker = (TimePicker)findViewById(R.id.timePicker);
+
+        timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
+            @Override
+            public void onTimeChanged(TimePicker timePicker, int hour, int minute) {
+                NewPost.this.hour = hour;
+                NewPost.this.minute = minute;
+            }
+        });
+
+        time1 = String.valueOf(hour) + ":" + String.valueOf(minute);
+        time2 = String.valueOf(hour + 3) + ":" + String.valueOf(minute);
+
 
         new_post.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                if (cb_male.isChecked())gender = "male";
-                if (cb_female.isChecked())gender = "female";
                 DatabaseReference ref_id = ref.child(res_id);
                 DatabaseReference ref_post = ref_id.push();
                 ref_post.setValue(new PostModel(AppState.userID,
                         AppState.userName,
                         AppState.userAvatar,
-                        gender,
-                        country.getSelectedItem().toString(),
-                        language.getSelectedItem().toString(),
-                        time1.getSelectedItem().toString() + am_pm1.getSelectedItem().toString(),
-                        time2.getSelectedItem().toString() + am_pm2.getSelectedItem().toString(),
+                        String.valueOf(day),
+                        String.valueOf(month),
+                        String.valueOf(year),
+                        time1,
+                        time2,
                         note.getText().toString(),
                         res_id,
-                        res_name,
-                        res_img,
-                        ref_post.getKey()));
+                        res_name.getText().toString(),
+                        ref_post.getKey(),
+                        res_img));
                 DatabaseReference ref_user = database.getReference("Users").child(AppState.userID).child("Posts");
                 ref_user.child(ref_post.getKey()).setValue(res_id);
                 Intent i = new Intent(getApplicationContext(),MapsActivity.class);
