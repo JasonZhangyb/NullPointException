@@ -1037,7 +1037,6 @@ id btnDetail
 id btnSearch
 id btn_finish
 id btn_info
-id btn_inv
 id btn_message
 id btn_new_post
 id btn_post

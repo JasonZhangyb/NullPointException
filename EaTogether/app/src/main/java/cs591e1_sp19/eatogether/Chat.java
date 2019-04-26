@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
@@ -37,7 +38,7 @@ import java.util.HashMap;
 public class Chat extends AppCompatActivity {
 
     EditText txt_input;
-    Button btn_send, btn_inv;
+    Button btn_send;
     ChatModel chats;
     MsgModel msg;
     ArrayList<MsgModel> msgs;
@@ -57,7 +58,6 @@ public class Chat extends AppCompatActivity {
 
         txt_input = findViewById(R.id.txt_input);
         btn_send = findViewById(R.id.btn_send);
-        btn_inv = findViewById(R.id.btn_inv);
         lstView_chat = findViewById(R.id.lstView_chat);
 
         final String post_id = getIntent().getStringExtra("post_id");
@@ -89,7 +89,8 @@ public class Chat extends AppCompatActivity {
                             rest_id,
                             restaurant_name,
                             time1,
-                            time2);
+                            time2,
+                            "inUse");
 
                     ref_msg.setValue(chats);
                     //ref_msg.child("guests").setValue(guests);
@@ -98,7 +99,7 @@ public class Chat extends AppCompatActivity {
 
                     ChatModel data = dataSnapshot.child(post_id).getValue(ChatModel.class);
                     ArrayList<MsgModel> old_msgs = new ArrayList<>();
-                    AppState.isCreator = data.creator_id;
+                    AppState.creatorID = data.creator_id;
                     for(DataSnapshot snapshot : dataSnapshot.child(post_id).child("msg").getChildren()){
                         old_msgs.add(snapshot.getValue(MsgModel.class));
                     }
@@ -129,6 +130,8 @@ public class Chat extends AppCompatActivity {
             public void onClick(View view) {
                 String input = txt_input.getText().toString();
 
+                txt_input.getText().clear();
+
                 DatabaseReference ref = ref_msg.child("msg").push();
 
                 msg = new MsgModel(AppState.userID, AppState.userName,input, AppState.userAvatar);
@@ -136,6 +139,12 @@ public class Chat extends AppCompatActivity {
                 ref.setValue(msg);
 
                 lstView_chat.setAdapter(null);
+
+                InputMethodManager inputManager = (InputMethodManager)
+                        getSystemService(Context.INPUT_METHOD_SERVICE);
+
+                inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
+                        InputMethodManager.HIDE_NOT_ALWAYS);
 
             }
         });
@@ -157,7 +166,7 @@ public class Chat extends AppCompatActivity {
                         @Override
                         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                             Intent intent = new Intent(getApplicationContext(), UserInfo.class);
-                            intent.putExtra("isCreator", AppState.isCreator);
+                            intent.putExtra("creator_id", AppState.creatorID);
                             intent.putExtra("creator_avatar", AppState.userAvatar);
                             intent.putExtra("creator_name", creator_name);
                             intent.putExtra("resID", rest_id);

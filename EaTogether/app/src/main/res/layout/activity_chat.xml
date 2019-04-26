@@ -27,27 +27,19 @@
 
             <EditText
                 android:id="@+id/txt_input"
-                android:layout_width="0dp"
-                android:layout_weight="4"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="4"
                 android:inputType="textPersonName" />
 
             <Button
                 android:id="@+id/btn_send"
                 style="@style/Widget.AppCompat.Button.Colored"
-                android:background="@drawable/btn_shape"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/btn_shape"
                 android:text="Send" />
-            <Button
-                android:id="@+id/btn_inv"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:background="@drawable/btn_shape"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Invite"/>
 
         </LinearLayout>
 

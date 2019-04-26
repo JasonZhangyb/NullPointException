@@ -32,7 +32,7 @@ public class AppState {
     public static String otherChatUserId;
     public static String otherChatUserAvatar;
 
-    public static String isCreator;
+    public static String creatorID;
     public static String onGoingPost;
     public static String onGoingRes;
 
@@ -52,7 +52,7 @@ public class AppState {
         onGoingPost = null;
         onGoingRes = null;
 
-        isCreator = null;
+        creatorID = null;
 
         radius = 1000;
 

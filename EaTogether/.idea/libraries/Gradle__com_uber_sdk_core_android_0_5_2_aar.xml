@@ -1,11 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: com.uber.sdk:core-android:0.5.2@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/core-android-0.5.2.aar/67be13a7d46ed425c0bac671c243c4ef/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/core-android-0.5.2.aar/67f57158200637e8748f4f79fce269eb/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/core-android-0.5.2.aar/67be13a7d46ed425c0bac671c243c4ef/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/core-android-0.5.2.aar/67be13a7d46ed425c0bac671c243c4ef/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/core-android-0.5.2.aar/67f57158200637e8748f4f79fce269eb/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/core-android-0.5.2.aar/67f57158200637e8748f4f79fce269eb/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

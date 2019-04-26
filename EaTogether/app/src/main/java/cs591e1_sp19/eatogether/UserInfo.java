@@ -40,7 +40,7 @@ public class UserInfo extends AppCompatActivity {
         btn_info = findViewById(R.id.btn_info);
         recView_info = findViewById(R.id.recView_info);
 
-        Boolean isCreator = getIntent().getStringExtra("isCreator").equals(AppState.userID);
+        Boolean isCreator = getIntent().getStringExtra("creator_id").equals(AppState.userID);
         final String creator_name = getIntent().getStringExtra("creator_name");
         final String creator_avatar = getIntent().getStringExtra("creator_avatar");
         final String post_id = getIntent().getStringExtra("postID");

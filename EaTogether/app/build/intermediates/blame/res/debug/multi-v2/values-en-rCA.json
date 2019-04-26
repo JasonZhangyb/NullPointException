@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/limuzi/AndroidStudioProjects/EaTogether/V5/NullPointException/EaTogether/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rCA/values-en-rCA.xml",
+            "outputFile": "C:\\Users\\Jason\\Desktop\\npe\\NullPointException\\EaTogether\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rCA\\values-en-rCA.xml",
             "map": [
                 {
-                    "source": "/Users/limuzi/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/8f83e906aef6520b9c953af6d9fe23d4/res/values-en-rCA/values-en-rCA.xml",
+                    "source": "C:\\Users\\Jason\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\cd009ebc467f19c6d422ec4bdc052734\\res\\values-en-rCA\\values-en-rCA.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

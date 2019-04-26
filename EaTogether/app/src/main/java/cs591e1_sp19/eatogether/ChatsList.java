@@ -54,8 +54,10 @@ public class ChatsList extends AppCompatActivity {
 
                     ChatModel chat_room = snapshot.getValue(ChatModel.class);
 
-                    if (chat_room.guests.containsKey(AppState.userID)||chat_room.creator_id.equals(AppState.userID))
-                        rooms.add(chat_room);
+                    if (chat_room.status.equals("inUse")) {
+                        if (chat_room.guests.containsKey(AppState.userID) || chat_room.creator_id.equals(AppState.userID))
+                            rooms.add(chat_room);
+                    }
 
                     lstView_chats_list = findViewById(R.id.lstView_chats_list);
                     chats_list_adapter = new ChatsListAdapter(getApplicationContext(), rooms);
