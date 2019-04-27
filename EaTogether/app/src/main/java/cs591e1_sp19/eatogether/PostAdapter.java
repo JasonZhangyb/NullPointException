@@ -86,6 +86,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
                 i.putExtra("restaurant_name", post.restaurant_name);
                 i.putExtra("time1", post.time1);
                 i.putExtra("time2", post.time2);
+                i.putExtra("latitude", post.latitude);
+                i.putExtra("longitude", post.longitude);
                 AppState.otherChatUserAvatar = post.avatar;
                 AppState.otherChatUserId = post.user_id;
 

@@ -1144,7 +1144,6 @@ id inv_accept
 id inv_avatar
 id inv_decline
 id inv_name
-id inv_note
 id inv_restaurant
 id invisible
 id inviteButton

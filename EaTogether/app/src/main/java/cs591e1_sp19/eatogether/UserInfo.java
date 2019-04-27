@@ -47,7 +47,7 @@ public class UserInfo extends AppCompatActivity {
         recView_info = findViewById(R.id.recView_info);
 
         final String creator_id = getIntent().getStringExtra("creator_id");
-        Boolean isCreator = creator_id.equals(AppState.userID);
+        final Boolean isCreator = creator_id.equals(AppState.userID);
         final String creator_name = getIntent().getStringExtra("creator_name");
         final String creator_avatar = getIntent().getStringExtra("creator_avatar");
         final String post_id = getIntent().getStringExtra("postID");
@@ -56,6 +56,8 @@ public class UserInfo extends AppCompatActivity {
         final String guest_id = getIntent().getStringExtra("guestID");
         final String time1 = getIntent().getStringExtra("time1");
         final String time2 = getIntent().getStringExtra("time2");
+        final String latitude = getIntent().getStringExtra("latitude");
+        final String longitude = getIntent().getStringExtra("longitude");
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference ref_posts = database.getReference("Posts");
@@ -66,10 +68,62 @@ public class UserInfo extends AppCompatActivity {
 
         btn_info.setVisibility(View.GONE);
 
-        ref_users.child(guest_id).child("Rating").addValueEventListener(new ValueEventListener() {
+        ref_users.child(guest_id).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                RatingModel data = dataSnapshot.getValue(RatingModel.class);
+                if (isCreator) {
+                    if (!AppState.userID.equals(guest_id)) {
+                        if (dataSnapshot.hasChild("Invite")) {
+                            PostModel data = dataSnapshot.child("Invite").getValue(PostModel.class);
+
+                            if (post_id.equals(data.post_id)) {
+                                if (AppState.userID.equals(data.user_id)) {
+                                    btn_info.setText("WITHDRAW");
+                                    btn_info.setVisibility(View.VISIBLE);
+                                    btn_info.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            ref_users.child(guest_id).child("Invite").child("note").setValue("withdraw");
+
+                                            AppState.onGoingPost = null;
+                                            AppState.onGoingRes = null;
+                                        }
+                                    });
+                                }
+                            }
+
+                        } else {
+
+                            btn_info.setVisibility(View.VISIBLE);
+                            btn_info.setText("INVITE");
+                            btn_info.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+
+                                    PostModel invitation = new PostModel(
+                                            creator_id,
+                                            creator_name,
+                                            creator_avatar,
+                                            res_id,
+                                            res_name,
+                                            post_id,
+                                            time1,
+                                            time2,
+                                            latitude,
+                                            longitude,
+                                            "onGoing");
+
+                                    ref_users.child(guest_id).child("Invite").setValue(invitation);
+
+                                    AppState.onGoingPost = post_id;
+                                    AppState.onGoingRes = res_id;
+                                }
+                            });
+                        }
+                    }
+                }
+
+                RatingModel data = dataSnapshot.child("Rating").getValue(RatingModel.class);
 
                 info_name.setText(data.username);
                 info_loc.setText(data.rating);
@@ -93,7 +147,7 @@ public class UserInfo extends AppCompatActivity {
             }
         });
 
-        if (isCreator){
+        /*if (isCreator){
             if (!AppState.userID.equals(guest_id)) {
                 btn_info.setVisibility(View.VISIBLE);
                 btn_info.setText("INVITE");
@@ -109,17 +163,18 @@ public class UserInfo extends AppCompatActivity {
                                 res_name,
                                 post_id,
                                 time1,
-                                time2);
+                                time2,
+                                latitude,
+                                longitude);
 
                         ref_users.child(guest_id).child("Invite").setValue(invitation);
 
                         AppState.onGoingPost = post_id;
                         AppState.onGoingRes = res_id;
-
                     }
                 });
             }
-        }
+        }*/
 
 
 
@@ -128,7 +183,7 @@ public class UserInfo extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-//        return super.onCreateOptionsMenu(menu);   //get rid of default behavior.
+        //return super.onCreateOptionsMenu(menu);   //get rid of default behavior.
 
         // Inflate the menu; this adds items to the action bar
         getMenuInflater().inflate(R.menu.menu_main, menu);
@@ -141,7 +196,6 @@ public class UserInfo extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.wish) {
-            Toast.makeText(getBaseContext(), "wishlist", Toast.LENGTH_LONG).show();
             Intent i = new Intent(this, WishList.class);
             startActivity(i);
             return true;

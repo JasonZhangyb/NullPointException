@@ -61,6 +61,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
+import static android.view.View.GONE;
 import static cs591e1_sp19.eatogether.AppState.current_lati;
 import static cs591e1_sp19.eatogether.AppState.current_longi;
 import static cs591e1_sp19.eatogether.AppState.onGoingPost;
@@ -143,10 +144,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         menu_trans.addToBackStack(null);
         menu_trans.commit();
 
+        inv_layout = findViewById(R.id.inv);
+        inv = new ImageView(getApplicationContext());
+        inv.setLayoutParams(new RelativeLayout.LayoutParams(150, 150));
+        inv.setImageResource(R.drawable.ic_notifications_black_24dp);
+
         mRef.child(AppState.userID).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.hasChild("Invite")){
+
                     PostModel invitation = dataSnapshot.child("Invite").getValue(PostModel.class);
                     AppState.onGoingPost = invitation.post_id;
                     AppState.onGoingRes = invitation.restaurant_id;
@@ -156,13 +163,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     final String res_name = invitation.restaurant_name;
                     final String time1 = invitation.time1;
                     final String time2 = invitation.time2;
-                    Toast.makeText(MapsActivity.this, "You just received an invitation!", Toast.LENGTH_SHORT).show();
+                    final String latitude = invitation.latitude;
+                    final String longitude = invitation.longitude;
+                    final String status = invitation.note;
 
-                    inv_layout = findViewById(R.id.inv);
-                    inv = new ImageView(getApplicationContext());
-                    inv.setLayoutParams(new RelativeLayout.LayoutParams(150, 150));
-                    inv.setImageResource(R.drawable.ic_notifications_black_24dp);
-                    inv_layout.addView(inv);
+                    if (status.equals("onGoing")) {
+                        Toast.makeText(MapsActivity.this, "You just received an invitation!", Toast.LENGTH_SHORT).show();
+                        inv_layout.addView(inv);
+                    } else {
+                        Toast.makeText(MapsActivity.this,
+                                "Oops, looks like the invitation has been withdrawn", Toast.LENGTH_SHORT).show();
+                    }
 
                     inv_layout.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -171,11 +182,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             openInvDialog(
                                     creator_name,
                                     creator_avatar,
-                                    "temp",
+                                    //"temp",
                                     res_name,
                                     creator_id,
                                     time1,
-                                    time2);
+                                    time2,
+                                    latitude,
+                                    longitude,
+                                    status);
                         }
                     });
 
@@ -214,69 +228,122 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         });
     }
 
-    public void openInvDialog(String name, String avatar, String note, String res, String id, String t1, String t2) {
+    public void openInvDialog(String name, String avatar, String res, String id,
+                              String t1, String t2, String lat, String lon, String note) {
+
         final Dialog inv_dialog = new Dialog(this);
+        final String status = note;
         inv_dialog.setContentView(R.layout.invitation_dialog);
 
-        inv_dialog.setTitle("Invitation from:");
         TextView inv_name = inv_dialog.findViewById(R.id.inv_name);
         TextView inv_res = inv_dialog.findViewById(R.id.inv_restaurant);
-        TextView inv_note = inv_dialog.findViewById(R.id.inv_note);
+        //TextView inv_note = inv_dialog.findViewById(R.id.inv_note);
         ImageView inv_avatar = inv_dialog.findViewById(R.id.inv_avatar);
         Button inv_accept = inv_dialog.findViewById(R.id.inv_accept);
+        Button inv_decline = inv_dialog.findViewById(R.id.inv_decline);
 
-        inv_name.setText(name);
-        inv_res.setText(res);
-        inv_note.setText(note);
-        Picasso.get().load(avatar).into(inv_avatar);
+        if (status.equals("onGoing")) {
 
-        final String res_id = res;
-        final String partner_id = id;
-        final String time1 = t1;
-        final String time2 = t2;
+            //inv_dialog.setTitle("Invitation from:");
+            inv_name.setText(name);
+            inv_res.setText(res);
+            //inv_note.setText(note);
+            Picasso.get().load(avatar).into(inv_avatar);
 
-        inv_dialog.show();
+            final String res_id = res;
+            final String partner_id = id;
+            final String time1 = t1;
+            final String time2 = t2;
+            final String latitude = lat;
+            final String longitude = lon;
 
-        inv_accept.setOnClickListener(new View.OnClickListener() {
-            HashMap<String, String> guest1 = new HashMap<>();
-            HashMap<String, String> guest2 = new HashMap<>();
-            @Override
-            public void onClick(View view) {
-                guest1.put("guest", partner_id);
-                EventModel event = new EventModel(
-                        AppState.userID,
-                        AppState.onGoingRes,
-                        res_id,
-                        AppState.onGoingPost,
-                        // TODO: change current to destination
-                        current_lati,
-                        current_longi,
-                        guest1,
-                        time1,
-                        time2);
+            inv_dialog.show();
+            inv_accept.setText("ACCEPT");
+            inv_decline.setText("DECLINE");
 
-                guest2.put("guest", AppState.userID);
-                EventModel event_guest = new EventModel(
-                        partner_id,
-                        AppState.onGoingRes,
-                        res_id,
-                        AppState.onGoingPost,
-                        current_lati,
-                        current_longi,
-                        guest2,
-                        time1,
-                        time2);
+            inv_accept.setOnClickListener(new View.OnClickListener() {
+                HashMap<String, String> guest1 = new HashMap<>();
+                HashMap<String, String> guest2 = new HashMap<>();
 
-                mRef.child(AppState.userID).child("Ongoing").setValue(event);
-                mRef.child(partner_id).child("Ongoing").setValue(event_guest);
-                mRef.child(AppState.userID).child("Invite").removeValue();
-                inv_layout.removeView(inv);
+                @Override
+                public void onClick(View view) {
+                    guest1.put("guest", partner_id);
+                    EventModel event = new EventModel(
+                            AppState.userID,
+                            AppState.onGoingRes,
+                            res_id,
+                            AppState.onGoingPost,
+                            // finished: changed current to destination
+                            latitude,
+                            longitude,
+                            guest1,
+                            time1,
+                            time2);
 
-                Intent i = new Intent(getApplicationContext(), OnGoingActivity.class);
-                startActivity(i);
-            }
-        });
+                    guest2.put("guest", AppState.userID);
+                    EventModel event_guest = new EventModel(
+                            partner_id,
+                            AppState.onGoingRes,
+                            res_id,
+                            AppState.onGoingPost,
+                            latitude,
+                            longitude,
+                            guest2,
+                            time1,
+                            time2);
 
+                    mRef.child(AppState.userID).child("Ongoing").setValue(event);
+                    mRef.child(partner_id).child("Ongoing").setValue(event_guest);
+                    mRef.child(AppState.userID).child("Invite").removeValue();
+                    inv_layout.removeView(inv);
+                    inv_dialog.cancel();
+
+                    Intent i = new Intent(getApplicationContext(), OnGoingActivity.class);
+                    startActivity(i);
+                }
+            });
+
+            inv_decline.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mRef.child(AppState.userID).child("Invite").removeValue();
+                    inv_layout.removeView(inv);
+                    inv_dialog.cancel();
+                    Toast.makeText(MapsActivity.this, "Invitation is declined", Toast.LENGTH_SHORT).show();
+                }
+            });
+        } else {
+
+            inv_name.setText("Oops, looks like " + name);
+            inv_res.setText("has withdrawn the invitation");
+            //inv_note.setText(note);
+            // TODO: change avatar into an "Oops" icon if possible
+            Picasso.get().load(avatar).into(inv_avatar);
+
+            final String res_id = res;
+            final String partner_id = id;
+            final String time1 = t1;
+            final String time2 = t2;
+            final String latitude = lat;
+            final String longitude = lon;
+
+            inv_dialog.show();
+            inv_accept.setText("BACK");
+            inv_accept.setVisibility(View.VISIBLE);
+            inv_decline.setVisibility(GONE);
+
+            inv_accept.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mRef.child(AppState.userID).child("Invite").removeValue();
+                    AppState.onGoingPost = null;
+                    AppState.onGoingRes = null;
+                    inv_layout.removeView(inv);
+                    inv_dialog.cancel();
+                }
+            });
+
+        }
     }
 
     /**

@@ -3,6 +3,8 @@ package cs591e1_sp19.eatogether;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -29,6 +31,8 @@ public class NewPost extends AppCompatActivity {
     String time1;
     String time2;
 
+    String latitude, longitude;
+
     public int year;
     public int month;
     public int day;
@@ -46,6 +50,8 @@ public class NewPost extends AppCompatActivity {
 
         res_name.setText(getIntent().getStringExtra("resName"));
         res_img = getIntent().getStringExtra("resImg");
+        latitude = getIntent().getStringExtra("latitude");
+        longitude = getIntent().getStringExtra("longitude");
 
 
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -97,7 +103,9 @@ public class NewPost extends AppCompatActivity {
                         res_id,
                         res_name.getText().toString(),
                         ref_post.getKey(),
-                        res_img));
+                        res_img,
+                        latitude,
+                        longitude));
                 DatabaseReference ref_user = database.getReference("Users").child(AppState.userID).child("Posts");
                 ref_user.child(ref_post.getKey()).setValue(res_id);
                 Intent i = new Intent(getApplicationContext(),MapsActivity.class);
@@ -105,4 +113,37 @@ public class NewPost extends AppCompatActivity {
             }
         });
     }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        //return super.onCreateOptionsMenu(menu);   //get rid of default behavior.
+
+        // Inflate the menu; this adds items to the action bar
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) { //open wishlist activity
+
+        int id = item.getItemId();
+
+        if (id == R.id.wish) {
+            Intent i = new Intent(this, WishList.class);
+            startActivity(i);
+            return true;
+        }
+
+        if (id == R.id.map) {
+            Intent i = new Intent(this, MapsActivity.class);
+            startActivity(i);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);  //if none of the above are true, do the default and return a boolean.
+    }
+
 }

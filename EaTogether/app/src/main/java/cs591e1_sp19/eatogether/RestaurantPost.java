@@ -90,7 +90,7 @@ public class RestaurantPost extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-//        return super.onCreateOptionsMenu(menu);   //get rid of default behavior.
+        //return super.onCreateOptionsMenu(menu);   //get rid of default behavior.
 
         // Inflate the menu; this adds items to the action bar
         getMenuInflater().inflate(R.menu.menu_main, menu);
@@ -118,7 +118,8 @@ public class RestaurantPost extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);  //if none of the above are true, do the default and return a boolean.
     }
-    public void setupBadge(TextView countTxt, Integer pendingCount){
+
+    /*public void setupBadge(TextView countTxt, Integer pendingCount){
         if (pendingCount == 0){
             if (countTxt.getVisibility() != View.GONE){
                 countTxt.setVisibility(View.GONE);
@@ -129,7 +130,7 @@ public class RestaurantPost extends AppCompatActivity {
                     countTxt.setVisibility(View.VISIBLE);
             }
         }
-    }
+    }*/
 
 
 
@@ -227,6 +228,8 @@ public class RestaurantPost extends AppCompatActivity {
                     i.putExtra("resID", business.getId());
                     i.putExtra("resName", business.getName());
                     i.putExtra("resImg", business.getImageUrl());
+                    i.putExtra("latitude", Double.toString(business.getCoordinates().getLatitude()));
+                    i.putExtra("longitude", Double.toString(business.getCoordinates().getLongitude()));
                     startActivity(i);
 
                 }

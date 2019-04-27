@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -112,6 +114,37 @@ public class ProfileActivity extends AppCompatActivity {
 
         setProfile();
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        //return super.onCreateOptionsMenu(menu);   //get rid of default behavior.
+
+        // Inflate the menu; this adds items to the action bar
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) { //open wishlist activity
+
+        int id = item.getItemId();
+
+        if (id == R.id.wish) {
+            Intent i = new Intent(this, WishList.class);
+            startActivity(i);
+            return true;
+        }
+
+        if (id == R.id.map) {
+            Intent i = new Intent(this, MapsActivity.class);
+            startActivity(i);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);  //if none of the above are true, do the default and return a boolean.
     }
 
     private void setProfile(){

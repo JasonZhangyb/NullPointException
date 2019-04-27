@@ -68,6 +68,8 @@ public class Chat extends AppCompatActivity {
         final String restaurant_name = getIntent().getStringExtra("restaurant_name");
         final String time1 = getIntent().getStringExtra("time1");
         final String time2 = getIntent().getStringExtra("time2");
+        final String latitude = getIntent().getStringExtra("latitude");
+        final String longitude = getIntent().getStringExtra("longitude");
 
         final DatabaseReference ref_msg = ref_chats.child(post_id);
 
@@ -88,6 +90,8 @@ public class Chat extends AppCompatActivity {
                             post_id,
                             rest_id,
                             restaurant_name,
+                            latitude,
+                            longitude,
                             time1,
                             time2,
                             "inUse");
@@ -98,21 +102,43 @@ public class Chat extends AppCompatActivity {
                 } else {
 
                     ChatModel data = dataSnapshot.child(post_id).getValue(ChatModel.class);
-                    ArrayList<MsgModel> old_msgs = new ArrayList<>();
-                    AppState.creatorID = data.creator_id;
-                    for(DataSnapshot snapshot : dataSnapshot.child(post_id).child("msg").getChildren()){
-                        old_msgs.add(snapshot.getValue(MsgModel.class));
-                    }
 
-                    if (!data.guests.containsKey(AppState.userID) && !AppState.userID.equals(data.creator_id)){
+                    if (data.status.equals("abandoned")){
+                        guests.put(AppState.userID ,AppState.userID);
 
-                        data.guests.put(AppState.userID ,AppState.userID);
+                        chats = new ChatModel(
+                                creator_id,
+                                creator_name,
+                                creator_avatar,
+                                guests,
+                                post_id,
+                                rest_id,
+                                restaurant_name,
+                                latitude,
+                                longitude,
+                                time1,
+                                time2,
+                                "inUse");
 
-                        ref_msg.setValue(data);
-                        for (MsgModel i: old_msgs){
-                            ref_msg.child("msg").push().setValue(i);
+                        ref_msg.setValue(chats);
+                    } else {
+
+                        ArrayList<MsgModel> old_msgs = new ArrayList<>();
+                        AppState.creatorID = data.creator_id;
+                        for (DataSnapshot snapshot : dataSnapshot.child(post_id).child("msg").getChildren()) {
+                            old_msgs.add(snapshot.getValue(MsgModel.class));
                         }
 
+                        if (!data.guests.containsKey(AppState.userID) && !AppState.userID.equals(data.creator_id)) {
+
+                            data.guests.put(AppState.userID, AppState.userID);
+
+                            ref_msg.setValue(data);
+                            for (MsgModel i : old_msgs) {
+                                ref_msg.child("msg").push().setValue(i);
+                            }
+
+                        }
                     }
                 }
             }
@@ -176,7 +202,8 @@ public class Chat extends AppCompatActivity {
                             intent.putExtra("guestID", msgs.get(i).sender_id);
                             intent.putExtra("time1", time1);
                             intent.putExtra("time2", time2);
-
+                            intent.putExtra("latitude", latitude);
+                            intent.putExtra("longitude", longitude);
 
                             startActivity(intent);
                         }
@@ -194,9 +221,10 @@ public class Chat extends AppCompatActivity {
             }
         });
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-//        return super.onCreateOptionsMenu(menu);   //get rid of default behavior.
+        //return super.onCreateOptionsMenu(menu);   //get rid of default behavior.
 
         // Inflate the menu; this adds items to the action bar
         getMenuInflater().inflate(R.menu.menu_main, menu);
@@ -209,7 +237,6 @@ public class Chat extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.wish) {
-            Toast.makeText(getBaseContext(), "wishlist", Toast.LENGTH_LONG).show();
             Intent i = new Intent(this, WishList.class);
             startActivity(i);
             return true;
