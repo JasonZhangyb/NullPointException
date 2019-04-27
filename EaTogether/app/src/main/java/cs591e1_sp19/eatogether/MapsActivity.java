@@ -269,6 +269,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                 mRef.child(AppState.userID).child("Ongoing").setValue(event);
                 mRef.child(partner_id).child("Ongoing").setValue(event_guest);
+                mRef.child(AppState.userID).child("Invite").removeValue();
+                inv_layout.removeView(inv);
 
                 Intent i = new Intent(getApplicationContext(), OnGoingActivity.class);
                 startActivity(i);
