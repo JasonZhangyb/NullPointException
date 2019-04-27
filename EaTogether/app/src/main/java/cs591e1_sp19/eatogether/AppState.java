@@ -1,5 +1,8 @@
 package cs591e1_sp19.eatogether;
 
+import android.view.View;
+import android.widget.TextView;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -19,6 +22,8 @@ public class AppState {
 
 
     // Variables
+    public static Integer pendingCount;
+
     public static boolean isLoggedIn;
     public static String userID;
     public static String userName;
@@ -49,6 +54,8 @@ public class AppState {
         userName = null;
         userAvatar = null;
 
+        pendingCount = 0;
+
         onGoingPost = null;
         onGoingRes = null;
 
@@ -73,4 +80,7 @@ public class AppState {
     protected static DatabaseReference getDatabaseReference(String databaseName) {
         return DATABASE_REFERENCE.child(databaseName);
     }
+
 }
+
+

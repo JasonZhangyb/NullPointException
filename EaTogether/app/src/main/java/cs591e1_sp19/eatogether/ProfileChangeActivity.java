@@ -224,6 +224,39 @@ public class ProfileChangeActivity extends AppCompatActivity {
 
         uploadAvatar();
 
+        mRef.child(AppState.userID).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                RatingModel new_data;
+
+                RatingModel old_data = dataSnapshot.child("Rating").getValue(RatingModel.class);
+                if (old_data.reviewers == null) {
+                    new_data = new RatingModel(
+                            old_data.username,
+                            dataSnapshot.child("avatar").getValue().toString(),
+                            old_data.rating,
+                            old_data.rating_amount
+                    );
+                } else {
+                    new_data = new RatingModel(
+                            old_data.username,
+                            dataSnapshot.child("avatar").getValue().toString(),
+                            old_data.rating,
+                            old_data.rating_amount,
+                            old_data.reviewers
+                    );
+                }
+
+                mRef.child(AppState.userID).child("Rating").setValue(new_data);
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
+
         updateNearby();
 
         Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);

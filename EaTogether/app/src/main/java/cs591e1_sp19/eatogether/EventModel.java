@@ -10,6 +10,7 @@ public class EventModel {
     public EventModel(String creator_id, String res_id, String res_name, String post_id,
                       String latitude, String longitude, HashMap<String, String> guests,
                       String time1, String time2){
+
         this.creator_id = creator_id;
         this.res_id = res_id;
         this.res_name = res_name;

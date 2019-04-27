@@ -10,14 +10,16 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:orientation="horizontal">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/info_avatar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:layout_weight="1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            tools:src="@tools:sample/avatars"
             tools:srcCompat="@tools:sample/avatars" />
 
         <LinearLayout
@@ -30,21 +32,21 @@
                 android:id="@+id/info_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="18dp"
+                android:layout_margin="8dp"
                 android:text="TextView" />
 
             <TextView
                 android:id="@+id/info_loc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="18dp"
+                android:layout_margin="8dp"
                 android:text="TextView" />
 
             <TextView
                 android:id="@+id/info_pref"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="18dp"
+                android:layout_margin="8dp"
                 android:text="TextView" />
 
         </LinearLayout>
@@ -53,8 +55,8 @@
             android:id="@+id/btn_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="18dp" />
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="8dp" />
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView

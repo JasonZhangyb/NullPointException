@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.Image;
+import android.media.Rating;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -11,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -39,6 +41,8 @@ import com.uber.sdk.rides.client.ServerTokenSession;
 import com.uber.sdk.rides.client.SessionConfiguration;
 import com.uber.sdk.rides.client.error.ApiError;
 
+import java.util.ArrayList;
+
 public class OnGoingActivity extends AppCompatActivity implements RideRequestButtonCallback, OnMapReadyCallback {
 
     private DatabaseReference ongoingdb;
@@ -50,6 +54,8 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
     private Button msg_btn;
     private Button finish_btn;
     private ImageView user_avatar;
+
+    private String username, useravatar;
 
     float ptner_rating;
     int rating_amount;
@@ -91,6 +97,10 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
     private MenuFragment  menu = new MenuFragment();;
     private FragmentManager menu_manager;
     private FragmentTransaction menu_trans;
+
+    public static Float rating_bar = Float.parseFloat("5.0");
+    public static String restaurant;
+    public static ArrayList<RatingModel> old_reviewers = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -154,6 +164,7 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
 
                 EventModel event = dataSnapshot.getValue(EventModel.class);
 
+                final String restaurant = event.res_name;
                 rest_name.setText(event.res_name);
                 time.setText(event.time1 + " - " + event.time2);
                 partner_id = event.guests.get("guest");
@@ -178,20 +189,28 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
         userdb.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
-                user_name.setText(dataSnapshot.child(partner_id).child("name").getValue(String.class));
-                user_rating.setRating(Float.parseFloat(dataSnapshot.child(partner_id).child("user_rating").getValue(String.class)));
+                final RatingModel rating = dataSnapshot.child(partner_id).child("Rating").getValue(RatingModel.class);
+                username = rating.username;
+                useravatar = rating.useravatar;
 
-                Picasso.get().load(dataSnapshot.child(partner_id).child("avatar").toString()).into(user_avatar);
+                user_name.setText(username);
+                user_rating.setRating(Float.parseFloat(rating.rating));
+
+                Picasso.get().load(useravatar).into(user_avatar);
 
                 //user_avatar.setImageResource(R.drawable.logo_login2);
 
-                ptner_rating = Float.parseFloat(dataSnapshot.child(partner_id).child("user_rating").getValue().toString());
-                rating_amount =  Integer.parseInt(dataSnapshot.child(partner_id).child("rating_amount").getValue().toString());
+                ptner_rating = Float.parseFloat(rating.rating);
+                rating_amount =  Integer.parseInt(rating.rating_amount);
+
+                if (rating.reviewers != null) {
+                    old_reviewers = rating.reviewers;
+                }
+
                 finish_btn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        openRatingDialog(user_name.getText().toString(), dataSnapshot.child(partner_id).child("avatar").toString());
-
+                        openRatingDialog(username, useravatar, old_reviewers);
 
                     }
                 });
@@ -274,7 +293,7 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
 
     }
 
-    public void openRatingDialog(String partner_name, String url){
+    public void openRatingDialog(final String partner_name, String url, final ArrayList<RatingModel> old_reviewers){
         final Dialog rating_dialog = new Dialog(this);
         rating_dialog.setContentView(R.layout.rating_dialog);
 
@@ -283,6 +302,7 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
         TextView name = (TextView) rating_dialog.findViewById(R.id.parner_name);
         ImageView avatar = (ImageView) rating_dialog.findViewById(R.id.partner_avatar);
         Button finish = (Button) rating_dialog.findViewById(R.id.rating_finish);
+        final EditText note = rating_dialog.findViewById(R.id.partner_note);
 
         name.setText(partner_name);
         //avatar.setImageResource(partner_avatar);
@@ -292,6 +312,7 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
         ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
+                rating_bar = v;
                 ratingBar.setRating(v);
             }
         });
@@ -307,11 +328,31 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
                 final DatabaseReference ref_users = database.getReference("Users");
                 final DatabaseReference ref_chats = database.getReference("ChatsAlt");
 
-                ptner_rating=  (ptner_rating * rating_amount + ratingBar.getRating() ) / (1 + rating_amount);
+                ptner_rating =  (ptner_rating * rating_amount + ratingBar.getRating() ) / (1 + rating_amount);
                 rating_amount ++;
 
-                userdb.child(partner_id).child("rating_amount").setValue(String.valueOf(rating_amount));
-                userdb.child(partner_id).child("user_rating").setValue(String.valueOf(ptner_rating));
+                String review = note.getText().toString();
+
+                RatingModel my_review = new RatingModel(
+                        AppState.userName,
+                        AppState.userAvatar,
+                        String.valueOf(rating_bar),
+                        restaurant,
+                        review
+                );
+
+                old_reviewers.add(my_review);
+
+                RatingModel partner =  new RatingModel(
+                        username,
+                        useravatar,
+                        String.valueOf(ptner_rating),
+                        String.valueOf(rating_amount),
+                        old_reviewers
+                );
+
+                ref_users.child(partner_id).child("Rating").setValue(partner);
+
 
                 rating_dialog.cancel();
 

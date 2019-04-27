@@ -881,6 +881,7 @@ drawable abc_vector_test
 drawable app_icon
 drawable avd_hide_password
 drawable avd_show_password
+drawable badge_background
 drawable bg
 drawable bottom_selector
 drawable btn_gradient_purple_rounded
@@ -1138,6 +1139,13 @@ id info_loc
 id info_name
 id info_pref
 id inputEditText
+id inv
+id inv_accept
+id inv_avatar
+id inv_decline
+id inv_name
+id inv_note
+id inv_restaurant
 id invisible
 id inviteButton
 id italic
@@ -1182,6 +1190,7 @@ id none
 id normal
 id note
 id notification_background
+id notification_badge
 id notification_main_column
 id notification_main_column_container
 id p_User
@@ -1193,6 +1202,7 @@ id parentPanel
 id parent_matrix
 id parner_name
 id partner_avatar
+id partner_note
 id payment_methods
 id percent
 id pin
@@ -1401,6 +1411,7 @@ layout activity_restaurant_search
 layout activity_user_info
 layout activity_wish_list
 layout bottom_navi
+layout custom_notification
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -1417,6 +1428,7 @@ layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout fragment_message
 layout fragment_restaurant_info
+layout invitation_dialog
 layout listview_review_row
 layout listview_row
 layout lyft_button

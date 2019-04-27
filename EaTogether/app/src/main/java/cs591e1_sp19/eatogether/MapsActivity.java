@@ -1,5 +1,6 @@
 package cs591e1_sp19.eatogether;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.location.Location;
@@ -27,17 +28,23 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewDebug;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.squareup.picasso.Picasso;
 import com.yelp.fusion.client.connection.YelpFusionApi;
 import com.yelp.fusion.client.connection.YelpFusionApiFactory;
 import com.yelp.fusion.client.models.Business;
@@ -56,12 +63,15 @@ import retrofit2.Response;
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
 import static cs591e1_sp19.eatogether.AppState.current_lati;
 import static cs591e1_sp19.eatogether.AppState.current_longi;
+import static cs591e1_sp19.eatogether.AppState.onGoingPost;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
+    TextView countTxt;
 
     private GoogleMap mMap;
     private ImageView rest_search;
+    private ImageView inv;
     //private int click_times = 0;
     //private String marker_id = "";
     private Marker previous_marker;
@@ -83,6 +93,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private FragmentTransaction menu_trans;
     private RelativeLayout rll_restaurant;
     private RelativeLayout rll_search;
+    private RelativeLayout inv_layout;
 
 
     LatLng current_loca = new LatLng(Double.parseDouble(current_lati), Double.parseDouble(current_longi));
@@ -91,7 +102,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     String databaseURL = "https://eatogether-cs591.firebaseio.com/";
 
     Firebase mRef;
-    Firebase databaseRef;
 
 
 
@@ -100,7 +110,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         Firebase.setAndroidContext(this);
-        mRef = new Firebase(databaseURL + "Users/" + AppState.userID + "/Nearby/");
+        mRef = new Firebase(databaseURL + "Users");
 
 
         rll_search= (RelativeLayout) findViewById(R.id.search);
@@ -133,9 +143,52 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         menu_trans.addToBackStack(null);
         menu_trans.commit();
 
+        mRef.child(AppState.userID).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.hasChild("Invite")){
+                    PostModel invitation = dataSnapshot.child("Invite").getValue(PostModel.class);
+                    AppState.onGoingPost = invitation.post_id;
+                    AppState.onGoingRes = invitation.restaurant_id;
+                    final String creator_id = invitation.user_id;
+                    final String creator_name = invitation.user_name;
+                    final String creator_avatar = invitation.avatar;
+                    final String res_name = invitation.restaurant_name;
+                    final String time1 = invitation.time1;
+                    final String time2 = invitation.time2;
+                    Toast.makeText(MapsActivity.this, "You just received an invitation!", Toast.LENGTH_SHORT).show();
 
+                    inv_layout = findViewById(R.id.inv);
+                    inv = new ImageView(getApplicationContext());
+                    inv.setLayoutParams(new RelativeLayout.LayoutParams(150, 150));
+                    inv.setImageResource(R.drawable.ic_notifications_black_24dp);
+                    inv_layout.addView(inv);
 
-        mRef.addValueEventListener(new ValueEventListener() {
+                    inv_layout.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Log.v("test_dialog",creator_name);
+                            openInvDialog(
+                                    creator_name,
+                                    creator_avatar,
+                                    "temp",
+                                    res_name,
+                                    creator_id,
+                                    time1,
+                                    time2);
+                        }
+                    });
+
+                }
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
+
+        mRef.child(AppState.userID).child("Nearby").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for(DataSnapshot snapshot : dataSnapshot.getChildren()){
@@ -159,10 +212,70 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             }
         });
-
-
     }
 
+    public void openInvDialog(String name, String avatar, String note, String res, String id, String t1, String t2) {
+        final Dialog inv_dialog = new Dialog(this);
+        inv_dialog.setContentView(R.layout.invitation_dialog);
+
+        inv_dialog.setTitle("Invitation from:");
+        TextView inv_name = inv_dialog.findViewById(R.id.inv_name);
+        TextView inv_res = inv_dialog.findViewById(R.id.inv_restaurant);
+        TextView inv_note = inv_dialog.findViewById(R.id.inv_note);
+        ImageView inv_avatar = inv_dialog.findViewById(R.id.inv_avatar);
+        Button inv_accept = inv_dialog.findViewById(R.id.inv_accept);
+
+        inv_name.setText(name);
+        inv_res.setText(res);
+        inv_note.setText(note);
+        Picasso.get().load(avatar).into(inv_avatar);
+
+        final String res_id = res;
+        final String partner_id = id;
+        final String time1 = t1;
+        final String time2 = t2;
+
+        inv_dialog.show();
+
+        inv_accept.setOnClickListener(new View.OnClickListener() {
+            HashMap<String, String> guest1 = new HashMap<>();
+            HashMap<String, String> guest2 = new HashMap<>();
+            @Override
+            public void onClick(View view) {
+                guest1.put("guest", partner_id);
+                EventModel event = new EventModel(
+                        AppState.userID,
+                        AppState.onGoingRes,
+                        res_id,
+                        AppState.onGoingPost,
+                        // TODO: change current to destination
+                        current_lati,
+                        current_longi,
+                        guest1,
+                        time1,
+                        time2);
+
+                guest2.put("guest", AppState.userID);
+                EventModel event_guest = new EventModel(
+                        partner_id,
+                        AppState.onGoingRes,
+                        res_id,
+                        AppState.onGoingPost,
+                        current_lati,
+                        current_longi,
+                        guest2,
+                        time1,
+                        time2);
+
+                mRef.child(AppState.userID).child("Ongoing").setValue(event);
+                mRef.child(partner_id).child("Ongoing").setValue(event_guest);
+
+                Intent i = new Intent(getApplicationContext(), OnGoingActivity.class);
+                startActivity(i);
+            }
+        });
+
+    }
 
     /**
      * Manipulates the map once available.
@@ -271,7 +384,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 //click_times++;
 
                 //read data from firebase
-                mRef.addValueEventListener(new ValueEventListener() {
+                mRef.child(AppState.userID).child("Nearby").addValueEventListener(new ValueEventListener() {
 
                     @Override
 

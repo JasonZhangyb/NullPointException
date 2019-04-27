@@ -2,6 +2,7 @@ package cs591e1_sp19.eatogether;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.app.AppCompatActivity;
@@ -93,6 +94,8 @@ public class RestaurantPost extends AppCompatActivity {
 
         // Inflate the menu; this adds items to the action bar
         getMenuInflater().inflate(R.menu.menu_main, menu);
+
+
         return true;
     }
 
@@ -102,7 +105,6 @@ public class RestaurantPost extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.wish) {
-            Toast.makeText(getBaseContext(), "wishlist", Toast.LENGTH_LONG).show();
             Intent i = new Intent(this, WishList.class);
             startActivity(i);
             return true;
@@ -116,7 +118,18 @@ public class RestaurantPost extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);  //if none of the above are true, do the default and return a boolean.
     }
-
+    public void setupBadge(TextView countTxt, Integer pendingCount){
+        if (pendingCount == 0){
+            if (countTxt.getVisibility() != View.GONE){
+                countTxt.setVisibility(View.GONE);
+            }
+        } else {
+            countTxt.setText(String.valueOf(Math.min(pendingCount, 99)));
+            if (countTxt.getVisibility() != View.VISIBLE){
+                    countTxt.setVisibility(View.VISIBLE);
+            }
+        }
+    }
 
 
 

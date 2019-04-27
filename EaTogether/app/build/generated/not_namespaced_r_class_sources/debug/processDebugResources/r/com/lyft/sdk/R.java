@@ -42,16 +42,16 @@ public final class R {
         private drawable() {}
 
         public static final int app_icon = 0x7f08005a;
-        public static final int btn_gradient_purple_rounded = 0x7f08005f;
-        public static final int btn_hotpink_rounded = 0x7f080060;
-        public static final int btn_white_rounded = 0x7f080062;
-        public static final int gradient_purple_rounded = 0x7f08007e;
-        public static final int prime_time_charcoal = 0x7f0800ad;
-        public static final int prime_time_mulberry = 0x7f0800ae;
-        public static final int prime_time_white = 0x7f0800af;
-        public static final int wordmark_thin_mulberry = 0x7f0800c0;
-        public static final int wordmark_thin_pink = 0x7f0800c1;
-        public static final int wordmark_thin_white = 0x7f0800c2;
+        public static final int btn_gradient_purple_rounded = 0x7f080060;
+        public static final int btn_hotpink_rounded = 0x7f080061;
+        public static final int btn_white_rounded = 0x7f080063;
+        public static final int gradient_purple_rounded = 0x7f08007f;
+        public static final int prime_time_charcoal = 0x7f0800ae;
+        public static final int prime_time_mulberry = 0x7f0800af;
+        public static final int prime_time_white = 0x7f0800b0;
+        public static final int wordmark_thin_mulberry = 0x7f0800c1;
+        public static final int wordmark_thin_pink = 0x7f0800c2;
+        public static final int wordmark_thin_white = 0x7f0800c3;
     }
     public static final class id {
         private id() {}
@@ -59,19 +59,19 @@ public final class R {
         public static final int cost_container = 0x7f090053;
         public static final int cost_text = 0x7f090054;
         public static final int get_ride_label = 0x7f090079;
-        public static final int lyftHotPink = 0x7f0900ae;
-        public static final int lyftLauncher = 0x7f0900af;
-        public static final int lyftMulberryDark = 0x7f0900b0;
-        public static final int lyftMulberryLight = 0x7f0900b1;
-        public static final int lyftMultiColor = 0x7f0900b2;
-        public static final int lyft_icon = 0x7f0900b4;
-        public static final int prime_time_icon = 0x7f0900d8;
-        public static final int ridetype_eta_text = 0x7f0900f4;
+        public static final int lyftHotPink = 0x7f0900b5;
+        public static final int lyftLauncher = 0x7f0900b6;
+        public static final int lyftMulberryDark = 0x7f0900b7;
+        public static final int lyftMulberryLight = 0x7f0900b8;
+        public static final int lyftMultiColor = 0x7f0900b9;
+        public static final int lyft_icon = 0x7f0900bb;
+        public static final int prime_time_icon = 0x7f0900e1;
+        public static final int ridetype_eta_text = 0x7f0900fd;
     }
     public static final class layout {
         private layout() {}
 
-        public static final int lyft_button = 0x7f0b003f;
+        public static final int lyft_button = 0x7f0b0041;
     }
     public static final class string {
         private string() {}

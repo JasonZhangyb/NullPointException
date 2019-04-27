@@ -30,6 +30,20 @@ public class PostModel {
         this.restaurant_img = restaurant_img;
     }
 
+    public PostModel(String user_id, String user_name, String avatar,String restaurant_id,
+                     String restaurant_name, String post_id, String time1, String time2){
+
+        this.user_id = user_id;
+        this.user_name = user_name;
+        this.avatar = avatar;
+        this.time1 = time1;
+        this.time2 = time2;
+        this.restaurant_id = restaurant_id;
+        this.restaurant_name = restaurant_name;
+        this.post_id = post_id;
+
+    }
+
     public PostModel(){}
 
 }

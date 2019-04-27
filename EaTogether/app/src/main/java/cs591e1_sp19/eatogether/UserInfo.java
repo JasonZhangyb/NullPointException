@@ -1,8 +1,10 @@
 package cs591e1_sp19.eatogether;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,8 +14,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
 
@@ -23,7 +29,7 @@ public class UserInfo extends AppCompatActivity {
     ImageView info_avatar;
     Button btn_info;
     RecyclerView recView_info;
-
+    infoAdapter info_adapter;
     EventModel event, event_guest;
 
     HashMap<String, String> guests1, guests2;
@@ -40,7 +46,8 @@ public class UserInfo extends AppCompatActivity {
         btn_info = findViewById(R.id.btn_info);
         recView_info = findViewById(R.id.recView_info);
 
-        Boolean isCreator = getIntent().getStringExtra("creator_id").equals(AppState.userID);
+        final String creator_id = getIntent().getStringExtra("creator_id");
+        Boolean isCreator = creator_id.equals(AppState.userID);
         final String creator_name = getIntent().getStringExtra("creator_name");
         final String creator_avatar = getIntent().getStringExtra("creator_avatar");
         final String post_id = getIntent().getStringExtra("postID");
@@ -57,49 +64,61 @@ public class UserInfo extends AppCompatActivity {
         guests1 = new HashMap<>();
         guests2 = new HashMap<>();
 
-        if (isCreator){
-            btn_info.setText("INVITE");
-            btn_info.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
+        btn_info.setVisibility(View.GONE);
 
-                    AppState.onGoingPost = post_id;
-                    AppState.onGoingRes = res_id;
+        ref_users.child(guest_id).child("Rating").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                RatingModel data = dataSnapshot.getValue(RatingModel.class);
 
-                    guests1.put("guest", guest_id);
-                    guests2.put("guest", AppState.userID);
-                    event = new EventModel(
-                            AppState.userID,
-                            res_id,
-                            res_name,
-                            post_id,
-                            AppState.current_lati,
-                            AppState.current_longi,
-                            guests1,
-                            time1,
-                            time2);
-                    event_guest = new EventModel(
-                            guest_id,
-                            res_id,
-                            res_name,
-                            post_id,
-                            AppState.current_lati,
-                            AppState.current_longi,
-                            guests2,
-                            time1,
-                            time2
-                    );
-                    ref_users.child(AppState.userID).child("Ongoing").setValue(event);
-                    ref_users.child(guest_id).child("Ongoing").setValue(event_guest);
-                    //ref_users.child(AppState.userID).child("Posts").child(post_id).removeValue();
-                    //ref_posts.child(res_id).child(post_id).removeValue();
+                info_name.setText(data.username);
+                info_loc.setText(data.rating);
+                info_pref.setText("hard coded pref");
+                Picasso.get().load(data.useravatar).into(info_avatar);
+
+                if (data.reviewers != null){
+
+                    recView_info = findViewById(R.id.recView_info);
+                    recView_info.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                    info_adapter = new infoAdapter(getApplicationContext(), data.reviewers);
+                    recView_info.setAdapter(info_adapter);
 
                 }
-            });
-        } else {
-            AppState.onGoingPost = post_id;
-            AppState.onGoingRes = res_id;
 
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        if (isCreator){
+            if (!AppState.userID.equals(guest_id)) {
+                btn_info.setVisibility(View.VISIBLE);
+                btn_info.setText("INVITE");
+                btn_info.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        PostModel invitation = new PostModel(
+                                creator_id,
+                                creator_name,
+                                creator_avatar,
+                                res_id,
+                                res_name,
+                                post_id,
+                                time1,
+                                time2);
+
+                        ref_users.child(guest_id).child("Invite").setValue(invitation);
+
+                        AppState.onGoingPost = post_id;
+                        AppState.onGoingRes = res_id;
+
+                    }
+                });
+            }
         }
 
 

@@ -166,8 +166,9 @@ public class Chat extends AppCompatActivity {
                         @Override
                         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                             Intent intent = new Intent(getApplicationContext(), UserInfo.class);
+
                             intent.putExtra("creator_id", AppState.creatorID);
-                            intent.putExtra("creator_avatar", AppState.userAvatar);
+                            intent.putExtra("creator_avatar", creator_avatar);
                             intent.putExtra("creator_name", creator_name);
                             intent.putExtra("resID", rest_id);
                             intent.putExtra("resName", restaurant_name);
