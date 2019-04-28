@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +28,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+
+import static android.view.View.GONE;
 
 public class MyPosts extends AppCompatActivity {
 
@@ -119,16 +122,18 @@ class MyPostsAdapter extends RecyclerView.Adapter<MyPostsAdapter.MyViewHolder> {
         TextView res_name, user_locale, time_period, user_note;
         ImageView res_img;
         Button msg_btn;
+        RatingBar user_rating;
 
         MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
             res_name = itemView.findViewById(R.id.user_name);
-            user_locale = itemView.findViewById(R.id.user_rating);
+            user_locale = itemView.findViewById(R.id.user_locale);
             time_period = itemView.findViewById(R.id.time_created);
             user_note = itemView.findViewById(R.id.user_comment);
             res_img = itemView.findViewById(R.id.user_avatar);
             msg_btn = itemView.findViewById(R.id.btn_message);
+            user_rating = itemView.findViewById(R.id.user_rating);
 
         }
     }
@@ -144,6 +149,7 @@ class MyPostsAdapter extends RecyclerView.Adapter<MyPostsAdapter.MyViewHolder> {
     public void onBindViewHolder(@NonNull final MyPostsAdapter.MyViewHolder myViewHolder, int i) {
         final PostModel post = posts.get(i);
 
+        myViewHolder.user_rating.setVisibility(GONE);
         myViewHolder.res_name.setText(post.restaurant_name);
         //myViewHolder.user_locale.setText(post.country + ", " + post.language);
         myViewHolder.user_locale.setText(post.date + "/" + post.month + "/" + post.year);

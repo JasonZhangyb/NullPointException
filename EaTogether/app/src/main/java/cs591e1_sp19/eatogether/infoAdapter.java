@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
@@ -27,9 +28,10 @@ public class infoAdapter extends RecyclerView.Adapter<infoAdapter.MyViewHolder> 
 
     class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView user_name, user_rating, time_pref, user_note;
+        TextView user_name, time_pref, user_note;
         ImageView user_avatar;
         Button msg_button;
+        RatingBar user_rating;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -57,7 +59,7 @@ public class infoAdapter extends RecyclerView.Adapter<infoAdapter.MyViewHolder> 
 
         myViewHolder.msg_button.setVisibility(View.GONE);
         myViewHolder.user_name.setText(review.username);
-        myViewHolder.user_rating.setText(review.rating);
+        myViewHolder.user_rating.setRating(Float.parseFloat(review.rating));
         myViewHolder.user_note.setText(review.review);
         Picasso.get().load(review.useravatar).into(myViewHolder.user_avatar);
 

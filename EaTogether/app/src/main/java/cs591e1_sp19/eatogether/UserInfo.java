@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,6 +35,7 @@ public class UserInfo extends AppCompatActivity {
     RecyclerView recView_info;
     infoAdapter info_adapter;
     EventModel event, event_guest;
+    RatingBar info_rating;
 
     HashMap<String, String> guests1, guests2;
 
@@ -48,6 +50,7 @@ public class UserInfo extends AppCompatActivity {
         info_avatar = findViewById(R.id.info_avatar);
         btn_info = findViewById(R.id.btn_info);
         recView_info = findViewById(R.id.recView_info);
+        info_rating = findViewById(R.id.info_rating);
 
         final String creator_id = getIntent().getStringExtra("creator_id");
         final Boolean isCreator = creator_id.equals(AppState.userID);
@@ -145,8 +148,20 @@ public class UserInfo extends AppCompatActivity {
                 RatingModel data = dataSnapshot.child("Rating").getValue(RatingModel.class);
 
                 info_name.setText(data.username);
-                info_loc.setText(data.rating);
-                info_pref.setText("hard coded pref");
+                info_rating.setRating(Float.parseFloat(data.rating));
+
+                info_loc.setVisibility(GONE);
+                info_pref.setVisibility(GONE);
+
+                if (dataSnapshot.hasChild("setting")){
+                    User pref = dataSnapshot.child("setting").getValue(User.class);
+                    info_loc.setVisibility(View.VISIBLE);
+                    info_pref.setVisibility(View.VISIBLE);
+                    info_loc.setText(pref.gender);
+                    info_pref.setText(pref.location + ", " + pref.language);
+                }
+
+
                 Picasso.get().load(data.useravatar).into(info_avatar);
 
                 if (dataSnapshot.child("Rating").hasChild("reviewers")){

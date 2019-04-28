@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +24,8 @@ import com.squareup.picasso.Picasso;
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+
+import static android.view.View.GONE;
 
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> {
 
@@ -38,16 +41,18 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
         TextView user_name, user_locale, time_period, user_note;
         ImageView user_avatar;
         Button msg_button;
+        RatingBar user_rating;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
             user_name = itemView.findViewById(R.id.user_name);
-            user_locale = itemView.findViewById(R.id.user_rating);
+            user_locale = itemView.findViewById(R.id.user_locale);
             time_period = itemView.findViewById(R.id.time_created);
             user_note = itemView.findViewById(R.id.user_comment);
             user_avatar = itemView.findViewById(R.id.user_avatar);
             msg_button = itemView.findViewById(R.id.btn_message);
+            user_rating = itemView.findViewById(R.id.user_rating);
 
         }
     }
@@ -63,9 +68,10 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
     public void onBindViewHolder(@NonNull final PostAdapter.MyViewHolder myViewHolder, int i) {
         final PostModel post = posts.get(i);
 
+        myViewHolder.user_rating.setVisibility(GONE);
         myViewHolder.user_name.setText(post.user_name);
         //myViewHolder.user_locale.setText(post.country + ", " + post.language);
-        myViewHolder.user_locale.setText("Boston" + ", " + "English");
+        myViewHolder.user_locale.setText(post.date + "/" + post.month + "/" + post.year);
         myViewHolder.time_period.setText(post.time1 + " - " + post.time2);
         myViewHolder.user_note.setText(post.note);
         myViewHolder.msg_button.setText("MESSAGE");

@@ -1143,6 +1143,7 @@ id info_avatar
 id info_loc
 id info_name
 id info_pref
+id info_rating
 id inputEditText
 id inv
 id inv_accept
@@ -1348,6 +1349,7 @@ id userPassword
 id userRegisterButton
 id user_avatar
 id user_comment
+id user_locale
 id user_name
 id user_rating
 id view_offset_helper

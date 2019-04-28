@@ -35,18 +35,29 @@
                 android:layout_margin="8dp"
                 android:text="TextView" />
 
+            <RatingBar
+                android:id="@+id/info_rating"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:clickable="false"
+                android:isIndicator="true"
+                android:text="TextView" />
+
             <TextView
                 android:id="@+id/info_loc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_margin="6dp"
                 android:text="TextView" />
 
             <TextView
                 android:id="@+id/info_pref"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_margin="6dp"
                 android:text="TextView" />
 
         </LinearLayout>
