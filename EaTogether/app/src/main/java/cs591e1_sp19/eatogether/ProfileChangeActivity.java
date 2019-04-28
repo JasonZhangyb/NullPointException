@@ -205,10 +205,29 @@ public class ProfileChangeActivity extends AppCompatActivity {
         String favTwo = edit2String(twoFood);
         String favThree = edit2String(threeFood);
 
+        HashMap<String, String> fav = new HashMap<>();
+
+        fav.put("one", favOne);
+        fav.put("two", favTwo);
+        fav.put("three", favThree);
+
+        Firebase userRegi = new Firebase(databaseURL + "/Users/" + name);
+
 //        Firebase nameRegi = new Firebase(databaseURL + "/Users/" + name + "/name");
 //        nameRegi.setValue(name);
 
-        Firebase genderRegi = new Firebase(databaseURL + "/Users/" + name + "/gender");
+        uploadAvatar();
+
+        User info = new User(
+                gender,
+                location,
+                language_user,
+                fav
+        );
+
+        mRef.child(name).child("setting").setValue(info);
+
+        /*Firebase genderRegi = new Firebase(databaseURL + "/Users/" + name + "/gender");
         genderRegi.setValue(gender);
 
         Firebase locRegi = new Firebase(databaseURL + "/Users/" + name + "/location");
@@ -220,9 +239,9 @@ public class ProfileChangeActivity extends AppCompatActivity {
         Firebase favoritesRegi = new Firebase(databaseURL + "/Users/" + name + "/fav");
         favoritesRegi.child("one").setValue(favOne);
         favoritesRegi.child("two").setValue(favTwo);
-        favoritesRegi.child("three").setValue(favThree);
+        favoritesRegi.child("three").setValue(favThree);*/
 
-        uploadAvatar();
+        //uploadAvatar();
 
         mRef.child(AppState.userID).addValueEventListener(new ValueEventListener() {
             @Override
@@ -231,20 +250,24 @@ public class ProfileChangeActivity extends AppCompatActivity {
                 RatingModel new_data;
 
                 RatingModel old_data = dataSnapshot.child("Rating").getValue(RatingModel.class);
-                if (old_data.reviewers == null) {
-                    new_data = new RatingModel(
-                            old_data.username,
-                            dataSnapshot.child("avatar").getValue().toString(),
-                            old_data.rating,
-                            old_data.rating_amount
-                    );
-                } else {
+
+                if (dataSnapshot.child("Rating").hasChild("reviewers")) {
+
                     new_data = new RatingModel(
                             old_data.username,
                             dataSnapshot.child("avatar").getValue().toString(),
                             old_data.rating,
                             old_data.rating_amount,
                             old_data.reviewers
+                    );
+
+                } else {
+
+                    new_data = new RatingModel(
+                            old_data.username,
+                            dataSnapshot.child("avatar").getValue().toString(),
+                            old_data.rating,
+                            old_data.rating_amount
                     );
                 }
 
@@ -259,7 +282,7 @@ public class ProfileChangeActivity extends AppCompatActivity {
 
         updateNearby();
 
-        Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+        Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
         startActivity(intent);
 
     }
@@ -316,6 +339,7 @@ public class ProfileChangeActivity extends AppCompatActivity {
             });
 
         }
+
     }
 
     private void updateNearby() {
@@ -371,13 +395,13 @@ public class ProfileChangeActivity extends AppCompatActivity {
                     if(userSnapShot.getKey().equals(AppState.userID)) {
                         if(userSnapShot.child("avatar").getValue() != null) {
                             Picasso.get()
-                                    .load(userSnapShot.child("avatar").getValue().toString())
+                                    .load(AppState.userAvatar)
                                     .transform(new CircleTransform())
                                     .into(avatar);
                         }
 
-                        if(userSnapShot.child("gender").getValue() != null) {
-                            if(userSnapShot.child("gender").getValue().toString().equals("female")) {
+                        if(userSnapShot.child("setting").child("gender").getValue() != null) {
+                            if(userSnapShot.child("setting").child("gender").getValue().toString().equals("female")) {
                                 female.setChecked(true);
                                 male.setChecked(false);
                             } else {
@@ -386,18 +410,18 @@ public class ProfileChangeActivity extends AppCompatActivity {
                             }
                         }
 
-                        if(userSnapShot.child("location").getValue() != null) {
-                            loc.setText(userSnapShot.child("location").getValue().toString());
+                        if(userSnapShot.child("setting").child("location").getValue() != null) {
+                            loc.setText(userSnapShot.child("setting").child("location").getValue().toString());
                         }
 
-                        if(userSnapShot.child("language").getValue() != null) {
-                            language.setText(userSnapShot.child("language").getValue().toString());
+                        if(userSnapShot.child("setting").child("language").getValue() != null) {
+                            language.setText(userSnapShot.child("setting").child("language").getValue().toString());
                         }
 
-                        if(userSnapShot.child("fav").getValue() != null) {
-                            oneFood.setText(userSnapShot.child("fav").child("one").getValue().toString());
-                            twoFood.setText(userSnapShot.child("fav").child("two").getValue().toString());
-                            threeFood.setText(userSnapShot.child("fav").child("three").getValue().toString());
+                        if(userSnapShot.child("setting").child("fav").getValue() != null) {
+                            oneFood.setText(userSnapShot.child("setting").child("fav").child("one").getValue().toString());
+                            twoFood.setText(userSnapShot.child("setting").child("fav").child("two").getValue().toString());
+                            threeFood.setText(userSnapShot.child("setting").child("fav").child("three").getValue().toString());
                         }
                     }
                 }

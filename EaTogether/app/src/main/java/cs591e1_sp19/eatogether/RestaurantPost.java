@@ -18,6 +18,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -50,7 +51,8 @@ public class RestaurantPost extends AppCompatActivity {
     PostAdapter posts_adapter;
 
     ArrayList<PostModel> posts_lst;
-    TextView res_name,res_rating,res_review,res_type;
+    TextView res_name,res_review,res_type;
+    RatingBar res_rating;
     //ImageView res_img;
     ArrayList<ImageView> imgs;
     ImageView img1, img2, img3;
@@ -141,10 +143,13 @@ public class RestaurantPost extends AppCompatActivity {
     Callback<Business> callback = new Callback<Business>() {
         @Override
         public void onResponse(Call<Business> call, Response<Business> response) {
+
             final Business business = response.body();
 
             final FirebaseDatabase database = FirebaseDatabase.getInstance();
             DatabaseReference ref = database.getReference("Posts").child(business.getId());
+
+            String types = "";
 
             res_name = findViewById(R.id.res_name);
             res_rating = findViewById(R.id.res_rating);
@@ -162,8 +167,14 @@ public class RestaurantPost extends AppCompatActivity {
             imgs.add(img3);
 
             res_name.setText(business.getName());
-            res_rating.setText("Rating: " + Double.toString(business.getRating()));
-            res_type.setText(business.getCategories().get(0).getTitle());
+            res_rating.setRating(Float.parseFloat(Double.toString(business.getRating())));
+
+            for (int i = 0; i < business.getCategories().size(); i++){
+                types += business.getCategories().get(i).getTitle();
+                if (i != business.getCategories().size() - 1) types += ", ";
+            }
+
+            res_type.setText(types);
           //  Picasso.get().load(business.getImageUrl())/*.resize(150,150)*/.into(res_img);
             for (int i = 0 ; i < business.getPhotos().size(); i++){
                 Picasso.get().load(business.getPhotos().get(i)).resize(300, 300).into(imgs.get(i));

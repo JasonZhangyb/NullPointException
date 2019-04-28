@@ -442,7 +442,7 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
                 StringBuilder stringBuilder = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
                 stringBuilder.append("location="+DROPOFF_LAT.toString()+","+DROPOFF_LONG.toString());
                 stringBuilder.append("&radius="+2000);
-                stringBuilder.append("&keyword="+"coffee");
+                stringBuilder.append("&keyword="+"cafe,bar,museum,park");
                 stringBuilder.append("&key="+getResources().getString(R.string.google_maps_key));
 
                 System.out.println(stringBuilder);

@@ -156,6 +156,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mRef.child(AppState.userID).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                inv_layout.removeView(inv);
                 if (dataSnapshot.hasChild("Invite")){
 
                     PostModel invitation = dataSnapshot.child("Invite").getValue(PostModel.class);

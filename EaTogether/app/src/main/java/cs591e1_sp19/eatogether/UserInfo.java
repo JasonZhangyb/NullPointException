@@ -83,7 +83,8 @@ public class UserInfo extends AppCompatActivity {
                                     btn_info.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View view) {
-                                            ref_users.child(guest_id).child("Invite").child("note").setValue("withdraw");
+                                            //ref_users.child(guest_id).child("Invite").child("note").setValue("withdraw");
+                                            ref_users.child(guest_id).child("Invite").removeValue();
 
                                             AppState.onGoingPost = null;
                                             AppState.onGoingRes = null;
@@ -120,6 +121,7 @@ public class UserInfo extends AppCompatActivity {
                                 }
                             });
                         }
+
                     }
                 }
 
@@ -130,7 +132,7 @@ public class UserInfo extends AppCompatActivity {
                 info_pref.setText("hard coded pref");
                 Picasso.get().load(data.useravatar).into(info_avatar);
 
-                if (data.reviewers != null){
+                if (dataSnapshot.child("Rating").hasChild("reviewers")){
 
                     recView_info = findViewById(R.id.recView_info);
                     recView_info.setLayoutManager(new LinearLayoutManager(getApplicationContext()));

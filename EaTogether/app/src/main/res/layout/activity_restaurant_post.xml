@@ -70,13 +70,14 @@
                     android:layout_weight="1"
                     android:orientation="horizontal">
 
-                    <TextView
+                    <RatingBar
                         android:id="@+id/res_rating"
+                        style="@style/Widget.AppCompat.RatingBar.Small"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="TextView"
-                        android:textStyle="bold" />
+                        android:backgroundTint="@color/black"
+                        android:progressTint="@color/black" />
 
                     <TextView
                         android:id="@+id/res_review"
@@ -133,7 +134,7 @@
         <ImageView
             android:id="@+id/img1"
             android:layout_width="wrap_content"
-            android:layout_height="170dp"
+            android:layout_height="110dp"
             android:layout_marginLeft="10dp"
             android:layout_weight="1"
             tools:srcCompat="@tools:sample/backgrounds/scenic" />
@@ -141,7 +142,7 @@
         <ImageView
             android:id="@+id/img2"
             android:layout_width="wrap_content"
-            android:layout_height="170dp"
+            android:layout_height="110dp"
             android:layout_marginLeft="10dp"
             android:layout_weight="1"
             tools:srcCompat="@tools:sample/backgrounds/scenic" />
@@ -149,7 +150,7 @@
         <ImageView
             android:id="@+id/img3"
             android:layout_width="wrap_content"
-            android:layout_height="170dp"
+            android:layout_height="110dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_weight="1"

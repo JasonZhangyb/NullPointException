@@ -27,6 +27,7 @@ import com.squareup.picasso.Picasso;
 import com.yelp.fusion.client.connection.YelpFusionApi;
 import com.yelp.fusion.client.connection.YelpFusionApiFactory;
 import com.yelp.fusion.client.models.Business;
+import com.yelp.fusion.client.models.Category;
 import com.yelp.fusion.client.models.SearchResponse;
 
 import java.util.ArrayList;
@@ -184,6 +185,7 @@ class CustomAdapter extends BaseAdapter {
     ArrayList<String> name;
     ArrayList<String> img;
     ArrayList<Double> rating;
+    ArrayList<ArrayList<Category>> type;
     Context context;
 
 
@@ -191,6 +193,7 @@ class CustomAdapter extends BaseAdapter {
         name = new ArrayList<>();
         img = new ArrayList<>();
         rating = new ArrayList<>();
+        type = new ArrayList<>();
         context = aContext;
         businesses = aBusinesses;
 
@@ -200,6 +203,7 @@ class CustomAdapter extends BaseAdapter {
             name.add(businesses.get(i).getName());
             img.add(businesses.get(i).getImageUrl());
             rating.add(businesses.get(i).getRating());
+            type.add(businesses.get(i).getCategories());
         }
 
     }
@@ -223,6 +227,7 @@ class CustomAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
 
         View row;
+        String types = "";
 
         if (convertView == null){
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -233,15 +238,22 @@ class CustomAdapter extends BaseAdapter {
         }
 
         TextView business_name = row.findViewById(R.id.business_name);
+        TextView business_type = row.findViewById(R.id.business_type);
         ImageView business_img = row.findViewById(R.id.business_img);
         RatingBar business_rating = row.findViewById(R.id.business_rating);
 
+
+        for (int i = 0; i < type.get(position).size(); i++){
+            types += type.get(position).get(i).getTitle();
+            if (i != type.get(position).size() - 1) types += ", ";
+        }
+
         business_name.setText(name.get(position));
-        //the rating bar is just a visualization of the ratings, you can change the rating for now, but in the final app, the rating will be fixed.
+        business_type.setText(types);
         business_rating.setRating(rating.get(position).floatValue());
         //Picasso is a third party library for showing images from url.
         //https://square.github.io/picasso/
-        Picasso.get().load(img.get(position)).resize(500,400).into(business_img);
+        Picasso.get().load(img.get(position)).resize(500,500).into(business_img);
 
         return row;
     }

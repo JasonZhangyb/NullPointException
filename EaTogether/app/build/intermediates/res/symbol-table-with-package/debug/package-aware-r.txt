@@ -1046,6 +1046,7 @@ id btn_send
 id business_img
 id business_name
 id business_rating
+id business_type
 id buttom_layout
 id buttonPanel
 id cancel_action
@@ -1225,7 +1226,6 @@ id recyclerView
 id recyclerViewHolder
 id recyclerViewLayout
 id recycler_view
-id refresh
 id registerButton
 id request
 id request_button

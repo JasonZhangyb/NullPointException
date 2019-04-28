@@ -17,6 +17,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText email,password,name;
@@ -91,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void addUser(String emailS, String nameS, String passwordS) {
+
         FirebaseDatabase mref = FirebaseDatabase.getInstance();
 
         DatabaseReference db = mref

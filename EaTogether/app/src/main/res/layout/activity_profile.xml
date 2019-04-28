@@ -156,14 +156,14 @@
             android:background="@color/colorPrimary"
             android:text=" Log out" />
 
-        <Button
+        <!--<Button
             android:id="@+id/refresh"
             android:textAllCaps="true"
             android:layout_width="145sp"
             android:layout_height="30sp"
             android:layout_marginTop="15sp"
             android:background="@color/colorPrimary"
-            android:text="REFRESH"/>
+            android:text="REFRESH"/>-->
 
     </LinearLayout>
     <RelativeLayout

@@ -1,13 +1,23 @@
 package cs591e1_sp19.eatogether;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class User {
     private String uid;
     private String uname;
     private String avatar;
     private String email;
+    public String gender, location, language;
+    public HashMap<String, String> fav;
 
-    public User() {
-        // Required empty contructor
+    public User(String gender, String location, String language,
+                HashMap<String, String> fav) {
+        //this.avatar = avatar;
+        this.gender = gender;
+        this.location = location;
+        this.language = language;
+        this.fav = fav;
     }
 
     public User(String uid, String uname, String avatar, String email) {
@@ -16,6 +26,8 @@ public class User {
         this.avatar = avatar;
         this.email = email;
     }
+
+    public User(){}
 
     public String getUid() {
         return uid;

@@ -50,7 +50,7 @@ public class ProfileActivity extends AppCompatActivity {
         goProf = findViewById(R.id.profile_change);
         logout = findViewById(R.id.logout);
         myPosts = findViewById(R.id.my_posts);
-        refresh = findViewById(R.id.refresh);
+        //refresh = findViewById(R.id.refresh);
 
         avatar = findViewById(R.id.profile_avatar);
         userName = findViewById(R.id.p_User);
@@ -120,19 +120,24 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
-        refresh.setOnClickListener(new View.OnClickListener() {
+        /*refresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
-
+        Picasso.get()
+                .load(AppState.userAvatar)
+                //.resize(300, 300)
+                .transform(new CircleTransform())
+                .into(avatar);
 
         setProfile();
 
     }
+
 
     @Override
     public void onBackPressed() {
@@ -178,34 +183,40 @@ public class ProfileActivity extends AppCompatActivity {
                 .getReference()
                 .child("Users");
 
-        db.addListenerForSingleValueEvent(new ValueEventListener() {
+        db.child(AppState.userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                for(DataSnapshot userSnapShot : dataSnapshot.getChildren()) {
-                    if(userSnapShot.getKey().equals(AppState.userID)) {
-                        if(userSnapShot.child("avatar").getValue() != null) {
-                            Picasso.get()
-                                    .load(userSnapShot.child("avatar").getValue().toString())
-                                    //.resize(300, 300)
-                                    .transform(new CircleTransform())
-                                    .into(avatar);
-                        }
-                        if(userSnapShot.child("name").getValue() != null) {
-                            userName.setText(userSnapShot.child("name").getValue().toString());
-                        }
-                        if(userSnapShot.child("location").getValue() != null) {
-                            location.setText("Location: " + userSnapShot.child("location").getValue().toString());
-                        }
-                        if(userSnapShot.child("fav").getValue() != null) {
-                            tagOne.setText(userSnapShot.child("fav").child("one").getValue().toString());
-                            tagTwo.setText(userSnapShot.child("fav").child("two").getValue().toString());
-                            tagThree.setText(userSnapShot.child("fav").child("three").getValue().toString());
-                        }
-                        if(userSnapShot.child("user_rating").getValue() != null) {
-                            String rating = userSnapShot.child("user_rating").getValue().toString().substring(0,3);
-                            ratingValue.setText("★ Rating: " + rating);
-                        }
+
+                if(dataSnapshot.child("name").getValue() != null) {
+                    userName.setText(dataSnapshot.child("name").getValue().toString());
+                }
+
+                if (dataSnapshot.child("setting").child("avatar").getValue() != null) {
+
+                    Picasso.get()
+                            .load(dataSnapshot.child("avatar").getValue().toString())
+                            //.resize(300, 300)
+                            .transform(new CircleTransform())
+                            .into(avatar);
+                }
+
+                if (dataSnapshot.hasChild("setting")) {
+
+                    if (dataSnapshot.child("setting").child("location").getValue() != null) {
+                        location.setText("Location: " + dataSnapshot.child("setting").child("location").getValue().toString());
+                    }
+                    if (dataSnapshot.child("setting").child("fav").getValue() != null) {
+                        tagOne.setText(dataSnapshot.child("setting").child("fav").child("one").getValue().toString());
+                        tagTwo.setText(dataSnapshot.child("setting").child("fav").child("two").getValue().toString());
+                        tagThree.setText(dataSnapshot.child("setting").child("fav").child("three").getValue().toString());
+                    }
+                }
+
+                if (dataSnapshot.hasChild("Rating")) {
+                    if (dataSnapshot.child("Rating").child("rating").getValue() != null) {
+                        String rating = dataSnapshot.child("Rating").child("rating").getValue().toString().substring(0, 3);
+                        ratingValue.setText("★ Rating: " + rating);
                     }
                 }
             }
