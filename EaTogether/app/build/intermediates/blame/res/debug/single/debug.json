@@ -60,12 +60,12 @@
         "source": "/Users/yuewu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/7c94a867cab18835b98140cae9b352ff/res/drawable-mdpi-v4/abc_btn_radio_to_on_mtrl_000.png"
     },
     {
-        "merged": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_ic_star_border_white_24dp.png.flat",
-        "source": "/Users/yuewu/.gradle/caches/transforms-1/files-1.1/materialfavoritebutton-0.1.4.aar/0d2980e83e3a9e8db872956a3ec3329b/res/drawable-mdpi-v4/ic_star_border_white_24dp.png"
-    },
-    {
         "merged": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_nav_event.png.flat",
         "source": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/src/main/res/drawable-xxxhdpi/nav_event.png"
+    },
+    {
+        "merged": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_ic_star_border_white_24dp.png.flat",
+        "source": "/Users/yuewu/.gradle/caches/transforms-1/files-1.1/materialfavoritebutton-0.1.4.aar/0d2980e83e3a9e8db872956a3ec3329b/res/drawable-mdpi-v4/ic_star_border_white_24dp.png"
     },
     {
         "merged": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/res/merged/debug/drawable_abc_cab_background_top_material.xml.flat",
@@ -84,12 +84,12 @@
         "source": "/Users/yuewu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/7c94a867cab18835b98140cae9b352ff/res/drawable/abc_ic_clear_material.xml"
     },
     {
-        "merged": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/res/merged/debug/drawable-mdpi_nav_map.png.flat",
-        "source": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/src/main/res/drawable-mdpi/nav_map.png"
-    },
-    {
         "merged": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
         "source": "/Users/yuewu/.gradle/caches/transforms-1/files-1.1/play-services-base-16.1.0.aar/9e7afd5f6d3a59fe349dd6be6a257fe7/res/drawable-xhdpi-v4/common_google_signin_btn_icon_dark_normal_background.9.png"
+    },
+    {
+        "merged": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/res/merged/debug/drawable-mdpi_nav_map.png.flat",
+        "source": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/src/main/res/drawable-mdpi/nav_map.png"
     },
     {
         "merged": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_wordmark_thin_mulberry.png.flat",
@@ -136,12 +136,12 @@
         "source": "/Users/yuewu/.gradle/caches/transforms-1/files-1.1/lyft-android-sdk-lyftbutton-1.0.3.aar/ebcf675f9448ae89369d0b67aba941cd/res/drawable-xxxhdpi-v4/app_icon.png"
     },
     {
-        "merged": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/res/merged/debug/drawable-hdpi_nav_me.png.flat",
-        "source": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/src/main/res/drawable-hdpi/nav_me.png"
-    },
-    {
         "merged": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_ic_favorite_border_black_24dp.png.flat",
         "source": "/Users/yuewu/.gradle/caches/transforms-1/files-1.1/materialfavoritebutton-0.1.4.aar/0d2980e83e3a9e8db872956a3ec3329b/res/drawable-xxxhdpi-v4/ic_favorite_border_black_24dp.png"
+    },
+    {
+        "merged": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/res/merged/debug/drawable-hdpi_nav_me.png.flat",
+        "source": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/src/main/res/drawable-hdpi/nav_me.png"
     },
     {
         "merged": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_wordmark_thin_pink.png.flat",
@@ -184,12 +184,12 @@
         "source": "/Users/yuewu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/7c94a867cab18835b98140cae9b352ff/res/color/abc_background_cache_hint_selector_material_dark.xml"
     },
     {
-        "merged": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
-        "source": "/Users/yuewu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/7c94a867cab18835b98140cae9b352ff/res/drawable-hdpi-v4/abc_scrubber_track_mtrl_alpha.9.png"
-    },
-    {
         "merged": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
         "source": "/Users/yuewu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/7c94a867cab18835b98140cae9b352ff/res/drawable-mdpi-v4/abc_list_selector_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
+        "source": "/Users/yuewu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/7c94a867cab18835b98140cae9b352ff/res/drawable-hdpi-v4/abc_scrubber_track_mtrl_alpha.9.png"
     },
     {
         "merged": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",

@@ -5,27 +5,26 @@
     build-mode="COLD"
     density="420dpi"
     format="10"
-    ir-eligibility="COMPATIBLE"
     plugin-version="3.2.0"
-    timestamp="1556434265232"
+    timestamp="1556435155479"
     token="-3626104655867648687"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="478" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="57" />
+        duration="0" />
     <task
         name="verifier"
-        duration="33" />
+        duration="0" />
 
     <artifact
-        location="/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+        location="/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
         type="SPLIT" />
 
     <build
@@ -79,6 +78,14 @@
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        timestamp="1556435155479"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
             type="SPLIT" />
     </build>
 
