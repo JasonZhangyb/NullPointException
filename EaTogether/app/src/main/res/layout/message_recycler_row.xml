@@ -11,7 +11,7 @@
     app:cardCornerRadius="@dimen/cardview_default_radius"
     android:elevation="@dimen/cardview_default_elevation">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -46,17 +46,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:id="@+id/rowTextHeader"/>
 
                 <TextView
+                    android:id="@+id/rowTextHeader"
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
-                    android:layout_weight="2"
-                    android:id="@+id/rowTextBody"/>
+                    android:layout_weight="2" />
+
+                <TextView
+                    android:id="@+id/rowTextBody"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/data_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
             </LinearLayout>
 
         </LinearLayout>

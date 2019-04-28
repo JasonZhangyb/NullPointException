@@ -94,6 +94,9 @@ public class ChatsList extends AppCompatActivity {
                             i.putExtra("restaurant_name", rooms.get(position).res_name);
                             i.putExtra("latitude", rooms.get(position).res_latitude);
                             i.putExtra("longitude", rooms.get(position).res_longitude);
+                            i.putExtra("date", rooms.get(position).date);
+                            i.putExtra("month", rooms.get(position).month);
+                            i.putExtra("year", rooms.get(position).year);
                             i.putExtra("time1", rooms.get(position).time1);
                             i.putExtra("time2", rooms.get(position).time2);
                             startActivity(i);

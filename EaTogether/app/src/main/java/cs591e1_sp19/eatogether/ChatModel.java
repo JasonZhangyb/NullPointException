@@ -9,13 +9,15 @@ public class ChatModel {
     public HashMap<String, String> guests;
     public String res_latitude, res_longitude;
     public String status;
+    public String date, month, year;
 
 
     public ChatModel(String creator_id, String creator_name,
                      String creator_avatar, HashMap<String, String> guests,
                      String post_id, String res_id, String res_name,
                      String latitude, String longitude,
-                     String time1, String time2, String status){
+                     String time1, String time2, String date,
+                     String month, String year, String status){
 
         this.creator_id = creator_id;
         this.creator_name = creator_name;
@@ -28,6 +30,9 @@ public class ChatModel {
         this.res_longitude = longitude;
         this.time1 = time1;
         this.time2 = time2;
+        this.date = date;
+        this.month = month;
+        this.year = year;
         this.status = status;
     }
 

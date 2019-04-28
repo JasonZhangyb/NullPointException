@@ -70,6 +70,9 @@ public class Chat extends AppCompatActivity {
         final String time2 = getIntent().getStringExtra("time2");
         final String latitude = getIntent().getStringExtra("latitude");
         final String longitude = getIntent().getStringExtra("longitude");
+        final String date = getIntent().getStringExtra("date");
+        final String month = getIntent().getStringExtra("month");
+        final String year = getIntent().getStringExtra("year");
 
         final DatabaseReference ref_msg = ref_chats.child(post_id);
 
@@ -94,6 +97,9 @@ public class Chat extends AppCompatActivity {
                             longitude,
                             time1,
                             time2,
+                            date,
+                            month,
+                            year,
                             "inUse");
 
                     ref_msg.setValue(chats);
@@ -118,6 +124,9 @@ public class Chat extends AppCompatActivity {
                                 longitude,
                                 time1,
                                 time2,
+                                date,
+                                month,
+                                year,
                                 "inUse");
 
                         ref_msg.setValue(chats);
@@ -139,6 +148,10 @@ public class Chat extends AppCompatActivity {
                             }
 
                         }
+
+                        if (lstView_chat != null && chat_adapter != null && chat_adapter.getCount() > 0) {
+                            lstView_chat.setSelection(chat_adapter.getCount() - 1);
+                        }
                     }
                 }
             }
@@ -156,22 +169,27 @@ public class Chat extends AppCompatActivity {
             public void onClick(View view) {
                 String input = txt_input.getText().toString();
 
-                txt_input.getText().clear();
+                if (!input.isEmpty()) {
+                    txt_input.getText().clear();
 
-                DatabaseReference ref = ref_msg.child("msg").push();
+                    DatabaseReference ref = ref_msg.child("msg").push();
 
-                msg = new MsgModel(AppState.userID, AppState.userName,input, AppState.userAvatar);
+                    msg = new MsgModel(AppState.userID, AppState.userName,input, AppState.userAvatar);
 
-                ref.setValue(msg);
+                    ref.setValue(msg);
 
-                lstView_chat.setAdapter(null);
+                    lstView_chat.setAdapter(null);
 
-                InputMethodManager inputManager = (InputMethodManager)
-                        getSystemService(Context.INPUT_METHOD_SERVICE);
+                    InputMethodManager inputManager = (InputMethodManager)
+                            getSystemService(Context.INPUT_METHOD_SERVICE);
 
-                inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
-                        InputMethodManager.HIDE_NOT_ALWAYS);
+                    inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
+                            InputMethodManager.HIDE_NOT_ALWAYS);
 
+                    if (chat_adapter.getCount() > 0) {
+                        lstView_chat.setSelection(chat_adapter.getCount() - 1);
+                    }
+                }
             }
         });
 
@@ -212,7 +230,9 @@ public class Chat extends AppCompatActivity {
 
                 }
 
-                //lstView_chat.setSelection(chat_adapter.getCount() - 1);
+                if (chat_adapter.getCount() > 0) {
+                    lstView_chat.setSelection(chat_adapter.getCount() - 1);
+                }
             }
 
             @Override
@@ -279,21 +299,12 @@ class ChatsAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View row;
-
         final MsgModel msg = msgs.get(position);
+        View row = buildMessageRowLayout(msg, parent);
 
-        if (convertView == null){
-            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            row = inflater.inflate(R.layout.message_recycler_row, parent, false);
-        }
-        else{
-            row = convertView;
-        }
-
-        TextView header = row.findViewById(R.id.rowTextHeader);
-        TextView body = row.findViewById(R.id.rowTextBody);
-        final ImageView user_avatar = row.findViewById(R.id.rowImageView);
+        TextView header = row.findViewById(R.id.text_message_name);
+        TextView body = row.findViewById(R.id.text_message_body);
+        final ImageView user_avatar = row.findViewById(R.id.image_message_profile);
 
         // Retrieving sender's user avatar.
         AppState.getDatabaseReference(AppState.USER_DATABASE).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -314,4 +325,13 @@ class ChatsAdapter extends BaseAdapter {
         return row;
     }
 
+    private View buildMessageRowLayout(MsgModel msg, ViewGroup parent) {
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        if (msg.sender_id.equals(AppState.userID)) {
+            return inflater.inflate(R.layout.outgoing_message, parent, false);
+        } else {
+            return inflater.inflate(R.layout.incoming_message, parent, false);
+        }
+    }
 }

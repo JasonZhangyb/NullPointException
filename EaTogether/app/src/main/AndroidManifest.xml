@@ -20,7 +20,8 @@
         <activity android:name=".UserInfo"></activity>
         <activity android:name=".ChatsList"
             android:label="Message"/>
-        <activity android:name=".Chat" />
+        <activity android:name=".Chat"
+            android:windowSoftInputMode="stateHidden"/>
         <activity android:name=".MyPosts" />
         <activity
             android:name=".OnGoingActivity"

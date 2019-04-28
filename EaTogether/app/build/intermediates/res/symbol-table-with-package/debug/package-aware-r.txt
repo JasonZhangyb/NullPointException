@@ -937,6 +937,7 @@ drawable icon_03
 drawable icon_03_white
 drawable icon_04
 drawable icon_04_white
+drawable incoming_message_bubble
 drawable kirk_spock1
 drawable login_btn
 drawable logo_img
@@ -960,6 +961,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable outgoing_message_bubble
 drawable post_bg
 drawable post_btn_shape
 drawable prime_time_charcoal
@@ -1073,6 +1075,7 @@ id cost_text
 id custom
 id customPanel
 id dark
+id data_time
 id datePicker
 id decor_content_parent
 id default_activity_button
@@ -1125,6 +1128,7 @@ id ifRoom
 id image
 id imageView
 id imageView2
+id image_message_profile
 id img1
 id img2
 id img3
@@ -1302,6 +1306,8 @@ id textSpacerNoTitle
 id textView
 id textView2
 id text_input_password_toggle
+id text_message_body
+id text_message_name
 id text_tag
 id textinput_counter
 id textinput_error
@@ -1427,6 +1433,7 @@ layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout fragment_message
 layout fragment_restaurant_info
+layout incoming_message
 layout invitation_dialog
 layout listview_review_row
 layout listview_row
@@ -1449,6 +1456,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout outgoing_message
 layout rating_dialog
 layout recyclerview_chats_list_row
 layout recyclerview_posts_row

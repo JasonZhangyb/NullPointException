@@ -146,7 +146,7 @@ class MyPostsAdapter extends RecyclerView.Adapter<MyPostsAdapter.MyViewHolder> {
 
         myViewHolder.res_name.setText(post.restaurant_name);
         //myViewHolder.user_locale.setText(post.country + ", " + post.language);
-        myViewHolder.user_locale.setText("Boston" + ", " + "English");
+        myViewHolder.user_locale.setText(post.date + "/" + post.month + "/" + post.year);
         myViewHolder.time_period.setText(post.time1 + " - " + post.time2);
         myViewHolder.user_note.setText(post.note);
         myViewHolder.msg_btn.setText("DELETE");
@@ -162,6 +162,15 @@ class MyPostsAdapter extends RecyclerView.Adapter<MyPostsAdapter.MyViewHolder> {
                 ref_users.child(AppState.userID).child("Posts").child(post.post_id).removeValue();
                 Intent i = new Intent(view.getContext(), MyPosts.class);
                 view.getContext().startActivity(i);
+            }
+        });
+
+        myViewHolder.res_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(context, RestaurantPost.class);
+                i.putExtra("rest_id", post.restaurant_id);
+                context.startActivity(i);
             }
         });
 

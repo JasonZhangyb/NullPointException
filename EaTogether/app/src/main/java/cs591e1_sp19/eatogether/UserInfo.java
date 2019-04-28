@@ -1,5 +1,6 @@
 package cs591e1_sp19.eatogether;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -22,6 +23,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
+
+import static android.view.View.GONE;
 
 public class UserInfo extends AppCompatActivity {
 
@@ -66,62 +69,76 @@ public class UserInfo extends AppCompatActivity {
         guests1 = new HashMap<>();
         guests2 = new HashMap<>();
 
-        btn_info.setVisibility(View.GONE);
+        btn_info.setVisibility(GONE);
 
         ref_users.child(guest_id).addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+            public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
                 if (isCreator) {
                     if (!AppState.userID.equals(guest_id)) {
-                        if (dataSnapshot.hasChild("Invite")) {
-                            PostModel data = dataSnapshot.child("Invite").getValue(PostModel.class);
+                        if (!dataSnapshot.hasChild("Ongoing")) {
+                            if (dataSnapshot.hasChild("Invite")) {
+                                PostModel data = dataSnapshot.child("Invite").getValue(PostModel.class);
 
-                            if (post_id.equals(data.post_id)) {
-                                if (AppState.userID.equals(data.user_id)) {
-                                    btn_info.setText("WITHDRAW");
-                                    btn_info.setVisibility(View.VISIBLE);
-                                    btn_info.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-                                            //ref_users.child(guest_id).child("Invite").child("note").setValue("withdraw");
-                                            ref_users.child(guest_id).child("Invite").removeValue();
+                                if (post_id.equals(data.post_id)) {
+                                    if (AppState.userID.equals(data.user_id)) {
+                                        btn_info.setText("WITHDRAW");
+                                        btn_info.setVisibility(View.VISIBLE);
+                                        btn_info.setOnClickListener(new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View view) {
+                                                //ref_users.child(guest_id).child("Invite").child("note").setValue("withdraw");
+                                                ref_users.child(guest_id).child("Invite").removeValue();
 
-                                            AppState.onGoingPost = null;
-                                            AppState.onGoingRes = null;
-                                        }
-                                    });
+                                                AppState.onGoingPost = null;
+                                                AppState.onGoingRes = null;
+                                            }
+                                        });
+                                    }
                                 }
+
+                            } else {
+
+                                btn_info.setVisibility(View.VISIBLE);
+                                btn_info.setText("INVITE");
+                                btn_info.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+
+                                        PostModel invitation = new PostModel(
+                                                creator_id,
+                                                creator_name,
+                                                creator_avatar,
+                                                res_id,
+                                                res_name,
+                                                post_id,
+                                                time1,
+                                                time2,
+                                                latitude,
+                                                longitude,
+                                                "onGoing");
+
+                                        ref_users.child(guest_id).child("Invite").setValue(invitation);
+
+                                        AppState.onGoingPost = post_id;
+                                        AppState.onGoingRes = res_id;
+                                    }
+                                });
                             }
-
                         } else {
-
                             btn_info.setVisibility(View.VISIBLE);
                             btn_info.setText("INVITE");
                             btn_info.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View view) {
 
-                                    PostModel invitation = new PostModel(
-                                            creator_id,
-                                            creator_name,
-                                            creator_avatar,
-                                            res_id,
-                                            res_name,
-                                            post_id,
-                                            time1,
-                                            time2,
-                                            latitude,
-                                            longitude,
-                                            "onGoing");
+                                    openNoteDialog(
+                                            dataSnapshot.child("name").getValue().toString(),
+                                            dataSnapshot.child("avatar").getValue().toString());
 
-                                    ref_users.child(guest_id).child("Invite").setValue(invitation);
-
-                                    AppState.onGoingPost = post_id;
-                                    AppState.onGoingRes = res_id;
                                 }
                             });
                         }
-
                     }
                 }
 
@@ -182,6 +199,31 @@ public class UserInfo extends AppCompatActivity {
 
     }
 
+    public void openNoteDialog(String name, String guest_avatar){
+        final Dialog note = new Dialog(UserInfo.this);
+        note.setContentView(R.layout.invitation_dialog);
+
+        TextView note1 = note.findViewById(R.id.inv_name);
+        TextView note2 = note.findViewById(R.id.inv_restaurant);
+        //TextView inv_note = inv_dialog.findViewById(R.id.inv_note);
+        ImageView avatar = note.findViewById(R.id.inv_avatar);
+        Button inv_accept = note.findViewById(R.id.inv_accept);
+        Button inv_decline = note.findViewById(R.id.inv_decline);
+
+        note1.setText("Oops, looks like " + name);
+        note2.setText("is currently unavailable");
+        Picasso.get().load(guest_avatar).into(avatar);
+
+        inv_decline.setVisibility(GONE);
+        note.show();
+        inv_accept.setText("BACK");
+        inv_accept.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                note.cancel();
+            }
+        });
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

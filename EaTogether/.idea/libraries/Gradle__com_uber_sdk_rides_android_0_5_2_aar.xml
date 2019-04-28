@@ -1,11 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: com.uber.sdk:rides-android:0.5.2@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/rides-android-0.5.2.aar/d20b7cda4aeaf1ddf63f6fc519cd3628/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/rides-android-0.5.2.aar/2b08a9f3204f4b32da070c38962ead9b/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/rides-android-0.5.2.aar/d20b7cda4aeaf1ddf63f6fc519cd3628/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/rides-android-0.5.2.aar/d20b7cda4aeaf1ddf63f6fc519cd3628/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/rides-android-0.5.2.aar/2b08a9f3204f4b32da070c38962ead9b/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/rides-android-0.5.2.aar/2b08a9f3204f4b32da070c38962ead9b/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
