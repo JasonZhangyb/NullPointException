@@ -4283,8 +4283,8 @@ public final class R {
     public static final int custom=0x7f090056;
     public static final int customPanel=0x7f090057;
     public static final int dark=0x7f090058;
-    public static final int data_time=0x7f090059;
-    public static final int datePicker=0x7f09005a;
+    public static final int datePicker=0x7f090059;
+    public static final int date_time=0x7f09005a;
     public static final int decor_content_parent=0x7f09005b;
     public static final int default_activity_button=0x7f09005c;
     public static final int design_bottom_sheet=0x7f09005d;

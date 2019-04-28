@@ -192,10 +192,12 @@ class ChatsListAdapter extends BaseAdapter {
 
         TextView user_name = row.findViewById(R.id.rowTextHeader);
         TextView res_name = row.findViewById(R.id.rowTextBody);
+        TextView date = row.findViewById(R.id.date_time);
         ImageView user_avatar = row.findViewById(R.id.rowImageView);
 
         user_name.setText(room.creator_name);
         res_name.setText(room.res_name);
+        date.setText(room.date + "/" + room.month + "/" + room.year);
         Picasso.get().load(room.creator_avatar).into(user_avatar);
 
         return row;

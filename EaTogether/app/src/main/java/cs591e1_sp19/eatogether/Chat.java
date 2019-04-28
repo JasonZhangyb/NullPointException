@@ -186,7 +186,7 @@ public class Chat extends AppCompatActivity {
                     inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
                             InputMethodManager.HIDE_NOT_ALWAYS);
 
-                    if (chat_adapter.getCount() > 0) {
+                    if (lstView_chat != null && chat_adapter != null && chat_adapter.getCount() > 0) {
                         lstView_chat.setSelection(chat_adapter.getCount() - 1);
                     }
                 }
@@ -230,7 +230,7 @@ public class Chat extends AppCompatActivity {
 
                 }
 
-                if (chat_adapter.getCount() > 0) {
+                if (lstView_chat != null && chat_adapter != null && chat_adapter.getCount() > 0) {
                     lstView_chat.setSelection(chat_adapter.getCount() - 1);
                 }
             }
