@@ -19,7 +19,9 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
@@ -59,7 +61,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     private static final int RC_SIGN_IN = 9001;
     private SignInButton signInButton;
     FirebaseAuth firebaseAuth;
-    GoogleApiClient mGoogleApiClient;
+    GoogleSignInClient mGoogleApiClient;
 
     //Yelp Class
     YelpFusionApiFactory apiFactory;
@@ -71,6 +73,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
     private static final int REQUEST_LOCATION = 1;
     LocationManager locationManager;
+    final private String img = "https://firebasestorage.googleapis.com/v0/b/eatogether-cs591.appspot.com/o/profile_img-01.png?alt=media&token=ef833632-1a12-47cf-aecf-a4504abe9c02";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,14 +100,16 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         }
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
+                //.requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
 
-        mGoogleApiClient = new GoogleApiClient.Builder(this)
-                .enableAutoManage(LoginActivity.this,this)
-                .addApi(Auth.GOOGLE_SIGN_IN_API,gso)
-                .build();
+//        mGoogleApiClient = new GoogleApiClient.Builder(this)
+//                .enableAutoManage(LoginActivity.this,this)
+//                .addApi(Auth.GOOGLE_SIGN_IN_API,gso)
+//                .build();
+
+        mGoogleApiClient = GoogleSignIn.getClient(this, gso);
 
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -146,7 +151,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     }
 
     private void signIn() {
-        Intent signIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
+        Intent signIntent = mGoogleApiClient.getSignInIntent();
         startActivityForResult(signIntent,RC_SIGN_IN);
     }
 
@@ -303,8 +308,15 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         if(requestCode==RC_SIGN_IN){
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
             if(result.isSuccess()){
-                GoogleSignInAccount account = result.getSignInAccount();
-                authWithGoogle(account);
+                GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(LoginActivity.this);
+                if (acct != null) {
+                    String personName = acct.getDisplayName();
+                    String personEmail = acct.getEmail();
+                    String personId = acct.getId();
+                    checkSignLogin(personEmail, personId, personName);
+                } else {
+                    Toast.makeText(getApplicationContext(), "Try Agian!", Toast.LENGTH_SHORT).show();
+                }
             }
         }
     }
@@ -323,6 +335,65 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 }
             }
         });
+    }
+
+    private void checkSignLogin(final String personEmail, final String personId, final String personName) {
+        FirebaseDatabase mref = FirebaseDatabase.getInstance();
+        final boolean[] exist = new boolean[1];
+        exist[0] = false;
+
+        DatabaseReference db = mref.getReference().child("Users");
+
+        db.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                for(DataSnapshot userSnapShot : dataSnapshot.getChildren()) {
+                    if(userSnapShot.child("email").getValue().toString().equals(personEmail)) {
+                        exist[0] = true;
+                        break;
+                    }
+                }
+
+                if(exist[0]) {
+                    logIn(personEmail, personId);
+                } else {
+                    addUser(personEmail, personName, personId);
+                    logIn(personEmail, personId);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    private void addUser(String emailS, String nameS, String passwordS) {
+
+        FirebaseDatabase mref = FirebaseDatabase.getInstance();
+
+        DatabaseReference db = mref
+                .getReference()
+                .child("Users");
+
+        RatingModel rating = new RatingModel(
+                nameS,
+                img,
+                "5.0",
+                "0"
+        );
+
+        String newKey = db.push().getKey();
+        db.child(newKey).child("email").setValue(emailS);
+        db.child(newKey).child("name").setValue(nameS);
+        db.child(newKey).child("password").setValue(passwordS);
+        db.child(newKey).child("Rating").setValue(rating);
+        db.child(newKey).child("avatar").setValue(img);
+        //db.child(newKey).child("user_rating").setValue("5.0");
+        //db.child(newKey).child("rating_amount").setValue("0");
+        //db.child(newKey).child("avatar").setValue(img);
     }
 
     @Override

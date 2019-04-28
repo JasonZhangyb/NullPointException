@@ -1,4 +1,4 @@
-#Sun Apr 28 13:16:23 EDT 2019
-base.0=C\:\\Users\\Jason\\Desktop\\npe\\NullPointException\\EaTogether\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\5
+#Sun Apr 28 18:59:26 EDT 2019
+base.0=/Users/limuzi/AndroidStudioProjects/EaTogether/V6/NullPointException/EaTogether/app/build/intermediates/transforms/dexMerger/debug/5
 path.0=classes.dex
 renamed.0=classes.dex

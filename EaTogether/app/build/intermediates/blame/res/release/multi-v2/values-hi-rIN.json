@@ -1,0 +1,43 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/limuzi/AndroidStudioProjects/EaTogether/V6/NullPointException/EaTogether/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-hi-rIN/values-hi-rIN.xml",
+            "map": [
+                {
+                    "source": "/Users/limuzi/.gradle/caches/transforms-1/files-1.1/core-android-0.5.2.aar/67be13a7d46ed425c0bac671c243c4ef/res/values-hi-rIN/values-hi-rIN.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "52",
+                        "endOffsets": "103"
+                    },
+                    "to": {
+                        "startLines": "8",
+                        "startColumns": "4",
+                        "startOffsets": "530",
+                        "endColumns": "52",
+                        "endOffsets": "578"
+                    }
+                },
+                {
+                    "source": "/Users/limuzi/.gradle/caches/transforms-1/files-1.1/rides-android-0.5.2.aar/7a48a66ef024c875a4a52c336abe1cd0/res/values-hi-rIN/values-hi-rIN.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "55,109,173,243,356,461,530",
+                        "endColumns": "53,63,69,112,104,68,57",
+                        "endOffsets": "104,168,238,351,456,525,583"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,9",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "55,109,173,243,356,461,583",
+                        "endColumns": "53,63,69,112,104,68,57",
+                        "endOffsets": "104,168,238,351,456,525,636"
+                    }
+                }
+            ]
+        }
+    ]
+}
