@@ -28,6 +28,12 @@ public class MenuFragment extends Fragment {
     private TextView txEvent;
     private TextView txMe;
     private int count=0;
+    private String value;
+
+    public void putArguments(Bundle args) {
+        value = args.getString("value");
+
+    }
 
     @Nullable
     @Override
@@ -42,6 +48,22 @@ public class MenuFragment extends Fragment {
         txMessage = (TextView) v.findViewById(R.id.tvMessage);
         txEvent = (TextView) v.findViewById(R.id.tvEvent);
         txMe = (TextView) v.findViewById(R.id.tvMe);
+
+
+        System.out.println(value);
+
+        if (value=="MAP"){
+            Map.setImageResource(R.drawable.icon_01_white);
+        }
+        else if (value=="MESSAGE"){
+            Message.setImageResource(R.drawable.icon_02_white);
+        }
+        else if (value == "EVENT"){
+            Event.setImageResource(R.drawable.icon_03_white);
+        }
+        else if (value == "ME"){
+            Me.setImageResource(R.drawable.icon_04_white);
+        }
 
         Map.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -216,7 +238,19 @@ public class MenuFragment extends Fragment {
 
         });
 
+        //MapsActivity activity = (MapsActivity) getActivity();
+        //ChatsList chat_activity = (ChatsList) getActivity();
+
+        //if (activity!=null){
+           // myDataFromActivity = activity.getMyData();
+            //System.out.println(myDataFromActivity);
+           // Map.setImageResource(R.drawable.icon_01_white);
+        //}
+
+
 
         return v;
     }
+
+
 }

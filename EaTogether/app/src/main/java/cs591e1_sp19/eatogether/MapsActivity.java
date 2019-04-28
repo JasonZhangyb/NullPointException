@@ -95,7 +95,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private RelativeLayout rll_restaurant;
     private RelativeLayout rll_search;
     private RelativeLayout inv_layout;
-
+    private String myString = "MAP";
 
     LatLng current_loca = new LatLng(Double.parseDouble(current_lati), Double.parseDouble(current_longi));
 
@@ -143,6 +143,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         menu_trans.addToBackStack(null);
         menu_trans.commit();
+
+        Bundle args = new Bundle();
+        args.putString("value","MAP");
+        menu.putArguments(args);
 
         inv_layout = findViewById(R.id.inv);
         inv = new ImageView(getApplicationContext());
@@ -227,6 +231,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         });
     }
+
+    //public String getMyData(){
+        //return myString;
+   // }
 
     public void openInvDialog(String name, String avatar, String res, String id,
                               String t1, String t2, String lat, String lon, String note) {

@@ -42,6 +42,7 @@ public class ChatsList extends AppCompatActivity {
     private MenuFragment  menu = new MenuFragment();;
     private FragmentManager menu_manager;
     private FragmentTransaction menu_trans;
+    private String myString = "MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +60,10 @@ public class ChatsList extends AppCompatActivity {
 
         menu_trans.addToBackStack(null);
         menu_trans.commit();
+
+        Bundle args = new Bundle();
+        args.putString("value","MESSAGE");
+        menu.putArguments(args);
 
         ref_chats.addValueEventListener(new ValueEventListener() {
             @Override
@@ -109,6 +114,8 @@ public class ChatsList extends AppCompatActivity {
 // super.onBackPressed();
 // Not calling **super**, disables back button in current screen.
     }
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 //        return super.onCreateOptionsMenu(menu);   //get rid of default behavior.

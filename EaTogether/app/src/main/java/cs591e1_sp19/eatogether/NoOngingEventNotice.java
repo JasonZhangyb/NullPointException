@@ -29,6 +29,10 @@ public class NoOngingEventNotice extends AppCompatActivity {
         menu_trans.addToBackStack(null);
         menu_trans.commit();
 
+        Bundle args = new Bundle();
+        args.putString("value","EVENT");
+        menu.putArguments(args);
+
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
