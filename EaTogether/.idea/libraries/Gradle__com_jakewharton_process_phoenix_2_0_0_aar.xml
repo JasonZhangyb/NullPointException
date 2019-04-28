@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.jakewharton:process-phoenix:2.0.0@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/process-phoenix-2.0.0.aar/ab4b5483fad8c0816c4c92f6d44a048d/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/process-phoenix-2.0.0.aar/ab4b5483fad8c0816c4c92f6d44a048d/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/process-phoenix-2.0.0.aar/a10d10d85fbac8c6f928bfee980471fe/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/process-phoenix-2.0.0.aar/a10d10d85fbac8c6f928bfee980471fe/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

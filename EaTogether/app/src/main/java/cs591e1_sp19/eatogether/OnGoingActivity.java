@@ -421,6 +421,12 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
 
     }
 
+    @Override
+    public void onBackPressed() {
+// super.onBackPressed();
+// Not calling **super**, disables back button in current screen.
+    }
+
     public void findCoffee(){
 
         ongoingdb.addListenerForSingleValueEvent(new ValueEventListener() {

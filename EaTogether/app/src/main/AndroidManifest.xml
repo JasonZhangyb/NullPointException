@@ -18,7 +18,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".UserInfo"></activity>
-        <activity android:name=".ChatsList" />
+        <activity android:name=".ChatsList"
+            android:label="Message"/>
         <activity android:name=".Chat" />
         <activity android:name=".MyPosts" />
         <activity
@@ -65,10 +66,13 @@
         <activity
             android:name=".NoOngingEventNotice"
             android:label="Event" />
-        <activity android:name=".MessageActivity" />
+        <activity android:name=".MessageActivity"
+            android:label="Message"/>
         <activity android:name=".ListOfChatsActivity" />
-        <activity android:name=".ProfileActivity" />
-        <activity android:name=".ProfileChangeActivity" />
+        <activity android:name=".ProfileActivity"
+            android:label="Profile"/>
+        <activity android:name=".ProfileChangeActivity"
+            android:label="Change Profile"/>
     </application>
 
 </manifest>

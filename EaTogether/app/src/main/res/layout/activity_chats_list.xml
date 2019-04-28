@@ -7,8 +7,24 @@
     android:orientation="vertical"
     tools:context=".ChatsList">
 
+
+
     <ListView
         android:id="@+id/lstView_chats_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_marginBottom = "56dp"/>
+
+    <RelativeLayout
+        android:id="@+id/menu"
+        android:layout_width="10dp"
+        android:layout_height="168dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:orientation="vertical">
+
+    </RelativeLayout>
+
 </LinearLayout>

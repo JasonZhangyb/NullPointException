@@ -37,4 +37,9 @@ public class NoOngingEventNotice extends AppCompatActivity {
             }
         });
     }
+    @Override
+    public void onBackPressed() {
+// super.onBackPressed();
+// Not calling **super**, disables back button in current screen.
+    }
 }

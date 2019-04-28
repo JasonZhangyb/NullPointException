@@ -3,6 +3,8 @@ package cs591e1_sp19.eatogether;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -37,6 +39,9 @@ public class ChatsList extends AppCompatActivity {
     ChatsListAdapter chats_list_adapter;
 
     ArrayList<ChatModel> rooms;
+    private MenuFragment  menu = new MenuFragment();;
+    private FragmentManager menu_manager;
+    private FragmentTransaction menu_trans;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +50,15 @@ public class ChatsList extends AppCompatActivity {
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference ref_chats = database.getReference("ChatsAlt");
+
+
+        //Add menu dynamically
+        menu_manager = getSupportFragmentManager();
+        menu_trans = menu_manager.beginTransaction();
+        menu_trans.add(R.id.menu, menu);
+
+        menu_trans.addToBackStack(null);
+        menu_trans.commit();
 
         ref_chats.addValueEventListener(new ValueEventListener() {
             @Override
@@ -89,6 +103,11 @@ public class ChatsList extends AppCompatActivity {
 
             }
         });
+    }
+    @Override
+    public void onBackPressed() {
+// super.onBackPressed();
+// Not calling **super**, disables back button in current screen.
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

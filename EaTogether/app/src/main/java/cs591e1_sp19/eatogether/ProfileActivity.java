@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -34,6 +36,11 @@ public class ProfileActivity extends AppCompatActivity {
 
     private ImageView avatar;
     private TextView userName, location, tagOne, tagTwo, tagThree, ratingValue;
+
+    private MenuFragment  menu = new MenuFragment();;
+    private FragmentManager menu_manager;
+    private FragmentTransaction menu_trans;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +59,13 @@ public class ProfileActivity extends AppCompatActivity {
         tagTwo = findViewById(R.id.tag_two);
         tagThree = findViewById(R.id.tag_three);
         ratingValue = findViewById(R.id.rating_value);
+
+        menu_manager = getSupportFragmentManager();
+        menu_trans = menu_manager.beginTransaction();
+        menu_trans.add(R.id.menu, menu);
+
+        menu_trans.addToBackStack(null);
+        menu_trans.commit();
 
         goWish.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,6 +128,12 @@ public class ProfileActivity extends AppCompatActivity {
 
         setProfile();
 
+    }
+
+    @Override
+    public void onBackPressed() {
+// super.onBackPressed();
+// Not calling **super**, disables back button in current screen.
     }
 
     @Override

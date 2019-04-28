@@ -149,7 +149,7 @@ public class MenuFragment extends Fragment {
             @Override
             public void onClick(View v){
                 //Toast.makeText(getActivity(),"Message!",Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getActivity(), ListOfChatsActivity.class);
+                Intent intent = new Intent(getActivity(), ChatsList.class);
                 startActivity(intent);
                 Map.setImageResource(R.drawable.icon_01);
                 Message.setImageResource(R.drawable.icon_02_white);

@@ -38,7 +38,9 @@
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity android:name="cs591e1_sp19.eatogether.UserInfo" />
-        <activity android:name="cs591e1_sp19.eatogether.ChatsList" />
+        <activity
+            android:name="cs591e1_sp19.eatogether.ChatsList"
+            android:label="Message" />
         <activity android:name="cs591e1_sp19.eatogether.Chat" />
         <activity android:name="cs591e1_sp19.eatogether.MyPosts" />
         <activity
@@ -85,10 +87,16 @@
         <activity
             android:name="cs591e1_sp19.eatogether.NoOngingEventNotice"
             android:label="Event" />
-        <activity android:name="cs591e1_sp19.eatogether.MessageActivity" />
+        <activity
+            android:name="cs591e1_sp19.eatogether.MessageActivity"
+            android:label="Message" />
         <activity android:name="cs591e1_sp19.eatogether.ListOfChatsActivity" />
-        <activity android:name="cs591e1_sp19.eatogether.ProfileActivity" />
-        <activity android:name="cs591e1_sp19.eatogether.ProfileChangeActivity" />
+        <activity
+            android:name="cs591e1_sp19.eatogether.ProfileActivity"
+            android:label="Profile" />
+        <activity
+            android:name="cs591e1_sp19.eatogether.ProfileChangeActivity"
+            android:label="Change Profile" />
         <activity
             android:name="com.uber.sdk.android.rides.RideRequestActivity"
             android:exported="false"
