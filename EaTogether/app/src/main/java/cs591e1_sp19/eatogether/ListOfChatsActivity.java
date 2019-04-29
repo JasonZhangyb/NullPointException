@@ -50,6 +50,7 @@ public class ListOfChatsActivity extends AppCompatActivity {
 
         setChildEventListener();
 
+        // Add menu dynamically
         menu_manager = getSupportFragmentManager();
         menu_trans = menu_manager.beginTransaction();
         menu_trans.add(R.id.menu, menu);

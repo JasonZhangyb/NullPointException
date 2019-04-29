@@ -1286,30 +1286,33 @@
     <session id="-364277116">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.9" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="5" />
-          <entry key="xml" value="15" />
+          <entry key="java" value="15" />
+          <entry key="xml" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="5" />
-          <entry key="XML" value="15" />
+          <entry key="JAVA" value="15" />
+          <entry key="XML" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="java" value="1369" />
           <entry key="txt" value="45" />
           <entry key="xml" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+          <entry key="JAVA" value="1369" />
           <entry key="PLAIN_TEXT" value="45" />
           <entry key="XML" value="28" />
         </counts>
@@ -1319,73 +1322,12 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/OnGoingActivity.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/WishList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="366" column="44" selection-start-line="366" selection-start-column="44" selection-end-line="366" selection-end-column="44" />
+            <state relative-caret-position="-443">
+              <caret line="50" column="65" selection-start-line="50" selection-start-column="65" selection-end-line="50" selection-end-column="65" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_restaurant_search.xml">
-          <provider editor-type-id="text-editor" />
-          <provider selected="true" editor-type-id="android-designer2" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_chats_list.xml">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="36" column="11" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="android-designer2" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/ChatsList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1515">
-              <caret line="135" column="25" selection-start-line="135" selection-start-column="25" selection-end-line="135" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/MapsActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4973">
-              <caret line="186" column="35" selection-start-line="186" selection-start-column="28" selection-end-line="186" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/menu_fragment.xml">
-          <provider editor-type-id="text-editor" />
-          <provider selected="true" editor-type-id="android-designer2" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
-          <provider editor-type-id="text-editor" />
-          <provider selected="true" editor-type-id="android-designer2" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_on_going.xml">
-          <provider editor-type-id="text-editor" />
-          <provider selected="true" editor-type-id="android-designer2" />
         </entry>
       </file>
     </leaf>
@@ -3715,9 +3657,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/badge_background.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/TopMenu.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/AppState.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/NotificationBadge.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/custom_notification.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/EventModel.java" />
@@ -3730,8 +3669,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_maps.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/MessageActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_message.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/NoOngingEventNotice.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/MenuFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_chats_list.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/OnGoingActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/RestaurantSearch.java" />
@@ -3740,14 +3677,10 @@
         <option value="$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/User.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/ProfileChangeActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/ProfileActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/RestaurantPost.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/MapsActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/ChatModel.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_chat.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/message_recycler_row.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/ChatsList.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/Chat.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_user_info.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/recyclerview_posts_row.xml" />
@@ -3766,6 +3699,15 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_on_going.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_restaurant_search.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/ChatsList.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/ListOfChatsActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/MapsActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/MenuFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/NoOngingEventNotice.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/ProfileActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/RestaurantPost.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/WishAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/WishList.java" />
       </list>
     </option>
   </component>
@@ -3808,35 +3750,6 @@
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="cs591e1_sp19" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="eatogether" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EaTogether" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
-            <path>
-              <item name="EaTogether" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="drawable" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="EaTogether" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="EaTogether" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="mipmap" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="EaTogether" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
           </expand>
           <select />
@@ -4043,7 +3956,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="815" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49746192" visible="true" weight="0.19241774" />
       <window_info id="Structure" order="1" sideWeight="0.5025381" side_tool="true" weight="0.3090129" />
@@ -4115,21 +4027,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/RestaurantInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_restaurant_info.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="25" column="25" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="54" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/rating_dialog.xml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="646">
@@ -4156,31 +4053,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/MenuFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="84" column="9" selection-start-line="84" selection-start-column="9" selection-end-line="84" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/WishAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/ProfileChangeActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5423">
           <caret line="368" column="16" selection-start-line="368" selection-start-column="16" selection-end-line="368" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/ProfileActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1088">
-          <caret line="72" selection-start-line="72" selection-end-line="72" />
         </state>
       </provider>
     </entry>
@@ -4217,13 +4093,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1717">
           <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/RestaurantPost.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3502">
-          <caret line="247" column="64" selection-start-line="247" selection-start-column="64" selection-end-line="247" selection-end-column="64" />
         </state>
       </provider>
     </entry>
@@ -4388,13 +4257,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/NoOngingEventNotice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="33" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/no_ongoing_notice.xml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -4426,28 +4288,6 @@
       <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_chats_list.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="11" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/ChatsList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1515">
-          <caret line="135" column="25" selection-start-line="135" selection-start-column="25" selection-end-line="135" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/MapsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4973">
-          <caret line="186" column="35" selection-start-line="186" selection-start-column="28" selection-end-line="186" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="383">
@@ -4458,8 +4298,79 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/OnGoingActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="366" column="44" selection-start-line="366" selection-start-column="44" selection-end-line="366" selection-end-column="44" />
+        <state relative-caret-position="80">
+          <caret line="363" lean-forward="true" selection-start-line="363" selection-end-line="363" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/ChatsList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1845">
+          <caret line="157" lean-forward="true" selection-start-line="157" selection-end-line="157" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_chats_list.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="36" column="11" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/ListOfChatsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="53" column="36" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/MenuFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="164" column="41" selection-start-line="164" selection-start-column="41" selection-end-line="164" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/NoOngingEventNotice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="45" column="4" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/MapsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="146" column="71" lean-forward="true" selection-start-line="146" selection-start-column="8" selection-end-line="146" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/ProfileActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="601">
+          <caret line="70" column="71" lean-forward="true" selection-start-line="70" selection-start-column="71" selection-end-line="70" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/RestaurantPost.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="296" column="29" lean-forward="true" selection-start-line="296" selection-start-column="29" selection-end-line="296" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/WishAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-263">
+          <caret line="110" column="101" selection-start-line="110" selection-start-column="101" selection-end-line="110" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cs591e1_sp19/eatogether/WishList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-443">
+          <caret line="50" column="65" selection-start-line="50" selection-start-column="65" selection-end-line="50" selection-end-column="65" />
         </state>
       </provider>
     </entry>

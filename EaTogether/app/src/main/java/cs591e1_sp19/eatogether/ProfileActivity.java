@@ -60,6 +60,7 @@ public class ProfileActivity extends AppCompatActivity {
         tagThree = findViewById(R.id.tag_three);
         ratingValue = findViewById(R.id.rating_value);
 
+        //Add menu dynamically
         menu_manager = getSupportFragmentManager();
         menu_trans = menu_manager.beginTransaction();
         menu_trans.add(R.id.menu, menu);
@@ -67,6 +68,7 @@ public class ProfileActivity extends AppCompatActivity {
         menu_trans.addToBackStack(null);
         menu_trans.commit();
 
+        //Send value to menu fragment to indicate which icon is pressed
         Bundle args = new Bundle();
         args.putString("value","ME");
         menu.putArguments(args);

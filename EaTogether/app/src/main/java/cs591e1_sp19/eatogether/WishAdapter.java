@@ -70,6 +70,9 @@ public class WishAdapter extends RecyclerView.Adapter<WishAdapter.MyViewHolder> 
                 @Override
                 public void onClick(View v) {
 
+                    //Go through the database and look for the name of current restaurant
+                    //get restaurant ID, and call the yelp api using the id to get the restaurant detail page
+
                     FirebaseDatabase.getInstance().getReference().child("Users").child(AppState.userID)
                             .child("Restaurants")
                             .addListenerForSingleValueEvent(new ValueEventListener() {
@@ -104,6 +107,8 @@ public class WishAdapter extends RecyclerView.Adapter<WishAdapter.MyViewHolder> 
                 }
             });
 
+            //Go through the database and look for the name of current restaurant
+            //get restaurant ID, and call the yelp api using the id to get the restaurant detail page
             imgRestaurant.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

@@ -48,6 +48,7 @@ public class WishList extends AppCompatActivity {
         reference = FirebaseDatabase.getInstance().getReference().child("Users").child(AppState.userID)
                 .child("Restaurants");
 
+        //set adapter to recycler view if there is new wish added
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -66,6 +67,9 @@ public class WishList extends AppCompatActivity {
             }
         });
 
+
+        //If there is no wish in the wishlist
+        //Show a image notice dynamically
         FirebaseDatabase.getInstance().getReference().child("Users").child(AppState.userID)
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override

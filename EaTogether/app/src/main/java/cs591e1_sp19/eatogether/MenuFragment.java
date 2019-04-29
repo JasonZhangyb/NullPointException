@@ -30,6 +30,8 @@ public class MenuFragment extends Fragment {
     private int count=0;
     private String value;
 
+
+    //Receive value from different activities to know which icon is pressed
     public void putArguments(Bundle args) {
         value = args.getString("value");
 
@@ -52,6 +54,8 @@ public class MenuFragment extends Fragment {
 
         System.out.println(value);
 
+        //If a specific icon is pressed, make that icon white
+
         if (value=="MAP"){
             Map.setImageResource(R.drawable.icon_01_white);
         }
@@ -65,6 +69,7 @@ public class MenuFragment extends Fragment {
             Me.setImageResource(R.drawable.icon_04_white);
         }
 
+        //Add click listener to icons and create intents
         Map.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -98,7 +103,10 @@ public class MenuFragment extends Fragment {
             public void onClick(View v){
                 //Toast.makeText(getActivity(),"Event!",Toast.LENGTH_SHORT).show();
 
-
+                // Go through database looking for "Ongoing" child
+                // To check whether there is an ongoing event.
+                // If there is an ongoing event, start ongoing event activity.
+                // Otherwise, start no ongoing event notice activity.
                 FirebaseDatabase.getInstance().getReference().child("Users").child(AppState.userID)
                         .addValueEventListener(new ValueEventListener() {
                             @Override
@@ -153,6 +161,8 @@ public class MenuFragment extends Fragment {
 
         });
 
+
+        //Add click listener to icon text and create intents
         txMap.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -238,14 +248,6 @@ public class MenuFragment extends Fragment {
 
         });
 
-        //MapsActivity activity = (MapsActivity) getActivity();
-        //ChatsList chat_activity = (ChatsList) getActivity();
-
-        //if (activity!=null){
-           // myDataFromActivity = activity.getMyData();
-            //System.out.println(myDataFromActivity);
-           // Map.setImageResource(R.drawable.icon_01_white);
-        //}
 
 
 

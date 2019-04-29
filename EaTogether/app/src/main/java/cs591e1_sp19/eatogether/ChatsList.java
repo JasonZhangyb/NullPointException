@@ -61,6 +61,7 @@ public class ChatsList extends AppCompatActivity {
         menu_trans.addToBackStack(null);
         menu_trans.commit();
 
+        //send value to menu fragment to indicate which icon is pressed
         Bundle args = new Bundle();
         args.putString("value","MESSAGE");
         menu.putArguments(args);

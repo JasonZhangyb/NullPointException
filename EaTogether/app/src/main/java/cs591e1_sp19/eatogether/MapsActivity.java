@@ -113,7 +113,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Firebase.setAndroidContext(this);
         mRef = new Firebase(databaseURL + "Users");
 
-
+        // add search button dynamically
         rll_search= (RelativeLayout) findViewById(R.id.search);
         rest_search = new ImageView(this);
         rest_search.setLayoutParams(new RelativeLayout.LayoutParams(150, 150));
@@ -144,6 +144,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         menu_trans.addToBackStack(null);
         menu_trans.commit();
 
+        //Send value to menu fragment to indicate which icon is pressed
         Bundle args = new Bundle();
         args.putString("value","MAP");
         menu.putArguments(args);

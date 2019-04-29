@@ -187,6 +187,8 @@ public class RestaurantPost extends AppCompatActivity {
 
             Log.v("test_loc", Boolean.toString(AppState.userID == null));
 
+            //Go through the database and compare the current restaurant name with name in wishlist
+            //If they are the same, then set favorite button filled.
             FirebaseDatabase.getInstance().getReference().child("Users").child(AppState.userID)
                     .child("Restaurants")
                     .addListenerForSingleValueEvent(new ValueEventListener() {
@@ -267,6 +269,8 @@ public class RestaurantPost extends AppCompatActivity {
                 }
             });
 
+
+            //When user clicks the fav button, they name and image of that restaurant will be uploaded to database
             favorite.setOnFavoriteChangeListener(  // add restaurant if to database if user like it
                     new MaterialFavoriteButton.OnFavoriteChangeListener() {
                         @Override
@@ -287,7 +291,7 @@ public class RestaurantPost extends AppCompatActivity {
 
                             }
                             else {
-                                nameRef.setValue(null);
+                                nameRef.setValue(null);   //unclick the fav button
                                 imageRef.setValue(null);
 
                             }

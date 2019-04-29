@@ -22,6 +22,7 @@ public class NoOngingEventNotice extends AppCompatActivity {
 
         btnSearch = (Button) findViewById(R.id.btnSearch);
 
+        // Add menu dynamically
         menu_manager = getSupportFragmentManager();
         menu_trans = menu_manager.beginTransaction();
         menu_trans.add(R.id.menu, menu);
@@ -29,6 +30,7 @@ public class NoOngingEventNotice extends AppCompatActivity {
         menu_trans.addToBackStack(null);
         menu_trans.commit();
 
+        //Send value to menu fragment to indicate which icon is pressed
         Bundle args = new Bundle();
         args.putString("value","EVENT");
         menu.putArguments(args);
@@ -41,6 +43,7 @@ public class NoOngingEventNotice extends AppCompatActivity {
             }
         });
     }
+
     @Override
     public void onBackPressed() {
 // super.onBackPressed();
