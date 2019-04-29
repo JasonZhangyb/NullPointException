@@ -16,6 +16,7 @@
             android:id="@+id/profile_avatar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_margin="15dp"
             android:layout_weight="1"/>
 
         <LinearLayout
@@ -32,26 +33,25 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1.2"
+                android:layout_weight="1.5"
                 android:gravity="center_vertical"
                 android:id="@+id/p_User"
                 android:textSize="20sp"
                 android:text="Username"/>
 
             <TextView
+                android:id="@+id/rating_value"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1.6"
-                android:text="Rating"
-                android:id="@+id/rating_value"
-                />
+                android:layout_weight="1.8"
+                android:text="Rating" />
 
             <TextView
+                android:id="@+id/p_location"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/p_location"
-                android:layout_weight="1.5"
-                android:text="Location"/>
+                android:layout_weight="1.8"
+                android:text="Location" />
 
 
             <RelativeLayout
@@ -122,39 +122,39 @@
         android:gravity="center">
 
         <Button
+            android:id="@+id/wish_list"
             android:layout_width="145sp"
             android:layout_height="45sp"
-            android:id="@+id/wish_list"
-            android:textAllCaps="true"
-            android:background="@color/colorPrimary"
-            android:text="Wish List"/>
+            android:background="@color/colorYellow"
+            android:text="Wish List"
+            android:textAllCaps="true" />
 
         <Button
+            android:id="@+id/profile_change"
             android:layout_width="145sp"
             android:layout_height="45sp"
-            android:id="@+id/profile_change"
-            android:textAllCaps="true"
             android:layout_marginTop="15sp"
-            android:background="@color/colorPrimary"
-            android:text="Profile Setting"/>
+            android:background="@color/colorYellow"
+            android:text="Profile Setting"
+            android:textAllCaps="true" />
 
         <Button
             android:id="@+id/my_posts"
             android:layout_width="145sp"
             android:layout_height="45sp"
             android:layout_marginTop="15sp"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorYellow"
             android:text="My Posts"
             android:textAllCaps="true" />
 
         <Button
             android:id="@+id/logout"
-            android:textAllCaps="true"
-            android:layout_marginTop="15sp"
             android:layout_width="145sp"
             android:layout_height="45sp"
-            android:background="@color/colorPrimary"
-            android:text=" Log out" />
+            android:layout_marginTop="15sp"
+            android:background="@color/colorYellow"
+            android:text=" Log out"
+            android:textAllCaps="true" />
 
         <!--<Button
             android:id="@+id/refresh"

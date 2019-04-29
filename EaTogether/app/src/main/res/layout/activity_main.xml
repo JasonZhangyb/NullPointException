@@ -63,12 +63,12 @@
             android:id="@+id/userRegisterButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:background="@drawable/btn_shape"
             android:text="Register!"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:layout_gravity="center"/>
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold" />
 
 
         <Button

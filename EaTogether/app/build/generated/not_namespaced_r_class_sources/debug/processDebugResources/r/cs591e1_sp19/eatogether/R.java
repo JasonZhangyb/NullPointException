@@ -694,14 +694,12 @@ public final class R {
      */
     public static final int cameraZoom=0x7f040056;
     /**
-     * Background color for CardView.
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
      * "<code>#<i>aarrggbb</i></code>".
      */
     public static final int cardBackgroundColor=0x7f040057;
     /**
-     * Corner radius for CardView.
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
      * Available units are: px (pixels), dp (density-independent pixels),
@@ -710,7 +708,6 @@ public final class R {
      */
     public static final int cardCornerRadius=0x7f040058;
     /**
-     * Elevation for CardView.
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
      * Available units are: px (pixels), dp (density-independent pixels),
@@ -719,7 +716,6 @@ public final class R {
      */
     public static final int cardElevation=0x7f040059;
     /**
-     * Maximum Elevation for CardView.
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
      * Available units are: px (pixels), dp (density-independent pixels),
@@ -728,13 +724,11 @@ public final class R {
      */
     public static final int cardMaxElevation=0x7f04005a;
     /**
-     * Add padding to CardView on v20 and before to prevent intersections between the Card content and rounded corners.
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
     public static final int cardPreventCornerOverlap=0x7f04005b;
     /**
-     * Add padding in API v21+ as well to have the same measurements with previous versions.
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
      */
@@ -1015,7 +1009,6 @@ public final class R {
      */
     public static final int contentInsetStartWithNavigation=0x7f040082;
     /**
-     * Inner padding between the edges of the Card and children of the CardView.
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
      * Available units are: px (pixels), dp (density-independent pixels),
@@ -1024,7 +1017,6 @@ public final class R {
      */
     public static final int contentPadding=0x7f040083;
     /**
-     * Inner padding between the bottom edge of the Card and children of the CardView.
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
      * Available units are: px (pixels), dp (density-independent pixels),
@@ -1033,7 +1025,6 @@ public final class R {
      */
     public static final int contentPaddingBottom=0x7f040084;
     /**
-     * Inner padding between the left edge of the Card and children of the CardView.
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
      * Available units are: px (pixels), dp (density-independent pixels),
@@ -1042,7 +1033,6 @@ public final class R {
      */
     public static final int contentPaddingLeft=0x7f040085;
     /**
-     * Inner padding between the right edge of the Card and children of the CardView.
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
      * Available units are: px (pixels), dp (density-independent pixels),
@@ -1051,7 +1041,6 @@ public final class R {
      */
     public static final int contentPaddingRight=0x7f040086;
     /**
-     * Inner padding between the top edge of the Card and children of the CardView.
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
      * Available units are: px (pixels), dp (density-independent pixels),
@@ -2268,7 +2257,7 @@ public final class R {
      * <tr><td>barrier</td><td>2</td><td></td></tr>
      * <tr><td>chains</td><td>4</td><td></td></tr>
      * <tr><td>dimensions</td><td>8</td><td></td></tr>
-     * <tr><td>direct</td><td>1</td><td>direct, barriers, chains</td></tr>
+     * <tr><td>direct</td><td>1</td><td></td></tr>
      * <tr><td>groups</td><td>20</td><td></td></tr>
      * <tr><td>none</td><td>0</td><td></td></tr>
      * <tr><td>standard</td><td>7</td><td></td></tr>
@@ -3741,89 +3730,90 @@ public final class R {
     public static final int colorAccent=0x7f06002b;
     public static final int colorPrimary=0x7f06002c;
     public static final int colorPrimaryDark=0x7f06002d;
-    public static final int common_google_signin_btn_text_dark=0x7f06002e;
-    public static final int common_google_signin_btn_text_dark_default=0x7f06002f;
-    public static final int common_google_signin_btn_text_dark_disabled=0x7f060030;
-    public static final int common_google_signin_btn_text_dark_focused=0x7f060031;
-    public static final int common_google_signin_btn_text_dark_pressed=0x7f060032;
-    public static final int common_google_signin_btn_text_light=0x7f060033;
-    public static final int common_google_signin_btn_text_light_default=0x7f060034;
-    public static final int common_google_signin_btn_text_light_disabled=0x7f060035;
-    public static final int common_google_signin_btn_text_light_focused=0x7f060036;
-    public static final int common_google_signin_btn_text_light_pressed=0x7f060037;
-    public static final int common_google_signin_btn_tint=0x7f060038;
-    public static final int dark_blue_1=0x7f060039;
-    public static final int dark_blue_2=0x7f06003a;
-    public static final int design_bottom_navigation_shadow_color=0x7f06003b;
-    public static final int design_error=0x7f06003c;
-    public static final int design_fab_shadow_end_color=0x7f06003d;
-    public static final int design_fab_shadow_mid_color=0x7f06003e;
-    public static final int design_fab_shadow_start_color=0x7f06003f;
-    public static final int design_fab_stroke_end_inner_color=0x7f060040;
-    public static final int design_fab_stroke_end_outer_color=0x7f060041;
-    public static final int design_fab_stroke_top_inner_color=0x7f060042;
-    public static final int design_fab_stroke_top_outer_color=0x7f060043;
-    public static final int design_snackbar_background_color=0x7f060044;
-    public static final int design_tint_password_toggle=0x7f060045;
-    public static final int dim_foreground_disabled_material_dark=0x7f060046;
-    public static final int dim_foreground_disabled_material_light=0x7f060047;
-    public static final int dim_foreground_material_dark=0x7f060048;
-    public static final int dim_foreground_material_light=0x7f060049;
-    public static final int error_color_material=0x7f06004a;
-    public static final int foreground_material_dark=0x7f06004b;
-    public static final int foreground_material_light=0x7f06004c;
-    public static final int grey_1=0x7f06004d;
-    public static final int grey_6=0x7f06004e;
-    public static final int highlighted_text_material_dark=0x7f06004f;
-    public static final int highlighted_text_material_light=0x7f060050;
-    public static final int hot_pink=0x7f060051;
-    public static final int hot_pink_2=0x7f060052;
-    public static final int hot_pink_3=0x7f060053;
-    public static final int material_blue_grey_800=0x7f060054;
-    public static final int material_blue_grey_900=0x7f060055;
-    public static final int material_blue_grey_950=0x7f060056;
-    public static final int material_deep_teal_200=0x7f060057;
-    public static final int material_deep_teal_500=0x7f060058;
-    public static final int material_grey_100=0x7f060059;
-    public static final int material_grey_300=0x7f06005a;
-    public static final int material_grey_50=0x7f06005b;
-    public static final int material_grey_600=0x7f06005c;
-    public static final int material_grey_800=0x7f06005d;
-    public static final int material_grey_850=0x7f06005e;
-    public static final int material_grey_900=0x7f06005f;
-    public static final int moon=0x7f060060;
-    public static final int mulberry=0x7f060061;
-    public static final int mulberry_2=0x7f060062;
-    public static final int notification_action_color_filter=0x7f060063;
-    public static final int notification_icon_bg_color=0x7f060064;
-    public static final int notification_material_background_media_default_color=0x7f060065;
-    public static final int primary_dark_material_dark=0x7f060066;
-    public static final int primary_dark_material_light=0x7f060067;
-    public static final int primary_material_dark=0x7f060068;
-    public static final int primary_material_light=0x7f060069;
-    public static final int primary_text_default_material_dark=0x7f06006a;
-    public static final int primary_text_default_material_light=0x7f06006b;
-    public static final int primary_text_disabled_material_dark=0x7f06006c;
-    public static final int primary_text_disabled_material_light=0x7f06006d;
-    public static final int ripple_material_dark=0x7f06006e;
-    public static final int ripple_material_light=0x7f06006f;
-    public static final int secondary_text_default_material_dark=0x7f060070;
-    public static final int secondary_text_default_material_light=0x7f060071;
-    public static final int secondary_text_disabled_material_dark=0x7f060072;
-    public static final int secondary_text_disabled_material_light=0x7f060073;
-    public static final int switch_thumb_disabled_material_dark=0x7f060074;
-    public static final int switch_thumb_disabled_material_light=0x7f060075;
-    public static final int switch_thumb_material_dark=0x7f060076;
-    public static final int switch_thumb_material_light=0x7f060077;
-    public static final int switch_thumb_normal_material_dark=0x7f060078;
-    public static final int switch_thumb_normal_material_light=0x7f060079;
-    public static final int tooltip_background_dark=0x7f06007a;
-    public static final int tooltip_background_light=0x7f06007b;
-    public static final int uber_black=0x7f06007c;
-    public static final int uber_black_90=0x7f06007d;
-    public static final int uber_white=0x7f06007e;
-    public static final int uber_white_40=0x7f06007f;
-    public static final int white=0x7f060080;
+    public static final int colorYellow=0x7f06002e;
+    public static final int common_google_signin_btn_text_dark=0x7f06002f;
+    public static final int common_google_signin_btn_text_dark_default=0x7f060030;
+    public static final int common_google_signin_btn_text_dark_disabled=0x7f060031;
+    public static final int common_google_signin_btn_text_dark_focused=0x7f060032;
+    public static final int common_google_signin_btn_text_dark_pressed=0x7f060033;
+    public static final int common_google_signin_btn_text_light=0x7f060034;
+    public static final int common_google_signin_btn_text_light_default=0x7f060035;
+    public static final int common_google_signin_btn_text_light_disabled=0x7f060036;
+    public static final int common_google_signin_btn_text_light_focused=0x7f060037;
+    public static final int common_google_signin_btn_text_light_pressed=0x7f060038;
+    public static final int common_google_signin_btn_tint=0x7f060039;
+    public static final int dark_blue_1=0x7f06003a;
+    public static final int dark_blue_2=0x7f06003b;
+    public static final int design_bottom_navigation_shadow_color=0x7f06003c;
+    public static final int design_error=0x7f06003d;
+    public static final int design_fab_shadow_end_color=0x7f06003e;
+    public static final int design_fab_shadow_mid_color=0x7f06003f;
+    public static final int design_fab_shadow_start_color=0x7f060040;
+    public static final int design_fab_stroke_end_inner_color=0x7f060041;
+    public static final int design_fab_stroke_end_outer_color=0x7f060042;
+    public static final int design_fab_stroke_top_inner_color=0x7f060043;
+    public static final int design_fab_stroke_top_outer_color=0x7f060044;
+    public static final int design_snackbar_background_color=0x7f060045;
+    public static final int design_tint_password_toggle=0x7f060046;
+    public static final int dim_foreground_disabled_material_dark=0x7f060047;
+    public static final int dim_foreground_disabled_material_light=0x7f060048;
+    public static final int dim_foreground_material_dark=0x7f060049;
+    public static final int dim_foreground_material_light=0x7f06004a;
+    public static final int error_color_material=0x7f06004b;
+    public static final int foreground_material_dark=0x7f06004c;
+    public static final int foreground_material_light=0x7f06004d;
+    public static final int grey_1=0x7f06004e;
+    public static final int grey_6=0x7f06004f;
+    public static final int highlighted_text_material_dark=0x7f060050;
+    public static final int highlighted_text_material_light=0x7f060051;
+    public static final int hot_pink=0x7f060052;
+    public static final int hot_pink_2=0x7f060053;
+    public static final int hot_pink_3=0x7f060054;
+    public static final int material_blue_grey_800=0x7f060055;
+    public static final int material_blue_grey_900=0x7f060056;
+    public static final int material_blue_grey_950=0x7f060057;
+    public static final int material_deep_teal_200=0x7f060058;
+    public static final int material_deep_teal_500=0x7f060059;
+    public static final int material_grey_100=0x7f06005a;
+    public static final int material_grey_300=0x7f06005b;
+    public static final int material_grey_50=0x7f06005c;
+    public static final int material_grey_600=0x7f06005d;
+    public static final int material_grey_800=0x7f06005e;
+    public static final int material_grey_850=0x7f06005f;
+    public static final int material_grey_900=0x7f060060;
+    public static final int moon=0x7f060061;
+    public static final int mulberry=0x7f060062;
+    public static final int mulberry_2=0x7f060063;
+    public static final int notification_action_color_filter=0x7f060064;
+    public static final int notification_icon_bg_color=0x7f060065;
+    public static final int notification_material_background_media_default_color=0x7f060066;
+    public static final int primary_dark_material_dark=0x7f060067;
+    public static final int primary_dark_material_light=0x7f060068;
+    public static final int primary_material_dark=0x7f060069;
+    public static final int primary_material_light=0x7f06006a;
+    public static final int primary_text_default_material_dark=0x7f06006b;
+    public static final int primary_text_default_material_light=0x7f06006c;
+    public static final int primary_text_disabled_material_dark=0x7f06006d;
+    public static final int primary_text_disabled_material_light=0x7f06006e;
+    public static final int ripple_material_dark=0x7f06006f;
+    public static final int ripple_material_light=0x7f060070;
+    public static final int secondary_text_default_material_dark=0x7f060071;
+    public static final int secondary_text_default_material_light=0x7f060072;
+    public static final int secondary_text_disabled_material_dark=0x7f060073;
+    public static final int secondary_text_disabled_material_light=0x7f060074;
+    public static final int switch_thumb_disabled_material_dark=0x7f060075;
+    public static final int switch_thumb_disabled_material_light=0x7f060076;
+    public static final int switch_thumb_material_dark=0x7f060077;
+    public static final int switch_thumb_material_light=0x7f060078;
+    public static final int switch_thumb_normal_material_dark=0x7f060079;
+    public static final int switch_thumb_normal_material_light=0x7f06007a;
+    public static final int tooltip_background_dark=0x7f06007b;
+    public static final int tooltip_background_light=0x7f06007c;
+    public static final int uber_black=0x7f06007d;
+    public static final int uber_black_90=0x7f06007e;
+    public static final int uber_white=0x7f06007f;
+    public static final int uber_white_40=0x7f060080;
+    public static final int white=0x7f060081;
   }
   public static final class dimen {
     public static final int abc_action_bar_content_inset_material=0x7f070000;
@@ -8482,17 +8472,17 @@ public final class R {
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #CardView_android_minWidth android:minWidth}</code></td><td></td></tr>
      * <tr><td><code>{@link #CardView_android_minHeight android:minHeight}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CardView_cardBackgroundColor cs591e1_sp19.eatogether:cardBackgroundColor}</code></td><td>Background color for CardView.</td></tr>
-     * <tr><td><code>{@link #CardView_cardCornerRadius cs591e1_sp19.eatogether:cardCornerRadius}</code></td><td>Corner radius for CardView.</td></tr>
-     * <tr><td><code>{@link #CardView_cardElevation cs591e1_sp19.eatogether:cardElevation}</code></td><td>Elevation for CardView.</td></tr>
-     * <tr><td><code>{@link #CardView_cardMaxElevation cs591e1_sp19.eatogether:cardMaxElevation}</code></td><td>Maximum Elevation for CardView.</td></tr>
-     * <tr><td><code>{@link #CardView_cardPreventCornerOverlap cs591e1_sp19.eatogether:cardPreventCornerOverlap}</code></td><td>Add padding to CardView on v20 and before to prevent intersections between the Card content and rounded corners.</td></tr>
-     * <tr><td><code>{@link #CardView_cardUseCompatPadding cs591e1_sp19.eatogether:cardUseCompatPadding}</code></td><td>Add padding in API v21+ as well to have the same measurements with previous versions.</td></tr>
-     * <tr><td><code>{@link #CardView_contentPadding cs591e1_sp19.eatogether:contentPadding}</code></td><td>Inner padding between the edges of the Card and children of the CardView.</td></tr>
-     * <tr><td><code>{@link #CardView_contentPaddingBottom cs591e1_sp19.eatogether:contentPaddingBottom}</code></td><td>Inner padding between the bottom edge of the Card and children of the CardView.</td></tr>
-     * <tr><td><code>{@link #CardView_contentPaddingLeft cs591e1_sp19.eatogether:contentPaddingLeft}</code></td><td>Inner padding between the left edge of the Card and children of the CardView.</td></tr>
-     * <tr><td><code>{@link #CardView_contentPaddingRight cs591e1_sp19.eatogether:contentPaddingRight}</code></td><td>Inner padding between the right edge of the Card and children of the CardView.</td></tr>
-     * <tr><td><code>{@link #CardView_contentPaddingTop cs591e1_sp19.eatogether:contentPaddingTop}</code></td><td>Inner padding between the top edge of the Card and children of the CardView.</td></tr>
+     * <tr><td><code>{@link #CardView_cardBackgroundColor cs591e1_sp19.eatogether:cardBackgroundColor}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CardView_cardCornerRadius cs591e1_sp19.eatogether:cardCornerRadius}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CardView_cardElevation cs591e1_sp19.eatogether:cardElevation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CardView_cardMaxElevation cs591e1_sp19.eatogether:cardMaxElevation}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CardView_cardPreventCornerOverlap cs591e1_sp19.eatogether:cardPreventCornerOverlap}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CardView_cardUseCompatPadding cs591e1_sp19.eatogether:cardUseCompatPadding}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CardView_contentPadding cs591e1_sp19.eatogether:contentPadding}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CardView_contentPaddingBottom cs591e1_sp19.eatogether:contentPaddingBottom}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CardView_contentPaddingLeft cs591e1_sp19.eatogether:contentPaddingLeft}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CardView_contentPaddingRight cs591e1_sp19.eatogether:contentPaddingRight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #CardView_contentPaddingTop cs591e1_sp19.eatogether:contentPaddingTop}</code></td><td></td></tr>
      * </table>
      * @see #CardView_android_minWidth
      * @see #CardView_android_minHeight
@@ -8515,9 +8505,8 @@ public final class R {
       0x7f040087
     };
     /**
-     * <p>
-     * @attr description
-     * Workaround to read user defined minimum width
+     * <p>This symbol is the offset where the {@link android.R.attr#minWidth}
+     * attribute's value can be found in the {@link #CardView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -8529,9 +8518,8 @@ public final class R {
      */
     public static final int CardView_android_minWidth=0;
     /**
-     * <p>
-     * @attr description
-     * Workaround to read user defined minimum height
+     * <p>This symbol is the offset where the {@link android.R.attr#minHeight}
+     * attribute's value can be found in the {@link #CardView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -8543,9 +8531,8 @@ public final class R {
      */
     public static final int CardView_android_minHeight=1;
     /**
-     * <p>
-     * @attr description
-     * Background color for CardView.
+     * <p>This symbol is the offset where the {@link cs591e1_sp19.eatogether.R.attr#cardBackgroundColor}
+     * attribute's value can be found in the {@link #CardView} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
@@ -8555,9 +8542,8 @@ public final class R {
      */
     public static final int CardView_cardBackgroundColor=2;
     /**
-     * <p>
-     * @attr description
-     * Corner radius for CardView.
+     * <p>This symbol is the offset where the {@link cs591e1_sp19.eatogether.R.attr#cardCornerRadius}
+     * attribute's value can be found in the {@link #CardView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -8569,9 +8555,8 @@ public final class R {
      */
     public static final int CardView_cardCornerRadius=3;
     /**
-     * <p>
-     * @attr description
-     * Elevation for CardView.
+     * <p>This symbol is the offset where the {@link cs591e1_sp19.eatogether.R.attr#cardElevation}
+     * attribute's value can be found in the {@link #CardView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -8583,9 +8568,8 @@ public final class R {
      */
     public static final int CardView_cardElevation=4;
     /**
-     * <p>
-     * @attr description
-     * Maximum Elevation for CardView.
+     * <p>This symbol is the offset where the {@link cs591e1_sp19.eatogether.R.attr#cardMaxElevation}
+     * attribute's value can be found in the {@link #CardView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -8597,9 +8581,8 @@ public final class R {
      */
     public static final int CardView_cardMaxElevation=5;
     /**
-     * <p>
-     * @attr description
-     * Add padding to CardView on v20 and before to prevent intersections between the Card content and rounded corners.
+     * <p>This symbol is the offset where the {@link cs591e1_sp19.eatogether.R.attr#cardPreventCornerOverlap}
+     * attribute's value can be found in the {@link #CardView} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
@@ -8608,9 +8591,8 @@ public final class R {
      */
     public static final int CardView_cardPreventCornerOverlap=6;
     /**
-     * <p>
-     * @attr description
-     * Add padding in API v21+ as well to have the same measurements with previous versions.
+     * <p>This symbol is the offset where the {@link cs591e1_sp19.eatogether.R.attr#cardUseCompatPadding}
+     * attribute's value can be found in the {@link #CardView} array.
      *
      * <p>May be a boolean value, such as "<code>true</code>" or
      * "<code>false</code>".
@@ -8619,9 +8601,8 @@ public final class R {
      */
     public static final int CardView_cardUseCompatPadding=7;
     /**
-     * <p>
-     * @attr description
-     * Inner padding between the edges of the Card and children of the CardView.
+     * <p>This symbol is the offset where the {@link cs591e1_sp19.eatogether.R.attr#contentPadding}
+     * attribute's value can be found in the {@link #CardView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -8633,9 +8614,8 @@ public final class R {
      */
     public static final int CardView_contentPadding=8;
     /**
-     * <p>
-     * @attr description
-     * Inner padding between the bottom edge of the Card and children of the CardView.
+     * <p>This symbol is the offset where the {@link cs591e1_sp19.eatogether.R.attr#contentPaddingBottom}
+     * attribute's value can be found in the {@link #CardView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -8647,9 +8627,8 @@ public final class R {
      */
     public static final int CardView_contentPaddingBottom=9;
     /**
-     * <p>
-     * @attr description
-     * Inner padding between the left edge of the Card and children of the CardView.
+     * <p>This symbol is the offset where the {@link cs591e1_sp19.eatogether.R.attr#contentPaddingLeft}
+     * attribute's value can be found in the {@link #CardView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -8661,9 +8640,8 @@ public final class R {
      */
     public static final int CardView_contentPaddingLeft=10;
     /**
-     * <p>
-     * @attr description
-     * Inner padding between the right edge of the Card and children of the CardView.
+     * <p>This symbol is the offset where the {@link cs591e1_sp19.eatogether.R.attr#contentPaddingRight}
+     * attribute's value can be found in the {@link #CardView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -8675,9 +8653,8 @@ public final class R {
      */
     public static final int CardView_contentPaddingRight=11;
     /**
-     * <p>
-     * @attr description
-     * Inner padding between the top edge of the Card and children of the CardView.
+     * <p>This symbol is the offset where the {@link cs591e1_sp19.eatogether.R.attr#contentPaddingTop}
+     * attribute's value can be found in the {@link #CardView} array.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -10176,7 +10153,7 @@ public final class R {
      * <tr><td>barrier</td><td>2</td><td></td></tr>
      * <tr><td>chains</td><td>4</td><td></td></tr>
      * <tr><td>dimensions</td><td>8</td><td></td></tr>
-     * <tr><td>direct</td><td>1</td><td>direct, barriers, chains</td></tr>
+     * <tr><td>direct</td><td>1</td><td></td></tr>
      * <tr><td>groups</td><td>20</td><td></td></tr>
      * <tr><td>none</td><td>0</td><td></td></tr>
      * <tr><td>standard</td><td>7</td><td></td></tr>

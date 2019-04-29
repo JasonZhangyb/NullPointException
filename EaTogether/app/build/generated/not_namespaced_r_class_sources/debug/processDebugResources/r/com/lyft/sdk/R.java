@@ -18,17 +18,17 @@ public final class R {
         private color() {}
 
         public static final int black = 0x7f06001e;
-        public static final int dark_blue_1 = 0x7f060039;
-        public static final int dark_blue_2 = 0x7f06003a;
-        public static final int grey_1 = 0x7f06004d;
-        public static final int grey_6 = 0x7f06004e;
-        public static final int hot_pink = 0x7f060051;
-        public static final int hot_pink_2 = 0x7f060052;
-        public static final int hot_pink_3 = 0x7f060053;
-        public static final int moon = 0x7f060060;
-        public static final int mulberry = 0x7f060061;
-        public static final int mulberry_2 = 0x7f060062;
-        public static final int white = 0x7f060080;
+        public static final int dark_blue_1 = 0x7f06003a;
+        public static final int dark_blue_2 = 0x7f06003b;
+        public static final int grey_1 = 0x7f06004e;
+        public static final int grey_6 = 0x7f06004f;
+        public static final int hot_pink = 0x7f060052;
+        public static final int hot_pink_2 = 0x7f060053;
+        public static final int hot_pink_3 = 0x7f060054;
+        public static final int moon = 0x7f060061;
+        public static final int mulberry = 0x7f060062;
+        public static final int mulberry_2 = 0x7f060063;
+        public static final int white = 0x7f060081;
     }
     public static final class dimen {
         private dimen() {}

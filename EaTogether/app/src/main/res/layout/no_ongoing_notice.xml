@@ -29,14 +29,14 @@
             android:id="@+id/btnSearch"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_marginBottom="150dp"
-            android:padding="10dp"
-            android:textColor="#604b44"
-            android:layout_weight="0.08"
             android:layout_gravity="center"
-            android:gravity="center"
+            android:layout_marginBottom="150dp"
+            android:layout_weight="0.08"
             android:background="@color/colorPrimary"
-            android:text="Search for Restaurant" />
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Search for Restaurant"
+            android:textColor="@color/colorPrimaryDark" />
 
     </LinearLayout>
 

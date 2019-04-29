@@ -81,24 +81,24 @@
 
         <Button
             android:id="@+id/btn_message"
-            android:background="@drawable/btn_shape"
-            android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/rest_name"
             android:layout_alignParentEnd="true"
-            android:text="Message" />
+            android:background="@drawable/btn_shape"
+            android:text="Message"
+            android:textColor="@color/colorPrimaryDark" />
 
         <Button
             android:id="@+id/btn_finish"
-            android:background="@drawable/tag_shape"
-            android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/rest_name"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="5dp"
-            android:text="Finish" />
+            android:background="@color/colorYellow"
+            android:text="Finish"
+            android:textColor="@color/colorPrimaryDark" />
 
     </LinearLayout>
 
