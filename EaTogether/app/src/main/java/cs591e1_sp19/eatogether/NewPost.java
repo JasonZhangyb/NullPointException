@@ -108,8 +108,12 @@ public class NewPost extends AppCompatActivity {
                         longitude));
                 DatabaseReference ref_user = database.getReference("Users").child(AppState.userID).child("Posts");
                 ref_user.child(ref_post.getKey()).setValue(res_id);
-                Intent i = new Intent(getApplicationContext(),MapsActivity.class);
-                startActivity(i);
+               // Intent i = new Intent(getApplicationContext(),MapsActivity.class);
+               // startActivity(i);
+
+                Intent intent = new Intent(NewPost.this, MyPosts.class);
+
+                startActivity(intent);
             }
         });
     }

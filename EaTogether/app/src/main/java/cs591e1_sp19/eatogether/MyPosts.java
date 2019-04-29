@@ -166,7 +166,7 @@ class MyPostsAdapter extends RecyclerView.Adapter<MyPostsAdapter.MyViewHolder> {
                 DatabaseReference ref_users = database.getReference("Users");
                 ref_posts.child(post.restaurant_id).child(post.post_id).removeValue();
                 ref_users.child(AppState.userID).child("Posts").child(post.post_id).removeValue();
-                Intent i = new Intent(view.getContext(), MyPosts.class);
+                Intent i = new Intent(view.getContext(), MapsActivity.class);
                 view.getContext().startActivity(i);
             }
         });

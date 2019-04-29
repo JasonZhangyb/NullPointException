@@ -44,7 +44,9 @@
         <activity
             android:name="cs591e1_sp19.eatogether.Chat"
             android:windowSoftInputMode="stateHidden" />
-        <activity android:name="cs591e1_sp19.eatogether.MyPosts" />
+        <activity
+            android:name="cs591e1_sp19.eatogether.MyPosts"
+            android:label="My Post" />
         <activity
             android:name="cs591e1_sp19.eatogether.OnGoingActivity"
             android:label="Event" />

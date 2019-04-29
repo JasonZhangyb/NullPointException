@@ -22,7 +22,8 @@
             android:label="Message"/>
         <activity android:name=".Chat"
             android:windowSoftInputMode="stateHidden"/>
-        <activity android:name=".MyPosts" />
+        <activity android:name=".MyPosts"
+            android:label="My Post"/>
         <activity
             android:name=".OnGoingActivity"
             android:label="Event" />
