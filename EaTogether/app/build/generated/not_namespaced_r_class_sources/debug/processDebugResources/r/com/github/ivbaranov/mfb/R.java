@@ -27,14 +27,14 @@ public final class R {
     public static final class drawable {
         private drawable() {}
 
-        public static final int ic_favorite_black_24dp = 0x7f080082;
-        public static final int ic_favorite_border_black_24dp = 0x7f080083;
-        public static final int ic_favorite_border_white_24dp = 0x7f080084;
-        public static final int ic_favorite_white_24dp = 0x7f080085;
-        public static final int ic_star_black_24dp = 0x7f08008a;
-        public static final int ic_star_border_black_24dp = 0x7f08008b;
-        public static final int ic_star_border_white_24dp = 0x7f08008c;
-        public static final int ic_star_white_24dp = 0x7f08008d;
+        public static final int ic_favorite_black_24dp = 0x7f080083;
+        public static final int ic_favorite_border_black_24dp = 0x7f080084;
+        public static final int ic_favorite_border_white_24dp = 0x7f080085;
+        public static final int ic_favorite_white_24dp = 0x7f080086;
+        public static final int ic_star_black_24dp = 0x7f08008b;
+        public static final int ic_star_border_black_24dp = 0x7f08008c;
+        public static final int ic_star_border_white_24dp = 0x7f08008d;
+        public static final int ic_star_white_24dp = 0x7f08008e;
     }
     public static final class id {
         private id() {}

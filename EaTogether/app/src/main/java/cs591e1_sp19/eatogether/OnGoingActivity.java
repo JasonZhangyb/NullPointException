@@ -471,7 +471,7 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        LatLng current_loca = new LatLng(Double.parseDouble(AppState.current_lati), Double.parseDouble(AppState.current_longi));
+        LatLng current_loca = new LatLng(DROPOFF_LAT, DROPOFF_LONG);
         MarkerOptions current_marker = new MarkerOptions();
         current_marker.title("Destination");
         current_marker.position(current_loca);

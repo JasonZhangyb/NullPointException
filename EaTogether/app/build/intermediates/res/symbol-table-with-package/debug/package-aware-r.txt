@@ -888,6 +888,7 @@ drawable bottom_selector
 drawable btn_gradient_purple_rounded
 drawable btn_hotpink_rounded
 drawable btn_shape
+drawable btn_shape_2
 drawable btn_white_rounded
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
@@ -1479,6 +1480,7 @@ layout ub__login_view
 layout ub__ride_request_activity
 layout ub__ride_request_button
 layout ub__ride_request_view
+layout user_review_row
 menu bottom_navi_items
 menu menu_main
 menu navigation
