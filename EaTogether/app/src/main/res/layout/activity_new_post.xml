@@ -8,9 +8,10 @@
     tools:context=".NewPost">
 
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -28,25 +29,6 @@
                 android:text="TextView"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textStyle="bold" />
-
-            <DatePicker
-                android:id="@+id/datePicker"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:calendarViewShown="false"
-                android:spinnersShown="true"
-                android:startYear="2000"
-                android:endYear="2100"
-                android:maxDate="12/31/2100"
-                android:minDate="01/01/2000"
-                android:datePickerMode="spinner" />
-
-            <TimePicker
-                android:id="@+id/timePicker"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:timePickerMode="clock"
-                android:headerBackground="@color/colorPrimary" />
 
             <TextView
                 android:id="@+id/txt_note"
@@ -66,22 +48,31 @@
                 android:inputType="text"
                 android:textColorLink="@color/colorPrimary" />
 
-            <Button
-                android:id="@+id/btn_new_post"
-                style="@style/Widget.AppCompat.Button.Colored"
+            <DatePicker
+                android:id="@+id/datePicker"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Post"
-                android:background="@drawable/btn_shape"
-                android:textColorLink="@color/colorPrimary"
-                android:layout_marginBottom="30sp"
-                />
+                android:calendarViewShown="false"
+                android:datePickerMode="spinner"
+                android:endYear="2100"
+                android:maxDate="12/31/2100"
+                android:minDate="01/01/2000"
+                android:spinnersShown="true"
+                android:startYear="2000" />
 
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="Next ->"
+                android:layout_gravity="right"
+                android:id="@+id/next_page"
+                android:background="@drawable/btn_shape" />
 
         </LinearLayout>
 
-    </ScrollView>
+    </LinearLayout>
 
 
 </LinearLayout>

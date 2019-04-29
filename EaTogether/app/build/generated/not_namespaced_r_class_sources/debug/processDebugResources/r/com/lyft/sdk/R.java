@@ -65,13 +65,13 @@ public final class R {
         public static final int lyftMulberryLight = 0x7f0900bd;
         public static final int lyftMultiColor = 0x7f0900be;
         public static final int lyft_icon = 0x7f0900c0;
-        public static final int prime_time_icon = 0x7f0900e6;
-        public static final int ridetype_eta_text = 0x7f090101;
+        public static final int prime_time_icon = 0x7f0900e7;
+        public static final int ridetype_eta_text = 0x7f090102;
     }
     public static final class layout {
         private layout() {}
 
-        public static final int lyft_button = 0x7f0b0042;
+        public static final int lyft_button = 0x7f0b0043;
     }
     public static final class string {
         private string() {}

@@ -50,7 +50,7 @@
             android:layout_height="45dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
-            android:background="@color/colorYellow"
+            android:background="@drawable/btn_shape_2"
             android:text="Login"
             android:textAllCaps="true"
             android:textColor="@color/colorPrimaryDark"

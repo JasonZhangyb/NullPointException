@@ -125,7 +125,7 @@
             android:id="@+id/wish_list"
             android:layout_width="145sp"
             android:layout_height="45sp"
-            android:background="@color/colorYellow"
+            android:background="@drawable/btn_shape_2"
             android:text="Wish List"
             android:textAllCaps="true" />
 
@@ -134,7 +134,7 @@
             android:layout_width="145sp"
             android:layout_height="45sp"
             android:layout_marginTop="15sp"
-            android:background="@color/colorYellow"
+            android:background="@drawable/btn_shape_2"
             android:text="Profile Setting"
             android:textAllCaps="true" />
 
@@ -143,7 +143,7 @@
             android:layout_width="145sp"
             android:layout_height="45sp"
             android:layout_marginTop="15sp"
-            android:background="@color/colorYellow"
+            android:background="@drawable/btn_shape_2"
             android:text="My Posts"
             android:textAllCaps="true" />
 
@@ -152,7 +152,7 @@
             android:layout_width="145sp"
             android:layout_height="45sp"
             android:layout_marginTop="15sp"
-            android:background="@color/colorYellow"
+            android:background="@drawable/btn_shape_2"
             android:text=" Log out"
             android:textAllCaps="true" />
 

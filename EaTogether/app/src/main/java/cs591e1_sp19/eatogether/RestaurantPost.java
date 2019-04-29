@@ -98,31 +98,6 @@ public class RestaurantPost extends AppCompatActivity {
 
         //If there is no post in the Restaurant Detail Page
         //Show a image notice dynamically
-        FirebaseDatabase.getInstance().getReference().child("Users").child(AppState.userID).child("Posts")
-                .addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                            System.out.println(snapshot.getValue());
-                            System.out.println(res_id);
-                            if (snapshot.getValue().equals(res_id)){
-                                notice = new ImageView(RestaurantPost.this);
-                                notice.setLayoutParams(new RelativeLayout.LayoutParams(800, 800));
-                                notice.setImageResource(R.drawable.have_post);
-                                rll_notice.addView(notice);
-
-                            }
-
-                        }
-
-                    }
-
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
 
         FirebaseDatabase.getInstance().getReference().child("Posts")
                 .addListenerForSingleValueEvent(new ValueEventListener() {

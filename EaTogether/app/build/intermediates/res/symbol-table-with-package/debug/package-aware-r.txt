@@ -1197,6 +1197,7 @@ id navigation_header_container
 id navigation_home
 id navigation_notifications
 id never
+id next_page
 id none
 id normal
 id note
@@ -1415,6 +1416,7 @@ layout activity_message
 layout activity_my_posts
 layout activity_new_post
 layout activity_on_going
+layout activity_posting
 layout activity_profile
 layout activity_profilechange
 layout activity_restaurant_post

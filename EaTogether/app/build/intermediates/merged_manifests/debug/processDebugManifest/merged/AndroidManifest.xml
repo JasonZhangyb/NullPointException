@@ -123,6 +123,7 @@
             android:name="cs591e1_sp19.eatogether.ProfileChangeActivity"
             android:label="Change Profile"
             android:screenOrientation="portrait" />
+        <activity android:name="cs591e1_sp19.eatogether.PostingActivity" />
         <activity
             android:name="com.uber.sdk.android.rides.RideRequestActivity"
             android:exported="false"

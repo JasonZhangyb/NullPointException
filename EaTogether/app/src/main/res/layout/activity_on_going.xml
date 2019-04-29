@@ -96,7 +96,7 @@
             android:layout_below="@+id/rest_name"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="5dp"
-            android:background="@color/colorYellow"
+            android:background="@drawable/btn_shape_2"
             android:text="Finish"
             android:textColor="@color/colorPrimaryDark" />
 

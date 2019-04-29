@@ -158,15 +158,16 @@
         android:layout_height="100dp"
         android:orientation="horizontal"
         android:gravity="center">
+
         <Button
-            android:text="Apply Change"
             android:id="@+id/applyButton"
             android:layout_width="140dp"
             android:layout_height="45dp"
-            android:textColor="#FFFF"
-            android:textAllCaps="true"
             android:layout_marginRight="10dp"
-            android:background="@color/colorAccent"/>
+            android:background="@drawable/btn_shape"
+            android:text="Apply Change"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimaryDark" />
 
     </LinearLayout>
 
