@@ -384,6 +384,10 @@
         "source": "/Users/yuewu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/7c94a867cab18835b98140cae9b352ff/res/drawable-xhdpi-v4/abc_scrubber_primary_mtrl_alpha.9.png"
     },
     {
+        "merged": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/res/merged/debug/drawable_no_post_notice.png.flat",
+        "source": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/src/main/res/drawable/no_post_notice.png"
+    },
+    {
         "merged": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/res/merged/debug/anim_abc_fade_out.xml.flat",
         "source": "/Users/yuewu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/7c94a867cab18835b98140cae9b352ff/res/anim/abc_fade_out.xml"
     },
@@ -678,6 +682,10 @@
     {
         "merged": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/res/merged/debug/drawable_icon_03.png.flat",
         "source": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/src/main/res/drawable/icon_03.png"
+    },
+    {
+        "merged": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/res/merged/debug/drawable_no_coversation_notice.png.flat",
+        "source": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/src/main/res/drawable/no_coversation_notice.png"
     },
     {
         "merged": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_design_ic_visibility.png.flat",
@@ -1874,6 +1882,10 @@
     {
         "merged": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_ic_favorite_border_white_24dp.png.flat",
         "source": "/Users/yuewu/.gradle/caches/transforms-1/files-1.1/materialfavoritebutton-0.1.4.aar/0d2980e83e3a9e8db872956a3ec3329b/res/drawable-mdpi-v4/ic_favorite_border_white_24dp.png"
+    },
+    {
+        "merged": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/res/merged/debug/drawable_have_post.png.flat",
+        "source": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/src/main/res/drawable/have_post.png"
     },
     {
         "merged": "/Users/yuewu/Documents/GitHub/NullPointException/EaTogether/app/build/intermediates/res/merged/debug/drawable_bg.png.flat",

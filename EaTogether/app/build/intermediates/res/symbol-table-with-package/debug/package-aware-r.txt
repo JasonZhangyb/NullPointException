@@ -917,6 +917,7 @@ drawable design_snackbar_background
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable gradient_purple_rounded
+drawable have_post
 drawable ic_dashboard_black_24dp
 drawable ic_favorite_black_24dp
 drawable ic_favorite_border_black_24dp
@@ -949,6 +950,8 @@ drawable nav_map
 drawable nav_me
 drawable nav_message
 drawable navigation_empty_icon
+drawable no_coversation_notice
+drawable no_post_notice
 drawable notice_1
 drawable notification_action_background
 drawable notification_bg
@@ -991,6 +994,8 @@ id ALT
 id CTRL
 id FUNCTION
 id META
+id No_Chat_Notice
+id No_Post_Notice
 id Rest_Name
 id RestaurantName
 id SHIFT

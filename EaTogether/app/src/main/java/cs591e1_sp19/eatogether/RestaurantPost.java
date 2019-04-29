@@ -21,6 +21,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RatingBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -61,6 +62,10 @@ public class RestaurantPost extends AppCompatActivity {
     Button post;
     MaterialFavoriteButton favorite;
 
+    private RelativeLayout rll_notice;
+    private ImageView notice;
+    private int count=0;
+
 
 
     //the blank space on the bottom is for showing existing posts ones the back end is finished.
@@ -76,6 +81,7 @@ public class RestaurantPost extends AppCompatActivity {
 
         favorite=(MaterialFavoriteButton)findViewById(R.id.fav);
         //mRef = new Firebase("https://yelpfusionapi-b5637.firebaseio.com/Restaurants");
+        rll_notice= (RelativeLayout) findViewById(R.id.No_Post_Notice);
 
         try {
             apiFactory  = new YelpFusionApiFactory();
@@ -84,11 +90,69 @@ public class RestaurantPost extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        String res_id = getIntent().getStringExtra("rest_id");
+        final String res_id = getIntent().getStringExtra("rest_id");
 
         //use the getBusiness function to query the Business API.
         Call<Business> call = yelpFusionApi.getBusiness(res_id);
         call.enqueue(callback);
+
+        //If there is no post in the Restaurant Detail Page
+        //Show a image notice dynamically
+        FirebaseDatabase.getInstance().getReference().child("Users").child(AppState.userID).child("Posts")
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                            System.out.println(snapshot.getValue());
+                            System.out.println(res_id);
+                            if (snapshot.getValue().equals(res_id)){
+                                notice = new ImageView(RestaurantPost.this);
+                                notice.setLayoutParams(new RelativeLayout.LayoutParams(800, 800));
+                                notice.setImageResource(R.drawable.have_post);
+                                rll_notice.addView(notice);
+
+                            }
+
+                        }
+
+                    }
+
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+        FirebaseDatabase.getInstance().getReference().child("Posts")
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                            System.out.println(snapshot.getKey());
+                            System.out.println(res_id);
+                            if (snapshot.getKey().equals(res_id)){
+                                count = 1;
+                                break;
+
+                            }
+
+                        }
+                        if (count==0){
+                            notice = new ImageView(RestaurantPost.this);
+                            notice.setLayoutParams(new RelativeLayout.LayoutParams(800, 800));
+                            notice.setImageResource(R.drawable.no_post_notice);
+                            rll_notice.addView(notice);
+                        }
+
+                    }
+
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
 
     }
 

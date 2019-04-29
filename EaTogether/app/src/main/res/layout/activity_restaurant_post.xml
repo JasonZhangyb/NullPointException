@@ -176,4 +176,14 @@
         android:layout_height="wrap_content"
         />
 
+    <RelativeLayout
+        android:id="@+id/No_Post_Notice"
+        android:layout_width = "match_parent"
+        android:layout_height = "match_parent"
+        android:padding="100dp"
+        android:gravity="center">
+
+
+    </RelativeLayout>
+
 </LinearLayout>

@@ -7,6 +7,15 @@
     tools:context=".ChatsList"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <RelativeLayout
+        android:id="@+id/No_Chat_Notice"
+        android:layout_width = "match_parent"
+        android:layout_height = "match_parent"
+        android:padding="100dp"
+        android:gravity="center">
+
+
+    </RelativeLayout>
 
 
         <ListView

@@ -20,6 +20,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,12 +43,16 @@ public class ChatsList extends AppCompatActivity {
     private MenuFragment  menu = new MenuFragment();;
     private FragmentManager menu_manager;
     private FragmentTransaction menu_trans;
-    private String myString = "MESSAGE";
+    private RelativeLayout rll_notice;
+    private ImageView notice;
+    private int count=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chats_list);
+
+        rll_notice= (RelativeLayout) findViewById(R.id.No_Chat_Notice);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference ref_chats = database.getReference("ChatsAlt");
@@ -112,6 +117,45 @@ public class ChatsList extends AppCompatActivity {
 
             }
         });
+
+        //If there is no chat in the message
+        //Show a image notice dynamically
+        FirebaseDatabase.getInstance().getReference().child("ChatsAlt")
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            String user_id = (snapshot.child("creator_id").getValue().toString());
+                            if(user_id.equals(AppState.userID)){
+                                count=1;
+                                break;
+                            }
+                            System.out.println(user_id);
+                            for (DataSnapshot snapshot1:snapshot.child("guests").getChildren()){
+                                if(snapshot1.getKey().equals(AppState.userID)){
+                                    count=1;
+                                    break;
+                                }
+                                System.out.println(snapshot1.getKey());
+                            }
+                        }
+                        if (count==0) {
+                            System.out.println("hiiii");
+                            notice = new ImageView(ChatsList.this);
+                            notice.setLayoutParams(new RelativeLayout.LayoutParams(600, 600));
+                            notice.setImageResource(R.drawable.no_coversation_notice);
+                            rll_notice.addView(notice);
+
+                        }
+
+                    }
+
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
     }
     @Override
     public void onBackPressed() {
