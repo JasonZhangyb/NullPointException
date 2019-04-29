@@ -1367,7 +1367,6 @@ id wish_list
 id withText
 id wrap
 id wrap_content
-id yeniSifreButton
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
 integer app_bar_elevation_anim_duration

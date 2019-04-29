@@ -4575,7 +4575,6 @@ public final class R {
     public static final int withText=0x7f090176;
     public static final int wrap=0x7f090177;
     public static final int wrap_content=0x7f090178;
-    public static final int yeniSifreButton=0x7f090179;
   }
   public static final class integer {
     public static final int abc_config_activityDefaultDur=0x7f0a0000;

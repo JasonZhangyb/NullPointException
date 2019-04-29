@@ -17,24 +17,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UserInfo"></activity>
+        <activity android:name=".UserInfo"
+            android:screenOrientation="portrait"></activity>
         <activity android:name=".ChatsList"
-            android:label="Message"/>
+            android:label="Message"
+            android:screenOrientation="portrait"/>
         <activity android:name=".Chat"
-            android:windowSoftInputMode="stateHidden"/>
+            android:windowSoftInputMode="stateHidden"
+            android:screenOrientation="portrait"/>
         <activity android:name=".MyPosts"
-            android:label="My Post"/>
+            android:label="My Post"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".OnGoingActivity"
-            android:label="Event" />
-        <activity android:name=".MainActivity">
+            android:label="Event"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".LoginActivity"
+            android:screenOrientation="portrait"/>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -49,32 +56,43 @@
 
         <activity
             android:name=".MapsActivity"
-            android:label="@string/title_activity_maps" />
+            android:label="@string/title_activity_maps"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".RestaurantSearch"
-            android:label="Search" />
+            android:label="Search"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".RestaurantPost"
-            android:label="Restaurant" />
+            android:label="Restaurant"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".WishList"
-            android:label="Wishlist" />
+            android:label="Wishlist"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".RestaurantReview"
-            android:label="Restaurants Reviews" />
+            android:label="Restaurants Reviews"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".NewPost"
-            android:label="New Post" />
+            android:label="New Post"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".NoOngingEventNotice"
-            android:label="Event" />
+            android:label="Event"
+            android:screenOrientation="portrait"/>
         <activity android:name=".MessageActivity"
-            android:label="Message"/>
-        <activity android:name=".ListOfChatsActivity" />
+            android:label="Message"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ListOfChatsActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name=".ProfileActivity"
-            android:label="Profile"/>
+            android:label="Profile"
+            android:screenOrientation="portrait"/>
         <activity android:name=".ProfileChangeActivity"
-            android:label="Change Profile"/>
+            android:label="Change Profile"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

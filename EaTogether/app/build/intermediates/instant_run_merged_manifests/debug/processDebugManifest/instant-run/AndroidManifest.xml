@@ -37,27 +37,37 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="cs591e1_sp19.eatogether.UserInfo" />
+        <activity
+            android:name="cs591e1_sp19.eatogether.UserInfo"
+            android:screenOrientation="portrait" />
         <activity
             android:name="cs591e1_sp19.eatogether.ChatsList"
-            android:label="Message" />
+            android:label="Message"
+            android:screenOrientation="portrait" />
         <activity
             android:name="cs591e1_sp19.eatogether.Chat"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name="cs591e1_sp19.eatogether.MyPosts"
-            android:label="My Post" />
+            android:label="My Post"
+            android:screenOrientation="portrait" />
         <activity
             android:name="cs591e1_sp19.eatogether.OnGoingActivity"
-            android:label="Event" />
-        <activity android:name="cs591e1_sp19.eatogether.MainActivity" >
+            android:label="Event"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cs591e1_sp19.eatogether.MainActivity"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="cs591e1_sp19.eatogether.LoginActivity" />
+        <activity
+            android:name="cs591e1_sp19.eatogether.LoginActivity"
+            android:screenOrientation="portrait" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -72,35 +82,47 @@
 
         <activity
             android:name="cs591e1_sp19.eatogether.MapsActivity"
-            android:label="@string/title_activity_maps" />
+            android:label="@string/title_activity_maps"
+            android:screenOrientation="portrait" />
         <activity
             android:name="cs591e1_sp19.eatogether.RestaurantSearch"
-            android:label="Search" />
+            android:label="Search"
+            android:screenOrientation="portrait" />
         <activity
             android:name="cs591e1_sp19.eatogether.RestaurantPost"
-            android:label="Restaurant" />
+            android:label="Restaurant"
+            android:screenOrientation="portrait" />
         <activity
             android:name="cs591e1_sp19.eatogether.WishList"
-            android:label="Wishlist" />
+            android:label="Wishlist"
+            android:screenOrientation="portrait" />
         <activity
             android:name="cs591e1_sp19.eatogether.RestaurantReview"
-            android:label="Restaurants Reviews" />
+            android:label="Restaurants Reviews"
+            android:screenOrientation="portrait" />
         <activity
             android:name="cs591e1_sp19.eatogether.NewPost"
-            android:label="New Post" />
+            android:label="New Post"
+            android:screenOrientation="portrait" />
         <activity
             android:name="cs591e1_sp19.eatogether.NoOngingEventNotice"
-            android:label="Event" />
+            android:label="Event"
+            android:screenOrientation="portrait" />
         <activity
             android:name="cs591e1_sp19.eatogether.MessageActivity"
-            android:label="Message" />
-        <activity android:name="cs591e1_sp19.eatogether.ListOfChatsActivity" />
+            android:label="Message"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cs591e1_sp19.eatogether.ListOfChatsActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name="cs591e1_sp19.eatogether.ProfileActivity"
-            android:label="Profile" />
+            android:label="Profile"
+            android:screenOrientation="portrait" />
         <activity
             android:name="cs591e1_sp19.eatogether.ProfileChangeActivity"
-            android:label="Change Profile" />
+            android:label="Change Profile"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.uber.sdk.android.rides.RideRequestActivity"
             android:exported="false"
