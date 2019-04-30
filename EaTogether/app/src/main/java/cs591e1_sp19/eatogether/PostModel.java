@@ -9,13 +9,14 @@ public class PostModel {
     public String note;
     public String restaurant_id, restaurant_name,post_id,restaurant_img;
     public String latitude, longitude;
+    public String res_rating, res_type;
 
 
     public PostModel(String user_id, String user_name, String avatar, String date,
                      String month, String year, String time1,
                      String time2, String note, String restaurant_id,
                      String restaurant_name, String post_id, String restaurant_img,
-                     String latitude, String longitude){
+                     String latitude, String longitude, String res_rating, String res_type){
 
         this.user_id = user_id;
         this.user_name = user_name;
@@ -32,6 +33,8 @@ public class PostModel {
         this.restaurant_img = restaurant_img;
         this.latitude = latitude;
         this.longitude = longitude;
+        this.res_rating = res_rating;
+        this.res_type = res_type;
     }
 
     public PostModel(String user_id, String user_name, String avatar,String restaurant_id,

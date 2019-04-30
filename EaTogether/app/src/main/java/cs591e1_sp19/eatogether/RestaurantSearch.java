@@ -96,6 +96,12 @@ public class RestaurantSearch extends AppCompatActivity {
             return true;
         }
 
+        if (id == R.id.lst) {
+            Intent i = new Intent(this, PostsList.class);
+            startActivity(i);
+            return true;
+        }
+
         if (id == R.id.wish) {
             Intent i = new Intent(this, WishList.class);
             startActivity(i);

@@ -15,10 +15,18 @@
         app:showAsAction="ifRoom" />
 
     <item
+        android:id="@+id/lst"
+        android:icon="@drawable/icon_01"
+        android:title="List of Restaurants"
+        app:showAsAction="ifRoom" />
+
+    <item
         android:id="@+id/map"
         android:icon="@drawable/ic_home_black_24dp"
         android:title="Map"
         app:showAsAction="ifRoom"/>
+
+
 
     <!--<item
         android:id="@+id/bell"

@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.github.ivbaranov.mfb.MaterialFavoriteButton;
@@ -37,13 +38,15 @@ public class WishAdapter extends RecyclerView.Adapter<WishAdapter.MyViewHolder> 
     @NonNull
     @Override
     public WishAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View v = LayoutInflater.from(context).inflate(R.layout.restaurant_item,viewGroup, false);
+        View v = LayoutInflater.from(context).inflate(R.layout.listview_row,viewGroup, false);
         return  new MyViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) { //retrieve data and show it in the view
         holder.tvName.setText(restaurants.get(position).getName());
+        holder.res_rating.setRating(Float.parseFloat(restaurants.get(position).getRating()));
+        holder.types.setText(restaurants.get(position).getType());
         Picasso.get().load(restaurants.get(position).getImageUrl()).into(holder.imgRestaurant);
 
     }
@@ -54,19 +57,22 @@ public class WishAdapter extends RecyclerView.Adapter<WishAdapter.MyViewHolder> 
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder{
-        public TextView tvName;
+        public TextView tvName, types;
         public ImageView imgRestaurant;
-        public Button btnDetail;
+        public RatingBar res_rating;
+        //public Button btnDetail;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            tvName = itemView.findViewById(R.id.RestaurantName);
-            imgRestaurant = itemView.findViewById(R.id.imgRestaurant);
-            btnDetail = itemView.findViewById(R.id.btnDetail);
+            tvName = itemView.findViewById(R.id.business_name);
+            imgRestaurant = itemView.findViewById(R.id.business_img);
+            types = itemView.findViewById(R.id.business_type);
+            res_rating = itemView.findViewById(R.id.business_rating);
+            //btnDetail = itemView.findViewById(R.id.btnDetail);
 
 
-            btnDetail.setOnClickListener(new View.OnClickListener() {
+            /*btnDetail.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
@@ -105,7 +111,7 @@ public class WishAdapter extends RecyclerView.Adapter<WishAdapter.MyViewHolder> 
 
 
                 }
-            });
+            });*/
 
             //Go through the database and look for the name of current restaurant
             //get restaurant ID, and call the yelp api using the id to get the restaurant detail page

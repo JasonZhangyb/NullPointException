@@ -384,9 +384,7 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
 
                 ref_users.child(partner_id).child("Rating").setValue(partner);
 
-
                 rating_dialog.cancel();
-
 
                 ref_users.child(AppState.userID).child("Ongoing").removeValue();
                 ref_users.child(AppState.userID).child("Posts").child(AppState.onGoingPost).removeValue();
@@ -429,7 +427,10 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
 // Not calling **super**, disables back button in current screen.
     }
 
-    public void findCoffee(){
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
 
         ongoingdb.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -442,8 +443,16 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
                 StringBuilder stringBuilder = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
                 stringBuilder.append("location="+DROPOFF_LAT.toString()+","+DROPOFF_LONG.toString());
                 stringBuilder.append("&radius="+2000);
-                stringBuilder.append("&keyword="+"cafe,bar,museum,park");
+                stringBuilder.append("&keyword="+"shop");
                 stringBuilder.append("&key="+getResources().getString(R.string.google_maps_key));
+                LatLng current_loca = new LatLng(DROPOFF_LAT, DROPOFF_LONG);
+                MarkerOptions current_marker = new MarkerOptions();
+                current_marker.title("Destination");
+                current_marker.position(current_loca);
+
+                mMap.addMarker(current_marker);
+
+                mMap.moveCamera(CameraUpdateFactory.newLatLng(current_loca));
 
                 System.out.println(stringBuilder);
 
@@ -463,24 +472,6 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
 
             }
         });
-
-
-    }
-
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
-
-        LatLng current_loca = new LatLng(DROPOFF_LAT, DROPOFF_LONG);
-        MarkerOptions current_marker = new MarkerOptions();
-        current_marker.title("Destination");
-        current_marker.position(current_loca);
-
-        mMap.addMarker(current_marker);
-
-        findCoffee();
-
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(current_loca));
 
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 

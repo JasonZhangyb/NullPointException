@@ -49,22 +49,22 @@
 
                 <TextView
                     android:id="@+id/rowTextHeader"
-                    android:textStyle="bold"
                     android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="2" />
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    tools:text="Header" />
 
                 <TextView
                     android:id="@+id/rowTextBody"
                     android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" />
+                    android:layout_height="wrap_content"
+                    tools:text="Body" />
 
                 <TextView
                     android:id="@+id/date_time"
                     android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" />
+                    android:layout_height="wrap_content"
+                    tools:text="Date" />
             </LinearLayout>
 
         </LinearLayout>

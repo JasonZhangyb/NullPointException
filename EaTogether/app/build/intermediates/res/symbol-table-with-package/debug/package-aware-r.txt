@@ -1147,6 +1147,7 @@ id imgNotice
 id imgRestaurant
 id info
 id info_avatar
+id info_gender
 id info_loc
 id info_name
 id info_pref
@@ -1173,9 +1174,11 @@ id list_item
 id loginButton
 id loginPassword
 id logout
+id lst
 id lstView
 id lstView_chat
 id lstView_chats_list
+id lstView_list
 id lstView_review
 id lyftHotPink
 id lyftLauncher
@@ -1329,6 +1332,7 @@ id titleDividerNoCustom
 id title_template
 id top
 id topPanel
+id top_info
 id touch_outside
 id transition_current_scene
 id transition_layout_save
@@ -1418,6 +1422,7 @@ layout activity_my_posts
 layout activity_new_post
 layout activity_on_going
 layout activity_posting
+layout activity_posts_list
 layout activity_profile
 layout activity_profilechange
 layout activity_restaurant_post

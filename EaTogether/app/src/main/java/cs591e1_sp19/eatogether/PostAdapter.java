@@ -71,7 +71,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
         myViewHolder.user_rating.setVisibility(GONE);
         myViewHolder.user_name.setText(post.user_name);
         //myViewHolder.user_locale.setText(post.country + ", " + post.language);
-        myViewHolder.user_locale.setText(post.date + "/" + post.month + "/" + post.year);
+        myViewHolder.user_locale.setText(post.month + "/" + post.date + "/" + post.year);
         myViewHolder.time_period.setText(post.time1 + " - " + post.time2);
         myViewHolder.user_note.setText(post.note);
         myViewHolder.msg_button.setText("MESSAGE");

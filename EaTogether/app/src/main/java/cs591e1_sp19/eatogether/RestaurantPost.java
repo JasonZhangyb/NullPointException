@@ -66,7 +66,7 @@ public class RestaurantPost extends AppCompatActivity {
     private ImageView notice;
     private int count=0;
 
-
+    String types = "";
 
     //the blank space on the bottom is for showing existing posts ones the back end is finished.
     //the post button does not have any functionality for now, since we do not have a back end yet.
@@ -153,6 +153,12 @@ public class RestaurantPost extends AppCompatActivity {
             return true;
         }
 
+        if (id == R.id.lst) {
+            Intent i = new Intent(this, PostsList.class);
+            startActivity(i);
+            return true;
+        }
+
         if (id == R.id.map) {
             Intent i = new Intent(this, MapsActivity.class);
             startActivity(i);
@@ -189,8 +195,6 @@ public class RestaurantPost extends AppCompatActivity {
 
             final FirebaseDatabase database = FirebaseDatabase.getInstance();
             DatabaseReference ref = database.getReference("Posts").child(business.getId());
-
-            String types = "";
 
             res_name = findViewById(R.id.res_name);
             res_rating = findViewById(R.id.res_rating);
@@ -294,6 +298,8 @@ public class RestaurantPost extends AppCompatActivity {
                     i.putExtra("resImg", business.getImageUrl());
                     i.putExtra("latitude", Double.toString(business.getCoordinates().getLatitude()));
                     i.putExtra("longitude", Double.toString(business.getCoordinates().getLongitude()));
+                    i.putExtra("rating", Double.toString(business.getRating()));
+                    i.putExtra("type", types);
                     startActivity(i);
 
                 }
@@ -322,11 +328,18 @@ public class RestaurantPost extends AppCompatActivity {
                             DatabaseReference noRef = mRef.child(business.getId());
                             DatabaseReference nameRef = noRef.child("Name");
                             DatabaseReference imageRef = noRef.child("imageUrl");
+                            DatabaseReference ratingRef = noRef.child("Rating");
+                            DatabaseReference typeRef = noRef.child("Type");
+
                             if (favorite == true){
 
                                 nameRef.setValue(business.getName());
 
                                 imageRef.setValue(business.getImageUrl());
+
+                                ratingRef.setValue(Double.toString(business.getRating()));
+
+                                typeRef.setValue(types);
 
                             }
                             else {

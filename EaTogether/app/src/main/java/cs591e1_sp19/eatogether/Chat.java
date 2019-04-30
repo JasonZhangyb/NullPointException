@@ -83,7 +83,7 @@ public class Chat extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (!dataSnapshot.hasChild(post_id)){
 
-                    guests.put(AppState.userID ,AppState.userID);
+                    guests.put(AppState.userID ,AppState.userName);
 
                     chats = new ChatModel(
                             creator_id,
@@ -110,7 +110,7 @@ public class Chat extends AppCompatActivity {
                     ChatModel data = dataSnapshot.child(post_id).getValue(ChatModel.class);
 
                     if (data.status.equals("abandoned")){
-                        guests.put(AppState.userID ,AppState.userID);
+                        guests.put(AppState.userID ,AppState.userName);
 
                         chats = new ChatModel(
                                 creator_id,
@@ -140,7 +140,7 @@ public class Chat extends AppCompatActivity {
 
                         if (!data.guests.containsKey(AppState.userID) && !AppState.userID.equals(data.creator_id)) {
 
-                            data.guests.put(AppState.userID, AppState.userID);
+                            data.guests.put(AppState.userID, AppState.userName);
 
                             ref_msg.setValue(data);
                             for (MsgModel i : old_msgs) {
@@ -258,6 +258,12 @@ public class Chat extends AppCompatActivity {
 
         if (id == R.id.wish) {
             Intent i = new Intent(this, WishList.class);
+            startActivity(i);
+            return true;
+        }
+
+        if (id == R.id.lst) {
+            Intent i = new Intent(this, PostsList.class);
             startActivity(i);
             return true;
         }

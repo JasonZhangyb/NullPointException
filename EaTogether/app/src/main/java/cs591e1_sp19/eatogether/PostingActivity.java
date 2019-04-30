@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,7 +26,7 @@ public class PostingActivity extends AppCompatActivity {
     String time2;
     String note;
 
-    String latitude, longitude;
+    String latitude, longitude, res_rating, res_type;
 
     public int year;
     public int month;
@@ -51,6 +53,8 @@ public class PostingActivity extends AppCompatActivity {
         year = getIntent().getIntExtra("year", 2019);
         month = getIntent().getIntExtra("month", 4);
         day = getIntent().getIntExtra("day", 30);
+        res_rating = getIntent().getStringExtra("rating");
+        res_type = getIntent().getStringExtra("type");
 
         final String res_id = getIntent().getStringExtra("resID");
 
@@ -87,7 +91,9 @@ public class PostingActivity extends AppCompatActivity {
                         ref_post.getKey(),
                         res_img,
                         latitude,
-                        longitude));
+                        longitude,
+                        res_rating,
+                        res_type));
                 DatabaseReference ref_user = database.getReference("Users").child(AppState.userID).child("Posts");
                 ref_user.child(ref_post.getKey()).setValue(res_id);
                 // Intent i = new Intent(getApplicationContext(),MapsActivity.class);
@@ -100,4 +106,42 @@ public class PostingActivity extends AppCompatActivity {
         });
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        //return super.onCreateOptionsMenu(menu);   //get rid of default behavior.
+
+        // Inflate the menu; this adds items to the action bar
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) { //open wishlist activity
+
+        int id = item.getItemId();
+
+        if (id == R.id.wish) {
+            Intent i = new Intent(this, WishList.class);
+            startActivity(i);
+            return true;
+        }
+
+        if (id == R.id.lst) {
+            Intent i = new Intent(this, PostsList.class);
+            startActivity(i);
+            return true;
+        }
+
+        if (id == R.id.map) {
+            Intent i = new Intent(this, MapsActivity.class);
+            startActivity(i);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);  //if none of the above are true, do the default and return a boolean.
+    }
+
 }

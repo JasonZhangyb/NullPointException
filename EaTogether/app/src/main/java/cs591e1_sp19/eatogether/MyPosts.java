@@ -98,6 +98,12 @@ public class MyPosts extends AppCompatActivity {
             return true;
         }
 
+        if (id == R.id.lst) {
+            Intent i = new Intent(this, PostsList.class);
+            startActivity(i);
+            return true;
+        }
+
         if (id == R.id.map) {
             Intent i = new Intent(this, MapsActivity.class);
             startActivity(i);
@@ -152,7 +158,7 @@ class MyPostsAdapter extends RecyclerView.Adapter<MyPostsAdapter.MyViewHolder> {
         myViewHolder.user_rating.setVisibility(GONE);
         myViewHolder.res_name.setText(post.restaurant_name);
         //myViewHolder.user_locale.setText(post.country + ", " + post.language);
-        myViewHolder.user_locale.setText(post.date + "/" + post.month + "/" + post.year);
+        myViewHolder.user_locale.setText(post.month + "/" + post.date + "/" + post.year);
         myViewHolder.time_period.setText(post.time1 + " - " + post.time2);
         myViewHolder.user_note.setText(post.note);
         myViewHolder.msg_btn.setText("DELETE");

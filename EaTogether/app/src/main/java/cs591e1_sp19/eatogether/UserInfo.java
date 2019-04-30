@@ -29,7 +29,7 @@ import static android.view.View.GONE;
 
 public class UserInfo extends AppCompatActivity {
 
-    TextView info_name, info_loc, info_pref;
+    TextView info_name, info_loc, info_pref, info_gender;
     ImageView info_avatar;
     Button btn_info;
     RecyclerView recView_info;
@@ -45,6 +45,7 @@ public class UserInfo extends AppCompatActivity {
         setContentView(R.layout.activity_user_info);
 
         info_name = findViewById(R.id.info_name);
+        info_gender = findViewById(R.id.info_gender);
         info_loc = findViewById(R.id.info_loc);
         info_pref = findViewById(R.id.info_pref);
         info_avatar = findViewById(R.id.info_avatar);
@@ -150,15 +151,19 @@ public class UserInfo extends AppCompatActivity {
                 info_name.setText(data.username);
                 info_rating.setRating(Float.parseFloat(data.rating));
 
+                info_gender.setVisibility(GONE);
                 info_loc.setVisibility(GONE);
                 info_pref.setVisibility(GONE);
 
                 if (dataSnapshot.hasChild("setting")){
                     User pref = dataSnapshot.child("setting").getValue(User.class);
+                    info_gender.setVisibility(View.VISIBLE);
                     info_loc.setVisibility(View.VISIBLE);
                     info_pref.setVisibility(View.VISIBLE);
-                    info_loc.setText(pref.gender);
-                    info_pref.setText(pref.location + ", " + pref.language);
+                    info_gender.setText(pref.gender);
+                    info_loc.setText(pref.location + ", " + pref.language);
+                    info_pref.setText(pref.fav.get("one") + ", " +
+                            pref.fav.get("two") + ", " + pref.fav.get("three"));
                 }
 
 
@@ -256,6 +261,12 @@ public class UserInfo extends AppCompatActivity {
 
         if (id == R.id.wish) {
             Intent i = new Intent(this, WishList.class);
+            startActivity(i);
+            return true;
+        }
+
+        if (id == R.id.lst) {
+            Intent i = new Intent(this, PostsList.class);
             startActivity(i);
             return true;
         }

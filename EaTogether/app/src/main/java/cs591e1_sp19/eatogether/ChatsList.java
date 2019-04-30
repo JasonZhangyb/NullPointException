@@ -171,6 +171,7 @@ class ChatsListAdapter extends BaseAdapter {
 
     Context context;
     ArrayList<ChatModel> rooms;
+    Integer guest_limit = 3;
 
     public ChatsListAdapter(Context c, ArrayList<ChatModel> p){
         context = c;
@@ -197,6 +198,9 @@ class ChatsListAdapter extends BaseAdapter {
 
         View row;
 
+        String guests = "";
+        int counter = 0;
+
         final ChatModel room = rooms.get(position);
 
         if (convertView == null){
@@ -207,14 +211,33 @@ class ChatsListAdapter extends BaseAdapter {
             row = convertView;
         }
 
-        TextView user_name = row.findViewById(R.id.rowTextHeader);
-        TextView res_name = row.findViewById(R.id.rowTextBody);
+        TextView res_name = row.findViewById(R.id.rowTextHeader);
+        TextView user_name = row.findViewById(R.id.rowTextBody);
         TextView date = row.findViewById(R.id.date_time);
         ImageView user_avatar = row.findViewById(R.id.rowImageView);
 
-        user_name.setText(room.creator_name);
+        if (room.guests.size() <= guest_limit){
+            for (String guest_id: room.guests.keySet()) {
+                counter++;
+                if (counter < room.guests.size())
+                    guests += room.guests.get(guest_id) + ", ";
+                else
+                    guests += room.guests.get(guest_id);
+            }
+        } else {
+            for (String guest_id: room.guests.keySet()) {
+                counter++;
+                if (counter < guest_limit)
+                    guests += room.guests.get(guest_id) + ", ";
+                else
+                    guests += room.guests.get(guest_id) + " ......";
+            }
+        }
+
+
         res_name.setText(room.res_name);
-        date.setText(room.date + "/" + room.month + "/" + room.year);
+        user_name.setText(room.creator_name + ", " + guests);
+        date.setText(room.month + "/" + room.date + "/" + room.year);
         Picasso.get().load(room.creator_avatar).into(user_avatar);
 
         return row;

@@ -17,22 +17,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UserInfo"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".ChatsList"
+        <activity android:name=".PostsList"></activity>
+        <activity
+            android:name=".UserInfo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ChatsList"
             android:label="Message"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Chat"
-            android:windowSoftInputMode="stateHidden"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".MyPosts"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Chat"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".MyPosts"
             android:label="My Post"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".OnGoingActivity"
             android:label="Event"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,8 +46,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -57,42 +64,46 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".RestaurantSearch"
             android:label="Search"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".RestaurantPost"
             android:label="Restaurant"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".WishList"
             android:label="Wishlist"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".RestaurantReview"
             android:label="Restaurants Reviews"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".NewPost"
             android:label="New Post"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".NoOngingEventNotice"
             android:label="Event"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".MessageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MessageActivity"
             android:label="Message"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ListOfChatsActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ListOfChatsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ProfileActivity"
             android:label="Profile"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ProfileChangeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ProfileChangeActivity"
             android:label="Change Profile"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity android:name=".PostingActivity" />
     </application>
 

@@ -31,7 +31,7 @@ public class NewPost extends AppCompatActivity {
     public int month;
     public int day;
 
-    String latitude, longitude;
+    String latitude, longitude, res_rating, res_type;
 
     String res_img;
 
@@ -48,6 +48,8 @@ public class NewPost extends AppCompatActivity {
         res_img = getIntent().getStringExtra("resImg");
         latitude = getIntent().getStringExtra("latitude");
         longitude = getIntent().getStringExtra("longitude");
+        res_rating = getIntent().getStringExtra("rating");
+        res_type = getIntent().getStringExtra("type");
 
 
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -79,6 +81,8 @@ public class NewPost extends AppCompatActivity {
                 i.putExtra("year", year);
                 i.putExtra("day", day);
                 i.putExtra("month", month);
+                i.putExtra("rating", res_rating);
+                i.putExtra("type", res_type);
 
                 startActivity(i);
             }
@@ -106,6 +110,12 @@ public class NewPost extends AppCompatActivity {
 
         if (id == R.id.wish) {
             Intent i = new Intent(this, WishList.class);
+            startActivity(i);
+            return true;
+        }
+
+        if (id == R.id.lst) {
+            Intent i = new Intent(this, PostsList.class);
             startActivity(i);
             return true;
         }
