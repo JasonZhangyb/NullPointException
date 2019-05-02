@@ -29,11 +29,12 @@
         android:layout_marginBottom="8dp"
         android:orientation="horizontal">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/user_avatar"
-            android:layout_width= "100dp"
+            android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_weight="1"
+            tools:src="@tools:sample/avatars"
             tools:srcCompat="@tools:sample/avatars" />
 
         <LinearLayout
@@ -53,6 +54,7 @@
             <RatingBar
                 android:id="@+id/user_rating"
                 style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_marginLeft="8dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:numStars="5" />

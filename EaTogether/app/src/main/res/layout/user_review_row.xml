@@ -19,8 +19,8 @@
 
     <LinearLayout
         android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_weight="3"
-        android:layout_height="match_parent"
         android:orientation="vertical">
 
 
@@ -28,23 +28,23 @@
             android:id="@+id/user_name"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_weight="2"
             android:layout_marginLeft="8dp"
-            android:textSize="12dp"
+            android:layout_weight="2"
             android:text="TextView"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textSize="12dp" />
 
         <RatingBar
             android:id="@+id/user_rating"
             style="@style/Widget.AppCompat.RatingBar.Small"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_weight="2"
             android:layout_marginLeft="8dp"
+            android:layout_weight="2"
             android:backgroundTint="@color/colorPrimaryDark"
-            android:progressTint="@color/colorPrimaryDark"
             android:clickable="false"
             android:isIndicator="true"
+            android:progressTint="@color/colorPrimaryDark"
             android:text="TextView" />
 
         <!--<TextView-->
@@ -61,14 +61,14 @@
 
         <TextView
             android:id="@+id/user_comment"
-            android:text="Some Reviews Some Reviews Some Reviews Some Reviews Some Reviews Some Reviews Some Reviews Some Reviews Some Reviews Some Reviews Some Reviews Some Reviews Some Reviews Some Reviews Some Reviews "
             android:layout_width="wrap_content"
             android:layout_height="0dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="4dp"
             android:layout_weight="3"
             android:paddingRight="2dp"
-            android:textColor="#000000"
-            android:layout_marginTop="4dp"
-            android:layout_marginLeft="8dp" />
+            android:text="Some Reviews Some Reviews Some Reviews Some Reviews Some Reviews Some Reviews Some Reviews Some Reviews Some Reviews Some Reviews Some Reviews Some Reviews Some Reviews Some Reviews Some Reviews "
+            android:textColor="#000000" />
 
     </LinearLayout>
 

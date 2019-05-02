@@ -81,7 +81,7 @@ public class PostingActivity extends AppCompatActivity {
                         AppState.userName,
                         AppState.userAvatar,
                         String.valueOf(day),
-                        String.valueOf(month),
+                        String.valueOf(month + 1),
                         String.valueOf(year),
                         time1,
                         time2,

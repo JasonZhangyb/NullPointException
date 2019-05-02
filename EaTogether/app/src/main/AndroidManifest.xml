@@ -17,7 +17,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PostsList"></activity>
+        <activity
+            android:name=".PostsList"
+            android:label="Restaurants"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".UserInfo"
             android:screenOrientation="portrait" />

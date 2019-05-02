@@ -32,6 +32,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewDebug;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -66,6 +68,15 @@ import static cs591e1_sp19.eatogether.AppState.current_lati;
 import static cs591e1_sp19.eatogether.AppState.current_longi;
 import static cs591e1_sp19.eatogether.AppState.onGoingPost;
 
+import android.content.Context;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+import android.support.v4.view.GestureDetectorCompat;
+import android.view.MotionEvent;
+import android.view.GestureDetector;
+
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     TextView countTxt;
@@ -97,6 +108,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private RelativeLayout inv_layout;
     private String myString = "MAP";
 
+    private SensorManager s_m;
+
+    private float accel_current;
+    private float accel_last;
+    private float shake;
+    private int shake_point=20;
+    private GestureDetectorCompat gestureDetector;
+
     LatLng current_loca = new LatLng(Double.parseDouble(current_lati), Double.parseDouble(current_longi));
 
 
@@ -119,6 +138,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         rest_search.setLayoutParams(new RelativeLayout.LayoutParams(150, 150));
         rest_search.setImageResource(R.drawable.search02);
         rll_search.addView(rest_search);
+
+
+        s_m = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        s_m.registerListener(sensorListener, s_m.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_NORMAL);
+
+        accel_current = SensorManager.GRAVITY_EARTH; //THE CURRENT ACCELERATION
+        accel_last = SensorManager.GRAVITY_EARTH; //TO STORE THE PREVIOUS ACCELERATION
+        shake = 0.00f;
+
+
 
 
         rll_search.setOnClickListener(new View.OnClickListener() {
@@ -234,9 +263,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         });
     }
 
+
     //public String getMyData(){
-        //return myString;
-   // }
+    //return myString;
+    // }
 
     public void openInvDialog(String name, String avatar, String res, String id,
                               String t1, String t2, String lat, String lon, String note) {
@@ -552,8 +582,31 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         });
 
 
-
-
-
     }
+    private final SensorEventListener sensorListener = new SensorEventListener() {
+        @Override
+        public void onSensorChanged(SensorEvent event) {
+
+            float x = event.values[0];
+            float y = event.values[1];
+            float z = event.values[2];
+
+            accel_last = accel_current;
+            accel_current = (float)Math.sqrt(x*x + y*y + z*z);
+            float delta = accel_current - accel_last;
+            shake = shake * 0.9f + delta; //GET THE SHAKING NUMBER
+
+            if (shake>shake_point){
+                Intent intent = new Intent(MapsActivity.this, ChatsList.class);
+
+                startActivity(intent);
+            }
+
+        }
+
+        @Override
+        public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
+        }
+    };
 }

@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:2:1-110:12
-INJECTED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:2:1-110:12
-INJECTED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:2:1-110:12
-INJECTED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:2:1-110:12
+ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:2:1-113:12
+INJECTED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:2:1-113:12
+INJECTED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:2:1-113:12
+INJECTED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:2:1-113:12
 MERGED from [com.android.support:design:27.1.1] C:\Users\Jason\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\a320a685e3b0046fcb0ab0a81ff80dff\AndroidManifest.xml:17:1-22:12
 MERGED from [com.uber.sdk:rides-android:0.5.2] C:\Users\Jason\.gradle\caches\transforms-1\files-1.1\rides-android-0.5.2.aar\2b08a9f3204f4b32da070c38962ead9b\AndroidManifest.xml:23:1-43:12
 MERGED from [io.github.ranga543:yelp-fusion-client:0.1.4] C:\Users\Jason\.gradle\caches\transforms-1\files-1.1\yelp-fusion-client-0.1.4.aar\36c78cb9ccdf5f86a6c23b7be613da5c\AndroidManifest.xml:2:1-17:12
@@ -64,20 +64,20 @@ MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Jason\.gradle\
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Jason\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\4a6fac0b62ff40c4c713f1307801283e\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Jason\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\1ce219b42b95b21bd828289e16f21eed\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Jason\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\3af3dad6685704208c4154ddd57a38cd\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:2:1-110:12
-INJECTED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:2:1-110:12
-INJECTED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:2:1-110:12
+INJECTED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:2:1-113:12
+INJECTED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:2:1-113:12
+INJECTED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:2:1-113:12
 	package
 		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:3:5-38
 		INJECTED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:2:1-110:12
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:2:1-113:12
 		INJECTED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:2:1-110:12
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:2:1-113:12
 		INJECTED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:2:11-69
@@ -114,7 +114,7 @@ MERGED from [com.uber.sdk:core-android:0.5.2] C:\Users\Jason\.gradle\caches\tran
 	android:name
 		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:11:22-76
 application
-ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:13:5-108:19
+ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:13:5-111:19
 MERGED from [com.uber.sdk:rides-android:0.5.2] C:\Users\Jason\.gradle\caches\transforms-1\files-1.1\rides-android-0.5.2.aar\2b08a9f3204f4b32da070c38962ead9b\AndroidManifest.xml:32:5-41:19
 MERGED from [com.uber.sdk:rides-android:0.5.2] C:\Users\Jason\.gradle\caches\transforms-1\files-1.1\rides-android-0.5.2.aar\2b08a9f3204f4b32da070c38962ead9b\AndroidManifest.xml:32:5-41:19
 MERGED from [io.github.ranga543:yelp-fusion-client:0.1.4] C:\Users\Jason\.gradle\caches\transforms-1\files-1.1\yelp-fusion-client-0.1.4.aar\36c78cb9ccdf5f86a6c23b7be613da5c\AndroidManifest.xml:11:5-15:19
@@ -190,165 +190,169 @@ MERGED from [com.jakewharton:process-phoenix:2.0.0] C:\Users\Jason\.gradle\cache
 	android:theme
 		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:19:9-40
 activity#cs591e1_sp19.eatogether.PostsList
-ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:20:9-56
-	android:name
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:20:19-44
-activity#cs591e1_sp19.eatogether.UserInfo
-ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:21:9-23:52
+ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:20:9-23:51
 	android:screenOrientation
 		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:23:13-49
-	android:name
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:22:13-37
-activity#cs591e1_sp19.eatogether.ChatsList
-ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:24:9-27:52
-	android:screenOrientation
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:27:13-49
 	android:label
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:26:13-36
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:22:13-40
 	android:name
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:25:13-38
-activity#cs591e1_sp19.eatogether.Chat
-ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:28:9-31:57
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:21:13-38
+activity#cs591e1_sp19.eatogether.UserInfo
+ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:24:9-26:52
+	android:screenOrientation
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:26:13-49
+	android:name
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:25:13-37
+activity#cs591e1_sp19.eatogether.ChatsList
+ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:27:9-30:52
 	android:screenOrientation
 		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:30:13-49
+	android:label
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:29:13-36
+	android:name
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:28:13-38
+activity#cs591e1_sp19.eatogether.Chat
+ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:31:9-34:57
+	android:screenOrientation
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:33:13-49
 	android:windowSoftInputMode
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:31:13-54
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:34:13-54
 	android:name
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:29:13-33
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:32:13-33
 activity#cs591e1_sp19.eatogether.MyPosts
-ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:32:9-35:52
+ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:35:9-38:52
 	android:screenOrientation
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:35:13-49
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:38:13-49
 	android:label
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:34:13-36
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:37:13-36
 	android:name
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:33:13-36
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:36:13-36
 activity#cs591e1_sp19.eatogether.OnGoingActivity
-ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:36:9-39:52
-	android:screenOrientation
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:39:13-49
-	android:label
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:38:13-34
-	android:name
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:37:13-44
-activity#cs591e1_sp19.eatogether.MainActivity
-ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:40:9-48:20
+ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:39:9-42:52
 	android:screenOrientation
 		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:42:13-49
+	android:label
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:41:13-34
 	android:name
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:41:13-41
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:40:13-44
+activity#cs591e1_sp19.eatogether.MainActivity
+ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:43:9-51:20
+	android:screenOrientation
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:45:13-49
+	android:name
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:44:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:43:13-47:29
+ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:46:13-50:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:44:17-69
+ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:47:17-69
 	android:name
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:44:25-66
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:47:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:46:17-77
+ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:49:17-77
 	android:name
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:46:27-74
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:49:27-74
 activity#cs591e1_sp19.eatogether.LoginActivity
-ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:49:9-51:52
+ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:52:9-54:52
 	android:screenOrientation
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:51:13-49
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:54:13-49
 	android:name
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:50:13-42
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:53:13-42
 meta-data#com.google.android.geo.API_KEY
-ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:60:9-62:71
+ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:63:9-65:71
 	android:value
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:62:13-68
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:65:13-68
 	android:name
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:61:13-58
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:64:13-58
 activity#cs591e1_sp19.eatogether.MapsActivity
-ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:64:9-67:52
+ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:67:9-70:52
 	android:screenOrientation
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:67:13-49
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:70:13-49
 	android:label
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:66:13-56
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:69:13-56
 	android:name
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:65:13-41
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:68:13-41
 activity#cs591e1_sp19.eatogether.RestaurantSearch
-ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:68:9-71:52
+ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:71:9-74:52
 	android:screenOrientation
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:71:13-49
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:74:13-49
 	android:label
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:70:13-35
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:73:13-35
 	android:name
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:69:13-45
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:72:13-45
 activity#cs591e1_sp19.eatogether.RestaurantPost
-ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:72:9-75:52
+ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:75:9-78:52
 	android:screenOrientation
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:75:13-49
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:78:13-49
 	android:label
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:74:13-39
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:77:13-39
 	android:name
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:73:13-43
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:76:13-43
 activity#cs591e1_sp19.eatogether.WishList
-ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:76:9-79:52
+ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:79:9-82:52
 	android:screenOrientation
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:79:13-49
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:82:13-49
 	android:label
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:78:13-37
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:81:13-37
 	android:name
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:77:13-37
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:80:13-37
 activity#cs591e1_sp19.eatogether.RestaurantReview
-ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:80:9-83:52
+ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:83:9-86:52
 	android:screenOrientation
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:83:13-49
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:86:13-49
 	android:label
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:82:13-48
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:85:13-48
 	android:name
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:81:13-45
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:84:13-45
 activity#cs591e1_sp19.eatogether.NewPost
-ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:84:9-87:52
+ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:87:9-90:52
 	android:screenOrientation
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:87:13-49
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:90:13-49
 	android:label
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:86:13-37
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:89:13-37
 	android:name
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:85:13-36
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:88:13-36
 activity#cs591e1_sp19.eatogether.NoOngingEventNotice
-ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:88:9-91:52
+ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:91:9-94:52
 	android:screenOrientation
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:91:13-49
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:94:13-49
 	android:label
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:90:13-34
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:93:13-34
 	android:name
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:89:13-48
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:92:13-48
 activity#cs591e1_sp19.eatogether.MessageActivity
-ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:92:9-95:52
-	android:screenOrientation
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:95:13-49
-	android:label
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:94:13-36
-	android:name
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:93:13-44
-activity#cs591e1_sp19.eatogether.ListOfChatsActivity
-ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:96:9-98:52
+ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:95:9-98:52
 	android:screenOrientation
 		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:98:13-49
+	android:label
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:97:13-36
 	android:name
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:97:13-48
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:96:13-44
+activity#cs591e1_sp19.eatogether.ListOfChatsActivity
+ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:99:9-101:52
+	android:screenOrientation
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:101:13-49
+	android:name
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:100:13-48
 activity#cs591e1_sp19.eatogether.ProfileActivity
-ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:99:9-102:52
+ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:102:9-105:52
 	android:screenOrientation
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:102:13-49
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:105:13-49
 	android:label
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:101:13-36
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:104:13-36
 	android:name
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:100:13-44
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:103:13-44
 activity#cs591e1_sp19.eatogether.ProfileChangeActivity
-ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:103:9-106:52
+ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:106:9-109:52
 	android:screenOrientation
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:106:13-49
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:109:13-49
 	android:label
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:105:13-43
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:108:13-43
 	android:name
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:104:13-50
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:107:13-50
 activity#cs591e1_sp19.eatogether.PostingActivity
-ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:107:9-53
+ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:110:9-53
 	android:name
-		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:107:19-50
+		ADDED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml:110:19-50
 uses-sdk
 INJECTED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Jason\Desktop\npe\NullPointException\EaTogether\app\src\main\AndroidManifest.xml
