@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="3dp"
+    android:paddingTop="3dp"
+    android:orientation="horizontal">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/user_avatar"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_weight="1"
+        tools:src="@tools:sample/avatars"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginLeft="8dp"
+            android:layout_weight="2"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textSize="12dp" />
+
+        <RatingBar
+            android:id="@+id/user_rating"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginLeft="8dp"
+            android:layout_weight="2"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:clickable="false"
+            android:isIndicator="true"
+            android:progressTint="@color/colorPrimaryDark"
+            android:text="TextView" />
+
+        <!--<TextView-->
+        <!--android:id="@+id/user_comment"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:background="@drawable/review_bubble"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="3"-->
+        <!--android:layout_marginLeft="15dp"-->
+        <!--android:text="TextView" -->
+        <!--android:textColor="#ffffff"-->
+        <!--android:textSize="12sp"-->
+        <!--android:layout_marginTop="4dp"/>-->
+
+        <TextView
+            android:id="@+id/user_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_weight="3"
+            android:paddingRight="2dp"
+            android:text="Some Reviews Some Reviews Some Reviews Some Reviews Some Reviews Some Reviews Some Reviews Some Reviews Some Reviews Some Reviews Some Reviews Some Reviews Some Reviews Some Reviews Some Reviews "
+            android:textColor="#000000" />
+
+    </LinearLayout>
+
+</LinearLayout>
+

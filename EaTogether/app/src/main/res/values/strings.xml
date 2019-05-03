@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Eatogether</string>
+    <string-array name="time_period">
+        <item>1:00</item>
+        <item>2:00</item>
+        <item>3:00</item>
+        <item>4:00</item>
+        <item>5:00</item>
+        <item>6:00</item>
+        <item>7:00</item>
+        <item>8:00</item>
+        <item>9:00</item>
+        <item>10:00</item>
+        <item>11:00</item>
+        <item>12:00</item>
+    </string-array>
+    <string-array name="am_pm">
+        <item>am</item>
+        <item>pm</item>
+    </string-array>
+    <string-array name="country">
+        <item>US</item>
+        <item>China</item>
+        <item>Japan</item>
+    </string-array>
+    <string-array name="language">
+        <item>English</item>
+        <item>Chinese</item>
+        <item>Japanese</item>
+    </string-array>
+    <string name="title_activity_maps">Map</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nav_map">Map</string>
+    <string name="nav_message">Message</string>
+    <string name="nav_event">My Events</string>
+    <string name="nav_me">Me</string>
+    <string name="title_activity_bottom_navigation">BottomNavigation</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+</resources>

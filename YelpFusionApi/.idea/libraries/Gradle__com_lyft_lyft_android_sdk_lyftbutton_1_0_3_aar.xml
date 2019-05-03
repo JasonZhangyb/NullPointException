@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.lyft:lyft-android-sdk-lyftbutton:1.0.3@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/lyft-android-sdk-lyftbutton-1.0.3.aar/d6b5da05fc40666e3bb2f6f0dcb591a3/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/lyft-android-sdk-lyftbutton-1.0.3.aar/d6b5da05fc40666e3bb2f6f0dcb591a3/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.lyft/lyft-android-sdk-lyftbutton/1.0.3/d053e332b2c8c35b71562cfa7e6121da93832d5a/lyft-android-sdk-lyftbutton-1.0.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
