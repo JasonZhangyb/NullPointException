@@ -58,6 +58,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     EditText loginEmail,loginPassword;
     Button loginButton,registerButton,newPassButton;
 
+    // we want to ensure the code is the same so we can check the result is for us to authentication
     private static final int RC_SIGN_IN = 9001;
     private SignInButton signInButton;
     FirebaseAuth firebaseAuth;
@@ -73,6 +74,9 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
     private static final int REQUEST_LOCATION = 1;
     LocationManager locationManager;
+
+    //we'll first sign one picture for users, since we don't have a local database, so for speed consideration, we just hard-coding here,
+    //of our future job is to build a local cache so such thing can be much faster
     final private String img = "https://firebasestorage.googleapis.com/v0/b/eatogether-cs591.appspot.com/o/profile_img-01.png?alt=media&token=ef833632-1a12-47cf-aecf-a4504abe9c02";
 
     @Override
@@ -111,6 +115,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
         mGoogleApiClient = GoogleSignIn.getClient(this, gso);
 
+        //the button for Google Login
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -133,6 +138,8 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 final String emailS = loginEmail.getText().toString();
                 final String passwordS = loginPassword.getText().toString();
 
+
+                // we want to first check if the format is right
                 if(TextUtils.isEmpty(emailS)){
                     Toast.makeText(getApplicationContext(),"Please fill in the required fields",Toast.LENGTH_SHORT).show();
                     return;
@@ -152,7 +159,29 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
     private void signIn() {
         Intent signIntent = mGoogleApiClient.getSignInIntent();
+
+        // startActivityForResult will start another activity from this activity and expect result to return
         startActivityForResult(signIntent,RC_SIGN_IN);
+    }
+
+    //onActivityResult is where we get the result returned from newly created class
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==RC_SIGN_IN){
+            GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
+            if(result.isSuccess()){
+                GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(LoginActivity.this);
+                if (acct != null) {
+                    String personName = acct.getDisplayName();
+                    String personEmail = acct.getEmail();
+                    String personId = acct.getId();
+                    checkSignLogin(personEmail, personId, personName);
+                } else {
+                    Toast.makeText(getApplicationContext(), "Try Agian!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        }
     }
 
     private void logIn(final String email, final String password) {
@@ -218,6 +247,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     }
 
 
+    //we write the getLocation fnuction at this place because
     private boolean getLocation() {
         if (ActivityCompat.checkSelfPermission(LoginActivity.this, Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission
@@ -292,8 +322,8 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             }
 
             Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
-           // Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
-           // Intent intent = new Intent(getApplicationContext(), OnGoingActivity.class);
+            // Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+            // Intent intent = new Intent(getApplicationContext(), OnGoingActivity.class);
             startActivity(intent);
         }
         @Override
@@ -302,24 +332,6 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         }
     };
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==RC_SIGN_IN){
-            GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
-            if(result.isSuccess()){
-                GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(LoginActivity.this);
-                if (acct != null) {
-                    String personName = acct.getDisplayName();
-                    String personEmail = acct.getEmail();
-                    String personId = acct.getId();
-                    checkSignLogin(personEmail, personId, personName);
-                } else {
-                    Toast.makeText(getApplicationContext(), "Try Agian!", Toast.LENGTH_SHORT).show();
-                }
-            }
-        }
-    }
 
     private void authWithGoogle(GoogleSignInAccount account) {
         AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(),null);

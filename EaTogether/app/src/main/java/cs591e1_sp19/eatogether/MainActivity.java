@@ -26,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private Button loginButton;
     private FirebaseAuth firebaseAuth;
 
-    //Temporary hard coding, will change it into buildConfig
+    //we'll first sign one picture for users, since we don't have a local database, so for speed consideration, we just hard-coding here,
+    //of our future job is to build a local cache so such thing can be much faster
     final private String img = "https://firebasestorage.googleapis.com/v0/b/eatogether-cs591.appspot.com/o/profile_img-01.png?alt=media&token=ef833632-1a12-47cf-aecf-a4504abe9c02";
 
     @Override
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
 
+        // we would first check if all this input time is legal
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Password must be at least 6 characters",Toast.LENGTH_SHORT).show();
                 }
 
+                //we would use firebaseAuth here so it's more secure
                 firebaseAuth.createUserWithEmailAndPassword(emailS,passwordS)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
@@ -91,7 +94,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
+    //we will asign our new user with original rating with 5.0, and a primary avatar, which he/she can change in the future in
+    //the profile setting page
     private void addUser(String emailS, String nameS, String passwordS) {
 
         FirebaseDatabase mref = FirebaseDatabase.getInstance();

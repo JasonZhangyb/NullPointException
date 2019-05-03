@@ -72,6 +72,7 @@ public class PostingActivity extends AppCompatActivity {
             }
         });
 
+        //we would first first create the post model here, so it's better for out post adapter and firebase uploading
         new_post.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {

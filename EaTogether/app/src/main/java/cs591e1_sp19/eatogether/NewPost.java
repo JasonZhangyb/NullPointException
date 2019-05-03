@@ -69,6 +69,8 @@ public class NewPost extends AppCompatActivity {
             }
         });
 
+        //we sent all this information to next post activity(posting activity) for better performance,
+        //since we have tried scroll view and timepicker, the compatibility is not good.
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
