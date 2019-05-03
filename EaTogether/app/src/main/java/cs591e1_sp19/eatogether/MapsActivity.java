@@ -84,8 +84,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private GoogleMap mMap;
     private ImageView rest_search;
     private ImageView inv;
-    //private int click_times = 0;
-    //private String marker_id = "";
     private Marker previous_marker;
     private MarkerOptions restaurant_marker = new MarkerOptions();
     private int count = 0;
@@ -118,7 +116,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     LatLng current_loca = new LatLng(Double.parseDouble(current_lati), Double.parseDouble(current_longi));
 
-
+    //database real time url
     String databaseURL = "https://eatogether-cs591.firebaseio.com/";
 
     Firebase mRef;
@@ -129,6 +127,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+
+        //connect the firebase
         Firebase.setAndroidContext(this);
         mRef = new Firebase(databaseURL + "Users");
 
@@ -149,7 +149,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
 
-
+        // if click the search button, then jump to the search page
         rll_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -178,17 +178,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         args.putString("value","MAP");
         menu.putArguments(args);
 
+        // show the notification icon on the map page
         inv_layout = findViewById(R.id.inv);
         inv = new ImageView(getApplicationContext());
         inv.setLayoutParams(new RelativeLayout.LayoutParams(150, 150));
         inv.setImageResource(R.drawable.ic_notifications_black_24dp);
 
+
+        //If user press the notification btn
         mRef.child(AppState.userID).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 inv_layout.removeView(inv);
                 if (dataSnapshot.hasChild("Invite")){
 
+                    //If user accept invitation, then store some value
                     PostModel invitation = dataSnapshot.child("Invite").getValue(PostModel.class);
                     AppState.onGoingPost = invitation.post_id;
                     AppState.onGoingRes = invitation.restaurant_id;
@@ -202,14 +206,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     final String longitude = invitation.longitude;
                     final String status = invitation.note;
 
+                    //if user receive an invitation
                     if (status.equals("onGoing")) {
                         Toast.makeText(MapsActivity.this, "You just received an invitation!", Toast.LENGTH_SHORT).show();
                         inv_layout.addView(inv);
                     } else {
+                        //if the host withdraw the invitation
                         Toast.makeText(MapsActivity.this,
                                 "Oops, looks like the invitation has been withdrawn", Toast.LENGTH_SHORT).show();
                     }
 
+                    // invitation dialog
                     inv_layout.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -237,6 +244,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         });
 
+        // Shows the Nearby restaurant with your setting radius
         mRef.child(AppState.userID).child("Nearby").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -268,6 +276,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     //return myString;
     // }
 
+    //This is a dialog for invitation. When user click the notification icon, this dialog will present
+
     public void openInvDialog(String name, String avatar, String res, String id,
                               String t1, String t2, String lat, String lon, String note) {
 
@@ -296,6 +306,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             final String time2 = t2;
             final String latitude = lat;
             final String longitude = lon;
+
+            //contains accept and decline choice
 
             inv_dialog.show();
             inv_accept.setText("ACCEPT");
@@ -343,6 +355,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 }
             });
 
+            //if click on the accept btn
+
             inv_decline.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -353,6 +367,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 }
             });
         } else {
+
+            //if user click withdraw in the dialog, then the invitation will be wirhdrew
 
             inv_name.setText("Oops, looks like " + name);
             inv_res.setText("has withdrawn the invitation");
@@ -402,6 +418,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 // Not calling **super**, disables back button in current screen.
     }
 
+
+    //This function is for the Google Map performance. It will shows all the nearby restaurants in the Google Map
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
@@ -414,32 +433,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
 
-
-/*
-//store data in firebase
-        for(int i = 0; i < rest_name.length; i++){
-            Firebase nameRegi = new Firebase(databaseURL + "/Restaurants/" + rest_name[i] + "/name");
-            nameRegi.setValue(rest_name[i]);
-            Firebase priceRegi = new Firebase(databaseURL + "/Restaurants/" + rest_name[i] + "/price");
-            priceRegi.setValue(rest_price[i]);
-
-            Firebase ratingRegi = new Firebase(databaseURL + "/Restaurants/" + rest_name[i] + "/rating");
-            ratingRegi.setValue(rest_rating[i]);
-
-            Firebase infoRegi = new Firebase(databaseURL + "/Restaurants/" + rest_name[i] + "/info");
-            infoRegi.setValue(rest_info[i]);
-
-            Firebase latRegi = new Firebase(databaseURL + "/Restaurants/" + rest_name[i] + "/lat");
-            latRegi.setValue(rest_lat[i]);
-
-            Firebase longRegi = new Firebase(databaseURL + "/Restaurants/" + rest_name[i] + "/long");
-            longRegi.setValue(rest_long[i]);
-
-
-        }
-*/
-
-
+        //set menu appear and disappear
         mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
             @Override
             public void onMapClick(LatLng latLng) {
@@ -474,6 +468,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         });
 
+        // if click any marker, a layout with restaurant info will shows on map
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(final Marker marker) {
@@ -488,6 +483,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     fragmentManager.beginTransaction().remove(fragment).commit();
                 }
                 count++;
+
+                //set the clicked marker a diff color
 
                 float color = 37;
 
@@ -549,7 +546,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                 rll_restaurant = (RelativeLayout) findViewById(R.id.fragment);
 
-
+                //if click the restaurant info layout, then jump to the restaurant post page
                 rll_restaurant.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -561,22 +558,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 });
 
 
-
-                //Bundle frag_bundle = fragment.getArguments();
-                //System.out.println(">>>>>>>>>>>>" + frag_bundle.getBoolean("ifClick") );
-
-                /*
-                if((click_times > 1 && marker_id.equals(marker.getId()))){
-                    click_times = 0;
-                    marker_id = "";
-
-
-
-
-                }
-
-                marker_id = marker.getId();
-                */
                 return false;
             }
         });

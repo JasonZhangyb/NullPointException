@@ -110,7 +110,7 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
         setContentView(R.layout.activity_on_going);
 
 
-
+        //open the firebase
         ongoingdb = FirebaseDatabase
                 .getInstance()
                 .getReference()
@@ -123,15 +123,6 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
                 .getReference()
                 .child("Users");
 
-/*
-        ongoingdb.child("Rest_name").setValue("Fugakyu Japanese Cuisine");
-        ongoingdb.child("partner_id").setValue("-LcNvXfmtYgx6_jBvAZy");
-        userdb.child(AppState.userID).child("rating").setValue("4.5");
-        ongoingdb.child("time1").setValue("1 pm");
-        ongoingdb.child("time2").setValue("3 pm");
-        ongoingdb.child("latitude").setValue("42.342954");
-        ongoingdb.child("longitude").setValue("-71.119374642915");
-*/
         rest_name = (TextView) findViewById(R.id.rest_name);
         user_name = (TextView) findViewById(R.id.user_name);
         user_rating = (RatingBar) findViewById(R.id.user_rating);
@@ -148,6 +139,7 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
         menu_trans.addToBackStack(null);
         menu_trans.commit();
 
+        
         Bundle args = new Bundle();
         args.putString("value","EVENT");
         menu.putArguments(args);
@@ -162,6 +154,7 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
             }
         });
 
+        //get ongoing data from firebase
         ongoingdb.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -190,6 +183,7 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
             }
         });
 
+        //get partner user info and set it on page
         userdb.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
@@ -226,12 +220,6 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
             }
         });
 
-        // rest_name.setText(ongoingdb.child("Rest_name").toString());
-
-        // user_name.setText(userdb.child().child("name").toString());
-
-        // user_rating.setText(userdb.child(AppState.userID).child("rating").toString());
-        // time.setText(ongoingdb.child("time1").getKey() + " - " + ongoingdb.child("time2").toString());
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.google_maps);
@@ -240,6 +228,7 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
 
     }
 
+    //create the bottom navigation
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         //return super.onCreateOptionsMenu(menu);   //get rid of default behavior.
@@ -250,6 +239,8 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
 
         return true;
     }
+
+    //open wishlist
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) { //open wishlist activity
@@ -271,6 +262,7 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
         return super.onOptionsItemSelected(item);  //if none of the above are true, do the default and return a boolean.
     }
 
+    // setting the Uber and Lyft deep link
     public void onRide(){
         //build a new session to connect Uber API
         config = new SessionConfiguration.Builder()
@@ -292,15 +284,12 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
                 .build();
 
 
-
-
-
         RideParameters rideParams = new RideParameters.Builder()
                 .setDropoffLocation(
                         DROPOFF_LAT, DROPOFF_LONG, PICKUP_NICK, DROPOFF_ADDR)
                 .setPickupLocation(PICKUP_LAT, PICKUP_LONG, PICKUP_NICK, PICKUP_ADDR)
                 .build();
-// set parameters for the RideRequestButton instance
+    // set parameters for the RideRequestButton instance
         ServerTokenSession session = new ServerTokenSession(config);
         RideRequestButton blackButton = (RideRequestButton) findViewById(R.id.uber_button_black);
 
@@ -310,7 +299,7 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
         blackButton.loadRideInformation();
 
 
-        //
+        //setting Lyft deep link API
         LyftButton lyftButton = (LyftButton) findViewById(R.id.lyft_button);
         lyftButton.setApiConfig(apiConfig);
 
@@ -324,6 +313,7 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
 
     }
 
+    //the rating dialog
     public void openRatingDialog(final String partner_name, String url, final ArrayList<RatingModel> old_reviewers){
         final Dialog rating_dialog = new Dialog(this);
         rating_dialog.setContentView(R.layout.rating_dialog);
@@ -339,7 +329,7 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
         //avatar.setImageResource(partner_avatar);
         Picasso.get().load(url).into(avatar);
 
-
+        //set the rating value
         ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
@@ -349,6 +339,8 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
         });
 
         rating_dialog.show();
+
+        //click finish, then calculate the average of rating, and updating the database
 
         finish.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -428,6 +420,8 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
     }
 
 
+    //Use Google Places API to recommend some nearby places nearing the destination
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
@@ -437,6 +431,8 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 EventModel event = dataSnapshot.getValue(EventModel.class);
+
+                //setting the important info in url and call the Google Places API
 
                 DROPOFF_LAT = Double.parseDouble(event.latitude);
                 DROPOFF_LONG = Double.parseDouble(event.longitude);

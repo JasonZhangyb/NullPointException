@@ -41,7 +41,7 @@ public class GoogleNearbyPlaces  extends AsyncTask <Object, String, String> {
         url = (String) objects[1];
 
         try{
-
+            //get the url contains important info
             URL myurl = new URL(url);
             HttpURLConnection httpURLConnection = (HttpURLConnection)myurl.openConnection();
             httpURLConnection.connect();
@@ -56,6 +56,8 @@ public class GoogleNearbyPlaces  extends AsyncTask <Object, String, String> {
                 stringBuilder.append(line);
 
             }
+
+
 
             data = stringBuilder.toString();
 
@@ -75,12 +77,14 @@ public class GoogleNearbyPlaces  extends AsyncTask <Object, String, String> {
 
 
         try {
+
+            //get the "results" item from the giving back info
             JSONObject parentObject = new JSONObject(s);
             JSONArray resultsArray = parentObject.getJSONArray("results");
 
             for(int i = 0; i < resultsArray.length(); i++){
 
-
+                // split the location from result
                 JSONObject jsonObject = resultsArray.getJSONObject(i);
                 JSONObject locationObj = jsonObject.getJSONObject("geometry").getJSONObject("location");
 
@@ -89,9 +93,10 @@ public class GoogleNearbyPlaces  extends AsyncTask <Object, String, String> {
 
                 JSONObject nameObject = resultsArray.getJSONObject(i);
 
+                //split the name from result
                 String rest_name = nameObject.getString("name");
 
-
+                //marker the location on Google Map
                 LatLng latLng = new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude));
 
                 MarkerOptions markerOptions = new MarkerOptions();
