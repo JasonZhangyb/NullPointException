@@ -139,7 +139,7 @@ public class OnGoingActivity extends AppCompatActivity implements RideRequestBut
         menu_trans.addToBackStack(null);
         menu_trans.commit();
 
-        
+
         Bundle args = new Bundle();
         args.putString("value","EVENT");
         menu.putArguments(args);
