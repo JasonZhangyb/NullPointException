@@ -1,4 +1,0 @@
-#Thu May 02 22:06:02 EDT 2019
-base.0=/Users/limuzi/AndroidStudioProjects/EaTogether/final/NullPointException/EaTogether/app/build/intermediates/transforms/dexMerger/debug/7
-path.0=classes.dex
-renamed.0=classes.dex

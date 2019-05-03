@@ -185,14 +185,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         inv.setImageResource(R.drawable.ic_notifications_black_24dp);
 
 
-        //If user press the notification btn
+        // a listener to keep track of the invitation
         mRef.child(AppState.userID).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 inv_layout.removeView(inv);
+                // An invitation has been received
                 if (dataSnapshot.hasChild("Invite")){
 
-                    //If user accept invitation, then store some value
                     PostModel invitation = dataSnapshot.child("Invite").getValue(PostModel.class);
                     AppState.onGoingPost = invitation.post_id;
                     AppState.onGoingRes = invitation.restaurant_id;
@@ -206,7 +206,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     final String longitude = invitation.longitude;
                     final String status = invitation.note;
 
-                    //if user receive an invitation
                     if (status.equals("onGoing")) {
                         Toast.makeText(MapsActivity.this, "You just received an invitation!", Toast.LENGTH_SHORT).show();
                         inv_layout.addView(inv);
@@ -216,7 +215,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                 "Oops, looks like the invitation has been withdrawn", Toast.LENGTH_SHORT).show();
                     }
 
-                    // invitation dialog
+                    // invitation dialog to accept/reject invitation
                     inv_layout.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -272,9 +271,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
 
-    //public String getMyData(){
-    //return myString;
-    // }
 
     //This is a dialog for invitation. When user click the notification icon, this dialog will present
 
@@ -437,7 +433,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
             @Override
             public void onMapClick(LatLng latLng) {
-                System.out.println("????????????????Click on map");
                 if(count != 0){
                     previous_marker.setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
 

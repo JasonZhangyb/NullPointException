@@ -78,9 +78,13 @@ public class UserInfo extends AppCompatActivity {
         ref_users.child(guest_id).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
+                // only the creator of the post can send invitations
                 if (isCreator) {
+                    // user can not send invitation to him/her self
                     if (!AppState.userID.equals(guest_id)) {
+                        // creator can send invitation only if the guest currently does not have an ongoing event
                         if (!dataSnapshot.hasChild("Ongoing")) {
+                            // checking conditions for the withdraw option
                             if (dataSnapshot.hasChild("Invite")) {
                                 PostModel data = dataSnapshot.child("Invite").getValue(PostModel.class);
 
@@ -103,12 +107,14 @@ public class UserInfo extends AppCompatActivity {
 
                             } else {
 
+                                // all conditions are satisfied
                                 btn_info.setVisibility(View.VISIBLE);
                                 btn_info.setText("INVITE");
                                 btn_info.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
 
+                                        // passing an invitation into the database
                                         PostModel invitation = new PostModel(
                                                 creator_id,
                                                 creator_name,
@@ -130,6 +136,7 @@ public class UserInfo extends AppCompatActivity {
                                 });
                             }
                         } else {
+                            // the guest is currently unavailable
                             btn_info.setVisibility(View.VISIBLE);
                             btn_info.setText("INVITE");
                             btn_info.setOnClickListener(new View.OnClickListener() {
